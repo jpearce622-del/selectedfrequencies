@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
-import { Waveform } from "@/components/ui/Waveform";
+import { SoundMark } from "@/components/brand/SoundMark";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = buildMetadata({
@@ -36,8 +36,8 @@ export default function ContactPage() {
                 directly, usually within a day.
               </p>
             </Reveal>
-            <Reveal delay={220} className="mt-10 h-10 w-40 opacity-70">
-              <Waveform bars={20} barClassName="bg-accent" />
+            <Reveal delay={220}>
+              <SoundMark className="mt-10 h-8 w-32 text-accent" />
             </Reveal>
           </div>
 

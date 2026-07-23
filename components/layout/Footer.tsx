@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { Waveform } from "@/components/ui/Waveform";
+import { Logo } from "@/components/brand/Logo";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
@@ -15,14 +15,7 @@ export function Footer() {
     <footer className="bg-deep text-background">
       <Container className="grid gap-10 py-16 sm:grid-cols-2 sm:items-start sm:justify-between">
         <div>
-          <div className="flex items-center gap-3">
-            <div className="h-6 w-14 opacity-80">
-              <Waveform bars={9} barClassName="bg-amber" />
-            </div>
-            <p className="font-display text-xl font-semibold tracking-tight">
-              Selected Frequencies
-            </p>
-          </div>
+          <Logo variant="light" size="md" />
           <p className="mt-4 max-w-sm text-sm text-background/55">
             End-to-end podcast production for expert and thought-leadership
             shows — founders, coaches, and finance voices.

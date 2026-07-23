@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { Waveform } from "@/components/ui/Waveform";
+import { SoundMark } from "@/components/brand/SoundMark";
 import { getAllCaseStudies, getCaseStudyBySlug } from "@/lib/case-studies";
 
 type Params = { slug: string };
@@ -131,9 +131,7 @@ export default async function CaseStudyPage({
           <Section>
             <Reveal>
               <blockquote className="mx-auto max-w-3xl text-center">
-                <div className="mx-auto mb-8 h-8 w-24 opacity-70">
-                  <Waveform bars={16} barClassName="bg-amber" />
-                </div>
+                <SoundMark className="mx-auto mb-8 h-8 w-24 text-amber opacity-90" />
                 <p className="font-display text-2xl leading-relaxed font-medium text-balance sm:text-3xl">
                   “{study.testimonial.quote}”
                 </p>

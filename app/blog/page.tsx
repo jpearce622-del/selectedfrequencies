@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/metadata";
 import { Section } from "@/components/ui/Section";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
-import { Waveform } from "@/components/ui/Waveform";
+import { SoundMark } from "@/components/brand/SoundMark";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = buildMetadata({
@@ -29,9 +29,7 @@ export default function BlogIndexPage() {
         {posts.length === 0 ? (
           <Reveal>
             <div className="flex flex-col items-center rounded-2xl border border-dashed border-border bg-surface/50 py-20 text-center">
-              <div className="mb-6 h-8 w-24 opacity-40">
-                <Waveform bars={16} barClassName="bg-accent" />
-              </div>
+              <SoundMark className="mb-6 h-8 w-24 text-accent opacity-40" />
               <p className="font-display text-xl font-medium">
                 Nothing published yet.
               </p>

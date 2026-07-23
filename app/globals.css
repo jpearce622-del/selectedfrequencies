@@ -16,11 +16,11 @@
   --deep-soft: #2f425c;
   --deep-line: #3b4e69;
 
-  /* Brand orange — CTAs, fills, accents */
-  --accent: #dc6b12;
-  --accent-bright: #ee7a2d;
+  /* Brand orange — matched to logo artwork; CTAs, fills, accents */
+  --accent: #e57329;
+  --accent-bright: #ef8b47;
   --accent-foreground: #ffffff;
-  --amber: #f08a3e; /* brighter orange spark (pops on navy) */
+  --amber: #f0904f; /* brighter orange spark (pops on navy) */
 }
 
 @theme inline {
@@ -118,6 +118,23 @@
   animation: sf-eq 1.4s ease-in-out infinite;
 }
 
+/* ---------- Sound-mark ambient pulse (large hero use only — the header/
+   footer logo stays perfectly static to match the brand exactly) ---------- */
+@keyframes sf-mark-pulse {
+  0%,
+  100% {
+    transform: scaleY(0.85);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+.sf-mark-bar {
+  animation: sf-mark-pulse 2.6s ease-in-out infinite;
+}
+
 /* ---------- Logo marquee ---------- */
 @keyframes sf-marquee {
   from {
@@ -144,7 +161,8 @@
     transition: none;
   }
   .sf-bar,
-  .sf-marquee {
+  .sf-marquee,
+  .sf-mark-bar {
     animation: none;
   }
 }

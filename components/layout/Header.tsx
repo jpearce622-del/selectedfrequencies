@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
+import { Logo } from "@/components/brand/Logo";
 
 const navLinks = [
   { href: "/services", label: "Services" },
@@ -11,17 +12,6 @@ const navLinks = [
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
 ];
-
-/** Three static bars echoing the equalizer motif, sitting beside the wordmark. */
-function Mark() {
-  return (
-    <span className="flex h-4 items-end gap-[2px]" aria-hidden="true">
-      <span className="h-2 w-[3px] rounded-full bg-accent" />
-      <span className="h-4 w-[3px] rounded-full bg-accent" />
-      <span className="h-2.5 w-[3px] rounded-full bg-amber" />
-    </span>
-  );
-}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -47,13 +37,8 @@ export function Header() {
       }`}
     >
       <Container className="flex h-20 items-center justify-between">
-        {/* TODO: swap for the real Selected Frequencies logo/wordmark asset */}
-        <Link
-          href="/"
-          className="flex items-center gap-2.5 text-lg font-semibold tracking-tight"
-        >
-          <Mark />
-          Selected Frequencies
+        <Link href="/" aria-label="Selected Frequencies — home">
+          <Logo />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

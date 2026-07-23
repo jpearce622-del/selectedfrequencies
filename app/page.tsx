@@ -5,8 +5,8 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { Waveform } from "@/components/ui/Waveform";
 import { Hexagon } from "@/components/ui/Hexagon";
+import { SoundMark } from "@/components/brand/SoundMark";
 import { LogoMarquee } from "@/components/case-studies/LogoStrip";
 import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
@@ -116,9 +116,10 @@ export default function Home() {
                 }}
               />
               <Hexagon className="w-40 sm:w-56" stroke="var(--accent-bright)" strokeWidth={1.1}>
-                <div className="h-1/2 w-1/2">
-                  <Waveform bars={14} barClassName="bg-accent-bright" />
-                </div>
+                <SoundMark
+                  animated
+                  className="h-1/2 w-1/2 text-accent-bright"
+                />
               </Hexagon>
             </div>
           </Reveal>
@@ -139,9 +140,10 @@ export default function Home() {
       <section className="bg-deep text-background">
         <Container className="py-24 text-center sm:py-32">
           <Reveal>
-            <div className="mx-auto mb-10 h-10 w-28">
-              <Waveform bars={18} barClassName="bg-accent-bright" />
-            </div>
+            <SoundMark
+              animated
+              className="mx-auto mb-10 h-10 w-28 text-accent-bright"
+            />
           </Reveal>
           <Reveal
             as="h2"
