@@ -176,25 +176,30 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ---------- Recent work ---------- */}
+      {/* ---------- Case Studies ---------- */}
       {featuredCaseStudies.length > 0 && (
         <section className="bg-fog">
           <Container className="py-24 sm:py-32">
             <Reveal className="flex items-end justify-between">
-              <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-                Recent work
-              </h2>
+              <div>
+                <h2 className="font-display text-4xl font-semibold uppercase tracking-widest sm:text-5xl">
+                  Case Studies
+                </h2>
+                <p className="mt-4 text-base text-muted">
+                  Production work spanning B2B strategy, expert finance, and executive leadership shows.
+                </p>
+              </div>
               <Link
                 href="/work"
-                className="hidden text-base font-medium text-accent sm:inline-block"
+                className="hidden shrink-0 pb-1 text-base font-medium text-accent sm:inline-block"
               >
                 View all →
               </Link>
             </Reveal>
 
-            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
               {featuredCaseStudies.map((study, i) => (
-                <Reveal key={study.slug} delay={i * 90}>
+                <Reveal key={study.slug} delay={i * 60}>
                   <CaseStudyCard study={study} />
                 </Reveal>
               ))}
