@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/metadata";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { PageHeader } from "@/components/ui/PageHeader";
+import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = buildMetadata({
   title: "Services",
@@ -55,61 +57,64 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <Section className="pt-20 sm:pt-28">
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
-          Services
-        </h1>
-        <p className="mt-6 max-w-2xl text-lg text-muted">
-          Pick a single service, or hand over the whole production process —
-          from raw recording to a published, promoted episode.
-        </p>
-      </Section>
+      <PageHeader
+        eyebrow="Services"
+        title="Everything your show needs — or just the part you're missing."
+        intro="Pick a single service, or hand over the whole production process — from raw recording to a published, promoted episode."
+      />
 
       <Section className="border-t border-border">
         <div className="grid gap-6 sm:grid-cols-2">
-          {services.map((service) => (
-            <div
-              key={service.name}
-              className="rounded-2xl border border-border bg-surface p-8"
-            >
-              <h2 className="text-xl font-semibold">{service.name}</h2>
-              <p className="mt-3 text-sm leading-6 text-muted">
-                {service.description}
-              </p>
-              <ul className="mt-5 space-y-2">
-                {service.bullets.map((bullet) => (
-                  <li
-                    key={bullet}
-                    className="flex items-start gap-2 text-sm text-foreground"
-                  >
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {services.map((service, i) => (
+            <Reveal key={service.name} delay={(i % 2) * 90}>
+              <div className="group h-full rounded-2xl border border-border bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-black/[0.06]">
+                <h2 className="font-display text-2xl font-semibold tracking-tight">
+                  {service.name}
+                </h2>
+                <p className="mt-3 text-sm leading-6 text-muted">
+                  {service.description}
+                </p>
+                <ul className="mt-6 space-y-2.5">
+                  {service.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex items-start gap-2.5 text-sm text-foreground"
+                    >
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Section>
 
       <Section className="border-t border-border">
-        <div className="rounded-2xl border border-dashed border-border bg-surface p-8">
-          <h2 className="text-xl font-semibold">Pricing</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
-            [PLACEHOLDER — decide whether to publish package pricing/ranges
-            here or keep this section enquiry-based. If publishing, structure
-            as a simple 3-tier table matching the packages above.]
-          </p>
-        </div>
+        <Reveal>
+          <div className="rounded-2xl border border-dashed border-border bg-surface p-8">
+            <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+              Pricing
+            </p>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
+              [PLACEHOLDER — decide whether to publish package pricing/ranges
+              here or keep this section enquiry-based. If publishing, structure
+              as a simple 3-tier table matching the packages above.]
+            </p>
+          </div>
+        </Reveal>
       </Section>
 
       <Section className="border-t border-border text-center">
-        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-          Not sure which service fits your show?
-        </h2>
-        <div className="mt-8 flex justify-center">
+        <Reveal>
+          <h2 className="font-display mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+            Not sure which service fits your show?
+          </h2>
+        </Reveal>
+        <Reveal delay={120} className="mt-8 flex justify-center">
           <Button href="/contact">Get in touch</Button>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

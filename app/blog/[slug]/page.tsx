@@ -39,7 +39,7 @@ export default async function BlogPostPage({
   return (
     <Section className="pt-20 sm:pt-28">
       <article className="mx-auto max-w-2xl">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
           {new Date(post.publishedAt).toLocaleDateString("en-GB", {
             year: "numeric",
             month: "long",
@@ -47,10 +47,10 @@ export default async function BlogPostPage({
           })}{" "}
           · {post.category}
         </p>
-        <h1 className="mt-2 text-4xl font-semibold tracking-tight">
+        <h1 className="font-display mt-4 text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl">
           {post.title}
         </h1>
-        <div className="prose prose-neutral mt-10 max-w-none">
+        <div className="prose prose-neutral mt-10 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-a:text-accent">
           <ReactMarkdown>{post.body}</ReactMarkdown>
         </div>
       </article>

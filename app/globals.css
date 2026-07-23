@@ -2,14 +2,24 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --background: #faf9f6;
-  --foreground: #1a1b23;
-  --muted: #6b6d76;
-  --muted-foreground: #8a8c94;
-  --border: #e4e2db;
-  --accent: #2f5d62;
-  --accent-foreground: #faf9f6;
+  /* Warm paper base + near-black warm ink */
+  --background: #f6f4ee;
+  --foreground: #16150f;
+  --muted: #54524a;
+  --muted-foreground: #86847a;
+  --border: #e4e0d6;
   --surface: #ffffff;
+
+  /* Dark sections */
+  --deep: #14130f;
+  --deep-soft: #1f1d18;
+  --deep-line: #322f28;
+
+  /* Brand — deep teal primary, warm amber spark */
+  --accent: #124e48;
+  --accent-bright: #1f8074;
+  --accent-foreground: #f6f4ee;
+  --amber: #e0a04a;
 }
 
 @theme inline {
@@ -18,14 +28,128 @@
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
   --color-surface: var(--surface);
+
+  --color-deep: var(--deep);
+  --color-deep-soft: var(--deep-soft);
+  --color-deep-line: var(--deep-line);
+
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-amber: var(--amber);
+
   --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-fraunces);
   --font-mono: var(--font-geist-mono);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+  }
+
+  /* Editorial display face for headings; tuned optical settings */
+  .font-display {
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+/* ---------- Grain overlay: subtle premium texture ---------- */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 0.68, 0.2, 1),
+    transform 0.8s cubic-bezier(0.22, 0.68, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+/* No-JS fallback: never leave revealed content hidden. */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Equalizer / frequency motif ---------- */
+@keyframes sf-eq {
+  0%,
+  100% {
+    transform: scaleY(0.28);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+.sf-bar {
+  transform-origin: bottom;
+  animation: sf-eq 1.4s ease-in-out infinite;
+}
+
+/* ---------- Logo marquee ---------- */
+@keyframes sf-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.sf-marquee {
+  animation: sf-marquee 42s linear infinite;
+}
+.sf-marquee-group:hover .sf-marquee {
+  animation-play-state: paused;
+}
+
+/* ---------- Reduced motion: disable all decorative motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .sf-bar,
+  .sf-marquee {
+    animation: none;
+  }
 }

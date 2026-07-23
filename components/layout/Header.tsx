@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 
 const navLinks = [
@@ -11,14 +12,47 @@ const navLinks = [
   { href: "/blog", label: "Blog" },
 ];
 
+/** Three static bars echoing the equalizer motif, sitting beside the wordmark. */
+function Mark() {
+  return (
+    <span className="flex h-4 items-end gap-[2px]" aria-hidden="true">
+      <span className="h-2 w-[3px] rounded-full bg-accent" />
+      <span className="h-4 w-[3px] rounded-full bg-accent" />
+      <span className="h-2.5 w-[3px] rounded-full bg-amber" />
+    </span>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header className="border-b border-border bg-background">
+    <header
+      className={`sticky top-0 z-50 transition-colors duration-300 ${
+        scrolled
+          ? "border-b border-border bg-background/80 backdrop-blur-md"
+          : "border-b border-transparent bg-background/0"
+      }`}
+    >
       <Container className="flex h-20 items-center justify-between">
         {/* TODO: swap for the real Selected Frequencies logo/wordmark asset */}
-        <Link href="/" className="text-lg font-semibold tracking-tight">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 text-lg font-semibold tracking-tight"
+        >
+          <Mark />
           Selected Frequencies
         </Link>
 
@@ -27,14 +61,18 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted hover:text-foreground"
+              className={`text-sm font-medium transition-colors ${
+                isActive(link.href)
+                  ? "text-foreground"
+                  : "text-muted hover:text-foreground"
+              }`}
             >
               {link.label}
             </Link>
           ))}
           <Link
             href="/contact"
-            className="rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground hover:opacity-90"
+            className="group relative overflow-hidden rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-accent-foreground transition-transform hover:-translate-y-0.5"
           >
             Contact
           </Link>
@@ -66,7 +104,7 @@ export function Header() {
       </Container>
 
       {open && (
-        <div className="border-t border-border md:hidden">
+        <div className="border-t border-border bg-background md:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {navLinks.map((link) => (
               <Link

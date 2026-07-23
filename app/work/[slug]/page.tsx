@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/metadata";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
+import { Reveal } from "@/components/ui/Reveal";
+import { Waveform } from "@/components/ui/Waveform";
 import { getAllCaseStudies, getCaseStudyBySlug } from "@/lib/case-studies";
 
 type Params = { slug: string };
@@ -40,92 +42,119 @@ export default async function CaseStudyPage({
   return (
     <>
       <Section className="pt-20 sm:pt-28">
-        <p className="text-sm font-medium text-muted">{study.clientName}</p>
-        <h1 className="mt-2 text-4xl font-semibold tracking-tight sm:text-5xl">
+        <Reveal>
+          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
+            {study.clientName}
+          </p>
+        </Reveal>
+        <Reveal
+          as="h1"
+          delay={80}
+          className="font-display mt-4 max-w-3xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-6xl"
+        >
           {study.showName}
-        </h1>
+        </Reveal>
         {study.hostName && (
-          <p className="mt-3 text-muted">Hosted by {study.hostName}</p>
+          <Reveal delay={140}>
+            <p className="mt-4 text-muted">Hosted by {study.hostName}</p>
+          </Reveal>
         )}
-        <p className="mt-6 max-w-2xl text-lg text-muted">{study.oneLiner}</p>
+        <Reveal delay={180} className="mt-6 max-w-2xl">
+          <p className="text-lg leading-relaxed text-muted">{study.oneLiner}</p>
+        </Reveal>
 
         {study.links.length > 0 && (
-          <div className="mt-8 flex flex-wrap gap-3">
+          <Reveal delay={240} className="mt-8 flex flex-wrap gap-3">
             {study.links.map((link) => (
               <a
                 key={link.label}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-border px-4 py-2 text-sm font-medium hover:border-accent"
+                className="rounded-full border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
               >
                 Listen on {link.label}
               </a>
             ))}
-          </div>
+          </Reveal>
         )}
       </Section>
 
       {study.coverImage && (
         <Section className="border-t border-border pt-16">
-          <Image
-            src={study.coverImage}
-            alt={study.coverImageAlt ?? ""}
-            width={1200}
-            height={675}
-            className="w-full rounded-2xl border border-border object-cover"
-          />
+          <Reveal>
+            <Image
+              src={study.coverImage}
+              alt={study.coverImageAlt ?? ""}
+              width={1200}
+              height={675}
+              className="w-full rounded-2xl border border-border object-cover"
+            />
+          </Reveal>
         </Section>
       )}
 
       <Section className="border-t border-border">
         <div className="grid gap-12 sm:grid-cols-2">
-          <div>
-            <h2 className="text-xl font-semibold">What I do</h2>
-            <ul className="mt-4 space-y-2">
+          <Reveal>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              What I do
+            </h2>
+            <ul className="mt-5 space-y-2.5">
               {study.services.map((service) => (
                 <li
                   key={service}
-                  className="flex items-start gap-2 text-sm text-foreground"
+                  className="flex items-start gap-2.5 text-sm text-foreground"
                 >
-                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                   {service}
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
 
           {study.outcome && (
-            <div>
-              <h2 className="text-xl font-semibold">Outcome</h2>
-              <p className="mt-4 text-sm leading-6 text-muted">
+            <Reveal delay={100}>
+              <h2 className="font-display text-2xl font-semibold tracking-tight">
+                Outcome
+              </h2>
+              <p className="mt-5 text-sm leading-6 text-muted">
                 {study.outcome}
               </p>
-            </div>
+            </Reveal>
           )}
         </div>
       </Section>
 
       {study.testimonial && (
-        <Section className="border-t border-border">
-          <blockquote className="max-w-2xl">
-            <p className="text-xl font-medium leading-8">
-              “{study.testimonial.quote}”
-            </p>
-            <footer className="mt-4 text-sm text-muted">
-              {study.testimonial.attribution}
-            </footer>
-          </blockquote>
-        </Section>
+        <section className="bg-deep text-background">
+          <Section>
+            <Reveal>
+              <blockquote className="mx-auto max-w-3xl text-center">
+                <div className="mx-auto mb-8 h-8 w-24 opacity-70">
+                  <Waveform bars={16} barClassName="bg-amber" />
+                </div>
+                <p className="font-display text-2xl leading-relaxed font-medium text-balance sm:text-3xl">
+                  “{study.testimonial.quote}”
+                </p>
+                <footer className="mt-6 text-sm text-background/60">
+                  {study.testimonial.attribution}
+                </footer>
+              </blockquote>
+            </Reveal>
+          </Section>
+        </section>
       )}
 
       <Section className="border-t border-border text-center">
-        <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
-          Want results like this for your show?
-        </h2>
-        <div className="mt-8 flex justify-center">
+        <Reveal>
+          <h2 className="font-display mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">
+            Want results like this for your show?
+          </h2>
+        </Reveal>
+        <Reveal delay={120} className="mt-8 flex justify-center">
           <Button href="/contact">Get in touch</Button>
-        </div>
+        </Reveal>
       </Section>
     </>
   );
