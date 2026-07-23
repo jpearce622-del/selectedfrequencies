@@ -19,8 +19,8 @@ export const clients: ClientRosterEntry[] = [
     clientName: "Sano Genetics",
     showName: "The Genetics Podcast",
     hostName: "Dr Patrick Short",
-    logo: "/images/clients/genetics-podcast.svg", // TODO: replace with real logo asset
-    logoAlt: "The Genetics Podcast logo — TODO: confirm alt text with client",
+    logo: "/images/clients/genetics-podcast.png", // real Sano Genetics logo
+    logoAlt: "Sano Genetics logo",
     hasCaseStudy: true,
   },
   {

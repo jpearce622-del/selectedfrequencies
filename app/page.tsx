@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { LogoMarquee } from "@/components/case-studies/LogoStrip";
+import { CompanyLogos } from "@/components/home/CompanyLogos";
 import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import { MicScrollStory } from "@/components/home/MicScrollStory";
@@ -116,6 +117,16 @@ export default function Home() {
           </p>
         </Container>
         <LogoMarquee />
+      </section>
+
+      {/* ---------- Company credibility strip ---------- */}
+      <section className="border-t border-border py-14">
+        <Container>
+          <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
+            Also worked with
+          </p>
+          <CompanyLogos />
+        </Container>
       </section>
 
       {/* ---------- Process (light-grey) ---------- */}

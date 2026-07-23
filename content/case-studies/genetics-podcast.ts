@@ -25,8 +25,8 @@ export const geneticsPodcast: CaseStudy = {
     { label: "Apple Podcasts", url: "#" }, // TODO: real link
     { label: "YouTube", url: "#" }, // TODO: real link
   ],
-  logo: "/images/clients/genetics-podcast.svg", // TODO: replace with real logo asset
-  logoAlt: "The Genetics Podcast logo",
+  logo: "/images/clients/genetics-podcast.png", // real Sano Genetics logo
+  logoAlt: "Sano Genetics logo",
   coverImage: "/images/case-studies/genetics-podcast.svg", // TODO: replace with real cover image
   coverImageAlt: "[PLACEHOLDER — describe the image: e.g. host recording in studio]",
   featured: true,
