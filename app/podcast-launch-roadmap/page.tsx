@@ -113,6 +113,61 @@ export default function PodcastLaunchRoadmapPage() {
         <Container>
           <div className="mx-auto max-w-3xl">
             <PodcastRoadmapChecklist steps={roadmapSteps} />
+
+            {/* ---------- The punchline: a fake "Step 10" that rhymes with
+                the nine real steps above ---------- */}
+            <Reveal delay={80}>
+              <div className="group relative mt-4 overflow-hidden rounded-2xl bg-gradient-to-br from-deep to-deep-soft p-6 text-background transition-transform duration-300 hover:-translate-y-0.5 sm:p-8">
+                {/* Ambient accent glow — brightens on hover */}
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-accent/25 opacity-70 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+                />
+
+                <div className="relative flex gap-4 sm:gap-5">
+                  {/* Pre-ticked badge — the joke is it's already done for you */}
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent text-accent-foreground shadow-lg shadow-accent/30"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path
+                        d="M4 10.5l3.5 3.5L16 6"
+                        stroke="currentColor"
+                        strokeWidth="2.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </span>
+
+                  <div className="min-w-0 flex-1">
+                    <p className="text-xs font-medium uppercase tracking-[0.12em] text-background/50">
+                      Step 10 · optional, but very tempting
+                    </p>
+                    <h2 className="font-display mt-1.5 text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
+                      Or&hellip; just hire us.
+                    </h2>
+                    <p className="mt-3 max-w-xl text-sm leading-6 text-background/70">
+                      Steps 1&ndash;9 are genuinely doable. They&rsquo;re also
+                      your evenings, your weekends, and one very dark night
+                      learning what a de-esser is. Step 10 is simpler: you send
+                      one email, and all of that quietly becomes our problem
+                      instead.
+                    </p>
+
+                    <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+                      <Button href="/contact" variant="onDark">
+                        Skip to step 10
+                      </Button>
+                      <span className="text-xs text-background/45">
+                        No mic gain was harmed in the making of this shortcut.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </Container>
       </section>
