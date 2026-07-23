@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/work/archive",
     "/about",
     "/blog",
+    "/podcast-launch-roadmap",
     "/contact",
   ].map((path) => ({
     url: `${siteConfig.url}${path}`,

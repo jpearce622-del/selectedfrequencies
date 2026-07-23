@@ -7,6 +7,7 @@ const footerLinks = [
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
+  { href: "/podcast-launch-roadmap", label: "Start a Podcast" },
   { href: "/contact", label: "Contact" },
 ];
 
