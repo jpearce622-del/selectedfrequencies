@@ -25,9 +25,10 @@ export const clients: ClientRosterEntry[] = [
   {
     slug: "assemble-you",
     clientName: "Assemble You",
-    showName: "Assemble You",
+    showName: "The Assembly", // real show title (Assemble You is the company)
+    hostName: "Adam Lacey & Brigid McCormack",
     // TODO: real logo asset still needed from client
-    hasCaseStudy: false,
+    hasCaseStudy: true,
   },
   {
     slug: "bitcoin-and-the-long-game",
@@ -35,7 +36,7 @@ export const clients: ClientRosterEntry[] = [
     showName: "Bitcoin and the Long Game",
     hostName: "Peter Lane & George Boyd",
     // TODO: real logo asset still needed from client
-    hasCaseStudy: false,
+    hasCaseStudy: true,
   },
   {
     slug: "bitcoin-collective",
@@ -43,15 +44,15 @@ export const clients: ClientRosterEntry[] = [
     showName: "The Bitcoin Collective",
     hostName: "Jordan Walker",
     // TODO: real logo asset still needed from client
-    hasCaseStudy: false,
+    hasCaseStudy: true,
   },
   {
     slug: "career-change-coach",
     clientName: "Alice Stapleton",
-    showName: "Career Change Coach",
+    showName: "The Career Change Diaries", // real show title (Career Change Coach is Alice's coaching brand)
     hostName: "Alice Stapleton",
     // TODO: real logo asset still needed from client
-    hasCaseStudy: false,
+    hasCaseStudy: true,
   },
   {
     slug: "ec-blueprint",

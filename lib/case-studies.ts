@@ -1,8 +1,18 @@
 import type { CaseStudy } from "@/types/case-study";
 import { geneticsPodcast } from "@/content/case-studies/genetics-podcast";
+import { theAssembly } from "@/content/case-studies/the-assembly";
+import { bitcoinAndTheLongGame } from "@/content/case-studies/bitcoin-and-the-long-game";
+import { bitcoinCollective } from "@/content/case-studies/bitcoin-collective";
+import { careerChangeDiaries } from "@/content/case-studies/career-change-coach";
 
 // Add one import + array entry per client as their case study copy is supplied.
-const allCaseStudies: CaseStudy[] = [geneticsPodcast];
+const allCaseStudies: CaseStudy[] = [
+  geneticsPodcast,
+  theAssembly,
+  bitcoinAndTheLongGame,
+  bitcoinCollective,
+  careerChangeDiaries,
+];
 
 export function getAllCaseStudies(): CaseStudy[] {
   return allCaseStudies;

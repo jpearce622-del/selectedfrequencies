@@ -24,9 +24,11 @@ export interface CaseStudy {
   outcome?: string;
   testimonial?: CaseStudyTestimonial;
   links: CaseStudyLink[];
-  /** Path under /public, e.g. /images/clients/genetics-podcast.svg */
-  logo: string;
-  logoAlt: string;
+  /** Path under /public, e.g. /images/clients/genetics-podcast.png.
+   *  Optional — CaseStudyCard and the case study page both render fine
+   *  without one, so clients without real artwork yet aren't blocked. */
+  logo?: string;
+  logoAlt?: string;
   /** Path under /public for the case study hero/cover image */
   coverImage?: string;
   coverImageAlt?: string;
