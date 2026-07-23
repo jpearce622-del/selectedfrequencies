@@ -32,7 +32,7 @@ export default function ContactPage() {
             </Reveal>
             <Reveal delay={160} className="mt-6 max-w-md">
               <p className="text-lg leading-relaxed text-muted">
-                Tell me about your show and what you need — I&apos;ll reply
+                Tell us about your show and what you need — we&apos;ll reply
                 directly, usually within a day.
               </p>
             </Reveal>

@@ -123,7 +123,7 @@ export default function Home() {
         <Container className="py-24 sm:py-32">
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-              What I do
+              What we do
             </h2>
             <p className="mt-4 text-lg text-muted">
               Five stages, one point of contact — the full journey from idea to

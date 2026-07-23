@@ -40,12 +40,13 @@ export default function AboutPage() {
                 delay={80}
                 className="font-display mt-4 text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-5xl"
               >
-                The producer behind the shows.
+                The studio behind the shows.
               </Reveal>
               <Reveal delay={160} className="mt-6 max-w-xl">
                 <p className="text-lg leading-relaxed text-muted">
-                  [PLACEHOLDER — background: how you got into podcast
-                  production, your path over the last 8 years.]
+                  [PLACEHOLDER — background: how the studio started, your
+                  path over the last 8 years, and the team you&apos;re
+                  building as Selected Frequencies grows.]
                 </p>
               </Reveal>
             </div>
@@ -80,6 +81,11 @@ export default function AboutPage() {
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               [PLACEHOLDER — client roster scale, episode count, or other
               credibility markers you want to lead with]
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              [PLACEHOLDER — if you want to mention the contractor
+              network/team as it grows, add it here]
             </li>
           </ul>
         </Reveal>

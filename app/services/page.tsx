@@ -27,7 +27,7 @@ const services = [
   {
     name: "Editing only",
     description:
-      "Bring your own show notes and distribution — I handle the edit.",
+      "Bring your own show notes and distribution — we handle the edit.",
     bullets: ["Full episode edit", "Sound cleanup & pacing"],
   },
   {

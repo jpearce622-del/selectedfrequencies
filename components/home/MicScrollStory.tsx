@@ -7,7 +7,7 @@ const FRAME_COUNT = 68;
 const frameSrc = (i: number) =>
   `/images/mic-360/frame-${String(i).padStart(3, "0")}.jpg`;
 
-// Every line here already appears elsewhere on the site (stats, "what I
+// Every line here already appears elsewhere on the site (stats, "what we
 // do" steps, positioning copy, closing CTA) — just told one beat at a
 // time as the mic turns. Nothing new is claimed.
 const chapters = [

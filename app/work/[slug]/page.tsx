@@ -98,7 +98,7 @@ export default async function CaseStudyPage({
         <div className="grid gap-12 sm:grid-cols-2">
           <Reveal>
             <h2 className="font-display text-2xl font-semibold tracking-tight">
-              What I do
+              What we do
             </h2>
             <ul className="mt-5 space-y-2.5">
               {study.services.map((service) => (

@@ -52,7 +52,7 @@ export function ContactForm() {
     return (
       <div className="rounded-2xl border border-border bg-surface p-8">
         <p className="text-lg font-medium">Thanks — message sent.</p>
-        <p className="mt-2 text-sm text-muted">I&apos;ll get back to you shortly.</p>
+        <p className="mt-2 text-sm text-muted">We&apos;ll get back to you shortly.</p>
       </div>
     );
   }
