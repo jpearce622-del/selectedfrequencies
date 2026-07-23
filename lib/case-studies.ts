@@ -4,6 +4,9 @@ import { theAssembly } from "@/content/case-studies/the-assembly";
 import { bitcoinAndTheLongGame } from "@/content/case-studies/bitcoin-and-the-long-game";
 import { bitcoinCollective } from "@/content/case-studies/bitcoin-collective";
 import { careerChangeDiaries } from "@/content/case-studies/career-change-coach";
+import { outthinkers } from "@/content/case-studies/outthinkers";
+import { strategyAtScale } from "@/content/case-studies/strategy-at-scale";
+import { chiefStrategyOfficerPodcast } from "@/content/case-studies/chief-strategy-officer-podcast";
 
 // Add one import + array entry per client as their case study copy is supplied.
 const allCaseStudies: CaseStudy[] = [
@@ -12,6 +15,9 @@ const allCaseStudies: CaseStudy[] = [
   bitcoinAndTheLongGame,
   bitcoinCollective,
   careerChangeDiaries,
+  outthinkers,
+  strategyAtScale,
+  chiefStrategyOfficerPodcast,
 ];
 
 export function getAllCaseStudies(): CaseStudy[] {

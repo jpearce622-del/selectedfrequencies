@@ -10,8 +10,27 @@ export const clients: ClientRosterEntry[] = [
     clientName: "Twenty One Collective",
     showName: "Outthinkers",
     hostName: "Kaihan Krippendorff",
-    // TODO: real logo asset still needed from client
-    hasCaseStudy: false,
+    logo: "/images/clients/outthinkers.jpeg", // real show artwork
+    logoAlt: "Outthinkers cover art",
+    hasCaseStudy: true,
+  },
+  {
+    slug: "strategy-at-scale",
+    clientName: "Twenty One Collective",
+    showName: "Strategy at Scale",
+    hostName: "Kaihan Krippendorff",
+    logo: "/images/clients/strategy-at-scale.jpeg", // real show artwork
+    logoAlt: "Strategy at Scale cover art",
+    hasCaseStudy: true,
+  },
+  {
+    slug: "chief-strategy-officer-podcast",
+    clientName: "Twenty One Collective",
+    showName: "The Chief Strategy Officer Podcast",
+    hostName: "Kaihan Krippendorff",
+    logo: "/images/clients/chief-strategy-officer-podcast.jpeg", // real show artwork
+    logoAlt: "The Chief Strategy Officer Podcast cover art",
+    hasCaseStudy: true,
   },
   {
     slug: "genetics-podcast",
