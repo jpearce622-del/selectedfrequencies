@@ -37,4 +37,5 @@ export const archiveItems: ArchiveItem[] = [
   { name: "Heldeep Radio", image: "/images/clients/heldeep-radio.jpeg", slug: "heldeep-radio" },
   { name: "Complete Human", image: "/images/clients/complete-human.png", slug: "complete-human-podcast" },
   { name: "Real Estate Mindset", image: "/images/clients/real-estate-mindset.jpg", slug: "real-estate-mindset" },
+  { name: "The EC Method", image: "/images/clients/the-ec-method.jpeg", slug: "the-ec-method" },
 ];

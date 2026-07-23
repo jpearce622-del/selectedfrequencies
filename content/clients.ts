@@ -77,11 +77,4 @@ export const clients: ClientRosterEntry[] = [
     logoAlt: "The Career Change Diaries cover art",
     hasCaseStudy: true,
   },
-  {
-    slug: "ec-blueprint",
-    clientName: "The EC Blueprint",
-    showName: "The EC Blueprint",
-    // TODO: real logo asset still needed from client
-    hasCaseStudy: false,
-  },
 ];

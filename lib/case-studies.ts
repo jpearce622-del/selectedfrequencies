@@ -23,6 +23,7 @@ import { fascatCoaching } from "@/content/case-studies/fascat-coaching";
 import { heldeepRadio } from "@/content/case-studies/heldeep-radio";
 import { completeHumanPodcast } from "@/content/case-studies/complete-human-podcast";
 import { realEstateMindset } from "@/content/case-studies/real-estate-mindset";
+import { theEcMethod } from "@/content/case-studies/the-ec-method";
 
 // Add one import + array entry per client as their case study copy is supplied.
 const allCaseStudies: CaseStudy[] = [
@@ -53,6 +54,7 @@ const allCaseStudies: CaseStudy[] = [
   heldeepRadio,
   completeHumanPodcast,
   realEstateMindset,
+  theEcMethod,
 ];
 
 export function getAllCaseStudies(): CaseStudy[] {
