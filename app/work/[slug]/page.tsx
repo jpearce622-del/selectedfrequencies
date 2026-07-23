@@ -129,6 +129,19 @@ export default async function CaseStudyPage({
         </Section>
       )}
 
+      {study.description && (
+        <Section className="border-t border-border">
+          <Reveal>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              About {study.showName}
+            </h2>
+            <p className="mt-5 max-w-3xl text-base leading-7 text-muted">
+              {study.description}
+            </p>
+          </Reveal>
+        </Section>
+      )}
+
       <Section className="border-t border-border">
         <div className="grid gap-12 sm:grid-cols-2">
           <Reveal>
