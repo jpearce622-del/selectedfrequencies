@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-label="Abstract podcast analytics chart">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3e57"/>
+      <stop offset="1" stop-color="#1b2838"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#e57329"/>
+      <stop offset="1" stop-color="#f0904f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.2" r="0.6">
+      <stop offset="0" stop-color="#e57329" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#e57329" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="840" fill="url(#bg)"/>
+  <rect width="1600" height="840" fill="url(#glow)"/>
+  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1">
+    <line x1="0" y1="210" x2="1600" y2="210"/>
+    <line x1="0" y1="420" x2="1600" y2="420"/>
+    <line x1="0" y1="630" x2="1600" y2="630"/>
+  </g>
+  <g transform="translate(360 180)">
+    <rect x="0"   y="360" width="80" height="140" rx="14" fill="#ffffff" fill-opacity="0.16"/>
+    <rect x="130" y="290" width="80" height="210" rx="14" fill="#ffffff" fill-opacity="0.22"/>
+    <rect x="260" y="220" width="80" height="280" rx="14" fill="url(#bar)"/>
+    <rect x="390" y="250" width="80" height="250" rx="14" fill="#ffffff" fill-opacity="0.22"/>
+    <rect x="520" y="150" width="80" height="350" rx="14" fill="url(#bar)"/>
+    <rect x="650" y="90"  width="80" height="410" rx="14" fill="#ffffff" fill-opacity="0.3"/>
+    <rect x="780" y="180" width="80" height="320" rx="14" fill="#ffffff" fill-opacity="0.22"/>
+    <polyline points="40,360 170,300 300,235 430,268 560,168 690,110 820,196"
+      fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.85"/>
+    <g fill="#ffffff">
+      <circle cx="40" cy="360" r="10"/><circle cx="170" cy="300" r="10"/>
+      <circle cx="300" cy="235" r="10"/><circle cx="430" cy="268" r="10"/>
+      <circle cx="560" cy="168" r="10"/><circle cx="690" cy="110" r="12" fill="#f0904f"/>
+      <circle cx="820" cy="196" r="10"/>
+    </g>
+  </g>
+  <g transform="translate(120 660)" fill="#e57329">
+    <rect x="0"  y="-38" width="10" height="38" rx="5" opacity="0.9"/>
+    <rect x="18" y="-58" width="10" height="58" rx="5"/>
+    <rect x="36" y="-24" width="10" height="24" rx="5" opacity="0.7"/>
+    <rect x="54" y="-70" width="10" height="70" rx="5"/>
+    <rect x="72" y="-30" width="10" height="30" rx="5" opacity="0.8"/>
+  </g>
+</svg>

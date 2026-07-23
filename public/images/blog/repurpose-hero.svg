@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-label="Abstract diagram of one episode fanning out into many content formats">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3e57"/>
+      <stop offset="1" stop-color="#1b2838"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.28" cy="0.5" r="0.6">
+      <stop offset="0" stop-color="#e57329" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#e57329" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="840" fill="url(#bg)"/>
+  <rect width="1600" height="840" fill="url(#glow)"/>
+  <!-- fan-out connectors -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.16" stroke-width="3">
+    <path d="M470 420 C 720 420, 760 160, 1080 160"/>
+    <path d="M470 420 C 720 420, 760 300, 1080 300"/>
+    <path d="M470 420 C 720 420, 760 420, 1080 420"/>
+    <path d="M470 420 C 720 420, 760 540, 1080 540"/>
+    <path d="M470 420 C 720 420, 760 680, 1080 680"/>
+  </g>
+  <!-- source: one episode -->
+  <g transform="translate(300 420)">
+    <circle r="96" fill="#e57329" fill-opacity="0.14"/>
+    <circle r="70" fill="#26374e" stroke="#f0904f" stroke-width="4"/>
+    <g fill="#f0904f">
+      <rect x="-30" y="-8"  width="8" height="16" rx="4"/>
+      <rect x="-16" y="-24" width="8" height="48" rx="4"/>
+      <rect x="-2"  y="-40" width="8" height="80" rx="4" fill="#ffffff"/>
+      <rect x="12"  y="-24" width="8" height="48" rx="4"/>
+      <rect x="26"  y="-10" width="8" height="20" rx="4"/>
+    </g>
+  </g>
+  <!-- destination format chips -->
+  <g font-family="-apple-system, Segoe UI, sans-serif" font-size="26" font-weight="600" fill="#26374e" text-anchor="middle">
+    <g transform="translate(1080 160)">
+      <rect x="0" y="-40" width="360" height="80" rx="40" fill="#f0904f"/>
+      <text x="180" y="8">Short-form clips</text>
+    </g>
+    <g transform="translate(1080 300)">
+      <rect x="0" y="-40" width="360" height="80" rx="40" fill="#ffffff"/>
+      <text x="180" y="8">Audiograms</text>
+    </g>
+    <g transform="translate(1080 420)">
+      <rect x="0" y="-40" width="360" height="80" rx="40" fill="#e57329"/>
+      <text x="180" y="8" fill="#ffffff">Blog article</text>
+    </g>
+    <g transform="translate(1080 540)">
+      <rect x="0" y="-40" width="360" height="80" rx="40" fill="#ffffff"/>
+      <text x="180" y="8">Newsletter</text>
+    </g>
+    <g transform="translate(1080 680)">
+      <rect x="0" y="-40" width="360" height="80" rx="40" fill="#f0904f"/>
+      <text x="180" y="8">YouTube cut</text>
+    </g>
+  </g>
+</svg>

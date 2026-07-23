@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata } from "@/lib/metadata";
 import { Section } from "@/components/ui/Section";
 import { PageHeader } from "@/components/ui/PageHeader";
@@ -45,21 +46,36 @@ export default function BlogIndexPage() {
               <Reveal key={post.slug} delay={(i % 3) * 80}>
                 <Link
                   href={`/blog/${post.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-8 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-black/[0.06]"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-xl hover:shadow-black/[0.06]"
                 >
-                  <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
-                    {new Date(post.publishedAt).toLocaleDateString("en-GB", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </p>
-                  <h2 className="font-display mt-2 text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">
-                    {post.title}
-                  </h2>
-                  <p className="mt-3 flex-1 text-sm leading-6 text-muted">
-                    {post.metaDescription}
-                  </p>
+                  <div className="aspect-[16/9] overflow-hidden bg-fog">
+                    <Image
+                      src={post.coverImage.src}
+                      alt={post.coverImage.alt}
+                      width={800}
+                      height={450}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col p-6">
+                    <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                      <span className="text-accent">{post.category}</span>
+                      <span aria-hidden="true">·</span>
+                      <span>{post.readingTime}</span>
+                    </div>
+                    <h2 className="font-display mt-2.5 text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
+                      {post.title}
+                    </h2>
+                    <p className="mt-2.5 flex-1 text-sm leading-6 text-muted">
+                      {post.metaDescription}
+                    </p>
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-accent">
+                      Read article
+                      <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                        →
+                      </span>
+                    </span>
+                  </div>
                 </Link>
               </Reveal>
             ))}

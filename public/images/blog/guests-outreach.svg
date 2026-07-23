@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-label="The anatomy of a guest outreach email, broken into five labelled parts" font-family="-apple-system, Segoe UI, sans-serif">
+  <rect width="1200" height="640" rx="24" fill="#f5f5f7"/>
+  <text x="60" y="72" font-size="30" font-weight="600" fill="#1d1d1f">Anatomy of an outreach email that gets a yes</text>
+
+  <!-- the email card -->
+  <g transform="translate(60 110)">
+    <rect x="0" y="0" width="720" height="480" rx="18" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+    <!-- subject -->
+    <rect x="0" y="0" width="720" height="70" rx="18" fill="#26374e"/>
+    <rect x="0" y="40" width="720" height="30" fill="#26374e"/>
+    <text x="32" y="44" font-size="20" font-weight="600" fill="#ffffff">Subject: a specific, personal hook</text>
+    <!-- body lines -->
+    <g fill="#c9ccd1">
+      <rect x="32" y="104" width="560" height="16" rx="8"/>
+      <rect x="32" y="150" width="620" height="16" rx="8"/>
+      <rect x="32" y="196" width="500" height="16" rx="8"/>
+      <rect x="32" y="270" width="600" height="16" rx="8"/>
+      <rect x="32" y="316" width="540" height="16" rx="8"/>
+      <rect x="32" y="392" width="440" height="16" rx="8"/>
+    </g>
+    <!-- highlighted "the ask" -->
+    <rect x="24" y="356" width="672" height="76" rx="12" fill="#e57329" fill-opacity="0.1"/>
+    <rect x="32" y="392" width="440" height="16" rx="8" fill="#e57329"/>
+    <circle cx="660" cy="394" r="26" fill="#e57329"/>
+    <path d="M648 394 l8 8 l16 -18" stroke="#ffffff" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- callouts -->
+  <g font-size="20" font-weight="600">
+    <g transform="translate(820 118)">
+      <rect x="0" y="0" width="320" height="66" rx="14" fill="#26374e"/>
+      <text x="24" y="30" fill="#ffffff">1 · Personal hook</text>
+      <text x="24" y="54" font-size="15" font-weight="400" fill="#ffffff" fill-opacity="0.7">Prove you actually know them</text>
+    </g>
+    <g transform="translate(820 210)">
+      <rect x="0" y="0" width="320" height="66" rx="14" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+      <text x="24" y="30" fill="#1d1d1f">2 · Why them, now</text>
+      <text x="24" y="54" font-size="15" font-weight="400" fill="#6e6e73">A reason only they can fill</text>
+    </g>
+    <g transform="translate(820 302)">
+      <rect x="0" y="0" width="320" height="66" rx="14" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+      <text x="24" y="30" fill="#1d1d1f">3 · What's in it for them</text>
+      <text x="24" y="54" font-size="15" font-weight="400" fill="#6e6e73">Audience, reach, distribution</text>
+    </g>
+    <g transform="translate(820 430)">
+      <rect x="0" y="0" width="320" height="66" rx="14" fill="#e57329"/>
+      <text x="24" y="30" fill="#ffffff">4 · One clear ask</text>
+      <text x="24" y="54" font-size="15" font-weight="400" fill="#ffffff" fill-opacity="0.85">Make saying yes effortless</text>
+    </g>
+  </g>
+</svg>

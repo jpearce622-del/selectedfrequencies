@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-label="A listener retention curve showing the percentage of an audience still listening across an episode's duration" font-family="-apple-system, Segoe UI, sans-serif">
+  <rect width="1200" height="620" rx="24" fill="#f5f5f7"/>
+  <text x="60" y="74" font-size="30" font-weight="600" fill="#1d1d1f">Listener retention across one episode</text>
+  <text x="60" y="112" font-size="20" fill="#6e6e73">Consumption tells you far more than a raw download count</text>
+
+  <!-- axes -->
+  <g stroke="#d7d7dc" stroke-width="2">
+    <line x1="120" y1="180" x2="120" y2="500"/>
+    <line x1="120" y1="500" x2="1120" y2="500"/>
+  </g>
+  <g fill="#86868b" font-size="17">
+    <text x="104" y="188" text-anchor="end">100%</text>
+    <text x="104" y="348" text-anchor="end">50%</text>
+    <text x="104" y="506" text-anchor="end">0%</text>
+    <text x="120" y="536" text-anchor="middle">Start</text>
+    <text x="620" y="536" text-anchor="middle">Midpoint</text>
+    <text x="1120" y="536" text-anchor="middle">End</text>
+  </g>
+
+  <!-- gridlines -->
+  <g stroke="#e6e6ea" stroke-width="1">
+    <line x1="120" y1="340" x2="1120" y2="340"/>
+    <line x1="120" y1="260" x2="1120" y2="260"/>
+    <line x1="120" y1="420" x2="1120" y2="420"/>
+  </g>
+
+  <!-- retention area + line: strong start, early-drop cliff, gentle decline -->
+  <path d="M120 184 L 230 196 L 300 300 L 420 330 L 620 372 L 820 404 L 1000 432 L 1120 452 L 1120 500 L 120 500 Z"
+    fill="#e57329" fill-opacity="0.12"/>
+  <path d="M120 184 L 230 196 L 300 300 L 420 330 L 620 372 L 820 404 L 1000 432 L 1120 452"
+    fill="none" stroke="#e57329" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- the early-drop annotation -->
+  <circle cx="300" cy="300" r="9" fill="#e57329"/>
+  <line x1="300" y1="300" x2="300" y2="210" stroke="#26374e" stroke-width="2" stroke-dasharray="5 5"/>
+  <g transform="translate(300 176)">
+    <rect x="-95" y="-34" width="190" height="50" rx="12" fill="#26374e"/>
+    <text x="0" y="-2" text-anchor="middle" font-size="18" font-weight="600" fill="#ffffff">The intro drop-off</text>
+  </g>
+
+  <!-- end marker -->
+  <circle cx="1120" cy="452" r="9" fill="#26374e"/>
+  <g transform="translate(1000 452)">
+    <rect x="-24" y="18" width="220" height="44" rx="12" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+    <text x="86" y="46" text-anchor="middle" font-size="18" font-weight="600" fill="#1d1d1f">~72% finish rate</text>
+  </g>
+</svg>

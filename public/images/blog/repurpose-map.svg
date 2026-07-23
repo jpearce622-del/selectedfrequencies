@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-label="A breakdown of how one podcast episode becomes many pieces of content" font-family="-apple-system, Segoe UI, sans-serif">
+  <rect width="1200" height="600" rx="24" fill="#f5f5f7"/>
+  <text x="60" y="72" font-size="30" font-weight="600" fill="#1d1d1f">One 45-minute episode, unpacked</text>
+  <text x="60" y="110" font-size="20" fill="#6e6e73">A realistic haul from a single recording session</text>
+
+  <!-- source pill -->
+  <g transform="translate(60 170)">
+    <rect x="0" y="0" width="300" height="360" rx="18" fill="#26374e"/>
+    <g transform="translate(150 120)" fill="#f0904f">
+      <rect x="-30" y="-8"  width="8" height="16" rx="4"/>
+      <rect x="-16" y="-28" width="8" height="56" rx="4"/>
+      <rect x="-2"  y="-44" width="8" height="88" rx="4" fill="#ffffff"/>
+      <rect x="12"  y="-28" width="8" height="56" rx="4"/>
+      <rect x="26"  y="-10" width="8" height="20" rx="4"/>
+    </g>
+    <text x="150" y="230" text-anchor="middle" font-size="24" font-weight="600" fill="#ffffff">1 recording</text>
+    <text x="150" y="264" text-anchor="middle" font-size="18" fill="#ffffff" fill-opacity="0.65">≈ 45 minutes of tape</text>
+    <text x="150" y="316" text-anchor="middle" font-size="18" fill="#f0904f" font-weight="600">becomes ↓ 20+ assets</text>
+  </g>
+
+  <!-- output rows -->
+  <g font-size="22" font-weight="600" fill="#1d1d1f">
+    <g transform="translate(420 170)">
+      <rect x="0" y="0" width="720" height="72" rx="14" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+      <circle cx="42" cy="36" r="22" fill="#e57329"/>
+      <text x="42" y="44" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">6</text>
+      <text x="86" y="44">Short-form vertical clips (TikTok, Reels, Shorts)</text>
+    </g>
+    <g transform="translate(420 258)">
+      <rect x="0" y="0" width="720" height="72" rx="14" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+      <circle cx="42" cy="36" r="22" fill="#e57329"/>
+      <text x="42" y="44" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">1</text>
+      <text x="86" y="44">Long-form YouTube cut with chapters</text>
+    </g>
+    <g transform="translate(420 346)">
+      <rect x="0" y="0" width="720" height="72" rx="14" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+      <circle cx="42" cy="36" r="22" fill="#e57329"/>
+      <text x="42" y="44" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">1</text>
+      <text x="86" y="44">SEO blog article + full transcript</text>
+    </g>
+    <g transform="translate(420 434)">
+      <rect x="0" y="0" width="350" height="72" rx="14" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+      <circle cx="42" cy="36" r="22" fill="#e57329"/>
+      <text x="42" y="44" text-anchor="middle" font-size="20" font-weight="700" fill="#ffffff">2</text>
+      <text x="86" y="44">Newsletter sends</text>
+    </g>
+    <g transform="translate(790 434)">
+      <rect x="0" y="0" width="350" height="72" rx="14" fill="#e57329"/>
+      <circle cx="42" cy="36" r="22" fill="#ffffff"/>
+      <text x="42" y="44" text-anchor="middle" font-size="20" font-weight="700" fill="#e57329">10</text>
+      <text x="86" y="44" fill="#ffffff">Quote &amp; audiogram cards</text>
+    </g>
+  </g>
+</svg>
