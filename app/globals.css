@@ -2,24 +2,25 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  /* Warm paper base + near-black warm ink */
-  --background: #f6f4ee;
-  --foreground: #16150f;
-  --muted: #54524a;
-  --muted-foreground: #86847a;
-  --border: #e4e0d6;
-  --surface: #ffffff;
+  /* Apple-style light system */
+  --background: #ffffff;
+  --foreground: #1d1d1f; /* near-black text */
+  --muted: #6e6e73; /* secondary text */
+  --muted-foreground: #86868b; /* captions */
+  --border: #e6e6ea; /* hairline */
+  --surface: #ffffff; /* cards */
+  --fog: #f5f5f7; /* light-grey alternating sections */
 
-  /* Dark sections */
-  --deep: #14130f;
-  --deep-soft: #1f1d18;
-  --deep-line: #322f28;
+  /* Brand navy — dark sections, footer, logo */
+  --deep: #26374e;
+  --deep-soft: #2f425c;
+  --deep-line: #3b4e69;
 
-  /* Brand — deep teal primary, warm amber spark */
-  --accent: #124e48;
-  --accent-bright: #1f8074;
-  --accent-foreground: #f6f4ee;
-  --amber: #e0a04a;
+  /* Brand orange — CTAs, fills, accents */
+  --accent: #dc6b12;
+  --accent-bright: #ee7a2d;
+  --accent-foreground: #ffffff;
+  --amber: #f08a3e; /* brighter orange spark (pops on navy) */
 }
 
 @theme inline {
@@ -29,6 +30,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-surface: var(--surface);
+  --color-fog: var(--fog);
 
   --color-deep: var(--deep);
   --color-deep-soft: var(--deep-soft);
@@ -39,8 +41,14 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-amber: var(--amber);
 
-  --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-fraunces);
+  /* System-first stack renders as San Francisco on Apple devices,
+     Geist elsewhere — clean, Apple-like, and no serif anywhere. */
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, var(--font-geist-sans), "Segoe UI",
+    system-ui, sans-serif;
+  --font-display:
+    -apple-system, BlinkMacSystemFont, var(--font-geist-sans), "Segoe UI",
+    system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -54,13 +62,13 @@
   body {
     background: var(--background);
     color: var(--foreground);
+    font-family: var(--font-sans);
   }
 
-  /* Editorial display face for headings; tuned optical settings */
+  /* Display headings: tight, bold, Apple-grade tracking */
   .font-display {
-    font-optical-sizing: auto;
-    font-variation-settings: "SOFT" 0, "WONK" 0;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.028em;
+    font-weight: 600;
   }
 
   ::selection {
@@ -74,24 +82,13 @@
   }
 }
 
-/* ---------- Grain overlay: subtle premium texture ---------- */
-.grain::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
 /* ---------- Scroll reveal ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(16px);
   transition:
-    opacity 0.8s cubic-bezier(0.22, 0.68, 0.2, 1),
-    transform 0.8s cubic-bezier(0.22, 0.68, 0.2, 1);
+    opacity 0.7s cubic-bezier(0.22, 0.68, 0.2, 1),
+    transform 0.7s cubic-bezier(0.22, 0.68, 0.2, 1);
   transition-delay: var(--reveal-delay, 0ms);
   will-change: opacity, transform;
 }
@@ -99,7 +96,6 @@
   opacity: 1;
   transform: none;
 }
-/* No-JS fallback: never leave revealed content hidden. */
 @media (scripting: none) {
   .reveal {
     opacity: 1;
@@ -107,7 +103,7 @@
   }
 }
 
-/* ---------- Equalizer / frequency motif ---------- */
+/* ---------- Equalizer / frequency motif (matches the logo mark) ---------- */
 @keyframes sf-eq {
   0%,
   100% {
@@ -138,7 +134,6 @@
   animation-play-state: paused;
 }
 
-/* ---------- Reduced motion: disable all decorative motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

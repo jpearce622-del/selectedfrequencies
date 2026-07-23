@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Waveform } from "@/components/ui/Waveform";
+import { Hexagon } from "@/components/ui/Hexagon";
 import { LogoMarquee } from "@/components/case-studies/LogoStrip";
 import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
@@ -19,11 +20,9 @@ export const metadata: Metadata = buildMetadata({
 });
 
 // HEADLINE OPTIONS — pick one, or ask for more. Currently live: Option B.
-// A. "Podcast production for the experts your industry already listens to."
-// B. "End-to-end podcast production for founders, coaches, and finance
-//     voices building real authority." <- live
-// C. "I produce thought-leadership podcasts — so you can focus on being
-//     the expert, not the editor."
+// A. "Bringing expert voices to the world."
+// B. "Podcasts that sound as credible as you are." <- live
+// C. "End-to-end production for people worth listening to."
 
 const whatIDo = [
   {
@@ -66,96 +65,125 @@ export default function Home() {
     <>
       <LocalBusinessJsonLd />
 
-      {/* ---------- Hero ---------- */}
-      <section className="relative overflow-hidden">
-        <Container className="pt-16 pb-0 sm:pt-24">
+      {/* ---------- Hero (centered, Apple-style) ---------- */}
+      <section className="overflow-hidden pt-16 pb-20 text-center sm:pt-24 sm:pb-28">
+        <Container>
           <Reveal>
-            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/60 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.14em] text-muted">
-              <span className="h-1.5 w-1.5 rounded-full bg-amber" />
-              Podcast production studio · Est. 2019
+            <p className="text-sm font-semibold tracking-wide text-accent">
+              Selected Frequencies
             </p>
           </Reveal>
-
           <Reveal
             as="h1"
-            delay={80}
-            className="font-display mt-8 max-w-4xl text-5xl leading-[1.02] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
+            delay={70}
+            className="font-display mx-auto mt-4 max-w-4xl text-5xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
           >
-            End-to-end podcast production for founders, coaches &amp; finance
-            voices building real authority.
+            Podcasts that sound as credible as you are.
           </Reveal>
-
-          <Reveal delay={160} className="mt-8 max-w-2xl">
-            <p className="text-lg leading-relaxed text-muted">
-              Eight years producing podcasts end-to-end — editing, episode
-              descriptions, YouTube and social assets, transcription review, and
-              chapter timestamps — so your show sounds as credible as your
-              expertise.
+          <Reveal delay={140} className="mx-auto mt-6 max-w-2xl">
+            <p className="text-xl leading-relaxed text-muted">
+              End-to-end production for founders, coaches, and finance voices —
+              editing, show notes, and distribution, handled so you can focus on
+              the ideas.
             </p>
           </Reveal>
-
-          <Reveal delay={240} className="mt-10 flex flex-wrap items-center gap-4">
+          <Reveal
+            delay={210}
+            className="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-4"
+          >
             <Button href="/contact">Start a conversation</Button>
-            <Button href="/work" variant="secondary" withArrow={false}>
+            <Link
+              href="/work"
+              className="group inline-flex items-center gap-1 text-base font-medium text-accent"
+            >
               See the work
-            </Button>
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                →
+              </span>
+            </Link>
           </Reveal>
         </Container>
 
-        {/* Signature frequency band — spans full width, fades at the edges */}
-        <div
-          className="mt-16 h-24 w-full sm:mt-24 sm:h-32"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 12%, black 88%, transparent)",
-          }}
-        >
-          <Container className="h-full">
-            <Waveform bars={48} barClassName="bg-accent/80" />
-          </Container>
-        </div>
+        {/* Hero visual — the brand hexagon + equalizer, as the "product shot" */}
+        <Container className="mt-16 sm:mt-20">
+          <Reveal delay={120}>
+            <div className="relative mx-auto flex aspect-[16/10] max-w-5xl items-center justify-center overflow-hidden rounded-[2rem] bg-deep sm:aspect-[16/9]">
+              <div
+                className="pointer-events-none absolute inset-0 opacity-70"
+                style={{
+                  background:
+                    "radial-gradient(60% 60% at 50% 45%, rgba(220,107,18,0.16), transparent 70%)",
+                }}
+              />
+              <Hexagon className="w-40 sm:w-56" stroke="var(--accent-bright)" strokeWidth={1.1}>
+                <div className="h-1/2 w-1/2">
+                  <Waveform bars={14} barClassName="bg-accent-bright" />
+                </div>
+              </Hexagon>
+            </div>
+          </Reveal>
+        </Container>
       </section>
 
       {/* ---------- Trusted-by marquee ---------- */}
-      <section className="border-y border-border py-12">
+      <section className="border-t border-border py-14">
         <Container>
-          <p className="mb-8 text-center text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-            Trusted by expert & thought-leadership shows
+          <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
+            Trusted by expert &amp; thought-leadership shows
           </p>
         </Container>
         <LogoMarquee />
       </section>
 
-      {/* ---------- Process (dark) ---------- */}
+      {/* ---------- Positioning statement (navy interstitial) ---------- */}
       <section className="bg-deep text-background">
-        <Container className="py-20 sm:py-28">
-          <Reveal className="flex items-end justify-between gap-6">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.14em] text-amber">
-                The process
-              </p>
-              <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
-                What I do
-              </h2>
-            </div>
-            <div className="hidden h-10 w-40 opacity-70 sm:block">
-              <Waveform bars={20} barClassName="bg-accent-bright" />
+        <Container className="py-24 text-center sm:py-32">
+          <Reveal>
+            <div className="mx-auto mb-10 h-10 w-28">
+              <Waveform bars={18} barClassName="bg-accent-bright" />
             </div>
           </Reveal>
+          <Reveal
+            as="h2"
+            delay={90}
+            className="font-display mx-auto max-w-3xl text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl"
+          >
+            Every episode, produced end to end.
+          </Reveal>
+          <Reveal delay={160} className="mx-auto mt-6 max-w-2xl">
+            <p className="text-lg leading-relaxed text-background/70">
+              From the raw recording to a polished, promoted episode — one
+              producer, eight years in, handling the whole pipeline so your show
+              is consistent every single week.
+            </p>
+          </Reveal>
+        </Container>
+      </section>
 
-          <div className="mt-14 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-5">
+      {/* ---------- Process (light-grey) ---------- */}
+      <section className="bg-fog">
+        <Container className="py-24 sm:py-32">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+              What I do
+            </h2>
+            <p className="mt-4 text-lg text-muted">
+              Five stages, one point of contact — the full journey from idea to
+              audience.
+            </p>
+          </Reveal>
+
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
             {whatIDo.map((item, i) => (
-              <Reveal key={item.step} delay={i * 90}>
-                <div className="border-t border-deep-line pt-5">
-                  <span className="font-mono text-sm text-amber">
+              <Reveal key={item.step} delay={i * 80}>
+                <div className="h-full rounded-3xl bg-surface p-7 shadow-sm">
+                  <span className="font-mono text-sm font-medium text-accent">
                     0{i + 1}
                   </span>
-                  <h3 className="font-display mt-3 text-xl font-medium">
+                  <h3 className="font-display mt-4 text-xl font-semibold">
                     {item.step}
                   </h3>
-                  <p className="mt-3 text-sm leading-6 text-background/60">
+                  <p className="mt-3 text-sm leading-6 text-muted">
                     {item.description}
                   </p>
                 </div>
@@ -167,15 +195,13 @@ export default function Home() {
 
       {/* ---------- Credibility stats ---------- */}
       <Section>
-        <div className="grid gap-8 sm:grid-cols-3">
+        <div className="grid gap-12 text-center sm:grid-cols-3">
           {stats.map((stat, i) => (
             <Reveal key={stat.label} delay={i * 90}>
-              <div className="border-l-2 border-accent pl-5">
-                <p className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-sm text-muted">{stat.label}</p>
-              </div>
+              <p className="font-display text-5xl font-semibold tracking-tight sm:text-6xl">
+                {stat.value}
+              </p>
+              <p className="mt-3 text-base text-muted">{stat.label}</p>
             </Reveal>
           ))}
         </div>
@@ -183,63 +209,53 @@ export default function Home() {
 
       {/* ---------- Recent work ---------- */}
       {featuredCaseStudies.length > 0 && (
-        <Section className="border-t border-border">
-          <Reveal className="flex items-end justify-between">
-            <div>
-              <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                Selected work
-              </p>
-              <h2 className="font-display mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+        <section className="bg-fog">
+          <Container className="py-24 sm:py-32">
+            <Reveal className="flex items-end justify-between">
+              <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
                 Recent work
               </h2>
+              <Link
+                href="/work"
+                className="hidden text-base font-medium text-accent sm:inline-block"
+              >
+                View all →
+              </Link>
+            </Reveal>
+
+            <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredCaseStudies.map((study, i) => (
+                <Reveal key={study.slug} delay={i * 90}>
+                  <CaseStudyCard study={study} />
+                </Reveal>
+              ))}
             </div>
+
             <Link
               href="/work"
-              className="hidden text-sm font-medium text-accent hover:text-accent-bright sm:inline-block"
+              className="mt-8 inline-block text-base font-medium text-accent sm:hidden"
             >
-              View all work →
+              View all →
             </Link>
-          </Reveal>
-
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredCaseStudies.map((study, i) => (
-              <Reveal key={study.slug} delay={i * 90}>
-                <CaseStudyCard study={study} />
-              </Reveal>
-            ))}
-          </div>
-
-          <Link
-            href="/work"
-            className="mt-8 inline-block text-sm font-medium text-accent sm:hidden"
-          >
-            View all work →
-          </Link>
-        </Section>
+          </Container>
+        </section>
       )}
 
-      {/* ---------- Final CTA ---------- */}
-      <section className="relative overflow-hidden border-t border-border">
+      {/* ---------- Final CTA (navy) ---------- */}
+      <section className="bg-deep text-background">
         <Container className="py-24 text-center sm:py-32">
-          <Reveal>
-            <h2 className="font-display mx-auto max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
-              Ready to sound like the expert you already are?
-            </h2>
+          <Reveal
+            as="h2"
+            className="font-display mx-auto max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl"
+          >
+            Ready to sound like the expert you already are?
           </Reveal>
           <Reveal delay={120} className="mt-10 flex justify-center">
-            <Button href="/contact">Start a conversation</Button>
+            <Button href="/contact" variant="onDark">
+              Start a conversation
+            </Button>
           </Reveal>
         </Container>
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 opacity-[0.18]"
-          style={{
-            maskImage: "linear-gradient(to right, transparent, black, transparent)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black, transparent)",
-          }}
-        >
-          <Waveform bars={60} barClassName="bg-accent" />
-        </div>
       </section>
     </>
   );
