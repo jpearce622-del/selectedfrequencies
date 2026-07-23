@@ -1,17 +1,17 @@
 import type { CaseStudy } from "@/types/case-study";
 
-// Hosts confirmed by James. Description reflects the "Sport · Money ·
-// Life" framing on the show's own cover art — no independent public
-// listing was found to verify further, so this stays deliberately
-// light on claims. Platform links unconfirmed — left as TODOs rather
-// than guessed. Outcome/testimonial are genuinely unknown.
+// Hosts confirmed by James; "Sport · Money · Life" is the show's own
+// cover-art tagline. No independent public listing was found to
+// verify further (platform links unconfirmed — left as TODOs rather
+// than guessed). Outcome/testimonial are genuinely unknown. Cover art
+// supplied by James.
 export const bitcoinAndTheLongGame: CaseStudy = {
   slug: "bitcoin-and-the-long-game",
   clientName: "Bitcoin and the Long Game",
   showName: "Bitcoin and the Long Game",
   hostName: "Peter Lane & George Boyd",
   oneLiner:
-    "A show about Bitcoin, sport, and money, hosted by Peter Lane and George Boyd — playing the long game across all three.",
+    "Peter Lane and George Boyd built Bitcoin and the Long Game around a simple idea — sport, money, and life all reward patience. A show about playing long games deserves production built to last: full audio and video, every week, with no corners cut.",
   services: [
     "Full audio & video episode edit",
     "Audio and video enhancement pass",
@@ -29,7 +29,8 @@ export const bitcoinAndTheLongGame: CaseStudy = {
     { label: "Spotify", url: "#" }, // TODO: real link — not confirmed via search
     { label: "Apple Podcasts", url: "#" }, // TODO: real link — not confirmed via search
   ],
-  logoAlt: "Bitcoin and the Long Game logo",
+  logo: "/images/clients/bitcoin-and-the-long-game.jpeg", // real show artwork
+  logoAlt: "Bitcoin and the Long Game cover art",
   featured: true,
   category: "flagship",
 };

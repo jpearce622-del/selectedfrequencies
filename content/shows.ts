@@ -10,7 +10,11 @@ export interface Show {
 // cover art / press imagery, supplied by James (originally scraped from
 // the old site's gallery, then curated into public/images/clients/).
 export const shows: Show[] = [
-  { name: "The Genetics Podcast (Sano Genetics)", artwork: "/images/clients/sano-genetics.png", caseStudySlug: "genetics-podcast" },
+  { name: "The Genetics Podcast (Sano Genetics)", artwork: "/images/clients/genetics-podcast-cover.jpeg", caseStudySlug: "genetics-podcast" },
+  { name: "The Assembly (Assemble You)", artwork: "/images/clients/the-assembly.jpeg", caseStudySlug: "assemble-you" },
+  { name: "Bitcoin and the Long Game", artwork: "/images/clients/bitcoin-and-the-long-game.jpeg", caseStudySlug: "bitcoin-and-the-long-game" },
+  { name: "The Bitcoin Collective", artwork: "/images/clients/bitcoin-collective.jpeg", caseStudySlug: "bitcoin-collective" },
+  { name: "The Career Change Diaries (Alice Stapleton)", artwork: "/images/clients/career-change-diaries.jpeg", caseStudySlug: "career-change-coach" },
   { name: "Martin Garrix", artwork: "/images/clients/martin-garrix.png" },
   { name: "Complete Human", artwork: "/images/clients/complete-human.png" },
   { name: "Tomorrowland", artwork: "/images/clients/tomorrowland-1.png" },

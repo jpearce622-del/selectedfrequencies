@@ -18,8 +18,8 @@ export const clients: ClientRosterEntry[] = [
     clientName: "Sano Genetics",
     showName: "The Genetics Podcast",
     hostName: "Dr Patrick Short",
-    logo: "/images/clients/genetics-podcast.png", // real Sano Genetics logo
-    logoAlt: "Sano Genetics logo",
+    logo: "/images/clients/genetics-podcast-cover.jpeg", // real show artwork
+    logoAlt: "The Genetics Podcast cover art",
     hasCaseStudy: true,
   },
   {
@@ -27,7 +27,8 @@ export const clients: ClientRosterEntry[] = [
     clientName: "Assemble You",
     showName: "The Assembly", // real show title (Assemble You is the company)
     hostName: "Adam Lacey & Brigid McCormack",
-    // TODO: real logo asset still needed from client
+    logo: "/images/clients/the-assembly.jpeg", // real show artwork
+    logoAlt: "The Assembly cover art",
     hasCaseStudy: true,
   },
   {
@@ -35,7 +36,8 @@ export const clients: ClientRosterEntry[] = [
     clientName: "Bitcoin and the Long Game",
     showName: "Bitcoin and the Long Game",
     hostName: "Peter Lane & George Boyd",
-    // TODO: real logo asset still needed from client
+    logo: "/images/clients/bitcoin-and-the-long-game.jpeg", // real show artwork
+    logoAlt: "Bitcoin and the Long Game cover art",
     hasCaseStudy: true,
   },
   {
@@ -43,7 +45,8 @@ export const clients: ClientRosterEntry[] = [
     clientName: "The Bitcoin Collective",
     showName: "The Bitcoin Collective",
     hostName: "Jordan Walker",
-    // TODO: real logo asset still needed from client
+    logo: "/images/clients/bitcoin-collective.jpeg", // real show artwork
+    logoAlt: "The Bitcoin Collective cover art",
     hasCaseStudy: true,
   },
   {
@@ -51,7 +54,8 @@ export const clients: ClientRosterEntry[] = [
     clientName: "Alice Stapleton",
     showName: "The Career Change Diaries", // real show title (Career Change Coach is Alice's coaching brand)
     hostName: "Alice Stapleton",
-    // TODO: real logo asset still needed from client
+    logo: "/images/clients/career-change-diaries.jpeg", // real show artwork
+    logoAlt: "The Career Change Diaries cover art",
     hasCaseStudy: true,
   },
   {
