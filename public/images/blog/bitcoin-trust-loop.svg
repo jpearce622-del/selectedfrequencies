@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-label="The bitcoin podcast trust flywheel: educate, show up consistently, build community, earn conviction, and turn listeners into advocates" font-family="-apple-system, Segoe UI, sans-serif">
+  <rect width="1200" height="780" rx="24" fill="#f5f5f7"/>
+  <text x="600" y="66" text-anchor="middle" font-size="30" font-weight="600" fill="#1d1d1f">The bitcoin podcast trust flywheel</text>
+  <text x="600" y="102" text-anchor="middle" font-size="19" fill="#6e6e73">Each turn makes the next one easier</text>
+
+  <!-- curved clockwise arrows between nodes -->
+  <g fill="none" stroke="#c9ccd1" stroke-width="3">
+    <path d="M672 214 A 260 260 0 0 1 856 372" marker-end="url(#a)"/>
+    <path d="M852 470 A 260 260 0 0 1 742 632" marker-end="url(#a)"/>
+    <path d="M660 662 A 260 260 0 0 1 470 640" marker-end="url(#a)"/>
+    <path d="M372 604 A 260 260 0 0 1 356 400" marker-end="url(#a)"/>
+    <path d="M392 300 A 260 260 0 0 1 528 214" marker-end="url(#a)"/>
+  </g>
+  <defs>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="6" refY="6" orient="auto">
+      <path d="M1 1 L9 6 L1 11 Z" fill="#c9ccd1"/>
+    </marker>
+  </defs>
+
+  <!-- centre label -->
+  <circle cx="600" cy="440" r="86" fill="#26374e"/>
+  <text x="600" y="432" text-anchor="middle" font-size="22" font-weight="700" fill="#ffffff">Trust</text>
+  <text x="600" y="460" text-anchor="middle" font-size="22" font-weight="700" fill="#f0904f">compounds</text>
+
+  <!-- nodes -->
+  <g font-size="21" font-weight="600" text-anchor="middle">
+    <!-- 1 top -->
+    <g transform="translate(600 200)">
+      <circle r="52" fill="#e57329"/>
+      <text y="9" font-size="30" font-weight="700" fill="#ffffff">1</text>
+      <text y="-72" fill="#1d1d1f">Educate — cut the jargon</text>
+    </g>
+    <!-- 2 right -->
+    <g transform="translate(868 366)">
+      <circle r="52" fill="#26374e"/>
+      <text y="9" font-size="30" font-weight="700" fill="#ffffff">2</text>
+      <text x="0" y="82" fill="#1d1d1f">Show up weekly</text>
+    </g>
+    <!-- 3 lower right -->
+    <g transform="translate(781 634)">
+      <circle r="52" fill="#26374e"/>
+      <text y="9" font-size="30" font-weight="700" fill="#ffffff">3</text>
+      <text x="0" y="82" fill="#1d1d1f">Build community</text>
+    </g>
+    <!-- 4 lower left -->
+    <g transform="translate(419 634)">
+      <circle r="52" fill="#26374e"/>
+      <text y="9" font-size="30" font-weight="700" fill="#ffffff">4</text>
+      <text x="0" y="82" fill="#1d1d1f">Earn conviction</text>
+    </g>
+    <!-- 5 left -->
+    <g transform="translate(332 366)">
+      <circle r="52" fill="#e57329"/>
+      <text y="9" font-size="30" font-weight="700" fill="#ffffff">5</text>
+      <text x="0" y="-72" fill="#1d1d1f">Listeners advocate</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" role="img" aria-label="A comparison of two bitcoin podcasts: Bitcoin and the Long Game, and The Bitcoin Collective" font-family="-apple-system, Segoe UI, sans-serif">
+  <rect width="1200" height="620" rx="24" fill="#f5f5f7"/>
+  <text x="60" y="66" font-size="30" font-weight="600" fill="#1d1d1f">Two shows, two ways to build the same trust</text>
+
+  <!-- Card 1: Long Game -->
+  <g transform="translate(60 110)">
+    <rect x="0" y="0" width="510" height="450" rx="20" fill="#ffffff" stroke="#e6e6ea" stroke-width="1.5"/>
+    <rect x="0" y="0" width="510" height="10" rx="5" fill="#c79a3e"/>
+    <text x="36" y="72" font-size="26" font-weight="700" fill="#1d1d1f">Bitcoin and the Long Game</text>
+    <text x="36" y="106" font-size="18" fill="#6e6e73">Peter Lane &amp; George Boyd</text>
+
+    <g font-size="19" fill="#1d1d1f">
+      <text x="36" y="168" font-weight="600" fill="#c79a3e">Angle</text>
+      <text x="36" y="198">Sport, money &amp; life — patience as</text>
+      <text x="36" y="224">the thread that ties them together</text>
+
+      <text x="36" y="284" font-weight="600" fill="#c79a3e">Format</text>
+      <text x="36" y="314">Full audio + video, no corners cut</text>
+
+      <text x="36" y="374" font-weight="600" fill="#c79a3e">Why it works</text>
+      <text x="36" y="404">A long-games philosophy needs</text>
+      <text x="36" y="430">production built to last</text>
+    </g>
+  </g>
+
+  <!-- Card 2: Collective -->
+  <g transform="translate(630 110)">
+    <rect x="0" y="0" width="510" height="450" rx="20" fill="#26374e"/>
+    <rect x="0" y="0" width="510" height="10" rx="5" fill="#e57329"/>
+    <text x="36" y="72" font-size="26" font-weight="700" fill="#ffffff">The Bitcoin Collective</text>
+    <text x="36" y="106" font-size="18" fill="#ffffff" fill-opacity="0.6">Jordan Walker</text>
+
+    <g font-size="19" fill="#ffffff">
+      <text x="36" y="168" font-weight="600" fill="#f0904f">Cadence</text>
+      <text x="36" y="198" fill-opacity="0.85">200+ episodes since 2021, weekly</text>
+      <text x="36" y="224" fill-opacity="0.85">without a single gap</text>
+
+      <text x="36" y="284" font-weight="600" fill="#f0904f">Rating</text>
+      <text x="36" y="314" fill-opacity="0.85">4.8 / 5 on Apple Podcasts</text>
+
+      <text x="36" y="374" font-weight="600" fill="#f0904f">Why it works</text>
+      <text x="36" y="404" fill-opacity="0.85">Founder conversations, jargon left</text>
+      <text x="36" y="430" fill-opacity="0.85">at the door, week after week</text>
+    </g>
+  </g>
+</svg>

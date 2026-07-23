@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-label="A bitcoin coin paired with an audio waveform on a deep navy background">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3e57"/>
+      <stop offset="1" stop-color="#1b2838"/>
+    </linearGradient>
+    <linearGradient id="coin" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f0904f"/>
+      <stop offset="1" stop-color="#e57329"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f0904f"/>
+      <stop offset="1" stop-color="#e57329"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.72" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#e57329" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#e57329" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="840" fill="url(#bg)"/>
+  <rect width="1600" height="840" fill="url(#glow)"/>
+  <line x1="0" y1="420" x2="1600" y2="420" stroke="#ffffff" stroke-opacity="0.07" stroke-width="2"/>
+
+  <!-- waveform building toward the coin -->
+  <g fill="url(#wave)">
+    <rect x="150" y="392" width="16" height="56"  rx="8"/>
+    <rect x="196" y="356" width="16" height="128" rx="8"/>
+    <rect x="242" y="300" width="16" height="240" rx="8"/>
+    <rect x="288" y="360" width="16" height="120" rx="8"/>
+    <rect x="334" y="250" width="16" height="340" rx="8"/>
+    <rect x="380" y="330" width="16" height="180" rx="8"/>
+    <rect x="426" y="200" width="16" height="440" rx="8"/>
+    <rect x="472" y="330" width="16" height="180" rx="8"/>
+    <rect x="518" y="270" width="16" height="300" rx="8"/>
+    <rect x="564" y="350" width="16" height="140" rx="8"/>
+    <rect x="610" y="220" width="16" height="400" rx="8"/>
+    <rect x="656" y="300" width="16" height="240" rx="8"/>
+    <rect x="702" y="160" width="16" height="520" rx="8"/>
+    <rect x="748" y="300" width="16" height="240" rx="8"/>
+    <rect x="794" y="240" width="16" height="360" rx="8"/>
+  </g>
+
+  <!-- concentric sound rings around the coin -->
+  <g fill="none" stroke="#f0904f" stroke-opacity="0.18">
+    <circle cx="1120" cy="420" r="210" stroke-width="2"/>
+    <circle cx="1120" cy="420" r="260" stroke-width="2" stroke-opacity="0.1"/>
+  </g>
+
+  <!-- bitcoin coin -->
+  <g transform="translate(1120 420)">
+    <circle r="150" fill="url(#coin)"/>
+    <circle r="150" fill="none" stroke="#ffffff" stroke-opacity="0.25" stroke-width="3"/>
+    <!-- ₿ glyph, drawn with strokes -->
+    <g stroke="#ffffff" stroke-width="24" stroke-linecap="round" fill="none">
+      <path d="M-40 -60 V 60"/>
+      <path d="M-40 -60 H 14 a44 40 0 0 1 0 80 H -40"/>
+      <path d="M-40 12 H 26 a48 44 0 0 1 0 88 H -40" transform="translate(0 -6)"/>
+      <path d="M-14 -84 V -60 M 16 -84 V -60 M -14 60 V 84 M 16 60 V 84"/>
+    </g>
+  </g>
+</svg>
