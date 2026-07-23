@@ -98,8 +98,7 @@ export function MicScrollStory() {
     const offsetY = 0;
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.fillStyle = "#14130f";
-    ctx.fillRect(0, 0, cssWidth, cssHeight);
+    ctx.clearRect(0, 0, cssWidth, cssHeight);
     ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
   };
 
@@ -210,66 +209,63 @@ export function MicScrollStory() {
 
   return (
     <section ref={sectionRef} className="relative bg-deep" style={{ height: "480vh" }}>
-      <div className="sticky top-0 h-screen w-full overflow-hidden">
-        <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+      <div className="sticky top-0 flex h-screen w-full flex-col items-center justify-center overflow-hidden px-6 sm:px-8">
+        {/* Fixed-aspect framed panel — sized well under the source's
+            native 960px width so it's never upscaled/blurry, and never
+            needs to letterbox: everything outside it is just the plain
+            section background, so there's no canvas-fill-vs-page-bg
+            seam to mismatch. */}
+        <div className="relative aspect-video w-full max-w-xl overflow-hidden rounded-3xl shadow-2xl shadow-black/40">
+          <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to top, rgba(20,19,15,0.85) 0%, rgba(20,19,15,0.15) 45%, rgba(20,19,15,0.55) 100%), linear-gradient(to right, #14130f 0%, rgba(20,19,15,0) 14%, rgba(20,19,15,0) 86%, #14130f 100%)",
-          }}
-        />
+          {loadedCount < FRAME_COUNT && (
+            <div className="absolute top-3 right-3 rounded-full bg-black/40 px-3 py-1 text-xs text-background/80">
+              Loading {Math.round((loadedCount / FRAME_COUNT) * 100)}%
+            </div>
+          )}
+        </div>
 
-        {loadedCount < FRAME_COUNT && (
-          <div className="absolute top-6 right-6 rounded-full bg-black/30 px-3 py-1 text-xs text-background/70">
-            Loading {Math.round((loadedCount / FRAME_COUNT) * 100)}%
-          </div>
-        )}
+        <div className="relative mt-10 w-full max-w-2xl text-center sm:mt-14">
+          {chapters.map((c, i) => (
+            <div
+              key={c.text}
+              style={{
+                opacity: activeChapter === i ? 1 : 0,
+                transform:
+                  activeChapter === i
+                    ? "scale(1) translateY(0)"
+                    : "scale(0.9) translateY(18px)",
+                transition:
+                  "opacity 0.5s cubic-bezier(0.22,1.3,0.4,1), transform 0.5s cubic-bezier(0.22,1.3,0.4,1)",
+                position: i === 0 ? "static" : "absolute",
+                inset: i === 0 ? undefined : 0,
+                pointerEvents: activeChapter === i ? "auto" : "none",
+              }}
+            >
+              <p className="text-xs font-medium tracking-[0.14em] text-amber uppercase">
+                {c.eyebrow}
+              </p>
+              <p className="font-display mt-3 text-2xl font-semibold tracking-tight text-balance text-background sm:text-4xl">
+                {c.text}
+              </p>
+            </div>
+          ))}
+        </div>
 
-        <div className="absolute inset-x-0 bottom-0 px-6 pb-20 sm:px-8 sm:pb-28">
-          <div className="mx-auto max-w-2xl text-center">
-            {chapters.map((c, i) => (
-              <div
-                key={c.text}
-                style={{
-                  opacity: activeChapter === i ? 1 : 0,
-                  transform:
-                    activeChapter === i
-                      ? "scale(1) translateY(0)"
-                      : "scale(0.9) translateY(18px)",
-                  transition:
-                    "opacity 0.5s cubic-bezier(0.22,1.3,0.4,1), transform 0.5s cubic-bezier(0.22,1.3,0.4,1)",
-                  position: i === 0 ? "static" : "absolute",
-                  inset: i === 0 ? undefined : 0,
-                  pointerEvents: activeChapter === i ? "auto" : "none",
-                }}
-              >
-                <p className="text-xs font-medium tracking-[0.14em] text-amber uppercase">
-                  {c.eyebrow}
-                </p>
-                <p className="font-display mt-3 text-2xl font-semibold tracking-tight text-balance text-background sm:text-4xl">
-                  {c.text}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex justify-center gap-2">
-            {chapters.map((_, i) => (
-              <span
-                key={i}
-                className="h-1 rounded-full transition-all duration-300"
-                style={{
-                  width: activeChapter === i ? 24 : 8,
-                  backgroundColor:
-                    activeChapter === i
-                      ? "var(--accent-bright)"
-                      : "rgba(255,255,255,0.25)",
-                }}
-              />
-            ))}
-          </div>
+        <div className="mt-8 flex justify-center gap-2">
+          {chapters.map((_, i) => (
+            <span
+              key={i}
+              className="h-1 rounded-full transition-all duration-300"
+              style={{
+                width: activeChapter === i ? 24 : 8,
+                backgroundColor:
+                  activeChapter === i
+                    ? "var(--accent-bright)"
+                    : "rgba(255,255,255,0.25)",
+              }}
+            />
+          ))}
         </div>
       </div>
     </section>
