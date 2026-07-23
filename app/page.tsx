@@ -66,6 +66,10 @@ export default function Home() {
     <>
       <LocalBusinessJsonLd />
 
+      {/* ---------- Scroll-scrubbed mic story — leads the page, Apple
+          product-page style ---------- */}
+      <MicScrollStory />
+
       {/* ---------- Hero (centered, Apple-style) ---------- */}
       <section className="overflow-hidden pt-16 pb-20 text-center sm:pt-24 sm:pb-28">
         <Container>
@@ -136,10 +140,6 @@ export default function Home() {
         </Container>
         <LogoMarquee />
       </section>
-
-      {/* ---------- Scroll-scrubbed mic story (replaces the old static
-          positioning band with the same messaging, told interactively) ---------- */}
-      <MicScrollStory />
 
       {/* ---------- Process (light-grey) ---------- */}
       <section className="bg-fog">

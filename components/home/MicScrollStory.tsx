@@ -7,21 +7,32 @@ const FRAME_COUNT = 68;
 const frameSrc = (i: number) =>
   `/images/mic-360/frame-${String(i).padStart(3, "0")}.jpg`;
 
+// Every line here already appears elsewhere on the site (stats, "what I
+// do" steps, positioning copy, closing CTA) — just told one beat at a
+// time as the mic turns. Nothing new is claimed.
 const chapters = [
   {
     eyebrow: "01 — Experience",
     text: "Eight years producing podcasts, start to finish.",
   },
   {
-    eyebrow: "02 — Service",
-    text: "Editing, show notes, chapter timestamps, YouTube and social assets — one producer, every step.",
+    eyebrow: "02 — Plan",
+    text: "Format, structure, and episode arcs mapped out before a single mic is switched on.",
   },
   {
-    eyebrow: "03 — Focus",
+    eyebrow: "03 — Edit",
+    text: "Full episode edit — pacing, sound, and story — so every episode sounds intentional.",
+  },
+  {
+    eyebrow: "04 — Distribute",
+    text: "Show notes, chapter timestamps, and transcription review, ready for every platform.",
+  },
+  {
+    eyebrow: "05 — Focus",
     text: "Built for founders, coaches, and finance voices building real authority.",
   },
   {
-    eyebrow: "04 — Next",
+    eyebrow: "06 — Next",
     text: "Ready to sound like the expert you already are?",
   },
 ];
@@ -74,24 +85,21 @@ export function MicScrollStory() {
       canvas.height = cssHeight * dpr;
     }
 
-    // Cover-fit the frame into the canvas.
-    const canvasRatio = cssWidth / cssHeight;
+    // Always fit to canvas height, centered horizontally. The sign of
+    // offsetX does the rest of the work on its own: on a normal or
+    // narrow (mobile) viewport the frame overflows the width slightly
+    // and crops at the sides (cover-like); on an ultra-wide viewport it
+    // falls short of the width instead, leaving navy letterbox padding
+    // left/right rather than stretching or over-cropping the mic.
     const imgRatio = img.naturalWidth / img.naturalHeight;
-    let drawW: number, drawH: number, offsetX: number, offsetY: number;
-    if (imgRatio > canvasRatio) {
-      drawH = cssHeight;
-      drawW = drawH * imgRatio;
-      offsetX = (cssWidth - drawW) / 2;
-      offsetY = 0;
-    } else {
-      drawW = cssWidth;
-      drawH = drawW / imgRatio;
-      offsetX = 0;
-      offsetY = (cssHeight - drawH) / 2;
-    }
+    const drawH = cssHeight;
+    const drawW = drawH * imgRatio;
+    const offsetX = (cssWidth - drawW) / 2;
+    const offsetY = 0;
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, cssWidth, cssHeight);
+    ctx.fillStyle = "#14130f";
+    ctx.fillRect(0, 0, cssWidth, cssHeight);
     ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
   };
 
@@ -138,10 +146,13 @@ export function MicScrollStory() {
           FRAME_COUNT - 1,
           Math.round(clamped * (FRAME_COUNT - 1))
         );
-        if (frame !== frameRef.current) {
-          frameRef.current = frame;
-          draw(frame);
-        }
+        // Always redraw, not just when the frame index changes — a pure
+        // resize (viewport width change) can leave the frame index
+        // identical while the canvas still needs its pixel dimensions
+        // and cover-fit math recalculated. draw() is cheap and already
+        // rAF-throttled, so there's no real cost to dropping the guard.
+        frameRef.current = frame;
+        draw(frame);
 
         const chapter = Math.min(
           chapters.length - 1,
@@ -198,7 +209,7 @@ export function MicScrollStory() {
   }
 
   return (
-    <section ref={sectionRef} className="relative bg-deep" style={{ height: "400vh" }}>
+    <section ref={sectionRef} className="relative bg-deep" style={{ height: "480vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
@@ -206,7 +217,7 @@ export function MicScrollStory() {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, rgba(20,19,15,0.85) 0%, rgba(20,19,15,0.15) 45%, rgba(20,19,15,0.55) 100%)",
+              "linear-gradient(to top, rgba(20,19,15,0.85) 0%, rgba(20,19,15,0.15) 45%, rgba(20,19,15,0.55) 100%), linear-gradient(to right, #14130f 0%, rgba(20,19,15,0) 14%, rgba(20,19,15,0) 86%, #14130f 100%)",
           }}
         />
 
@@ -221,9 +232,14 @@ export function MicScrollStory() {
             {chapters.map((c, i) => (
               <div
                 key={c.text}
-                className="transition-opacity duration-500"
                 style={{
                   opacity: activeChapter === i ? 1 : 0,
+                  transform:
+                    activeChapter === i
+                      ? "scale(1) translateY(0)"
+                      : "scale(0.9) translateY(18px)",
+                  transition:
+                    "opacity 0.5s cubic-bezier(0.22,1.3,0.4,1), transform 0.5s cubic-bezier(0.22,1.3,0.4,1)",
                   position: i === 0 ? "static" : "absolute",
                   inset: i === 0 ? undefined : 0,
                   pointerEvents: activeChapter === i ? "auto" : "none",

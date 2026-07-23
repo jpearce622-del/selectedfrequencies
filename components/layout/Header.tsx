@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/brand/Logo";
 
@@ -15,26 +15,17 @@ const navLinks = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? "border-b border-border bg-background/80 backdrop-blur-md"
-          : "border-b border-transparent bg-background/0"
-      }`}
+      // Always blurred/solid, not transparent-at-top: the homepage now
+      // opens on the dark mic scroll-story, so a transparent header would
+      // be unreadable until the visitor scrolled past it.
+      className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md"
     >
       <Container className="flex h-20 items-center justify-between">
         <Link href="/" aria-label="Selected Frequencies — home">
