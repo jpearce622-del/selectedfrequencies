@@ -181,7 +181,7 @@ export function MicScrollStory() {
 
   if (reducedMotion) {
     return (
-      <section className="bg-deep py-24 text-background sm:py-32">
+      <section className="bg-black py-24 text-background sm:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center sm:px-8">
           <NextImage
             src={frameSrc(20)}
@@ -208,23 +208,23 @@ export function MicScrollStory() {
   }
 
   return (
-    <section ref={sectionRef} className="relative bg-deep" style={{ height: "480vh" }}>
+    <section ref={sectionRef} className="relative bg-black" style={{ height: "480vh" }}>
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Canvas only ever draws the photo itself (clearRect, never a
             solid fill) — any space beside it when the viewport is wider
             than the 16:9 source is left transparent, so the section's
-            own bg-deep shows through directly underneath. The fade
-            overlay below targets that same --deep variable, so the
-            vignette and the background it blends into are guaranteed to
-            be pixel-identical rather than two separately-authored
-            "black"s that happen to drift apart. */}
+            own bg-black shows through directly underneath. The fade
+            overlay below targets that same plain black, so the vignette
+            and the background it blends into are guaranteed to be
+            pixel-identical rather than two separately-authored "black"s
+            that happen to drift apart. */}
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "linear-gradient(to top, color-mix(in srgb, var(--deep) 85%, transparent) 0%, color-mix(in srgb, var(--deep) 15%, transparent) 45%, color-mix(in srgb, var(--deep) 55%, transparent) 100%), linear-gradient(to right, var(--deep) 0%, transparent 16%, transparent 84%, var(--deep) 100%)",
+              "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.55) 100%), linear-gradient(to right, #000 0%, transparent 16%, transparent 84%, #000 100%)",
           }}
         />
 
