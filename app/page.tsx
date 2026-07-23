@@ -5,8 +5,6 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { Hexagon } from "@/components/ui/Hexagon";
-import { SoundMark } from "@/components/brand/SoundMark";
 import { LogoMarquee } from "@/components/case-studies/LogoStrip";
 import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
@@ -106,27 +104,6 @@ export default function Home() {
                 →
               </span>
             </Link>
-          </Reveal>
-        </Container>
-
-        {/* Hero visual — the brand hexagon + equalizer, as the "product shot" */}
-        <Container className="mt-16 sm:mt-20">
-          <Reveal delay={120}>
-            <div className="relative mx-auto flex aspect-[16/10] max-w-5xl items-center justify-center overflow-hidden rounded-[2rem] bg-deep sm:aspect-[16/9]">
-              <div
-                className="pointer-events-none absolute inset-0 opacity-70"
-                style={{
-                  background:
-                    "radial-gradient(60% 60% at 50% 45%, rgba(220,107,18,0.16), transparent 70%)",
-                }}
-              />
-              <Hexagon className="w-40 sm:w-56" stroke="var(--accent-bright)" strokeWidth={1.1}>
-                <SoundMark
-                  animated
-                  className="h-1/2 w-1/2 text-accent-bright"
-                />
-              </Hexagon>
-            </div>
           </Reveal>
         </Container>
       </section>
