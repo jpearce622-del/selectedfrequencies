@@ -27,6 +27,7 @@ export const geneticsPodcast: CaseStudy = {
   ],
   logo: "/images/clients/genetics-podcast-cover.jpeg", // real show artwork
   logoAlt: "The Genetics Podcast cover art",
+  themeColor: "#E85A42", // sampled from the show's coral-red cover art
   featured: true,
   category: "flagship",
 };

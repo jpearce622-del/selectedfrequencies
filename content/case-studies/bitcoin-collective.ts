@@ -32,6 +32,7 @@ export const bitcoinCollective: CaseStudy = {
   ],
   logo: "/images/clients/bitcoin-collective.jpeg", // real show artwork
   logoAlt: "The Bitcoin Collective cover art",
+  themeColor: "#4A4A52", // sampled from the show's charcoal cover art
   featured: true,
   category: "flagship",
 };

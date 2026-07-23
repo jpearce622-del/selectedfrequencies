@@ -31,6 +31,7 @@ export const bitcoinAndTheLongGame: CaseStudy = {
   ],
   logo: "/images/clients/bitcoin-and-the-long-game.jpeg", // real show artwork
   logoAlt: "Bitcoin and the Long Game cover art",
+  themeColor: "#C79A3E", // sampled from the show's gold title text
   featured: true,
   category: "flagship",
 };

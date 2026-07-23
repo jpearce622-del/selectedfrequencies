@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { buildMetadata } from "@/lib/metadata";
+import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
@@ -41,44 +42,78 @@ export default async function CaseStudyPage({
 
   return (
     <>
-      <Section className="pt-20 sm:pt-28">
-        <Reveal>
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">
-            {study.clientName}
-          </p>
-        </Reveal>
-        <Reveal
-          as="h1"
-          delay={80}
-          className="font-display mt-4 max-w-3xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-6xl"
-        >
-          {study.showName}
-        </Reveal>
-        {study.hostName && (
-          <Reveal delay={140}>
-            <p className="mt-4 text-muted">Hosted by {study.hostName}</p>
-          </Reveal>
-        )}
-        <Reveal delay={180} className="mt-6 max-w-2xl">
-          <p className="text-lg leading-relaxed text-muted">{study.oneLiner}</p>
-        </Reveal>
+      {/* Hero — themed to the show's own cover art, Spotify show-page
+          style: a colour sampled from the artwork at the top, fading
+          down into the site's own brand navy so it still reads as one
+          site rather than five unrelated pages. */}
+      <section
+        className="pt-24 pb-14 sm:pt-32 sm:pb-20"
+        style={{
+          background: `linear-gradient(180deg, ${study.themeColor ?? "var(--deep)"} 0%, var(--deep) 100%)`,
+        }}
+      >
+        <Container>
+          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:gap-8">
+            {study.logo && (
+              <Reveal>
+                <Image
+                  src={study.logo}
+                  alt={study.logoAlt ?? ""}
+                  width={220}
+                  height={220}
+                  className="h-32 w-32 rounded-2xl object-cover shadow-2xl shadow-black/40 sm:h-48 sm:w-48"
+                />
+              </Reveal>
+            )}
 
-        {study.links.length > 0 && (
-          <Reveal delay={240} className="mt-8 flex flex-wrap gap-3">
-            {study.links.map((link) => (
-              <a
-                key={link.label}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-border px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent"
+            <div>
+              <Reveal>
+                <p className="text-sm font-medium text-background/80">Podcast</p>
+              </Reveal>
+              <Reveal
+                as="h1"
+                delay={80}
+                className="font-display mt-2 max-w-2xl text-4xl leading-[1.05] font-semibold tracking-tight text-balance text-background sm:text-6xl"
               >
-                Listen on {link.label}
-              </a>
-            ))}
+                {study.showName}
+              </Reveal>
+              <Reveal delay={140}>
+                <p className="mt-3 text-lg font-medium text-background/85">
+                  {study.clientName}
+                  {study.hostName && (
+                    <span className="text-background/70">
+                      {" "}
+                      · Hosted by {study.hostName}
+                    </span>
+                  )}
+                </p>
+              </Reveal>
+            </div>
+          </div>
+
+          <Reveal delay={200} className="mt-8 max-w-2xl">
+            <p className="text-lg leading-relaxed text-background/80">
+              {study.oneLiner}
+            </p>
           </Reveal>
-        )}
-      </Section>
+
+          {study.links.length > 0 && (
+            <Reveal delay={260} className="mt-8 flex flex-wrap gap-3">
+              {study.links.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-background/95 px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-background"
+                >
+                  Listen on {link.label}
+                </a>
+              ))}
+            </Reveal>
+          )}
+        </Container>
+      </section>
 
       {study.coverImage && (
         <Section className="border-t border-border pt-16">

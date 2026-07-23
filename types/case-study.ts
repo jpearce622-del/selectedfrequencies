@@ -32,6 +32,10 @@ export interface CaseStudy {
   /** Path under /public for the case study hero/cover image */
   coverImage?: string;
   coverImageAlt?: string;
+  /** Hex color sampled from the show's own cover art — used as the top
+   *  of the case study hero's gradient (fades to brand navy), Spotify
+   *  show-page style. Falls back to plain navy if omitted. */
+  themeColor?: string;
   /** Show in home page teasers + logo strip */
   featured: boolean;
   category: "flagship" | "archive";

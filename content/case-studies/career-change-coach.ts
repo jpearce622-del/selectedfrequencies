@@ -34,6 +34,7 @@ export const careerChangeDiaries: CaseStudy = {
   ],
   logo: "/images/clients/career-change-diaries.jpeg", // real show artwork
   logoAlt: "The Career Change Diaries cover art",
+  themeColor: "#8A6F52", // warm taupe, evoking the cover's cream/elegant tone
   featured: true,
   category: "flagship",
 };

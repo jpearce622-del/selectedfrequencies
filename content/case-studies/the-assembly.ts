@@ -30,6 +30,7 @@ export const theAssembly: CaseStudy = {
   ],
   logo: "/images/clients/the-assembly.jpeg", // real show artwork
   logoAlt: "The Assembly cover art",
+  themeColor: "#1FCB82", // sampled from the show's mint-green cover art
   featured: true,
   category: "flagship",
 };
