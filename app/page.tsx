@@ -113,7 +113,7 @@ export default function Home() {
       <section className="border-t border-border py-14">
         <Container>
           <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
-            Trusted by expert &amp; thought-leadership shows
+            Trusted by shows worldwide
           </p>
         </Container>
         <LogoMarquee />
@@ -123,7 +123,7 @@ export default function Home() {
       <section className="border-t border-border py-14">
         <Container>
           <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
-            Also worked with
+            Companies we&apos;ve partnered with
           </p>
           <CompanyLogos />
         </Container>

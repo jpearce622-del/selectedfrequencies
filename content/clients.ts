@@ -1,17 +1,16 @@
 import type { ClientRosterEntry } from "@/types/case-study";
 
-// Flagship client roster — used for the home page logo strip and the
-// /work index. Only entries with hasCaseStudy: true link to a full
-// case study page; the rest render as unlinked roster items until
-// their case study content is supplied.
+// Flagship client roster — drives the /work index. Only entries with
+// hasCaseStudy: true link to a full case study page; the rest render as
+// unlinked roster cards until their case study content is supplied.
+// (The homepage artwork marquee is driven separately by content/shows.ts.)
 export const clients: ClientRosterEntry[] = [
   {
     slug: "outthinkers",
     clientName: "Twenty One Collective",
     showName: "Outthinkers",
     hostName: "Kaihan Krippendorff",
-    logo: "/images/clients/outthinkers.svg", // TODO: replace with real logo asset
-    logoAlt: "Outthinkers logo — TODO: confirm alt text with client",
+    // TODO: real logo asset still needed from client
     hasCaseStudy: false,
   },
   {
@@ -27,8 +26,7 @@ export const clients: ClientRosterEntry[] = [
     slug: "assemble-you",
     clientName: "Assemble You",
     showName: "Assemble You",
-    logo: "/images/clients/assemble-you.svg", // TODO: replace with real logo asset
-    logoAlt: "Assemble You logo — TODO: confirm alt text with client",
+    // TODO: real logo asset still needed from client
     hasCaseStudy: false,
   },
   {
@@ -36,8 +34,7 @@ export const clients: ClientRosterEntry[] = [
     clientName: "Bitcoin and the Long Game",
     showName: "Bitcoin and the Long Game",
     hostName: "Peter Lane & George Boyd",
-    logo: "/images/clients/bitcoin-and-the-long-game.svg", // TODO: replace with real logo asset
-    logoAlt: "Bitcoin and the Long Game logo — TODO: confirm alt text with client",
+    // TODO: real logo asset still needed from client
     hasCaseStudy: false,
   },
   {
@@ -45,8 +42,7 @@ export const clients: ClientRosterEntry[] = [
     clientName: "The Bitcoin Collective",
     showName: "The Bitcoin Collective",
     hostName: "Jordan Walker",
-    logo: "/images/clients/bitcoin-collective.svg", // TODO: replace with real logo asset
-    logoAlt: "The Bitcoin Collective logo — TODO: confirm alt text with client",
+    // TODO: real logo asset still needed from client
     hasCaseStudy: false,
   },
   {
@@ -54,16 +50,14 @@ export const clients: ClientRosterEntry[] = [
     clientName: "Alice Stapleton",
     showName: "Career Change Coach",
     hostName: "Alice Stapleton",
-    logo: "/images/clients/career-change-coach.svg", // TODO: replace with real logo asset
-    logoAlt: "Career Change Coach logo — TODO: confirm alt text with client",
+    // TODO: real logo asset still needed from client
     hasCaseStudy: false,
   },
   {
     slug: "ec-blueprint",
     clientName: "The EC Blueprint",
     showName: "The EC Blueprint",
-    logo: "/images/clients/ec-blueprint.svg", // TODO: replace with real logo asset
-    logoAlt: "The EC Blueprint logo — TODO: confirm alt text with client",
+    // TODO: real logo asset still needed from client
     hasCaseStudy: false,
   },
 ];

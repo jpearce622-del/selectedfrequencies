@@ -1,37 +1,34 @@
 import Image from "next/image";
 import Link from "next/link";
-import { clients } from "@/content/clients";
+import { shows } from "@/content/shows";
 
-function LogoItem({
-  client,
-}: {
-  client: (typeof clients)[number];
-}) {
-  const logo = (
+function ShowTile({ show }: { show: (typeof shows)[number] }) {
+  const tile = (
     <Image
-      src={client.logo}
-      alt={client.logoAlt}
-      width={160}
-      height={54}
-      className="h-9 w-auto object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+      src={show.artwork}
+      alt={show.name}
+      width={112}
+      height={112}
+      className="h-14 w-14 rounded-xl object-cover shadow-sm ring-1 ring-border transition duration-300 hover:scale-105 sm:h-16 sm:w-16"
     />
   );
 
   return (
-    <div className="shrink-0 px-8" title={client.showName}>
-      {client.hasCaseStudy ? (
-        <Link href={`/work/${client.slug}`}>{logo}</Link>
+    <div className="shrink-0 px-4" title={show.name}>
+      {show.caseStudySlug ? (
+        <Link href={`/work/${show.caseStudySlug}`}>{tile}</Link>
       ) : (
-        logo
+        tile
       )}
     </div>
   );
 }
 
 /**
- * Infinite, seamless logo marquee. The client list is rendered twice and the
- * track is translated -50%, so the loop is gapless. Pauses on hover; frozen
- * under prefers-reduced-motion (see .sf-marquee in globals.css).
+ * Infinite, seamless artwork marquee of shows produced by the studio.
+ * The list is rendered twice and the track translated -50%, so the loop
+ * is gapless. Pauses on hover; frozen under prefers-reduced-motion
+ * (see .sf-marquee in globals.css).
  */
 export function LogoMarquee() {
   return (
@@ -45,43 +42,14 @@ export function LogoMarquee() {
       }}
     >
       <div className="sf-marquee flex w-max items-center">
-        {clients.map((client) => (
-          <LogoItem key={client.slug} client={client} />
+        {shows.map((show) => (
+          <ShowTile key={show.name} show={show} />
         ))}
         {/* Duplicate set for the seamless loop */}
-        {clients.map((client) => (
-          <LogoItem key={`${client.slug}-dup`} client={client} />
+        {shows.map((show) => (
+          <ShowTile key={`${show.name}-dup`} show={show} />
         ))}
       </div>
-    </div>
-  );
-}
-
-/** Static grid variant, kept for pages that prefer a settled layout. */
-export function LogoStrip() {
-  return (
-    <div className="grid grid-cols-2 items-center gap-x-8 gap-y-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
-      {clients.map((client) => {
-        const logo = (
-          <Image
-            src={client.logo}
-            alt={client.logoAlt}
-            width={140}
-            height={48}
-            className="mx-auto h-8 w-auto object-contain opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
-          />
-        );
-
-        return (
-          <div key={client.slug} title={client.showName}>
-            {client.hasCaseStudy ? (
-              <Link href={`/work/${client.slug}`}>{logo}</Link>
-            ) : (
-              logo
-            )}
-          </div>
-        );
-      })}
     </div>
   );
 }

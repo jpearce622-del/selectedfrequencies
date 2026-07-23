@@ -40,8 +40,10 @@ export interface ClientRosterEntry {
   clientName: string;
   showName: string;
   hostName?: string;
-  logo: string;
-  logoAlt: string;
+  /** Optional — the /work index renders text cards, so a logo is only
+   *  needed once real artwork exists for the client. */
+  logo?: string;
+  logoAlt?: string;
   /** Whether a full /work/[slug] case study page exists yet */
   hasCaseStudy: boolean;
 }
