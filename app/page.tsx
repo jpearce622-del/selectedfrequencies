@@ -10,6 +10,7 @@ import { SoundMark } from "@/components/brand/SoundMark";
 import { LogoMarquee } from "@/components/case-studies/LogoStrip";
 import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
 import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
+import { MicScrollStory } from "@/components/home/MicScrollStory";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export const metadata: Metadata = buildMetadata({
@@ -136,31 +137,9 @@ export default function Home() {
         <LogoMarquee />
       </section>
 
-      {/* ---------- Positioning statement (navy interstitial) ---------- */}
-      <section className="bg-deep text-background">
-        <Container className="py-24 text-center sm:py-32">
-          <Reveal>
-            <SoundMark
-              animated
-              className="mx-auto mb-10 h-10 w-28 text-accent-bright"
-            />
-          </Reveal>
-          <Reveal
-            as="h2"
-            delay={90}
-            className="font-display mx-auto max-w-3xl text-4xl leading-[1.1] font-semibold tracking-tight text-balance sm:text-5xl"
-          >
-            Every episode, produced end to end.
-          </Reveal>
-          <Reveal delay={160} className="mx-auto mt-6 max-w-2xl">
-            <p className="text-lg leading-relaxed text-background/70">
-              From the raw recording to a polished, promoted episode — one
-              producer, eight years in, handling the whole pipeline so your show
-              is consistent every single week.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
+      {/* ---------- Scroll-scrubbed mic story (replaces the old static
+          positioning band with the same messaging, told interactively) ---------- */}
+      <MicScrollStory />
 
       {/* ---------- Process (light-grey) ---------- */}
       <section className="bg-fog">
