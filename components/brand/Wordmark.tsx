@@ -7,6 +7,8 @@
 const SIZES = {
   sm: { top: "text-lg", bottom: "text-[0.6rem]" },
   md: { top: "text-2xl", bottom: "text-xs" },
+  // Tuned for the h-20 header: as large as fits with comfortable breathing room.
+  nav: { top: "text-3xl", bottom: "text-sm" },
   lg: { top: "text-5xl sm:text-6xl", bottom: "text-lg sm:text-xl" },
 } as const;
 

@@ -8,11 +8,18 @@ export function Logo({
   className = "",
 }: {
   variant?: "dark" | "light";
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "nav" | "lg";
   className?: string;
 }) {
   const iconColor = variant === "dark" ? "text-deep" : "text-background";
-  const iconHeight = size === "lg" ? "h-10" : size === "md" ? "h-7" : "h-5";
+  const iconHeight =
+    size === "lg"
+      ? "h-10"
+      : size === "nav"
+        ? "h-9"
+        : size === "md"
+          ? "h-7"
+          : "h-5";
 
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
