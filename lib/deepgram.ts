@@ -3,7 +3,7 @@ import { DeepgramClient } from "@deepgram/sdk";
 function getClient() {
   const key = process.env.DEEPGRAM_API_KEY;
   if (!key) throw new Error("DEEPGRAM_API_KEY is not configured");
-  return new DeepgramClient(key);
+  return new DeepgramClient({ apiKey: key });
 }
 
 /**
