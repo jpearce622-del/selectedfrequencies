@@ -136,15 +136,18 @@ export async function transcribeUrl(audioUrl: string): Promise<string> {
 
   if (!res.ok) {
     const detail = await res.text().catch(() => "");
-    // Groq caps upload size per tier (free ~25 MB, dev ~100 MB). A 413 (or a
-    // size-related 400) is the common real-world failure for full episodes.
+    const mb = (bytes.byteLength / (1024 * 1024)).toFixed(0);
+    // Surface Groq's own response verbatim — the raw message tells us the
+    // real cause (which tier the key is on, edge vs account limit, etc.)
+    // rather than an assumption.
     if (res.status === 413 || /max.*size|too large|25 ?MB/i.test(detail)) {
-      const mb = (bytes.byteLength / (1024 * 1024)).toFixed(0);
       throw new Error(
-        `This ${mb} MB file is over the transcription size limit. Groq's free tier allows 25 MB; upgrade to the dev tier (100 MB) or upload a smaller/compressed file.`
+        `Groq rejected this ${mb} MB file as too large (HTTP ${res.status}). Groq said: ${detail.slice(0, 400) || "(no message body)"}`
       );
     }
-    throw new Error(`Groq transcription failed (${res.status}): ${detail}`);
+    throw new Error(
+      `Groq transcription failed (HTTP ${res.status}): ${detail.slice(0, 400) || "(no message body)"}`
+    );
   }
 
   const data = (await res.json()) as GroqVerboseResponse;
