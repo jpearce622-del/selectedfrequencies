@@ -1,7 +1,11 @@
+import { get } from "@vercel/blob";
+
 // Transcription via Groq-hosted Whisper (whisper-large-v3-turbo).
 // Groq's audio API is OpenAI-compatible and extremely fast, but — unlike
 // Deepgram — it does NOT fetch from a URL. We download the file from the
-// Blob URL and forward the bytes as multipart form-data.
+// (private) Blob store with an authenticated get() and forward the bytes as
+// multipart form-data. Uploads are private so the audio is never publicly
+// reachable; only this server, holding BLOB_READ_WRITE_TOKEN, can read it.
 
 // whisper-large-v3-turbo: ~$0.04 / hour of audio (~$0.02 for a 30-min episode).
 const GROQ_MODEL = "whisper-large-v3-turbo";
@@ -96,20 +100,20 @@ export async function transcribeUrl(audioUrl: string): Promise<string> {
   const key = process.env.GROQ_API_KEY;
   if (!key) throw new Error("GROQ_API_KEY is not configured");
 
-  // 1. Download the file from Blob storage.
-  const audioRes = await fetch(audioUrl);
-  if (!audioRes.ok) {
-    throw new Error(`Could not fetch audio (${audioRes.status})`);
+  // 1. Download the file from the private Blob store (authenticated read).
+  const result = await get(audioUrl, { access: "private" });
+  if (!result || result.statusCode !== 200 || !result.stream) {
+    throw new Error("Could not read audio from storage");
   }
-  const contentType =
-    audioRes.headers.get("content-type") ?? "application/octet-stream";
-  const bytes = await audioRes.arrayBuffer();
 
-  if (bytes.byteLength > MAX_UPLOAD_BYTES) {
+  if (result.blob.size > MAX_UPLOAD_BYTES) {
     throw new Error(
       "File is too large to transcribe. Please upload an audio file (or a smaller/compressed recording)."
     );
   }
+
+  const contentType = result.blob.contentType || "application/octet-stream";
+  const bytes = await new Response(result.stream).arrayBuffer();
 
   // 2. Forward to Groq as multipart form-data.
   const form = new FormData();

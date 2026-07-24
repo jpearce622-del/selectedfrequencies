@@ -90,7 +90,7 @@ export function UploadZone({ onUploadComplete }: UploadZoneProps) {
 
       try {
         const blob = await upload(file.name, file, {
-          access: "public",
+          access: "private",
           handleUploadUrl: "/api/tools/show-notes/upload-url",
           clientPayload: file.type,
           onUploadProgress: ({ percentage }) => {
