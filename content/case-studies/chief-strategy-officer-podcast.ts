@@ -9,7 +9,7 @@ import type { CaseStudy } from "@/types/case-study";
 // Outcome uses only sourced guest/company names; testimonial unknown.
 export const chiefStrategyOfficerPodcast: CaseStudy = {
   slug: "chief-strategy-officer-podcast",
-  clientName: "Twenty One Collective",
+  clientName: "Outthinkers Network",
   showName: "The Chief Strategy Officer Podcast",
   hostName: "Kaihan Krippendorff",
   oneLiner:
@@ -21,7 +21,7 @@ export const chiefStrategyOfficerPodcast: CaseStudy = {
     "Guests include Google's Chief Strategist Neil Hoyne and sitting Chief Strategy Officers from WestRock, IDEX, and Anywhere Real Estate.",
   testimonial: {
     quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Twenty One Collective]",
+    attribution: "[PLACEHOLDER — name, title, Outthinkers Network]",
   },
   links: [
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-chief-strategy-officer-podcast/id1742792507" },

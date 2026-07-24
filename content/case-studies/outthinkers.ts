@@ -9,7 +9,7 @@ import type { CaseStudy } from "@/types/case-study";
 // five). Outcome uses only sourced guest names; testimonial unknown.
 export const outthinkers: CaseStudy = {
   slug: "outthinkers",
-  clientName: "Twenty One Collective",
+  clientName: "Outthinkers Network",
   showName: "Outthinkers",
   hostName: "Kaihan Krippendorff",
   oneLiner:
@@ -21,7 +21,7 @@ export const outthinkers: CaseStudy = {
     "Guests have included Eric Ries, Coach's Lew Frankfort, and Experience Economy co-author Joe Pine — part of Outthinker's global network of Chief Strategy and Innovation Officers.",
   testimonial: {
     quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Twenty One Collective]",
+    attribution: "[PLACEHOLDER — name, title, Outthinkers Network]",
   },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/0P9pQn0uYEXE7bk4FHJrLy" },

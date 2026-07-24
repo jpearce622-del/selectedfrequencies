@@ -7,7 +7,7 @@ import type { CaseStudy } from "@/types/case-study";
 // supplied by James.
 export const bitcoinAndTheLongGame: CaseStudy = {
   slug: "bitcoin-and-the-long-game",
-  clientName: "Bitcoin and the Long Game",
+  clientName: "Peter Lane and George Boyd",
   showName: "Bitcoin and the Long Game",
   hostName: "Peter Lane & George Boyd",
   oneLiner:

@@ -10,7 +10,7 @@ import type { CaseStudy } from "@/types/case-study";
 // example; testimonial unknown.
 export const strategyAtScale: CaseStudy = {
   slug: "strategy-at-scale",
-  clientName: "Twenty One Collective",
+  clientName: "Outthinkers Network",
   showName: "Strategy at Scale",
   hostName: "Kaihan Krippendorff",
   oneLiner:
@@ -22,7 +22,7 @@ export const strategyAtScale: CaseStudy = {
     "Guests include Veeva Systems co-founder Matt Wallach, who scaled the company to a public business generating close to $2.75B in annual revenue.",
   testimonial: {
     quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Twenty One Collective]",
+    attribution: "[PLACEHOLDER — name, title, Outthinkers Network]",
   },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/3dcIfmlCtQd8nVQ31SLeiy" },
