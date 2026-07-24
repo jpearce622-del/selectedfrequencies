@@ -7,7 +7,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import {
-  getPublishedBitcoinPodcasts,
+  bitcoinPodcasts,
   type BitcoinPodcast,
 } from "@/content/bitcoin-podcasts";
 
@@ -60,9 +60,9 @@ function PodcastCard({ show }: { show: BitcoinPodcast }) {
           </h3>
           <p className="mt-1 text-sm text-muted">Hosted by {show.host}</p>
         </div>
-        {show.producedByUs && show.caseStudySlug && (
+        {show.producedByUs && show.caseStudyUrl && (
           <Link
-            href={`/work/${show.caseStudySlug}`}
+            href={show.caseStudyUrl}
             className="shrink-0 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent/15"
           >
             Produced by Selected Frequencies
@@ -93,7 +93,7 @@ function PodcastCard({ show }: { show: BitcoinPodcast }) {
 }
 
 export default function BestBitcoinPodcastsPage() {
-  const shows = getPublishedBitcoinPodcasts();
+  const shows = bitcoinPodcasts;
 
   const canonical = `${siteConfig.url}/best-bitcoin-podcasts`;
   const jsonLd = {
