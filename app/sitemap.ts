@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/blog",
     "/bitcoin",
+    "/best-bitcoin-podcasts",
     "/podcast-launch-roadmap",
     "/contact",
   ].map((path) => ({

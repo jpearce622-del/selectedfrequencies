@@ -8,6 +8,7 @@ const footerLinks = [
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
   { href: "/bitcoin", label: "Bitcoin" },
+  { href: "/best-bitcoin-podcasts", label: "Best Bitcoin Podcasts" },
   { href: "/podcast-launch-roadmap", label: "Start a Podcast" },
   { href: "/contact", label: "Contact" },
 ];

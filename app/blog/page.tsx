@@ -82,6 +82,35 @@ export default function BlogIndexPage() {
           </div>
         )}
       </Section>
+
+      {/* Resource callout — the curated directory sits naturally here */}
+      <Section className="border-t border-border">
+        <Reveal>
+          <Link
+            href="/best-bitcoin-podcasts"
+            className="group flex flex-col items-start justify-between gap-4 rounded-2xl border border-border bg-fog p-8 transition-colors hover:border-accent/40 sm:flex-row sm:items-center"
+          >
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                Resource
+              </p>
+              <h2 className="font-display mt-2 text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">
+                The best Bitcoin &amp; crypto podcasts to follow in 2026
+              </h2>
+              <p className="mt-2 max-w-xl text-sm leading-6 text-muted">
+                A hand-picked directory of shows on sound money, macro, and
+                investing — with where to listen.
+              </p>
+            </div>
+            <span className="inline-flex shrink-0 items-center gap-1.5 text-sm font-medium text-accent">
+              Browse the directory
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                →
+              </span>
+            </span>
+          </Link>
+        </Reveal>
+      </Section>
     </>
   );
 }

@@ -97,7 +97,18 @@ export default function BitcoinPage() {
         eyebrow="Among the first UK podcast studios to take BTC"
         title="We accept Bitcoin."
         intro="Selected Frequencies is a podcast production studio that takes Bitcoin — and, as far as we can tell, one of the first in the UK to do it. You can pay for editing, show notes, and full production in BTC — on-chain or over Lightning — alongside the usual card and bank options. We're not bolting a crypto logo onto a checkout for the novelty of it; Bitcoin is part of how we think and who we work with. Here's why."
-      />
+      >
+        <p className="text-sm text-muted">
+          New to the space? Browse our pick of the{" "}
+          <Link
+            href="/best-bitcoin-podcasts"
+            className="font-medium text-accent hover:text-accent-bright"
+          >
+            best Bitcoin &amp; crypto podcasts
+          </Link>
+          .
+        </p>
+      </PageHeader>
 
       {/* A first for UK podcast production */}
       <Section className="border-t border-border">
