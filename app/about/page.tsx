@@ -21,10 +21,10 @@ export default function AboutPage() {
           <div className="grid gap-12 sm:grid-cols-[1fr_1.6fr] sm:items-center">
             <Reveal>
               <Image
-                src="/images/about/headshot.svg" // TODO: replace with real headshot
+                src="/images/about/headshot.jpg"
                 alt="James Pearce, founder of Selected Frequencies"
-                width={480}
-                height={480}
+                width={720}
+                height={720}
                 className="w-full max-w-xs rounded-2xl border border-border object-cover"
               />
             </Reveal>
