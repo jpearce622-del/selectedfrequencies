@@ -120,17 +120,18 @@ export default function AboutPage() {
             </li>
             <li className="flex items-start gap-2.5">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              Produced mixes broadcast on BBC Radio 1 as a subcontractor for
-              Noisehouse
+              Award-winning podcast producer and audio engineer with 7+ years&apos;
+              experience
             </li>
             <li className="flex items-start gap-2.5">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              Commissioned by Universal Music to produce music for its artists
+              BA (Hons) in Music Production and Sound Engineering from Point Blank
+              Music, London
             </li>
             <li className="flex items-start gap-2.5">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              Weekly role on The Martin Garrix Show (streaming); mix produced for
-              NERVO
+              Clients rely on the quality — meticulous edits, clear communication,
+              and fast turnaround that bring them back show after show
             </li>
             <li className="flex items-start gap-2.5">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
