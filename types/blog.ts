@@ -25,6 +25,17 @@ export interface BlogReference {
   url: string;
 }
 
+export interface Author {
+  name: string;
+  /** Job title, e.g. "Head of Content Marketing" */
+  role: string;
+  /** Short first-person bio shown in the author card */
+  bio: string;
+  /** Path under /public to a square headshot (rendered in a circle) */
+  avatar: string;
+  avatarAlt: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -32,7 +43,7 @@ export interface BlogPost {
   publishedAt: string; // ISO date, e.g. "2026-01-01"
   updatedAt?: string; // ISO date
   category: string;
-  author: string;
+  author: Author;
   /** Human-readable reading time, e.g. "9 min read" */
   readingTime: string;
   /** Hero / cover image */

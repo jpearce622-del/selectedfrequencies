@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/types/blog";
+import { shaunaMartin } from "@/content/authors";
 
 export const podcastAudioQualityGuide: BlogPost = {
   slug: "podcast-audio-quality-guide",
@@ -7,7 +8,7 @@ export const podcastAudioQualityGuide: BlogPost = {
     "How to make your podcast sound professional — room and mic technique, the gear that matters, the signal chain, editing, and the loudness target most shows get wrong.",
   publishedAt: "2026-07-02",
   category: "Production",
-  author: "Selected Frequencies",
+  author: shaunaMartin,
   readingTime: "11 min read",
   coverImage: {
     src: "/images/blog/audio-hero.svg",

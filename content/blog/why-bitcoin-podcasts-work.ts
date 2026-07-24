@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/types/blog";
+import { shaunaMartin } from "@/content/authors";
 
 export const whyBitcoinPodcastsWork: BlogPost = {
   slug: "why-bitcoin-podcasts-work",
@@ -7,7 +8,7 @@ export const whyBitcoinPodcastsWork: BlogPost = {
     "Bitcoin is hard to explain and easy to distrust. This is a deep dive into why podcasts have become the medium of record for crypto — how audio builds trust, educates, and compounds — with two shows we produce as worked examples.",
   publishedAt: "2026-07-22",
   category: "Bitcoin",
-  author: "Selected Frequencies",
+  author: shaunaMartin,
   readingTime: "19 min read",
   coverImage: {
     src: "/images/blog/bitcoin-hero.svg",

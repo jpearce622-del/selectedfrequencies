@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/types/blog";
+import { shaunaMartin } from "@/content/authors";
 
 export const repurposePodcastContent: BlogPost = {
   slug: "repurpose-podcast-content",
@@ -7,7 +8,7 @@ export const repurposePodcastContent: BlogPost = {
     "A system for repurposing podcast episodes into clips, video, blog posts, newsletters, and social content — so one recording works for weeks instead of a day.",
   publishedAt: "2026-06-25",
   category: "Marketing",
-  author: "Selected Frequencies",
+  author: shaunaMartin,
   readingTime: "9 min read",
   coverImage: {
     src: "/images/blog/repurpose-hero.svg",

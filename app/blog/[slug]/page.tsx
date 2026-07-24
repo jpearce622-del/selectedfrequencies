@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { AuthorCard, AuthorAvatar } from "@/components/blog/AuthorCard";
 import type { BlogImage } from "@/types/blog";
 
 type Params = { slug: string };
@@ -39,7 +40,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
-      authors: [post.author],
+      authors: [post.author.name],
       images: [{ url: post.coverImage.src, alt: post.coverImage.alt }],
     },
     twitter: {
@@ -113,7 +114,13 @@ export default async function BlogPostPage({
     image: `${siteConfig.url}${post.coverImage.src}`,
     datePublished: post.publishedAt,
     dateModified: post.updatedAt ?? post.publishedAt,
-    author: { "@type": "Organization", name: post.author, url: siteConfig.url },
+    author: {
+      "@type": "Person",
+      name: post.author.name,
+      jobTitle: post.author.role,
+      image: `${siteConfig.url}${post.author.avatar}`,
+      worksFor: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+    },
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -163,15 +170,20 @@ export default async function BlogPostPage({
             >
               {post.title}
             </Reveal>
-            <Reveal
-              delay={140}
-              className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted"
-            >
-              <span className="font-medium text-foreground">{post.author}</span>
-              <span aria-hidden="true">·</span>
-              <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-              <span aria-hidden="true">·</span>
-              <span>{post.readingTime}</span>
+            <Reveal delay={140} className="mt-6 flex items-center gap-3">
+              <AuthorAvatar author={post.author} size={44} />
+              <div className="text-sm">
+                <p className="font-medium text-foreground">{post.author.name}</p>
+                <p className="flex flex-wrap items-center gap-x-2 gap-y-0.5 text-muted">
+                  <span>{post.author.role}</span>
+                  <span aria-hidden="true">·</span>
+                  <time dateTime={post.publishedAt}>
+                    {formatDate(post.publishedAt)}
+                  </time>
+                  <span aria-hidden="true">·</span>
+                  <span>{post.readingTime}</span>
+                </p>
+              </div>
             </Reveal>
           </div>
         </Container>
@@ -287,6 +299,11 @@ export default async function BlogPostPage({
                   </ol>
                 </div>
               )}
+
+              {/* About the author */}
+              <div className="mt-12 border-t border-border pt-8">
+                <AuthorCard author={post.author} />
+              </div>
             </article>
           </div>
         </Container>

@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/types/blog";
+import { shaunaMartin } from "@/content/authors";
 
 export const howToStartAPodcastIn2026: BlogPost = {
   slug: "how-to-start-a-podcast-in-2026",
@@ -7,7 +8,7 @@ export const howToStartAPodcastIn2026: BlogPost = {
     "A step-by-step guide to how to start a podcast in 2026 — concept, gear, recording, editing, hosting, and promotion — with realistic time and cost, for complete beginners.",
   publishedAt: "2026-07-24",
   category: "Getting Started",
-  author: "Selected Frequencies",
+  author: shaunaMartin,
   readingTime: "10 min read",
   coverImage: {
     src: "/images/blog/start-podcast-hero.svg",

@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/types/blog";
+import { shaunaMartin } from "@/content/authors";
 
 export const podcastSeoGuide: BlogPost = {
   slug: "podcast-seo-guide",
@@ -7,7 +8,7 @@ export const podcastSeoGuide: BlogPost = {
     "Podcasts are invisible to search engines by default. Here's how to make your show discoverable — episode titles, transcripts, per-episode pages, schema, and AI answers.",
   publishedAt: "2026-06-18",
   category: "SEO",
-  author: "Selected Frequencies",
+  author: shaunaMartin,
   readingTime: "11 min read",
   coverImage: {
     src: "/images/blog/seo-hero.svg",

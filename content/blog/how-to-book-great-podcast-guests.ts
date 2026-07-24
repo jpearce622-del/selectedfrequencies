@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/types/blog";
+import { shaunaMartin } from "@/content/authors";
 
 export const howToBookGreatPodcastGuests: BlogPost = {
   slug: "how-to-book-great-podcast-guests",
@@ -7,7 +8,7 @@ export const howToBookGreatPodcastGuests: BlogPost = {
     "A practical system for booking podcast guests who actually move the needle — how to find them, the outreach email that gets a yes, and how to make saying yes effortless.",
   publishedAt: "2026-07-09",
   category: "Growth",
-  author: "Selected Frequencies",
+  author: shaunaMartin,
   readingTime: "9 min read",
   coverImage: {
     src: "/images/blog/guests-hero.svg",

@@ -1,4 +1,5 @@
 import type { BlogPost } from "@/types/blog";
+import { shaunaMartin } from "@/content/authors";
 
 export const podcastAnalyticsMetricsThatMatter: BlogPost = {
   slug: "podcast-analytics-metrics-that-matter",
@@ -8,7 +9,7 @@ export const podcastAnalyticsMetricsThatMatter: BlogPost = {
     "A producer's guide to podcast analytics — what downloads really measure, why consumption and retention matter more, and the five numbers worth checking every month.",
   publishedAt: "2026-07-14",
   category: "Analytics",
-  author: "Selected Frequencies",
+  author: shaunaMartin,
   readingTime: "10 min read",
   coverImage: {
     src: "/images/blog/analytics-hero.svg",
