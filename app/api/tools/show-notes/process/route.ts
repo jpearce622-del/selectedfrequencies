@@ -114,12 +114,18 @@ export async function POST(request: Request): Promise<Response> {
         try {
           transcript = await transcribeUrl(blobUrl);
         } catch (err) {
+          console.error("[show-notes] transcription failed:", err);
           await recordSubmission(email.trim(), ip, "failed", {
             error: String(err),
           });
           send("error", {
+            // Surface the real cause — transcription errors are usually
+            // actionable (file too large for the Groq tier, unsupported
+            // format, missing key) rather than a generic "bad file".
             message:
-              "Transcription failed. Make sure the file is a valid audio or video recording.",
+              err instanceof Error
+                ? err.message
+                : "Transcription failed. Make sure the file is a valid audio or video recording.",
           });
           controller.close();
           return;
