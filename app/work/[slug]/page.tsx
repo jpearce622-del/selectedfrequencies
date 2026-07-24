@@ -56,13 +56,15 @@ export default async function CaseStudyPage({
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-end sm:gap-8">
             {study.logo && (
               <Reveal>
-                <Image
-                  src={study.logo}
-                  alt={study.logoAlt ?? ""}
-                  width={220}
-                  height={220}
-                  className="h-32 w-32 rounded-2xl object-cover shadow-2xl shadow-black/40 sm:h-48 sm:w-48"
-                />
+                <div className="h-32 w-32 shrink-0 overflow-hidden rounded-2xl bg-white shadow-2xl shadow-black/40 sm:h-48 sm:w-48">
+                  <Image
+                    src={study.logo}
+                    alt={study.logoAlt ?? ""}
+                    width={220}
+                    height={220}
+                    className="h-full w-full object-cover"
+                  />
+                </div>
               </Reveal>
             )}
 
