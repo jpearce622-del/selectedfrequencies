@@ -11,6 +11,7 @@ const navLinks = [
   { href: "/work", label: "Work" },
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
+  { href: "/bitcoin", label: "Bitcoin" },
   { href: "/podcast-launch-roadmap", label: "Start a Podcast" },
 ];
 

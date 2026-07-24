@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -38,6 +39,18 @@ export default function ContactPage() {
             </Reveal>
             <Reveal delay={220}>
               <SoundMark className="mt-10 h-8 w-32 text-accent" />
+            </Reveal>
+            <Reveal delay={280}>
+              <p className="mt-8 text-sm text-muted">
+                We accept Bitcoin —{" "}
+                <Link
+                  href="/bitcoin"
+                  className="font-medium text-accent hover:text-accent-bright"
+                >
+                  see how
+                </Link>
+                .
+              </p>
             </Reveal>
           </div>
 

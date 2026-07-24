@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
@@ -101,6 +102,16 @@ export default function ServicesPage() {
               Every show is different, so pricing is tailored to what you need —
               from a single edit to full end-to-end production. Tell me about
               your show and I&apos;ll send a quote.
+            </p>
+            <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
+              Prefer crypto? We accept Bitcoin —{" "}
+              <Link
+                href="/bitcoin"
+                className="font-medium text-accent hover:text-accent-bright"
+              >
+                see how it works
+              </Link>
+              .
             </p>
           </div>
         </Reveal>
