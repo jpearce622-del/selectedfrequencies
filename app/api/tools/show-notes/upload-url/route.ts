@@ -1,6 +1,6 @@
 import { handleUpload, type HandleUploadBody } from "@vercel/blob/client";
 
-// Allowed audio/video MIME types Deepgram supports
+// Allowed audio/video MIME types the transcriber accepts
 const ALLOWED_TYPES = [
   "audio/mpeg",
   "audio/mp3",
@@ -38,7 +38,7 @@ export async function POST(request: Request): Promise<Response> {
 
         return {
           allowedContentTypes: ALLOWED_TYPES,
-          maximumSizeInBytes: 500 * 1024 * 1024, // 500 MB
+          maximumSizeInBytes: 100 * 1024 * 1024, // 100 MB — Groq upload ceiling
           tokenPayload: "",
         };
       },

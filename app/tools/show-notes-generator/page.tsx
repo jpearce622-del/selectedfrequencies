@@ -101,7 +101,7 @@ export default function ShowNotesGeneratorPage() {
               {
                 step: "2",
                 title: "Transcription runs",
-                body: "Your episode is transcribed using Deepgram's Nova-2 model — one of the most accurate speech-to-text engines available.",
+                body: "Your episode is transcribed using Whisper large-v3 on Groq — fast, accurate speech-to-text with word-level timing.",
               },
               {
                 step: "3",
@@ -134,10 +134,10 @@ export default function ShowNotesGeneratorPage() {
             <div className="rounded-2xl border border-border bg-fog p-6 text-sm leading-relaxed text-muted">
               <p className="font-medium text-foreground">Data & privacy</p>
               <p className="mt-2">
-                Your uploaded audio is sent to Deepgram for transcription and
-                then deleted — it is not stored by Selected Frequencies beyond
-                the processing window. The generated transcript and show notes
-                are stored against your email address solely to prevent
+                Your uploaded audio is sent to Groq for transcription and then
+                deleted — it is not stored by Selected Frequencies beyond the
+                processing window. The generated transcript and content are
+                stored against your email address solely to prevent
                 re-submission abuse and to deliver your results. Your email
                 will not be sold or shared with third parties.
               </p>

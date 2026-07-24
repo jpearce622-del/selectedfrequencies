@@ -8,7 +8,10 @@ interface UploadZoneProps {
 }
 
 const MAX_DURATION_SECONDS = 30 * 60; // 30 minutes
-const MAX_SIZE_BYTES = 500 * 1024 * 1024; // 500 MB
+// Groq's transcription upload ceiling is ~100 MB; a 30-min audio file is
+// well under it. Large video files won't fit — keep uploads to audio or
+// lightly-compressed video.
+const MAX_SIZE_BYTES = 100 * 1024 * 1024; // 100 MB
 
 const ACCEPTED_TYPES = [
   "audio/mpeg",
@@ -63,7 +66,7 @@ export function UploadZone({ onUploadComplete }: UploadZoneProps) {
 
       // Size check
       if (file.size > MAX_SIZE_BYTES) {
-        setError("File is too large. Maximum size is 500 MB.");
+        setError("File is too large. Maximum size is 100 MB — try an audio file or a compressed recording.");
         return;
       }
 
@@ -78,7 +81,7 @@ export function UploadZone({ onUploadComplete }: UploadZoneProps) {
           return;
         }
       } catch {
-        // If we can't read the duration, let Deepgram handle it server-side
+        // If we can't read the duration, let the transcriber handle it server-side
       }
 
       // Upload to Vercel Blob

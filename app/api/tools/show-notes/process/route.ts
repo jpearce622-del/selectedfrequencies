@@ -1,11 +1,12 @@
 import { del } from "@vercel/blob";
-import { transcribeUrl } from "@/lib/deepgram";
+import { transcribeUrl } from "@/lib/groq";
 import { generateContentSuite } from "@/lib/show-notes-prompt";
 import { DEFAULT_CONFIG } from "@/lib/content-suite-prompt";
 import { checkRateLimit, recordSubmission } from "@/lib/rate-limit";
 import type { ShowConfig } from "@/types/show-notes";
 
-// Allow up to 5 minutes — Deepgram + Claude can take ~2 min for a 30-min episode.
+// Allow up to 5 minutes — transcription + Claude can take a couple of minutes
+// for a 30-min episode. (Groq transcription itself is fast; Claude is the tail.)
 export const maxDuration = 300;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -102,7 +103,7 @@ export async function POST(request: Request): Promise<Response> {
         // 3. Mark as processing
         await recordSubmission(email.trim(), ip, "processing");
 
-        // 4. Transcribe via Deepgram
+        // 4. Transcribe via Groq-hosted Whisper
         send("status", {
           stage: "transcribing",
           message:
