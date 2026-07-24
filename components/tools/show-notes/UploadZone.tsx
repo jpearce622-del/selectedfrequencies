@@ -5,6 +5,7 @@ import { upload } from "@vercel/blob/client";
 
 interface UploadZoneProps {
   onUploadComplete: (blobUrl: string, fileName: string) => void;
+  onReset: () => void;
 }
 
 const MAX_DURATION_SECONDS = 30 * 60; // 30 minutes
@@ -47,11 +48,12 @@ async function getFileDuration(file: File): Promise<number> {
   });
 }
 
-export function UploadZone({ onUploadComplete }: UploadZoneProps) {
+export function UploadZone({ onUploadComplete, onReset }: UploadZoneProps) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [isUploading, setIsUploading] = useState(false);
+  const [uploadedName, setUploadedName] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const handleFile = useCallback(
@@ -98,6 +100,8 @@ export function UploadZone({ onUploadComplete }: UploadZoneProps) {
           },
         });
 
+        setUploadedName(file.name);
+        setIsUploading(false);
         onUploadComplete(blob.url, file.name);
       } catch (err) {
         setError(
@@ -108,6 +112,14 @@ export function UploadZone({ onUploadComplete }: UploadZoneProps) {
     },
     [onUploadComplete]
   );
+
+  const handleReset = useCallback(() => {
+    setUploadedName(null);
+    setError(null);
+    setUploadProgress(0);
+    if (inputRef.current) inputRef.current.value = "";
+    onReset();
+  }, [onReset]);
 
   const onDrop = useCallback(
     (e: React.DragEvent) => {
@@ -123,6 +135,41 @@ export function UploadZone({ onUploadComplete }: UploadZoneProps) {
     const file = e.target.files?.[0];
     if (file) handleFile(file);
   };
+
+  if (uploadedName && !isUploading) {
+    return (
+      <div className="flex items-center gap-4 rounded-2xl border-2 border-accent/30 bg-accent/[0.06] px-5 py-4">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="text-sm font-semibold text-foreground">
+            File ready to transcribe
+          </p>
+          <p className="truncate text-sm text-muted">{uploadedName}</p>
+        </div>
+        <button
+          type="button"
+          onClick={handleReset}
+          className="shrink-0 rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-muted transition-colors hover:border-accent hover:text-accent"
+        >
+          Replace
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-4">

@@ -39,6 +39,9 @@ export async function POST(request: Request): Promise<Response> {
         return {
           allowedContentTypes: ALLOWED_TYPES,
           maximumSizeInBytes: 100 * 1024 * 1024, // 100 MB — Groq upload ceiling
+          // Unique filename per upload — otherwise re-uploading a file with
+          // the same name collides ("blob already exists").
+          addRandomSuffix: true,
           tokenPayload: "",
         };
       },

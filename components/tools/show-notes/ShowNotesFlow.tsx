@@ -86,10 +86,17 @@ export function ShowNotesFlow() {
     setConfig((c) => ({ ...c, ...patch }));
   }, []);
 
+  // Store the uploaded file but stay on the upload/settings screen — the
+  // user advances deliberately with the Continue button, so finishing the
+  // upload never yanks them off the settings they're mid-way through.
   const handleUploadComplete = useCallback((url: string, name: string) => {
     setBlobUrl(url);
     setFileName(name);
-    setStep("email");
+  }, []);
+
+  const handleUploadReset = useCallback(() => {
+    setBlobUrl("");
+    setFileName("");
   }, []);
 
   const handleEmailSubmit = useCallback(
@@ -204,7 +211,19 @@ export function ShowNotesFlow() {
       {step === "upload" && (
         <div className="space-y-6">
           <ConfigPanel config={config} onChange={patchConfig} />
-          <UploadZone onUploadComplete={handleUploadComplete} />
+          <UploadZone
+            onUploadComplete={handleUploadComplete}
+            onReset={handleUploadReset}
+          />
+          {blobUrl && (
+            <button
+              type="button"
+              onClick={() => setStep("email")}
+              className="w-full rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              Continue to transcribe →
+            </button>
+          )}
         </div>
       )}
 
