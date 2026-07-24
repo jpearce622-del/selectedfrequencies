@@ -190,13 +190,16 @@ export function MicScrollStory() {
             height={540}
             className="mx-auto mb-14 w-full max-w-xl rounded-3xl"
           />
-          <div className="space-y-10">
+          <div className="mx-auto flex max-w-md flex-col gap-4 text-left">
             {chapters.map((c) => (
-              <div key={c.text}>
-                <p className="text-xs font-medium tracking-[0.14em] text-amber uppercase">
+              <div
+                key={c.text}
+                className="rounded-2xl border border-white/15 bg-white/[0.07] px-5 py-4 backdrop-blur-md"
+              >
+                <p className="text-[11px] font-semibold tracking-[0.16em] text-amber uppercase">
                   {c.eyebrow}
                 </p>
-                <p className="font-display mt-3 text-2xl font-semibold tracking-tight text-balance sm:text-3xl">
+                <p className="font-display mt-1.5 text-lg font-semibold leading-snug tracking-tight sm:text-xl">
                   {c.text}
                 </p>
               </div>
@@ -234,48 +237,47 @@ export function MicScrollStory() {
           </div>
         )}
 
-        <div className="absolute inset-x-0 bottom-0 px-6 pb-20 sm:px-8 sm:pb-28">
-          <div className="mx-auto max-w-2xl text-center">
-            {chapters.map((c, i) => (
-              <div
-                key={c.text}
-                style={{
-                  opacity: activeChapter === i ? 1 : 0,
-                  transform:
-                    activeChapter === i
-                      ? "scale(1) translateY(0)"
-                      : "scale(0.9) translateY(18px)",
-                  transition:
-                    "opacity 0.5s cubic-bezier(0.22,1.3,0.4,1), transform 0.5s cubic-bezier(0.22,1.3,0.4,1)",
-                  position: i === 0 ? "static" : "absolute",
-                  inset: i === 0 ? undefined : 0,
-                  pointerEvents: activeChapter === i ? "auto" : "none",
-                }}
-              >
-                <p className="text-xs font-medium tracking-[0.14em] text-amber uppercase">
-                  {c.eyebrow}
-                </p>
-                <p className="font-display mt-3 text-2xl font-semibold tracking-tight text-balance text-background sm:text-4xl">
-                  {c.text}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex justify-center gap-2">
-            {chapters.map((_, i) => (
-              <span
-                key={i}
-                className="h-1 rounded-full transition-all duration-300"
-                style={{
-                  width: activeChapter === i ? 24 : 8,
-                  backgroundColor:
-                    activeChapter === i
-                      ? "var(--accent-bright)"
-                      : "rgba(255,255,255,0.25)",
-                }}
-              />
-            ))}
+        {/* Chapters accumulate as they're reached: each block pops in, in
+            order, and stays. The stack is anchored to the bottom and grows
+            upward — newest block enters at the bottom, pushing earlier ones
+            up — so the sequence reads 01, then 01+02, then 01+02+03… */}
+        <div className="absolute inset-x-0 bottom-0 px-6 pb-16 sm:px-10 sm:pb-20">
+          <div className="mx-auto flex max-w-md flex-col sm:mx-0">
+            {chapters.map((c, i) => {
+              const revealed = i <= activeChapter;
+              return (
+                <div
+                  key={c.text}
+                  style={{
+                    display: "grid",
+                    gridTemplateRows: revealed ? "1fr" : "0fr",
+                    opacity: revealed ? 1 : 0,
+                    transition:
+                      "grid-template-rows 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.45s ease",
+                  }}
+                >
+                  <div style={{ overflow: "hidden", minHeight: 0 }}>
+                    <div
+                      className="mt-3 rounded-2xl border border-white/15 bg-white/[0.07] px-5 py-4 shadow-xl shadow-black/40 backdrop-blur-md"
+                      style={{
+                        transform: revealed
+                          ? "translateY(0) scale(1)"
+                          : "translateY(10px) scale(0.98)",
+                        transition:
+                          "transform 0.55s cubic-bezier(0.22,1,0.36,1)",
+                      }}
+                    >
+                      <p className="text-[11px] font-semibold tracking-[0.16em] text-amber uppercase">
+                        {c.eyebrow}
+                      </p>
+                      <p className="font-display mt-1.5 text-lg font-semibold leading-snug tracking-tight text-background sm:text-xl">
+                        {c.text}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
