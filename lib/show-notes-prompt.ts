@@ -1,65 +1,62 @@
 import Anthropic from "@anthropic-ai/sdk";
+import type { ShowConfig } from "@/types/show-notes";
+import {
+  buildSystemPrompt,
+  cleanTranscript,
+  maxTokensFor,
+} from "./content-suite-prompt";
 
-// ⚠️  PLACEHOLDER TEMPLATE — James to replace with his actual proprietary
-//     show notes format (multi-paragraph structure + sponsor/host footer
-//     conventions used for client shows). This generic version demonstrates
-//     the pipeline; it is not the paid-service output quality.
-const SYSTEM_PROMPT = `You are an expert podcast show notes writer for Selected Frequencies, a podcast production studio.
-
-Generate professional, SEO-optimised show notes from the provided transcript. Infer the episode title and guest name from context.
-
-Use exactly this structure (Markdown):
-
-## [Episode Title]
-
-[One punchy sentence — the single most compelling insight or hook from the episode]
-
-### In This Episode
-- [Key topic or moment 1]
-- [Key topic or moment 2]
-- [Key topic or moment 3]
-- [Key topic or moment 4]
-- [Key topic or moment 5]
-
-### Key Takeaways
-- [Actionable insight 1]
-- [Actionable insight 2]
-- [Actionable insight 3]
-
-### Resources & Links Mentioned
-[List any books, tools, companies, websites, or people referenced. If none are clearly mentioned, omit this section entirely.]
-
-### About [Guest Name]
-[2–3 sentences drawn from what the transcript reveals about the guest's background and expertise. If solo episode, write "About This Episode" instead.]
-
----
-*Produced by Selected Frequencies — end-to-end podcast production for expert and thought-leadership shows.*
-
-Rules:
-- Write in third person about the guest, first person about the host where relevant.
-- Keep bullet points tight — one idea each, no sub-bullets.
-- Do not invent facts not supported by the transcript.
-- If the transcript is unclear, use [unclear] rather than guessing.`;
-
-export async function generateShowNotes(transcript: string): Promise<string> {
+/**
+ * Generate the podcast content suite (YouTube titles, thumbnails,
+ * description, chapters, tags, pinned comment, X + LinkedIn posts) from a
+ * transcript and the show configuration.
+ *
+ * Cost controls (all per the prompt spec):
+ * - Instructions go in the cached `system` block — show settings rarely
+ *   change between episodes, so repeat runs hit the prompt cache (~10% of
+ *   normal input cost).
+ * - The transcript (95%+ of input cost) goes raw in the user message, after
+ *   a light filler/whitespace clean-up. Timestamps are preserved.
+ * - max_tokens scales with the number of ticked sections, capped at 2500.
+ * - Streamed accumulation keeps the connection alive so long generations
+ *   don't trip an intermediate idle timeout.
+ */
+export async function generateContentSuite(
+  transcript: string,
+  config: ShowConfig
+): Promise<string> {
   const key = process.env.ANTHROPIC_API_KEY;
   if (!key) throw new Error("ANTHROPIC_API_KEY is not configured");
 
   const client = new Anthropic({ apiKey: key });
 
-  const message = await client.messages.create({
-    model: "claude-haiku-4-5-20251001",
-    max_tokens: 1500,
-    system: SYSTEM_PROMPT,
-    messages: [
+  const systemPrompt = buildSystemPrompt(config);
+  const cleaned = cleanTranscript(transcript);
+  const maxTokens = maxTokensFor(config.sections.length);
+
+  const stream = client.messages.stream({
+    model: "claude-sonnet-4-6",
+    max_tokens: maxTokens,
+    // temperature left at default (1) — copy variety matters more than
+    // determinism; lowering it flattens the marketing copy.
+    system: [
       {
-        role: "user",
-        content: `Please generate show notes for this podcast transcript:\n\n${transcript}`,
+        type: "text",
+        text: systemPrompt,
+        cache_control: { type: "ephemeral" },
       },
     ],
+    messages: [{ role: "user", content: cleaned }],
   });
 
-  const block = message.content[0];
-  if (block.type !== "text") throw new Error("Unexpected Claude response type");
-  return block.text;
+  const message = await stream.finalMessage();
+
+  const text = message.content
+    .filter((block): block is Anthropic.TextBlock => block.type === "text")
+    .map((block) => block.text)
+    .join("")
+    .trim();
+
+  if (!text) throw new Error("Claude returned an empty response");
+  return text;
 }

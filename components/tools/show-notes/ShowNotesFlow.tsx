@@ -1,11 +1,20 @@
 "use client";
 
-import { useState, useCallback } from "react";
-import type { FlowStep, ProcessingStage, ShowNotesResult } from "@/types/show-notes";
+import { useState, useCallback, useEffect } from "react";
+import type {
+  FlowStep,
+  ProcessingStage,
+  GenerationResult,
+  ShowConfig,
+} from "@/types/show-notes";
+import { DEFAULT_CONFIG } from "@/lib/content-suite-prompt";
+import { ConfigPanel } from "./ConfigPanel";
 import { UploadZone } from "./UploadZone";
 import { EmailGate } from "./EmailGate";
 import { ProcessingState } from "./ProcessingState";
 import { ResultsView } from "./ResultsView";
+
+const CONFIG_STORAGE_KEY = "sf_show_config_v1";
 
 interface StreamEvent {
   event: string;
@@ -40,12 +49,42 @@ function parseSSEChunk(chunk: string): StreamEvent[] {
 
 export function ShowNotesFlow() {
   const [step, setStep] = useState<FlowStep>("upload");
+  const [config, setConfig] = useState<ShowConfig>(DEFAULT_CONFIG);
   const [blobUrl, setBlobUrl] = useState("");
   const [fileName, setFileName] = useState("");
   const [stage, setStage] = useState<ProcessingStage>("idle");
   const [stageMessage, setStageMessage] = useState<string | undefined>();
-  const [result, setResult] = useState<ShowNotesResult | null>(null);
+  const [result, setResult] = useState<GenerationResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+
+  // Restore persisted show settings (guests are intentionally not persisted).
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(CONFIG_STORAGE_KEY);
+      if (!raw) return;
+      const saved = JSON.parse(raw) as Partial<ShowConfig>;
+      setConfig((c) => ({ ...c, ...saved, guests: [] }));
+    } catch {
+      // ignore malformed storage
+    }
+  }, []);
+
+  // Persist the stable subset of settings whenever they change.
+  useEffect(() => {
+    const { showName, hostName, language, tone, showType, sections } = config;
+    try {
+      localStorage.setItem(
+        CONFIG_STORAGE_KEY,
+        JSON.stringify({ showName, hostName, language, tone, showType, sections })
+      );
+    } catch {
+      // storage unavailable — non-fatal
+    }
+  }, [config]);
+
+  const patchConfig = useCallback((patch: Partial<ShowConfig>) => {
+    setConfig((c) => ({ ...c, ...patch }));
+  }, []);
 
   const handleUploadComplete = useCallback((url: string, name: string) => {
     setBlobUrl(url);
@@ -63,7 +102,7 @@ export function ShowNotesFlow() {
         const response = await fetch("/api/tools/show-notes/process", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ blobUrl, email }),
+          body: JSON.stringify({ blobUrl, email, config }),
         });
 
         if (!response.body) {
@@ -97,7 +136,7 @@ export function ShowNotesFlow() {
               } else if (event === "complete") {
                 setResult({
                   transcript: data.transcript as string,
-                  showNotes: data.showNotes as string,
+                  content: data.content as string,
                 });
                 setStage("complete");
                 setStep("results");
@@ -117,7 +156,7 @@ export function ShowNotesFlow() {
         setStep("email");
       }
     },
-    [blobUrl]
+    [blobUrl, config]
   );
 
   const handleStartOver = useCallback(() => {
@@ -163,7 +202,10 @@ export function ShowNotesFlow() {
 
       {/* Step content */}
       {step === "upload" && (
-        <UploadZone onUploadComplete={handleUploadComplete} />
+        <div className="space-y-6">
+          <ConfigPanel config={config} onChange={patchConfig} />
+          <UploadZone onUploadComplete={handleUploadComplete} />
+        </div>
       )}
 
       {step === "email" && (
@@ -177,7 +219,7 @@ export function ShowNotesFlow() {
       {step === "results" && result && (
         <ResultsView
           transcript={result.transcript}
-          showNotes={result.showNotes}
+          content={result.content}
           onStartOver={handleStartOver}
         />
       )}

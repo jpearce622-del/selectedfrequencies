@@ -1,36 +1,67 @@
 "use client";
 
 import { useState } from "react";
-import ReactMarkdown from "react-markdown";
 import Link from "next/link";
-import type { ShowNotesResult } from "@/types/show-notes";
+import type { GenerationResult } from "@/types/show-notes";
 
-interface ResultsViewProps extends ShowNotesResult {
+interface ResultsViewProps extends GenerationResult {
   onStartOver: () => void;
+}
+
+interface Section {
+  heading: string;
+  body: string;
+}
+
+// The model outputs numbered sections: "1) YOUTUBE TITLES\n<body>". Split on
+// the numbered-heading pattern, then peel the heading off each chunk's first
+// line. Reliable because the prompt fixes the exact format.
+function parseSections(raw: string): Section[] {
+  return raw
+    .split(/^\s*\d+\)\s+/m)
+    .map((chunk) => chunk.trim())
+    .filter(Boolean)
+    .map((chunk) => {
+      const nl = chunk.indexOf("\n");
+      const heading = (nl === -1 ? chunk : chunk.slice(0, nl)).trim();
+      const body = nl === -1 ? "" : chunk.slice(nl + 1).trim();
+      return { heading, body };
+    });
+}
+
+function CopyButton({ text, label = "Copy" }: { text: string; label?: string }) {
+  const [copied, setCopied] = useState(false);
+  return (
+    <button
+      type="button"
+      onClick={() =>
+        navigator.clipboard.writeText(text).then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+        })
+      }
+      className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+    >
+      {copied ? "Copied!" : label}
+    </button>
+  );
 }
 
 export function ResultsView({
   transcript,
-  showNotes,
+  content,
   onStartOver,
 }: ResultsViewProps) {
   const [transcriptOpen, setTranscriptOpen] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  function handleCopy() {
-    navigator.clipboard.writeText(showNotes).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  }
+  const sections = parseSections(content);
 
   function handleDownload() {
-    const content = `SHOW NOTES\n${"=".repeat(60)}\n\n${showNotes}\n\n${"=".repeat(60)}\nFULL TRANSCRIPT\n${"=".repeat(60)}\n\n${transcript}`;
-    const blob = new Blob([content], { type: "text/plain" });
+    const body = `CONTENT SUITE\n${"=".repeat(60)}\n\n${content}\n\n${"=".repeat(60)}\nFULL TRANSCRIPT\n${"=".repeat(60)}\n\n${transcript}`;
+    const blob = new Blob([body], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "show-notes.txt";
+    a.download = "content-suite.txt";
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -38,42 +69,48 @@ export function ResultsView({
   return (
     <div className="space-y-8">
       {/* Success header */}
-      <div className="rounded-2xl bg-fog px-6 py-5 text-center">
-        <p className="text-sm font-semibold uppercase tracking-widest text-accent">
-          Done
-        </p>
-        <p className="mt-1 text-base font-medium text-foreground">
-          Your show notes are ready
-        </p>
+      <div className="flex flex-col items-center justify-between gap-4 rounded-2xl bg-fog px-6 py-5 sm:flex-row sm:text-left">
+        <div className="text-center sm:text-left">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+            Done
+          </p>
+          <p className="mt-1 text-base font-medium text-foreground">
+            Your content suite is ready
+          </p>
+        </div>
+        <div className="flex gap-2">
+          <CopyButton text={content} label="Copy all" />
+          <button
+            type="button"
+            onClick={handleDownload}
+            className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+          >
+            Download .txt
+          </button>
+        </div>
       </div>
 
-      {/* Show notes */}
+      {/* Section cards */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between gap-4">
-          <h3 className="font-display text-lg font-semibold tracking-tight">
-            Show Notes
-          </h3>
-          <div className="flex gap-2">
-            <button
-              type="button"
-              onClick={handleCopy}
-              className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
-            >
-              {copied ? "Copied!" : "Copy text"}
-            </button>
-            <button
-              type="button"
-              onClick={handleDownload}
-              className="rounded-lg border border-border px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
-            >
-              Download .txt
-            </button>
+        {sections.map((section, i) => (
+          <div
+            key={i}
+            className="overflow-hidden rounded-2xl border border-border bg-surface"
+          >
+            <div className="flex items-center justify-between gap-4 border-b border-border bg-fog/60 px-5 py-3">
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-muted">
+                {section.heading}
+              </h3>
+              <CopyButton
+                text={`${section.heading}\n${section.body}`}
+                label="Copy"
+              />
+            </div>
+            <pre className="overflow-x-auto whitespace-pre-wrap px-5 py-4 font-sans text-sm leading-relaxed text-foreground">
+              {section.body}
+            </pre>
           </div>
-        </div>
-
-        <div className="prose prose-sm max-w-none rounded-2xl border border-border bg-surface p-6 leading-relaxed">
-          <ReactMarkdown>{showNotes}</ReactMarkdown>
-        </div>
+        ))}
       </div>
 
       {/* Transcript (collapsible) */}
@@ -99,7 +136,7 @@ export function ResultsView({
         </button>
 
         {transcriptOpen && (
-          <div className="max-h-96 overflow-y-auto rounded-xl border border-border bg-fog p-5 text-sm leading-relaxed text-muted">
+          <div className="max-h-96 overflow-y-auto whitespace-pre-wrap rounded-xl border border-border bg-fog p-5 text-sm leading-relaxed text-muted">
             {transcript}
           </div>
         )}
@@ -111,9 +148,9 @@ export function ResultsView({
           This is a single-pass draft.
         </p>
         <p className="mt-2 text-sm leading-relaxed opacity-80">
-          The full production service includes polished show notes, chapter
-          timestamps, transcript review, YouTube assets, and distribution-ready
-          copy — every week, for every episode.
+          The full production service includes editorial polish, chapter
+          timestamps, transcript review, and distribution-ready assets — every
+          week, for every episode.
         </p>
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Link

@@ -6,9 +6,9 @@ import { ShowNotesFlow } from "@/components/tools/show-notes/ShowNotesFlow";
 import { ExampleOutput } from "@/components/tools/show-notes/ExampleOutput";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Free Podcast Show Notes Generator",
+  title: "Free Podcast Show Notes & Content Generator",
   description:
-    "Upload a podcast episode and get a full transcript plus AI-drafted show notes in minutes. Free tool from Selected Frequencies — no account, no subscription.",
+    "Upload a podcast episode and get a full transcript plus AI-drafted YouTube titles, descriptions, chapters, tags and social posts in minutes. Free tool from Selected Frequencies — no account, no subscription.",
   path: "/tools/show-notes-generator",
 });
 
@@ -28,12 +28,13 @@ export default function ShowNotesGeneratorPage() {
             delay={70}
             className="font-display mx-auto mt-4 max-w-3xl text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl"
           >
-            Podcast Show Notes Generator
+            Podcast Content Generator
           </Reveal>
           <Reveal delay={130} className="mx-auto mt-5 max-w-xl">
             <p className="text-lg leading-relaxed text-muted">
-              Upload an episode, enter your email, and get back a full
-              transcript plus draft show notes — in a few minutes, for free.
+              Upload an episode and get back a full transcript plus a ready-to-post
+              content suite — YouTube titles, description, chapters, tags, and
+              social posts — in a few minutes, for free.
             </p>
           </Reveal>
 
@@ -42,8 +43,8 @@ export default function ShowNotesGeneratorPage() {
             {[
               "Audio & video files",
               "Up to 30 minutes",
-              "Transcript included",
-              "Copy or download",
+              "Titles, chapters & tags",
+              "Social posts included",
             ].map((label) => (
               <span
                 key={label}
@@ -71,8 +72,9 @@ export default function ShowNotesGeneratorPage() {
               What you&rsquo;ll get
             </h2>
             <p className="mt-2 max-w-xl text-base text-muted">
-              A real transcript of your episode plus structured show notes
-              ready to publish — generated from your audio, not a template.
+              A real transcript of your episode plus a full content suite ready
+              to publish — titles, description, chapters, tags, and social
+              posts, generated from your audio, not a template.
             </p>
           </Reveal>
           <Reveal delay={80} className="mt-8">
@@ -103,8 +105,8 @@ export default function ShowNotesGeneratorPage() {
               },
               {
                 step: "3",
-                title: "Show notes are drafted",
-                body: "Claude reads the transcript and generates structured show notes: summary, key topics, takeaways, and resources mentioned.",
+                title: "Your content is drafted",
+                body: "Claude reads the transcript and generates your content suite: YouTube titles, description, chapters, tags, a pinned comment, and X + LinkedIn posts — tuned to the settings you choose.",
               },
             ].map((item, i) => (
               <Reveal key={item.step} delay={i * 80}>

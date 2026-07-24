@@ -1,7 +1,9 @@
 import { del } from "@vercel/blob";
 import { transcribeUrl } from "@/lib/deepgram";
-import { generateShowNotes } from "@/lib/show-notes-prompt";
+import { generateContentSuite } from "@/lib/show-notes-prompt";
+import { DEFAULT_CONFIG } from "@/lib/content-suite-prompt";
 import { checkRateLimit, recordSubmission } from "@/lib/rate-limit";
+import type { ShowConfig } from "@/types/show-notes";
 
 // Allow up to 5 minutes — Deepgram + Claude can take ~2 min for a 30-min episode.
 export const maxDuration = 300;
@@ -13,11 +15,53 @@ function sseMessage(event: string, data: Record<string, unknown>): Uint8Array {
   return new TextEncoder().encode(text);
 }
 
+// Merge the client-supplied config over defaults and clamp anything
+// unbounded — never trust the shape or size of the incoming object.
+function normalizeConfig(raw: unknown): ShowConfig {
+  const c = (raw ?? {}) as Partial<ShowConfig>;
+  const guests = Array.isArray(c.guests)
+    ? c.guests
+        .filter((g): g is string => typeof g === "string")
+        .map((g) => g.slice(0, 100))
+        .slice(0, 4)
+    : DEFAULT_CONFIG.guests;
+  const sections = Array.isArray(c.sections)
+    ? c.sections.filter((s): s is ShowConfig["sections"][number] =>
+        DEFAULT_CONFIG.sections.includes(
+          s as ShowConfig["sections"][number]
+        )
+      )
+    : DEFAULT_CONFIG.sections;
+
+  return {
+    showName: typeof c.showName === "string" ? c.showName.slice(0, 120) : "",
+    hostName: typeof c.hostName === "string" ? c.hostName.slice(0, 120) : "",
+    guests,
+    language: c.language === "US" ? "US" : "UK",
+    tone:
+      c.tone === "punchy" ||
+      c.tone === "educational" ||
+      c.tone === "professional"
+        ? c.tone
+        : "warm",
+    showType:
+      c.showType === "finance" ||
+      c.showType === "health" ||
+      c.showType === "legal"
+        ? c.showType
+        : "general",
+    sections: sections.length ? sections : DEFAULT_CONFIG.sections,
+  };
+}
+
 export async function POST(request: Request): Promise<Response> {
-  const { blobUrl, email } = (await request.json()) as {
+  const body = (await request.json()) as {
     blobUrl: string;
     email: string;
+    config?: unknown;
   };
+  const { blobUrl, email } = body;
+  const config = normalizeConfig(body.config);
 
   const ip =
     request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
@@ -80,21 +124,21 @@ export async function POST(request: Request): Promise<Response> {
           return;
         }
 
-        // 5. Generate show notes via Claude
+        // 5. Generate the content suite via Claude
         send("status", {
           stage: "generating",
-          message: "Writing your show notes…",
+          message: "Writing your content suite…",
         });
 
-        let showNotes: string;
+        let content: string;
         try {
-          showNotes = await generateShowNotes(transcript);
+          content = await generateContentSuite(transcript, config);
         } catch (err) {
           await recordSubmission(email.trim(), ip, "failed", {
             error: String(err),
           });
           send("error", {
-            message: "Show notes generation failed. Please try again.",
+            message: "Content generation failed. Please try again.",
           });
           controller.close();
           return;
@@ -103,7 +147,7 @@ export async function POST(request: Request): Promise<Response> {
         // 6. Save result + delete blob
         await recordSubmission(email.trim(), ip, "complete", {
           transcript,
-          showNotes,
+          showNotes: content,
         });
 
         try {
@@ -113,7 +157,7 @@ export async function POST(request: Request): Promise<Response> {
         }
 
         // 7. Return results
-        send("complete", { transcript, showNotes });
+        send("complete", { transcript, content });
       } catch (err) {
         console.error("Show notes processing error:", err);
         send("error", { message: "An unexpected error occurred. Please try again." });
