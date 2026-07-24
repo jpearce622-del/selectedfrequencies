@@ -22,11 +22,6 @@ export const collaectionRadio: CaseStudy = {
     "Sound mastering",
     "Episode packaging for platform distribution",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Collaection Radio]",
-  },
   links: [],
   logo: "/images/clients/felix-jaehn-collection-radio.jpg",
   logoAlt: "Collaection Radio by Felix Jaehn cover art",

@@ -22,11 +22,6 @@ export const biohackingBeauty: CaseStudy = {
     "Sound cleanup & mixing",
     "Episode description writing",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — Amitay Eshel or Anastasia Khodzhaeva, Young Goose]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/4ekyDFzsglp9ACO4uFZeun" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/biohacking-beauty-the-anti-aging-skincare-podcast/id1552026927" },

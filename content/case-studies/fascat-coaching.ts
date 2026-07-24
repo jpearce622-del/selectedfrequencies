@@ -23,11 +23,6 @@ export const fascatCoaching: CaseStudy = {
     "Sound cleanup & mixing",
     "Episode description writing",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, FasCat Coaching]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/2dCwiPGkiv3VJuSeJN957S" },
   ],

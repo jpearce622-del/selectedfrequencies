@@ -21,11 +21,6 @@ export const embraceYourReal: CaseStudy = {
     "Sound cleanup & mixing",
     "Episode description writing",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — Julie Ledbetter, Embrace Your Real]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/5R8iILZKXWALGZ6FjSWVXI" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/embrace-your-real/id1498254607" },

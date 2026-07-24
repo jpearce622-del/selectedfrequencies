@@ -22,11 +22,6 @@ export const oneWorldRadio: CaseStudy = {
     "Sound mastering",
     "Episode packaging for platform distribution",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, One World Radio]",
-  },
   links: [
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/tomorrowland-friendship-mix/id1482399861" },
   ],

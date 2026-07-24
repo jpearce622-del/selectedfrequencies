@@ -22,10 +22,6 @@ export const bitcoinCollective: CaseStudy = {
   ],
   outcome:
     "204 episodes since 2021, released weekly without a gap, holding a 4.8/5 rating on Apple Podcasts.",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, The Bitcoin Collective]",
-  },
   links: [
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-bitcoin-collective/id1561573613" },
     { label: "Website", url: "https://bitcoincollective.co/bitcoin-podcast-episodes/" },

@@ -6,7 +6,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Services",
+  title: "Podcast Editing & Production Services",
   description:
     "Full production, editing-only, show notes and chapters, YouTube and social asset creation, and launch packages for new shows.",
   path: "/services",
@@ -98,9 +98,9 @@ export default function ServicesPage() {
               Pricing
             </p>
             <p className="mt-3 max-w-2xl text-sm leading-6 text-muted">
-              [PLACEHOLDER — decide whether to publish package pricing/ranges
-              here or keep this section enquiry-based. If publishing, structure
-              as a simple 3-tier table matching the packages above.]
+              Every show is different, so pricing is tailored to what you need —
+              from a single edit to full end-to-end production. Tell me about
+              your show and I&apos;ll send a quote.
             </p>
           </div>
         </Reveal>

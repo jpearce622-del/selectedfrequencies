@@ -15,15 +15,9 @@ export const strategyAtScale: CaseStudy = {
   hostName: "Kaihan Krippendorff",
   oneLiner:
     "Produced with Scaling Up and the Growth Institute, Strategy at Scale interviews founders who've actually scaled — including Veeva Systems co-founder Matt Wallach, who took the company to nearly $2.75 billion in annual revenue. Extracting a repeatable strategy from a story like that takes an edit as sharp as the guest.",
-  services: [
-    "[PLACEHOLDER — service scope not yet confirmed for this client]",
-  ],
+  services: [],
   outcome:
     "Guests include Veeva Systems co-founder Matt Wallach, who scaled the company to a public business generating close to $2.75B in annual revenue.",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Outthinkers Network]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/3dcIfmlCtQd8nVQ31SLeiy" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/strategy-at-scale/id1780820829" },

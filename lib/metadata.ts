@@ -5,7 +5,7 @@ export const siteConfig = {
   // TODO: confirm final production domain before launch
   url: "https://selectedfrequencies.com",
   positioning:
-    "Podcast production for expert and thought-leadership shows — founders, coaches, and finance voices.", // TODO: pick from home page headline options
+    "Selected Frequencies is a full-service podcast editing and production studio — editing, show notes, and distribution, end to end — with deep experience in Bitcoin and finance shows.",
 };
 
 export function buildMetadata({

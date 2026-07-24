@@ -21,11 +21,6 @@ export const brohug: CaseStudy = {
     "Sound mastering",
     "Short-form clips for social",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. release count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Brohug]",
-  },
   links: [],
   logo: "/images/clients/brohug.png",
   logoAlt: "Brohug promotional photo",

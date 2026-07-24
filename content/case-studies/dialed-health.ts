@@ -22,11 +22,6 @@ export const dialedHealth: CaseStudy = {
     "Sound cleanup & mixing",
     "Episode description writing",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Dialed Health]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/4yNtSgv7jAjuatn4KuQFMl" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/dialed-health/id1480709469" },

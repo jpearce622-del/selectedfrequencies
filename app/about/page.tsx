@@ -9,7 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = buildMetadata({
   title: "About",
   description:
-    "Selected Frequencies — eight years producing podcasts, now specializing in expert and thought-leadership shows.",
+    "Selected Frequencies is a full-service podcast editing and production studio, founded by James Pearce in 2019 — thousands of episodes produced, with deep experience in Bitcoin and finance shows.",
   path: "/about",
 });
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
             <Reveal>
               <Image
                 src="/images/about/headshot.svg" // TODO: replace with real headshot
-                alt="[PLACEHOLDER — headshot alt text]"
+                alt="James Pearce, founder of Selected Frequencies"
                 width={480}
                 height={480}
                 className="w-full max-w-xs rounded-2xl border border-border object-cover"
@@ -42,11 +42,29 @@ export default function AboutPage() {
               >
                 The studio behind the shows.
               </Reveal>
-              <Reveal delay={160} className="mt-6 max-w-xl">
-                <p className="text-lg leading-relaxed text-muted">
-                  [PLACEHOLDER — background: how the studio started, your
-                  path over the last 8 years, and the team you&apos;re
-                  building as Selected Frequencies grows.]
+              <Reveal delay={160} className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-muted">
+                <p>
+                  Selected Frequencies is a full-service podcast production
+                  company, founded in 2019 by me, James Pearce.
+                </p>
+                <p>
+                  My route into audio began in London in 2017. I started as a
+                  subcontractor for Noisehouse, producing mixes that played on
+                  BBC Radio 1, and was commissioned by Universal Music to produce
+                  music for their artists — much of it under the Selected
+                  Frequencies name. Those early years taught me the thing I still
+                  build everything around: production isn&apos;t about the gear or
+                  the software, it&apos;s about protecting the listener&apos;s
+                  attention from the first second to the last.
+                </p>
+                <p>
+                  That work ran deep into electronic music — a weekly role on The
+                  Martin Garrix Show handling streaming, a mix produced for NERVO,
+                  and collaborations across labels and artists. As podcasting
+                  grew, I grew with it, and Selected Frequencies became what it is
+                  today. Since then I&apos;ve produced thousands of episodes for
+                  shows around the world, heard by millions of listeners across
+                  every major platform.
                 </p>
               </Reveal>
             </div>
@@ -57,13 +75,30 @@ export default function AboutPage() {
       <Section className="border-t border-border">
         <Reveal>
           <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-            Why expert and thought-leadership podcasts, now
+            Who I work with
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-muted">
-            [PLACEHOLDER — the reasoning behind repositioning from broad
-            &quot;any podcast&quot; work toward founders, coaches, and finance
-            voices building authority through audio.]
-          </p>
+          <div className="mt-5 max-w-2xl space-y-4 text-base leading-7 text-muted">
+            <p>
+              I take on all kinds of shows — interview, solo, narrative,
+              business, and everything in between. If you&apos;ve got a podcast
+              and want it to sound its best, that&apos;s the job. Selected
+              Frequencies is a full-service editing and production studio, and
+              I&apos;m happy working across any topic or format.
+            </p>
+            <p>
+              That said, some of my favourite work sits in Bitcoin and finance. I
+              produce a number of crypto and investing shows, and it&apos;s a
+              space I&apos;ve come to really enjoy — the ideas are genuinely
+              interesting, the audiences are sharp, and the hosts care about
+              getting it right. So while the door is open to any show, Bitcoin and
+              finance is where I&apos;ve built the deepest track record.
+            </p>
+            <p>
+              Whatever the subject, the offer is the same: hand over the edit, the
+              show notes, the distribution — as much or as little as you need —
+              and put your energy into the ideas instead of the timeline.
+            </p>
+          </div>
         </Reveal>
       </Section>
 
@@ -75,17 +110,32 @@ export default function AboutPage() {
           <ul className="mt-5 space-y-2.5 text-base text-muted">
             <li className="flex items-start gap-2.5">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              8 years producing podcasts, 2019–present
+              Founded Selected Frequencies in 2019; working in professional audio
+              since 2017
             </li>
             <li className="flex items-start gap-2.5">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              [PLACEHOLDER — client roster scale, episode count, or other
-              credibility markers you want to lead with]
+              Thousands of episodes produced, with millions of listens across
+              platforms
             </li>
             <li className="flex items-start gap-2.5">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              [PLACEHOLDER — if you want to mention the contractor
-              network/team as it grows, add it here]
+              Produced mixes broadcast on BBC Radio 1 as a subcontractor for
+              Noisehouse
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              Commissioned by Universal Music to produce music for its artists
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              Weekly role on The Martin Garrix Show (streaming); mix produced for
+              NERVO
+            </li>
+            <li className="flex items-start gap-2.5">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              Full-service editing and production for any show, with deep
+              experience in Bitcoin and finance
             </li>
           </ul>
         </Reveal>

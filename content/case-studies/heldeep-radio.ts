@@ -23,11 +23,6 @@ export const heldeepRadio: CaseStudy = {
     "Sound mastering",
     "Episode packaging for platform distribution",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Heldeep Radio]",
-  },
   links: [
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/oliver-heldens-presents-heldeep-radio/id1236253646" },
   ],

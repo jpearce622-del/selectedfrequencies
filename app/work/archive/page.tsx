@@ -10,7 +10,7 @@ import { archiveItems } from "@/content/archive";
 export const metadata: Metadata = buildMetadata({
   title: "Archive",
   description:
-    "Earlier production work — podcasts, radio, and EDM — from before Selected Frequencies focused on expert and thought-leadership shows.",
+    "Earlier production work — podcasts, radio, and EDM — from the first years of Selected Frequencies.",
   path: "/work/archive",
 });
 
@@ -20,7 +20,7 @@ export default function WorkArchivePage() {
       <PageHeader
         eyebrow="Archive"
         title="Where it started."
-        intro="From mindset and health podcasts to EDM radio shows — earlier production work, before the focus narrowed to expert and thought-leadership podcasts."
+        intro="From mindset and health podcasts to EDM radio shows — earlier production work from the studio's first years."
       />
 
       <Section className="border-t border-border">

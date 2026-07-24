@@ -24,10 +24,6 @@ export const theLivelyShow: CaseStudy = {
   ],
   outcome:
     "500+ episodes and 14 million+ downloads since the show launched in 2014, with guests including Elizabeth Gilbert, Gary Vaynerchuk, and Brené Brown.",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — Jess Lively, The Lively Show]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/6rpypdj7FZJ5Zij90bE74c" },
   ],

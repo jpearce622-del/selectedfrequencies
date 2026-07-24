@@ -19,12 +19,6 @@ export const bitcoinAndTheLongGame: CaseStudy = {
     "Short-form clips for social",
     "Distribution across platforms",
   ],
-  outcome:
-    "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title]",
-  },
   links: [
     { label: "Spotify", url: "#" }, // TODO: real link — not confirmed via search
     { label: "Apple Podcasts", url: "#" }, // TODO: real link — not confirmed via search

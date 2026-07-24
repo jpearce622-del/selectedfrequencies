@@ -9,7 +9,7 @@ import { clients } from "@/content/clients";
 export const metadata: Metadata = buildMetadata({
   title: "Work",
   description:
-    "Case studies from expert and thought-leadership podcasts produced by Selected Frequencies.",
+    "Case studies from podcasts produced by Selected Frequencies — full-service editing and production, with deep experience in Bitcoin and finance shows.",
   path: "/work",
 });
 
@@ -19,7 +19,7 @@ export default function WorkIndexPage() {
       <PageHeader
         eyebrow="Selected work"
         title="Shows we produce for."
-        intro="A selection of the expert and thought-leadership shows we produce — from genetics research to bitcoin and career change."
+        intro="A selection of the shows we produce — from genetics research to bitcoin and career change."
       />
 
       <Section className="border-t border-border">

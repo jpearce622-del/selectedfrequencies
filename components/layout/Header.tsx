@@ -16,6 +16,12 @@ const navLinks = [
 
 const toolsItems = [
   {
+    href: "/podcast-launch-roadmap",
+    label: "Podcast Launch Roadmap",
+    badge: "Free",
+    description: "A tickable 9-step checklist to launch your show",
+  },
+  {
     href: "/tools/show-notes-generator",
     label: "Show Notes Generator",
     badge: "Free",

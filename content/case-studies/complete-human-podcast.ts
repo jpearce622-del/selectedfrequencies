@@ -22,11 +22,6 @@ export const completeHumanPodcast: CaseStudy = {
     "Sound cleanup & mixing",
     "Episode description writing",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — Janna Breslin or Evan DeMarco, Complete Human]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/4XuwzwZINKitjWzYgZJImq" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/complete-human/id1493565947" },

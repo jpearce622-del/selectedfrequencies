@@ -18,8 +18,8 @@ export function Footer() {
         <div>
           <Logo variant="light" size="md" />
           <p className="mt-4 max-w-sm text-sm text-background/55">
-            End-to-end podcast production for expert and thought-leadership
-            shows — founders, coaches, and finance voices.
+            Full-service podcast editing and production — for any show, with
+            deep experience in Bitcoin and finance.
           </p>
         </div>
 

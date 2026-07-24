@@ -24,10 +24,6 @@ export const realEstateMindset: CaseStudy = {
   ],
   outcome:
     "170+ episodes across more than three years, interviewing successful property investors on the mindset and strategy behind their success before the show concluded its run.",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — Eric Nelson, The Real Estate Mindset]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/1uLOJQhkC98skIm3KQTHKE" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-real-estate-mindset/id1560387078" },

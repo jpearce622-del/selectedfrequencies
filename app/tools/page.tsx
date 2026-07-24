@@ -13,6 +13,14 @@ export const metadata: Metadata = buildMetadata({
 
 const tools = [
   {
+    href: "/podcast-launch-roadmap",
+    label: "Podcast Launch Roadmap",
+    badge: "Free",
+    description:
+      "A tickable, 9-step checklist that walks you from idea to published episode — with tips, costs, and time estimates for each step.",
+    tags: ["Getting Started", "Checklist", "Launch"],
+  },
+  {
     href: "/tools/show-notes-generator",
     label: "Show Notes Generator",
     badge: "Free",

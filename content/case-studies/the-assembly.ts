@@ -18,12 +18,6 @@ export const theAssembly: CaseStudy = {
     "Branded intro clip added to the top of every episode",
     "Custom music bed at the open and close",
   ],
-  outcome:
-    "[PLACEHOLDER — results/outcome copy, e.g. consistency of weekly release, listener growth]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Assemble You]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/4iu3PejaNtPJuDSNMRlMVV" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/gb/podcast/the-assembly/id1682879103" },

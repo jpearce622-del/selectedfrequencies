@@ -22,12 +22,6 @@ export const careerChangeDiaries: CaseStudy = {
     "Short-form clips for social",
     "Distribution across platforms",
   ],
-  outcome:
-    "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, Career Change Coach]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/11UsIHAsAR20UZPS78r01N" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-career-change-diaries/id1752092843" },

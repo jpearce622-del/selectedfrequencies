@@ -19,11 +19,6 @@ export const locTax: CaseStudy = {
     "Sound cleanup & mixing",
     "Episode description writing",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, loc.tax]",
-  },
   links: [],
   logo: "/images/clients/loc-tax.png",
   logoAlt: "loc.tax cover art",

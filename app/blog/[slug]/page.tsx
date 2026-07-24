@@ -320,8 +320,9 @@ export default async function BlogPostPage({
           </Reveal>
           <Reveal delay={120} className="mx-auto mt-4 max-w-xl">
             <p className="text-base leading-relaxed text-background/70">
-              We produce expert and thought-leadership podcasts end to end —
-              editing, show notes, and distribution handled.
+              We&apos;re a full-service podcast editing and production studio —
+              editing, show notes, and distribution, end to end, with deep
+              experience in Bitcoin and finance shows.
             </p>
           </Reveal>
           <Reveal delay={200} className="mt-8 flex justify-center">

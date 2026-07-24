@@ -22,11 +22,6 @@ export const tomorrowland: CaseStudy = {
     "Sound mastering",
     "Episode packaging for platform distribution",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. release count, reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Tomorrowland]",
-  },
   links: [{ label: "Website", url: "https://www.tomorrowland.com" }],
   logo: "/images/clients/tomorrowland-2.jpeg",
   logoAlt: "Tomorrowland official crest artwork",

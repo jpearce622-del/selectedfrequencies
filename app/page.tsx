@@ -12,17 +12,19 @@ import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import { MicScrollStory } from "@/components/home/MicScrollStory";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
-export const metadata: Metadata = buildMetadata({
-  title: "Podcast Production for Expert & Thought-Leadership Shows",
-  description:
-    "Selected Frequencies produces expert and thought-leadership podcasts for founders, coaches, and finance voices — editing, show notes, and distribution, end to end.",
-  path: "/",
-});
-
-// HEADLINE OPTIONS — pick one, or ask for more. Currently live: Option B.
-// A. "Bringing expert voices to the world."
-// B. "Podcasts that sound as credible as you are." <- live
-// C. "End-to-end production for people worth listening to."
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: "Full-Service Podcast Editing & Production",
+    description:
+      "Selected Frequencies is a full-service podcast editing and production studio — editing, show notes, and distribution, end to end — with deep experience in Bitcoin and finance shows.",
+    path: "/",
+  }),
+  // The root segment doesn't apply the layout's "%s | Selected Frequencies"
+  // template to its own title, so set the full document title explicitly.
+  title: {
+    absolute: "Full-Service Podcast Editing & Production | Selected Frequencies",
+  },
+};
 
 const whatIDo = [
   {
@@ -55,7 +57,7 @@ const whatIDo = [
 const stats = [
   { value: "8 yrs", label: "Producing podcasts since 2019" },
   { value: "End-to-end", label: "From raw audio to promoted episode" },
-  { value: "B2B", label: "Expert & thought-leadership focus" },
+  { value: "Any genre", label: "Bitcoin & finance a speciality" },
 ];
 
 export default function Home() {
@@ -82,13 +84,13 @@ export default function Home() {
             delay={70}
             className="font-display mx-auto mt-4 max-w-4xl text-5xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
           >
-            Podcasts that sound as credible as you are.
+            Podcasts that sound the part.
           </Reveal>
           <Reveal delay={140} className="mx-auto mt-6 max-w-2xl">
             <p className="text-xl leading-relaxed text-muted">
-              End-to-end production for founders, coaches, and finance voices —
-              editing, show notes, and distribution, handled so you can focus on
-              the ideas.
+              Full-service editing and production for any show — editing, show
+              notes, and distribution, handled so you can focus on the ideas.
+              Deep experience in Bitcoin and finance podcasts.
             </p>
           </Reveal>
           <Reveal
@@ -123,7 +125,7 @@ export default function Home() {
       <section className="border-t border-border py-14">
         <Container>
           <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
-            Companies we&apos;ve partnered with
+            We&apos;ve worked with
           </p>
           <CompanyLogos />
         </Container>

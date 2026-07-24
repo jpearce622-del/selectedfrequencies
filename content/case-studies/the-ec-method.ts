@@ -22,11 +22,6 @@ export const theEcMethod: CaseStudy = {
     "Sound cleanup & mixing",
     "Episode description writing",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — Chloe & Emma, The EC Method]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/09xSxSkNik87YljpT3U90V" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/gb/podcast/the-ec-method/id1503997038" },

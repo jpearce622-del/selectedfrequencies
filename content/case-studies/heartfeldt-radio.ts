@@ -21,11 +21,6 @@ export const heartfeldtRadio: CaseStudy = {
     "Sound mastering",
     "Episode packaging for platform distribution",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Heartfeldt Radio]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/4Zn4i73CnizWiwZs9XjkcH" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/in/podcast/heartfeldt-radio-by-sam-feldt/id1790408466" },

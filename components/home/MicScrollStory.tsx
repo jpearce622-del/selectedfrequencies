@@ -29,7 +29,7 @@ const chapters = [
   },
   {
     eyebrow: "05 — Focus",
-    text: "Built for founders, coaches, and finance voices building real authority.",
+    text: "Any show, any topic — with deep experience in Bitcoin and finance.",
   },
   {
     eyebrow: "06 — Next",

@@ -17,10 +17,6 @@ export const geneticsPodcast: CaseStudy = {
   services: ["Full audio & video episode edit", "Short-form clips for social"],
   outcome:
     "248 episodes and counting, 880,000+ downloads across 40 countries — the highest-ranked genetics podcast on Google, covering everything from gene therapy to AI-driven health data.",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Sano Genetics]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/2VT2teij4xBhPMNDYoZ7Ur" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-genetics-podcast/id1462418412" },

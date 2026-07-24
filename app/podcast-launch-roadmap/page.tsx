@@ -216,9 +216,9 @@ export default function PodcastLaunchRoadmapPage() {
           <Reveal delay={120} className="mx-auto mt-5 max-w-2xl">
             <p className="text-base leading-relaxed text-background/70">
               Editing, show notes, and promotion are what quietly eat a
-              podcaster's week. Selected Frequencies produces expert and
-              thought-leadership shows end to end — so you can focus on the
-              ideas, not the timeline.
+              podcaster's week. Selected Frequencies is a full-service editing
+              and production studio — we handle any show end to end, so you can
+              focus on the ideas, not the timeline.
             </p>
           </Reveal>
           <Reveal

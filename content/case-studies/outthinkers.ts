@@ -14,15 +14,9 @@ export const outthinkers: CaseStudy = {
   hostName: "Kaihan Krippendorff",
   oneLiner:
     "Kaihan Krippendorff's weekly growth-strategy show has hosted Eric Ries (The Lean Startup), Coach's Lew Frankfort, and Experience Economy co-author Joe Pine — reaching a global network of Chief Strategy and Innovation Officers from Fortune 500 companies. A show built for that room can't sound like it was cut in a hurry.",
-  services: [
-    "[PLACEHOLDER — service scope not yet confirmed for this client]",
-  ],
+  services: [],
   outcome:
     "Guests have included Eric Ries, Coach's Lew Frankfort, and Experience Economy co-author Joe Pine — part of Outthinker's global network of Chief Strategy and Innovation Officers.",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Outthinkers Network]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/0P9pQn0uYEXE7bk4FHJrLy" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/outthinkers/id1561681365" },

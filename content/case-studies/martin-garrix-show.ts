@@ -22,11 +22,6 @@ export const martinGarrixShow: CaseStudy = {
     "Sound mastering",
     "Episode packaging for platform distribution",
   ],
-  outcome: "[PLACEHOLDER — results/outcome copy, e.g. episode count, growth, audience reach]",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, The Martin Garrix Show]",
-  },
   links: [
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-martin-garrix-show/id1132914986" },
   ],

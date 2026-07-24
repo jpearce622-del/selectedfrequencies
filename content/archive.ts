@@ -7,8 +7,8 @@ export interface ArchiveItem {
 
 // Earlier production work (pre-repositioning), pulled from the old Wix
 // site's gallery — general podcasts plus EDM/radio production. Kept
-// separate from the flagship case studies on /work, which focus on
-// current expert & thought-leadership clients. Most items below now
+// separate from the flagship case studies on /work, which feature the
+// studio's current podcast clients. Most items below now
 // link through to a full /work/[slug] case study page (see
 // content/case-studies/) rather than being logo-only — the handful
 // without a slug don't have case study copy yet.

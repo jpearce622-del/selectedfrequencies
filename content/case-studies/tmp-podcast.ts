@@ -23,10 +23,6 @@ export const tmpPodcast: CaseStudy = {
   ],
   outcome:
     "113 episodes and counting — a back catalogue of mindset and mental-performance conversations for an audience of coaches, PTs, and gym owners.",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, TMP Podcast]",
-  },
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/6YjwvuD3oY6v5PTf5unlDE" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/gb/podcast/total-mental-performance/id1596646125" },

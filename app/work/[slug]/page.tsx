@@ -40,6 +40,16 @@ export default async function CaseStudyPage({
   const study = getCaseStudyBySlug(slug);
   if (!study) notFound();
 
+  // Only surface copy that's real — never render leftover placeholder
+  // markers publicly. Real quotes/outcomes/services can be added to the data
+  // later and will appear automatically.
+  const isReal = (value?: string) =>
+    Boolean(value && !value.includes("PLACEHOLDER"));
+  const services = study.services.filter(isReal);
+  const showOutcome = isReal(study.outcome);
+  const showTestimonial =
+    study.testimonial && isReal(study.testimonial.quote);
+
   return (
     <>
       {/* Hero — themed to the show's own cover art, Spotify show-page
@@ -144,14 +154,16 @@ export default async function CaseStudyPage({
         </Section>
       )}
 
+      {(services.length > 0 || showOutcome) && (
       <Section className="border-t border-border">
         <div className="grid gap-12 sm:grid-cols-2">
+          {services.length > 0 && (
           <Reveal>
             <h2 className="font-display text-2xl font-semibold tracking-tight">
               What we do
             </h2>
             <ul className="mt-5 space-y-2.5">
-              {study.services.map((service) => (
+              {services.map((service) => (
                 <li
                   key={service}
                   className="flex items-start gap-2.5 text-sm text-foreground"
@@ -162,8 +174,9 @@ export default async function CaseStudyPage({
               ))}
             </ul>
           </Reveal>
+          )}
 
-          {study.outcome && (
+          {showOutcome && (
             <Reveal delay={100}>
               <h2 className="font-display text-2xl font-semibold tracking-tight">
                 Outcome
@@ -175,8 +188,9 @@ export default async function CaseStudyPage({
           )}
         </div>
       </Section>
+      )}
 
-      {study.testimonial && (
+      {showTestimonial && study.testimonial && (
         <section className="bg-deep text-background">
           <Section>
             <Reveal>

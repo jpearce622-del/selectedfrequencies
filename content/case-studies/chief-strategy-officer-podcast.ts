@@ -14,15 +14,9 @@ export const chiefStrategyOfficerPodcast: CaseStudy = {
   hostName: "Kaihan Krippendorff",
   oneLiner:
     "Kaihan Krippendorff — who has advised more than 300 of the world's top companies — sits down monthly with sitting Chief Strategy Officers from businesses like WestRock, IDEX, and Anywhere Real Estate, plus Google's Chief Strategist Neil Hoyne. Conversations at that level need production that never once gets in the way.",
-  services: [
-    "[PLACEHOLDER — service scope not yet confirmed for this client]",
-  ],
+  services: [],
   outcome:
     "Guests include Google's Chief Strategist Neil Hoyne and sitting Chief Strategy Officers from WestRock, IDEX, and Anywhere Real Estate.",
-  testimonial: {
-    quote: "[PLACEHOLDER — client testimonial quote]",
-    attribution: "[PLACEHOLDER — name, title, Outthinkers Network]",
-  },
   links: [
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-chief-strategy-officer-podcast/id1742792507" },
     { label: "Website", url: "https://outthinker.com/csopodcast/" },
