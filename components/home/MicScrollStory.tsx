@@ -16,23 +16,15 @@ const chapters = [
     text: "Eight years producing podcasts, start to finish.",
   },
   {
-    eyebrow: "02 — Plan",
-    text: "Format, structure, and episode arcs mapped out before a single mic is switched on.",
-  },
-  {
-    eyebrow: "03 — Edit",
+    eyebrow: "02 — Edit",
     text: "Full episode edit — pacing, sound, and story — so every episode sounds intentional.",
   },
   {
-    eyebrow: "04 — Distribute",
+    eyebrow: "03 — Distribute",
     text: "Show notes, chapter timestamps, and transcription review, ready for every platform.",
   },
   {
-    eyebrow: "05 — Focus",
-    text: "Any show, any topic — with deep experience in Bitcoin and finance.",
-  },
-  {
-    eyebrow: "06 — Next",
+    eyebrow: "04 — Next",
     text: "Ready to sound like the expert you already are?",
   },
 ];
