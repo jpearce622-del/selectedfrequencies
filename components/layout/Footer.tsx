@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/brand/Logo";
+import { BitcoinMark } from "@/components/brand/BitcoinMark";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
@@ -23,6 +24,13 @@ export function Footer() {
             Full-service podcast editing and production — for any show, with
             deep experience in Bitcoin and finance.
           </p>
+          <Link
+            href="/bitcoin"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-background/15 bg-background/5 px-3.5 py-1.5 text-xs font-medium text-background/75 transition-colors hover:border-background/30 hover:text-background"
+          >
+            <BitcoinMark className="h-4 w-4" />
+            We accept Bitcoin
+          </Link>
         </div>
 
         <nav className="flex flex-wrap gap-x-8 gap-y-3 sm:justify-end">
