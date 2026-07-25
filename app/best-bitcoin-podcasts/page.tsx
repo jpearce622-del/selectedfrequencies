@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { buildMetadata, siteConfig } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -53,21 +54,34 @@ function ListenLinks({ show }: { show: BitcoinPodcast }) {
 function PodcastCard({ show }: { show: BitcoinPodcast }) {
   return (
     <div className="flex h-full flex-col rounded-2xl border border-border bg-surface p-6 sm:p-8">
-      <div className="flex flex-wrap items-start justify-between gap-3">
-        <div>
-          <h3 className="font-display text-xl font-semibold tracking-tight">
-            {show.name}
-          </h3>
-          <p className="mt-1 text-sm text-muted">Hosted by {show.host}</p>
-        </div>
-        {show.producedByUs && show.caseStudyUrl && (
-          <Link
-            href={show.caseStudyUrl}
-            className="shrink-0 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent/15"
-          >
-            Produced by Selected Frequencies
-          </Link>
+      <div className="flex items-start gap-4">
+        {show.artwork && (
+          <Image
+            src={show.artwork}
+            alt={`${show.name} cover art`}
+            width={160}
+            height={160}
+            className="h-16 w-16 shrink-0 rounded-xl border border-border object-cover sm:h-20 sm:w-20"
+          />
         )}
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1.5">
+            <div className="min-w-0">
+              <h3 className="font-display text-xl font-semibold tracking-tight">
+                {show.name}
+              </h3>
+              <p className="mt-1 text-sm text-muted">Hosted by {show.host}</p>
+            </div>
+            {show.producedByUs && show.caseStudyUrl && (
+              <Link
+                href={show.caseStudyUrl}
+                className="shrink-0 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-xs font-medium text-accent transition-colors hover:bg-accent/15"
+              >
+                Produced by Selected Frequencies
+              </Link>
+            )}
+          </div>
+        </div>
       </div>
 
       <p className="mt-4 text-sm leading-6 text-muted">{show.description}</p>
@@ -106,7 +120,7 @@ export default function BestBitcoinPodcastsPage() {
       "@type": "ItemList",
       name: PAGE_TITLE,
       itemListElement: shows.map((show, i) => {
-        const url = show.websiteUrl ?? show.appleUrl ?? show.spotifyUrl;
+        const url = show.websiteUrl || show.appleUrl || show.spotifyUrl;
         return {
           "@type": "ListItem",
           position: i + 1,
