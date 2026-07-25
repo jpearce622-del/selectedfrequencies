@@ -29,7 +29,9 @@ export async function POST(request: Request) {
   }
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
+  // Enquiries always go to James. The env var can override the destination,
+  // but defaulting here means the form routes correctly even if it's unset.
+  const to = process.env.CONTACT_TO_EMAIL?.trim() || "james@selectedfrequencies.com";
   const from = process.env.CONTACT_FROM_EMAIL;
 
   if (!apiKey || !to || !from) {
