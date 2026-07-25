@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
+
+// Nodemailer needs the Node.js runtime (not edge).
+export const runtime = "nodejs";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -28,15 +31,19 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  // Enquiries always go to James. The env var can override the destination,
-  // but defaulting here means the form routes correctly even if it's unset.
-  const to = process.env.CONTACT_TO_EMAIL?.trim() || "james@selectedfrequencies.com";
-  const from = process.env.CONTACT_FROM_EMAIL;
+  // SMTP config (Fasthosts mailbox). Set these in Vercel → Environment
+  // Variables. SMTP_PASS is the mailbox password — keep it out of git.
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  const port = Number(process.env.SMTP_PORT) || 587;
 
-  if (!apiKey || !to || !from) {
+  // Enquiries always go to James; CONTACT_TO_EMAIL can override.
+  const to = process.env.CONTACT_TO_EMAIL?.trim() || "james@selectedfrequencies.com";
+
+  if (!host || !user || !pass) {
     console.error(
-      "Contact form is not configured: missing RESEND_API_KEY, CONTACT_TO_EMAIL, or CONTACT_FROM_EMAIL."
+      "Contact form is not configured: missing SMTP_HOST, SMTP_USER, or SMTP_PASS."
     );
     return NextResponse.json(
       { error: "The contact form isn't set up yet. Please try again later." },
@@ -44,26 +51,32 @@ export async function POST(request: Request) {
     );
   }
 
-  const resend = new Resend(apiKey);
-
-  const { error } = await resend.emails.send({
-    from,
-    to,
-    replyTo: email.trim(),
-    subject: `New enquiry from ${name.trim()}${service ? ` — ${service.trim()}` : ""}`,
-    text: [
-      `Name: ${name.trim()}`,
-      `Email: ${email.trim()}`,
-      service ? `Service interested in: ${service.trim()}` : null,
-      "",
-      message.trim(),
-    ]
-      .filter(Boolean)
-      .join("\n"),
+  const transporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465, // 465 = implicit TLS; 587 = STARTTLS
+    auth: { user, pass },
   });
 
-  if (error) {
-    console.error("Resend send failed:", error);
+  try {
+    await transporter.sendMail({
+      // Most SMTP servers require the From to be the authenticated mailbox.
+      from: `Selected Frequencies Website <${user}>`,
+      to,
+      replyTo: email.trim(),
+      subject: `New enquiry from ${name.trim()}${service ? ` — ${service.trim()}` : ""}`,
+      text: [
+        `Name: ${name.trim()}`,
+        `Email: ${email.trim()}`,
+        service ? `Service interested in: ${service.trim()}` : null,
+        "",
+        message.trim(),
+      ]
+        .filter(Boolean)
+        .join("\n"),
+    });
+  } catch (err) {
+    console.error("SMTP send failed:", err);
     return NextResponse.json(
       { error: "Something went wrong sending your message. Please try again." },
       { status: 502 }
