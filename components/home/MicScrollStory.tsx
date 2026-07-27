@@ -3,7 +3,7 @@
 import NextImage from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const FRAME_COUNT = 271;
+const FRAME_COUNT = 202;
 const frameSrc = (i: number) =>
   `/images/mic-360/frame-${String(i).padStart(3, "0")}.jpg`;
 
@@ -91,7 +91,7 @@ export function MicScrollStory() {
 
   /**
    * Draw the single frame nearest the (fractional) scroll position — crisp,
-   * never blended. With 271 frames the sequence is dense enough that snapping
+   * never blended. With 202 frames the sequence is dense enough that snapping
    * to the closest whole frame reads as continuous motion, so no cross-fade
    * (which looked like motion blur) is needed.
    */
@@ -132,7 +132,7 @@ export function MicScrollStory() {
         if (cancelled) return;
         setLoadedCount((c) => c + 1);
         // Note: we deliberately do NOT force img.decode() on every frame.
-        // 271 decoded 720p frames would pin ~1GB of bitmap memory and can
+        // 202 decoded 720p frames would pin ~750MB of bitmap memory and can
         // crash mobile browsers; decode-on-draw is cheap for 15KB frames.
         if (i === 0) draw(0);
       };
@@ -188,8 +188,8 @@ export function MicScrollStory() {
       const progress = scrollable > 0 ? -rect.top / scrollable : 0;
       const clamped = Math.min(1, Math.max(0, progress));
 
-      // Kept fractional — draw() cross-fades between the neighbouring
-      // frames rather than snapping to the nearest one.
+      // Kept fractional so the easing loop can glide through frames; draw()
+      // snaps to the nearest whole frame when it paints.
       targetFrameRef.current = clamped * (FRAME_COUNT - 1);
       frameRef.current = Math.round(targetFrameRef.current);
       start();
@@ -224,7 +224,7 @@ export function MicScrollStory() {
     // Deliberately excludes `loadedCount`: this effect only needs to run
     // once per mount (reducedMotion flip aside) — `draw()` always reads
     // the latest `imagesRef.current`, so re-subscribing on every one of
-    // the 271 incremental loads would just churn listeners for no benefit.
+    // the 202 incremental loads would just churn listeners for no benefit.
   }, [reducedMotion, draw]);
 
   if (reducedMotion) {
