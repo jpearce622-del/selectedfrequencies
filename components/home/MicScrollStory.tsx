@@ -1,7 +1,7 @@
 "use client";
 
 import NextImage from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const FRAME_COUNT = 68;
 const frameSrc = (i: number) =>
@@ -43,6 +43,13 @@ export function MicScrollStory() {
   const frameRef = useRef(0);
   const rafRef = useRef<number | null>(null);
 
+  // Fractional frame positions. `target` is where the scroll says we should
+  // be; `current` eases toward it so a fast flick animates through the
+  // intervening frames instead of teleporting.
+  const targetFrameRef = useRef(0);
+  const currentFrameRef = useRef(0);
+  const runningRef = useRef(false);
+
   const [loadedCount, setLoadedCount] = useState(0);
   const [activeChapter, setActiveChapter] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
@@ -61,13 +68,48 @@ export function MicScrollStory() {
     };
   }, []);
 
-  const draw = (index: number) => {
-    const canvas = canvasRef.current;
-    const img = imagesRef.current[index];
-    if (!canvas || !img || !img.complete || img.naturalWidth === 0) return;
+  // Always fit to canvas height, centered horizontally. The sign of
+  // offsetX does the rest of the work on its own: on a normal or
+  // narrow (mobile) viewport the frame overflows the width slightly
+  // and crops at the sides (cover-like); on an ultra-wide viewport it
+  // falls short of the width instead, leaving navy letterbox padding
+  // left/right rather than stretching or over-cropping the mic.
+  const paint = (
+    ctx: CanvasRenderingContext2D,
+    img: HTMLImageElement,
+    cssWidth: number,
+    cssHeight: number
+  ) => {
+    const imgRatio = img.naturalWidth / img.naturalHeight;
+    const drawH = cssHeight;
+    const drawW = drawH * imgRatio;
+    ctx.drawImage(img, (cssWidth - drawW) / 2, 0, drawW, drawH);
+  };
 
+  const ready = (img: HTMLImageElement | undefined): img is HTMLImageElement =>
+    Boolean(img?.complete && img.naturalWidth > 0);
+
+  /**
+   * Draw a *fractional* frame position by cross-fading the two frames it
+   * falls between. 68 frames over ~380vh works out at roughly one frame per
+   * 50px of scroll, so snapping to whole frames reads as a series of steps;
+   * blending gives the sequence effectively continuous resolution without
+   * needing a denser render.
+   */
+  const draw = useCallback((value: number) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    const maxIndex = FRAME_COUNT - 1;
+    const clamped = Math.min(maxIndex, Math.max(0, value));
+    const lower = Math.floor(clamped);
+    const upper = Math.min(maxIndex, lower + 1);
+    const blend = clamped - lower;
+
+    const lowerImg = imagesRef.current[lower];
+    if (!ready(lowerImg)) return;
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const cssWidth = canvas.clientWidth;
@@ -77,22 +119,22 @@ export function MicScrollStory() {
       canvas.height = cssHeight * dpr;
     }
 
-    // Always fit to canvas height, centered horizontally. The sign of
-    // offsetX does the rest of the work on its own: on a normal or
-    // narrow (mobile) viewport the frame overflows the width slightly
-    // and crops at the sides (cover-like); on an ultra-wide viewport it
-    // falls short of the width instead, leaving navy letterbox padding
-    // left/right rather than stretching or over-cropping the mic.
-    const imgRatio = img.naturalWidth / img.naturalHeight;
-    const drawH = cssHeight;
-    const drawW = drawH * imgRatio;
-    const offsetX = (cssWidth - drawW) / 2;
-    const offsetY = 0;
-
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, cssWidth, cssHeight);
-    ctx.drawImage(img, offsetX, offsetY, drawW, drawH);
-  };
+
+    ctx.globalAlpha = 1;
+    paint(ctx, lowerImg, cssWidth, cssHeight);
+
+    // Second frame layered at the fractional weight. Skipped at the very
+    // ends of a step (nothing to blend) and when the neighbour hasn't
+    // loaded yet, so a partially-preloaded sequence still renders cleanly.
+    const upperImg = imagesRef.current[upper];
+    if (blend > 0.001 && upper !== lower && ready(upperImg)) {
+      ctx.globalAlpha = blend;
+      paint(ctx, upperImg, cssWidth, cssHeight);
+      ctx.globalAlpha = 1;
+    }
+  }, []);
 
   // Preload frames; draw frame 0 the moment it lands, as a poster.
   useEffect(() => {
@@ -106,6 +148,11 @@ export function MicScrollStory() {
       img.onload = () => {
         if (cancelled) return;
         setLoadedCount((c) => c + 1);
+        // Decode up front so the first drawImage of each frame doesn't pay
+        // the decode cost mid-scroll — that shows up as a hitch exactly
+        // when the sequence should feel smoothest. Best-effort: older
+        // browsers without decode() just fall back to decode-on-draw.
+        void img.decode?.().catch(() => {});
         if (i === 0) draw(0);
       };
       images.push(img);
@@ -115,61 +162,89 @@ export function MicScrollStory() {
     return () => {
       cancelled = true;
     };
-  }, [reducedMotion]);
+  }, [reducedMotion, draw]);
 
   // Scroll-driven frame + chapter selection.
   useEffect(() => {
     if (reducedMotion) return;
 
-    const onScroll = () => {
-      if (rafRef.current) return;
-      rafRef.current = requestAnimationFrame(() => {
+    // How much of the remaining distance is covered each frame. Low enough
+    // to smooth out coarse wheel/trackpad steps, high enough that the mic
+    // still feels attached to the scroll rather than lagging behind it.
+    const EASING = 0.22;
+
+    const tick = () => {
+      const target = targetFrameRef.current;
+      const diff = target - currentFrameRef.current;
+
+      // Close enough — settle exactly on target and stop the loop so we're
+      // not holding a rAF open for the life of the page.
+      if (Math.abs(diff) < 0.002) {
+        currentFrameRef.current = target;
+        draw(target);
+        runningRef.current = false;
         rafRef.current = null;
-        const section = sectionRef.current;
-        if (!section) return;
+        return;
+      }
 
-        const rect = section.getBoundingClientRect();
-        const scrollable = rect.height - window.innerHeight;
-        const progress = scrollable > 0 ? -rect.top / scrollable : 0;
-        const clamped = Math.min(1, Math.max(0, progress));
+      currentFrameRef.current += diff * EASING;
+      draw(currentFrameRef.current);
+      rafRef.current = requestAnimationFrame(tick);
+    };
 
-        const frame = Math.min(
-          FRAME_COUNT - 1,
-          Math.round(clamped * (FRAME_COUNT - 1))
-        );
-        // Always redraw, not just when the frame index changes — a pure
-        // resize (viewport width change) can leave the frame index
-        // identical while the canvas still needs its pixel dimensions
-        // and cover-fit math recalculated. draw() is cheap and already
-        // rAF-throttled, so there's no real cost to dropping the guard.
-        frameRef.current = frame;
-        draw(frame);
+    const start = () => {
+      if (runningRef.current) return;
+      runningRef.current = true;
+      rafRef.current = requestAnimationFrame(tick);
+    };
 
-        const chapter = Math.min(
-          chapters.length - 1,
-          Math.floor(clamped * chapters.length)
-        );
-        setActiveChapter(chapter);
-      });
+    const onScroll = () => {
+      const section = sectionRef.current;
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const scrollable = rect.height - window.innerHeight;
+      const progress = scrollable > 0 ? -rect.top / scrollable : 0;
+      const clamped = Math.min(1, Math.max(0, progress));
+
+      // Kept fractional — draw() cross-fades between the neighbouring
+      // frames rather than snapping to the nearest one.
+      targetFrameRef.current = clamped * (FRAME_COUNT - 1);
+      frameRef.current = Math.round(targetFrameRef.current);
+      start();
+
+      const chapter = Math.min(
+        chapters.length - 1,
+        Math.floor(clamped * chapters.length)
+      );
+      setActiveChapter(chapter);
+    };
+
+    // A resize changes the canvas pixel dimensions and the fit maths, so
+    // redraw the current position immediately rather than easing to it.
+    const onResize = () => {
+      onScroll();
+      draw(currentFrameRef.current);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener("resize", onResize);
     onScroll();
 
     return () => {
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("resize", onResize);
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
         rafRef.current = null;
       }
+      runningRef.current = false;
     };
     // Deliberately excludes `loadedCount`: this effect only needs to run
     // once per mount (reducedMotion flip aside) — `draw()` always reads
     // the latest `imagesRef.current`, so re-subscribing on every one of
     // the 68 incremental loads would just churn listeners for no benefit.
-  }, [reducedMotion]);
+  }, [reducedMotion, draw]);
 
   if (reducedMotion) {
     return (
