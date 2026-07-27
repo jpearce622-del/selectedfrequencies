@@ -33,10 +33,12 @@ export async function POST(request: Request) {
 
   // SMTP config (Fasthosts mailbox). Set these in Vercel → Environment
   // Variables. SMTP_PASS is the mailbox password — keep it out of git.
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const port = Number(process.env.SMTP_PORT) || 587;
+  // Trim: values pasted into the Vercel dashboard routinely carry a stray
+  // tab/newline, which makes DNS try to resolve "\tsmtp.example.com".
+  const host = process.env.SMTP_HOST?.trim();
+  const user = process.env.SMTP_USER?.trim();
+  const pass = process.env.SMTP_PASS?.trim();
+  const port = Number(process.env.SMTP_PORT?.trim()) || 587;
 
   // Enquiries always go to James; CONTACT_TO_EMAIL can override.
   const to = process.env.CONTACT_TO_EMAIL?.trim() || "james@selectedfrequencies.com";

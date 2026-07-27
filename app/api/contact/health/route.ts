@@ -12,10 +12,19 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function GET() {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  const port = Number(process.env.SMTP_PORT) || 587;
+  const rawHost = process.env.SMTP_HOST;
+  const rawUser = process.env.SMTP_USER;
+  const rawPass = process.env.SMTP_PASS;
+
+  // Trim: pasted values routinely carry a stray tab/newline, which makes DNS
+  // try to resolve "\tsmtp.example.com". Flag it so it can be cleaned up.
+  const host = rawHost?.trim();
+  const user = rawUser?.trim();
+  const pass = rawPass?.trim();
+  const port = Number(process.env.SMTP_PORT?.trim()) || 587;
+
+  const hasStrayWhitespace =
+    rawHost !== host || rawUser !== user || rawPass !== pass;
 
   const env = {
     SMTP_HOST: Boolean(host),
@@ -23,6 +32,8 @@ export async function GET() {
     SMTP_PASS: Boolean(pass),
     SMTP_PORT: port,
     CONTACT_TO_EMAIL: Boolean(process.env.CONTACT_TO_EMAIL),
+    // True when a value had leading/trailing whitespace (now trimmed).
+    strayWhitespaceInValues: hasStrayWhitespace,
   };
 
   if (!host || !user || !pass) {
