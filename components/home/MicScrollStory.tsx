@@ -3,7 +3,7 @@
 import NextImage from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const FRAME_COUNT = 68;
+const FRAME_COUNT = 271;
 const frameSrc = (i: number) =>
   `/images/mic-360/frame-${String(i).padStart(3, "0")}.jpg`;
 
@@ -90,11 +90,10 @@ export function MicScrollStory() {
     Boolean(img?.complete && img.naturalWidth > 0);
 
   /**
-   * Draw a *fractional* frame position by cross-fading the two frames it
-   * falls between. 68 frames over ~380vh works out at roughly one frame per
-   * 50px of scroll, so snapping to whole frames reads as a series of steps;
-   * blending gives the sequence effectively continuous resolution without
-   * needing a denser render.
+   * Draw the single frame nearest the (fractional) scroll position — crisp,
+   * never blended. With 271 frames the sequence is dense enough that snapping
+   * to the closest whole frame reads as continuous motion, so no cross-fade
+   * (which looked like motion blur) is needed.
    */
   const draw = useCallback((value: number) => {
     const canvas = canvasRef.current;
@@ -103,13 +102,9 @@ export function MicScrollStory() {
     if (!ctx) return;
 
     const maxIndex = FRAME_COUNT - 1;
-    const clamped = Math.min(maxIndex, Math.max(0, value));
-    const lower = Math.floor(clamped);
-    const upper = Math.min(maxIndex, lower + 1);
-    const blend = clamped - lower;
-
-    const lowerImg = imagesRef.current[lower];
-    if (!ready(lowerImg)) return;
+    const index = Math.min(maxIndex, Math.max(0, Math.round(value)));
+    const img = imagesRef.current[index];
+    if (!ready(img)) return;
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const cssWidth = canvas.clientWidth;
@@ -121,19 +116,7 @@ export function MicScrollStory() {
 
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.clearRect(0, 0, cssWidth, cssHeight);
-
-    ctx.globalAlpha = 1;
-    paint(ctx, lowerImg, cssWidth, cssHeight);
-
-    // Second frame layered at the fractional weight. Skipped at the very
-    // ends of a step (nothing to blend) and when the neighbour hasn't
-    // loaded yet, so a partially-preloaded sequence still renders cleanly.
-    const upperImg = imagesRef.current[upper];
-    if (blend > 0.001 && upper !== lower && ready(upperImg)) {
-      ctx.globalAlpha = blend;
-      paint(ctx, upperImg, cssWidth, cssHeight);
-      ctx.globalAlpha = 1;
-    }
+    paint(ctx, img, cssWidth, cssHeight);
   }, []);
 
   // Preload frames; draw frame 0 the moment it lands, as a poster.
@@ -148,11 +131,9 @@ export function MicScrollStory() {
       img.onload = () => {
         if (cancelled) return;
         setLoadedCount((c) => c + 1);
-        // Decode up front so the first drawImage of each frame doesn't pay
-        // the decode cost mid-scroll — that shows up as a hitch exactly
-        // when the sequence should feel smoothest. Best-effort: older
-        // browsers without decode() just fall back to decode-on-draw.
-        void img.decode?.().catch(() => {});
+        // Note: we deliberately do NOT force img.decode() on every frame.
+        // 271 decoded 720p frames would pin ~1GB of bitmap memory and can
+        // crash mobile browsers; decode-on-draw is cheap for 15KB frames.
         if (i === 0) draw(0);
       };
       images.push(img);
@@ -243,7 +224,7 @@ export function MicScrollStory() {
     // Deliberately excludes `loadedCount`: this effect only needs to run
     // once per mount (reducedMotion flip aside) — `draw()` always reads
     // the latest `imagesRef.current`, so re-subscribing on every one of
-    // the 68 incremental loads would just churn listeners for no benefit.
+    // the 271 incremental loads would just churn listeners for no benefit.
   }, [reducedMotion, draw]);
 
   if (reducedMotion) {
@@ -251,7 +232,7 @@ export function MicScrollStory() {
       <section className="bg-black py-24 text-background sm:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center sm:px-8">
           <NextImage
-            src={frameSrc(20)}
+            src={frameSrc(80)}
             alt="Podcast microphone in a recording studio"
             width={960}
             height={540}
