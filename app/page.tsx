@@ -73,15 +73,14 @@ export default function Home() {
       <section className="overflow-hidden pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
         <Container>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent sm:text-sm">
-            Podcast editing &amp; production · London &amp; remote
+            Podcast editing &amp; production
           </p>
           <h1 className="font-display mx-auto mt-4 max-w-4xl text-4xl leading-[1.06] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
             Podcast production that gives you your week back.
           </h1>
           <p className="mx-auto mt-5 max-w-[60ch] text-lg leading-relaxed text-muted sm:mt-6 sm:text-xl">
-            Full-service editing, show notes, and distribution for any show —
-            with a speciality in Bitcoin and finance. Eight years, thousands of
-            episodes, millions of listens.
+            Full-service editing, show notes, and distribution for any show.
+            Eight years, thousands of episodes, millions of listens.
           </p>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
             <Button href="/contact">Start a conversation</Button>

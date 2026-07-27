@@ -51,7 +51,7 @@ export function Footer() {
           © {new Date().getFullYear()} Selected Frequencies. All rights reserved.
         </p>
         <p className="text-xs text-background/40">
-          Podcast production, London &amp; remote {/* TODO: confirm location line */}
+          Podcast production, worldwide
         </p>
       </Container>
     </footer>
