@@ -67,9 +67,11 @@ export default function Home() {
     <>
       <LocalBusinessJsonLd />
 
-      {/* ---------- Static hero — above the fold, server-rendered, NOT
-          animated in and not scroll-dependent (no Reveal wrappers) so the
-          headline, subhead, and CTA are visible on first paint ---------- */}
+      {/* ---------- Scroll-scrubbed mic story — leads the page ---------- */}
+      <MicScrollStory />
+
+      {/* ---------- Static hero (below the mic) — server-rendered, not
+          animated in and not scroll-dependent (no Reveal wrappers) ---------- */}
       <section className="overflow-hidden pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
         <Container>
           <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent sm:text-sm">
@@ -107,23 +109,6 @@ export default function Home() {
           <CompanyLogos />
         </Container>
       </section>
-
-      {/* Blend the white hero/logo strip down into the black mic story so
-          there's no hard seam between the two sections. */}
-      <div
-        aria-hidden="true"
-        className="h-24 bg-gradient-to-b from-background to-black sm:h-32"
-      />
-
-      {/* ---------- Scroll-scrubbed mic story — now below the hero ---------- */}
-      <MicScrollStory />
-
-      {/* Ease the black mic story back up into the light grey process
-          section (mirrors the blend above). */}
-      <div
-        aria-hidden="true"
-        className="h-24 bg-gradient-to-b from-black to-fog sm:h-32"
-      />
 
       {/* ---------- Process (light-grey) ---------- */}
       <section className="bg-fog">
