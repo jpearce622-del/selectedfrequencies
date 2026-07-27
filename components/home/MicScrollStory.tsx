@@ -2,6 +2,7 @@
 
 import NextImage from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/Button";
 
 const FRAME_COUNT = 202;
 const frameSrc = (i: number) =>
@@ -10,22 +11,31 @@ const frameSrc = (i: number) =>
 // Every line here already appears elsewhere on the site (stats, "what we
 // do" steps, positioning copy, closing CTA) — just told one beat at a
 // time as the mic turns. Nothing new is claimed.
-const chapters = [
+const chapters: {
+  eyebrow: string;
+  text: string;
+  cta?: { label: string; href: string };
+}[] = [
   {
     eyebrow: "01 — Experience",
-    text: "Eight years producing podcasts, start to finish.",
+    text: "Eight years, thousands of episodes, millions of listens.",
   },
   {
-    eyebrow: "02 — Edit",
-    text: "Full episode edit — pacing, sound, and story — so every episode sounds intentional.",
+    eyebrow: "02 — Everything handled",
+    text: "Editing, show notes, chapters, and clips — the whole production, one point of contact.",
   },
   {
-    eyebrow: "03 — Distribute",
-    text: "Show notes, chapter timestamps, and transcription review, ready for every platform.",
+    eyebrow: "03 — Sound",
+    text: "Full episode edits — pacing, sound, and story — so every show sounds intentional.",
   },
   {
-    eyebrow: "04 — Next",
+    eyebrow: "04 — Speciality",
+    text: "A rare edge in Bitcoin and finance shows — we'll even take payment in Bitcoin.",
+  },
+  {
+    eyebrow: "05 — Next",
     text: "Ready to sound like the expert you already are?",
+    cta: { label: "Start a conversation", href: "/contact" },
   },
 ];
 
@@ -250,6 +260,11 @@ export function MicScrollStory() {
                 <p className="font-display mt-1.5 text-lg font-semibold leading-snug tracking-tight sm:text-xl">
                   {c.text}
                 </p>
+                {c.cta && (
+                  <div className="mt-4">
+                    <Button href={c.cta.href}>{c.cta.label}</Button>
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -321,6 +336,11 @@ export function MicScrollStory() {
                       <p className="font-display mt-1.5 text-lg font-semibold leading-snug tracking-tight text-background sm:text-xl">
                         {c.text}
                       </p>
+                      {c.cta && (
+                        <div className="mt-4">
+                          <Button href={c.cta.href}>{c.cta.label}</Button>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>

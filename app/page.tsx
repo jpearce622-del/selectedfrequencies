@@ -67,36 +67,23 @@ export default function Home() {
     <>
       <LocalBusinessJsonLd />
 
-      {/* ---------- Scroll-scrubbed mic story — leads the page, Apple
-          product-page style ---------- */}
-      <MicScrollStory />
-
-      {/* ---------- Hero (centered, Apple-style) ---------- */}
-      <section className="overflow-hidden pt-16 pb-20 text-center sm:pt-24 sm:pb-28">
+      {/* ---------- Static hero — above the fold, server-rendered, NOT
+          animated in and not scroll-dependent (no Reveal wrappers) so the
+          headline, subhead, and CTA are visible on first paint ---------- */}
+      <section className="overflow-hidden pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
         <Container>
-          <Reveal>
-            <p className="text-sm font-semibold tracking-wide text-accent">
-              Selected Frequencies
-            </p>
-          </Reveal>
-          <Reveal
-            as="h1"
-            delay={70}
-            className="font-display mx-auto mt-4 max-w-4xl text-5xl leading-[1.05] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl"
-          >
-            Podcasts that sound the part.
-          </Reveal>
-          <Reveal delay={140} className="mx-auto mt-6 max-w-2xl">
-            <p className="text-xl leading-relaxed text-muted">
-              Full-service editing and production for any show — editing, show
-              notes, and distribution, handled so you can focus on the ideas.
-              Deep experience in Bitcoin and finance podcasts.
-            </p>
-          </Reveal>
-          <Reveal
-            delay={210}
-            className="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-4"
-          >
+          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent sm:text-sm">
+            Podcast editing &amp; production · London &amp; remote
+          </p>
+          <h1 className="font-display mx-auto mt-4 max-w-4xl text-4xl leading-[1.06] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
+            Podcast production that gives you your week back.
+          </h1>
+          <p className="mx-auto mt-5 max-w-[60ch] text-lg leading-relaxed text-muted sm:mt-6 sm:text-xl">
+            Full-service editing, show notes, and distribution for any show —
+            with a speciality in Bitcoin and finance. Eight years, thousands of
+            episodes, millions of listens.
+          </p>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
             <Button href="/contact">Start a conversation</Button>
             <Link
               href="/work"
@@ -107,29 +94,23 @@ export default function Home() {
                 →
               </span>
             </Link>
-          </Reveal>
+          </div>
         </Container>
       </section>
 
-      {/* ---------- Trusted-by marquee ---------- */}
-      <section className="border-t border-border py-14">
+      {/* ---------- Client trust strip: brand logos, immediately below the
+          hero. Greyscale → colour on hover, wraps on mobile. ---------- */}
+      <section className="border-t border-border py-10 sm:py-12">
         <Container>
-          <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
-            Trusted by shows worldwide
-          </p>
-        </Container>
-        <LogoMarquee />
-      </section>
-
-      {/* ---------- Company credibility strip ---------- */}
-      <section className="border-t border-border py-14">
-        <Container>
-          <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
+          <p className="mb-8 text-center text-sm font-medium text-muted-foreground">
             We&apos;ve worked with
           </p>
           <CompanyLogos />
         </Container>
       </section>
+
+      {/* ---------- Scroll-scrubbed mic story — now below the hero ---------- */}
+      <MicScrollStory />
 
       {/* ---------- Process (light-grey) ---------- */}
       <section className="bg-fog">
@@ -177,6 +158,17 @@ export default function Home() {
           ))}
         </div>
       </Section>
+
+      {/* ---------- Shows we produce — artwork marquee, each cover links to
+          its case study (kept here for the case-study links it adds) ---------- */}
+      <section className="border-t border-border py-14">
+        <Container>
+          <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
+            Shows we produce
+          </p>
+        </Container>
+        <LogoMarquee />
+      </section>
 
       {/* ---------- Case Studies ---------- */}
       {featuredCaseStudies.length > 0 && (
