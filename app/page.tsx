@@ -108,8 +108,22 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Blend the white hero/logo strip down into the black mic story so
+          there's no hard seam between the two sections. */}
+      <div
+        aria-hidden="true"
+        className="h-24 bg-gradient-to-b from-background to-black sm:h-32"
+      />
+
       {/* ---------- Scroll-scrubbed mic story — now below the hero ---------- */}
       <MicScrollStory />
+
+      {/* Ease the black mic story back up into the light grey process
+          section (mirrors the blend above). */}
+      <div
+        aria-hidden="true"
+        className="h-24 bg-gradient-to-b from-black to-fog sm:h-32"
+      />
 
       {/* ---------- Process (light-grey) ---------- */}
       <section className="bg-fog">
