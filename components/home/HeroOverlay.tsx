@@ -15,7 +15,10 @@ import { Container } from "@/components/ui/Container";
  */
 export function HeroOverlay() {
   return (
-    <div className="pointer-events-none absolute inset-0 flex items-center">
+    // Top-aligned on mobile (the chapter cards stack up from the bottom there,
+    // so the hero keeps the upper half); vertically centred from sm up, where
+    // the cards sit bottom-left and the hero sits right.
+    <div className="pointer-events-none absolute inset-0 flex items-start pt-20 sm:items-center sm:pt-0">
       {/* Contrast scrim. Bottom-up on mobile, left-to-right on desktop, so
           the text side is always darkened without reading as a visible box. */}
       <div

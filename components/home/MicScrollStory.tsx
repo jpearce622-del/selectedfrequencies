@@ -221,10 +221,9 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
             );
       setActiveChapter(chapter);
 
-      // Fade the hero out across the first 12% of the pinned scroll, so it
-      // hands over to the chapter cards instead of colliding with them.
-      const fade = 1 - Math.min(1, clamped / 0.12);
-      setHeroOpacity(fade);
+      // The hero stays put for the whole pinned section — only the scroll cue
+      // fades, once the visitor has clearly started scrolling.
+      setHeroOpacity(1 - Math.min(1, clamped / 0.06));
     };
 
     // A resize changes the canvas pixel dimensions and the fit maths, so
@@ -332,20 +331,9 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
           </div>
         )}
 
-        {/* Above-the-fold hero. Rendered at full opacity from first paint and
-            faded out on scroll — never faded *in*, so it's readable
-            immediately and present in the server HTML. */}
-        {hero && (
-          <div
-            style={{
-              opacity: heroOpacity,
-              visibility: heroOpacity < 0.02 ? "hidden" : "visible",
-            }}
-            className="absolute inset-0"
-          >
-            {hero}
-          </div>
-        )}
+        {/* Above-the-fold hero. Pinned for the whole section — always visible,
+            never faded in or out — and present in the server HTML. */}
+        {hero && <div className="absolute inset-0">{hero}</div>}
 
         {/* Scroll cue — sits bottom-centre, clear of the CTA, and fades with
             the hero so it doesn't linger over the chapter cards. */}
@@ -382,6 +370,11 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
               return (
                 <div
                   key={c.text}
+                  // The hero is now pinned for the whole section, so on small
+                  // screens show only the current card — a full accumulated
+                  // stack would run past the hero. Desktop keeps the stack:
+                  // there the hero sits right and the cards sit bottom-left.
+                  className={i === activeChapter ? "" : "max-sm:!hidden"}
                   style={{
                     display: "grid",
                     gridTemplateRows: revealed ? "1fr" : "0fr",
