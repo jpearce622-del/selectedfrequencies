@@ -1,20 +1,49 @@
 import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/metadata";
+import { buildMetadata, siteConfig } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { ShowNotesFlow } from "@/components/tools/show-notes/ShowNotesFlow";
 import { ExampleOutput } from "@/components/tools/show-notes/ExampleOutput";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Free Podcast Show Notes & Content Generator",
+  // Kept under ~60 characters including the " | Selected Frequencies"
+  // suffix so Google doesn't truncate it in results.
+  title: "Free Podcast Show Notes Generator",
   description:
-    "Upload a podcast episode and get a full transcript plus AI-drafted YouTube titles, descriptions, chapters, tags and social posts in minutes. Free tool from Selected Frequencies — no account, no subscription.",
+    "Upload an episode and get a free transcript plus AI-drafted show notes, YouTube titles, chapters, tags and social posts. No account, no subscription.",
   path: "/tools/show-notes-generator",
 });
 
 export default function ShowNotesGeneratorPage() {
+  // Matches the pattern used by the cost calculator: tells Google and AI
+  // search this page is a free, usable tool rather than a marketing page.
+  const appJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Podcast Show Notes Generator",
+    url: `${siteConfig.url}/tools/show-notes-generator`,
+    applicationCategory: "MultimediaApplication",
+    operatingSystem: "Any",
+    description:
+      "Upload a podcast episode and get a transcript plus AI-drafted show notes, YouTube titles, chapters, tags and social posts.",
+    offers: {
+      "@type": "Offer",
+      price: 0,
+      priceCurrency: "GBP",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(appJsonLd) }}
+      />
       {/* Hero */}
       <section className="pt-24 pb-16 text-center sm:pt-32 sm:pb-20">
         <Container>
