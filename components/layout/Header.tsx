@@ -50,7 +50,7 @@ export function Header() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 transform-gpu border-b border-border bg-background/90 backdrop-blur-md [will-change:transform]">
       <Container className="flex h-20 items-center justify-between">
         <Link href="/" aria-label="Selected Frequencies — home">
           <Logo size="nav" />
