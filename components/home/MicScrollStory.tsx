@@ -158,6 +158,16 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
     };
   }, [reducedMotion, draw]);
 
+  // Frames arrive asynchronously, and draw() bails on any frame that hasn't
+  // loaded yet. Without this, the canvas stays stuck on whatever it managed to
+  // paint until the next scroll event nudges it — which is why the sequence
+  // used to need "a little scroll" before it came alive. Redrawing as frames
+  // land means the mic is correct at the current position from the start.
+  useEffect(() => {
+    if (reducedMotion) return;
+    draw(currentFrameRef.current);
+  }, [loadedCount, reducedMotion, draw]);
+
   // Scroll-driven frame + chapter selection.
   useEffect(() => {
     if (reducedMotion) return;
@@ -305,7 +315,15 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
   }
 
   return (
-    <section ref={sectionRef} className="relative bg-black" style={{ height: "480vh" }}>
+    // -mt-20 pulls the section up under the sticky 80px header so the image
+    // sits behind it from first paint, rather than only sliding under it once
+    // you scroll. The hero overlay adds matching top padding so its text still
+    // clears the header.
+    <section
+      ref={sectionRef}
+      className="relative -mt-20 bg-black"
+      style={{ height: "480vh" }}
+    >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Canvas only ever draws the photo itself (clearRect, never a
             solid fill) — any space beside it when the viewport is wider
