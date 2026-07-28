@@ -23,9 +23,9 @@ export const bitcoinAndTheLongGame: CaseStudy = {
     { label: "Spotify", url: "#" }, // TODO: real link — not confirmed via search
     { label: "Apple Podcasts", url: "#" }, // TODO: real link — not confirmed via search
   ],
-  logo: "/images/clients/bitcoin-btc-logo.svg", // official BTC logo (cryptologos.cc)
-  logoAlt: "Bitcoin logo",
-  themeColor: "#F7931A", // official Bitcoin orange
+  logo: "/images/clients/bitcoin-and-the-long-game.jpeg", // the show's real cover art
+  logoAlt: "Bitcoin and the Long Game cover art",
+  themeColor: "#C79A3E", // sampled from the gold "BITCOIN" title on the cover
   featured: true,
   category: "flagship",
 };
