@@ -361,6 +361,15 @@ export function CostCalculator() {
 
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
           <Button href="/contact?source=cost-calculator">Get a quote</Button>
+          {/* Save as PDF via the browser's own print-to-PDF. No email, no
+              list, no third party — the user keeps their numbers. */}
+          <button
+            type="button"
+            onClick={() => window.print()}
+            className="text-sm font-medium text-accent hover:text-accent-bright"
+          >
+            Save these figures as a PDF
+          </button>
           <Link
             href="/services"
             className="text-sm font-medium text-accent hover:text-accent-bright"
@@ -368,6 +377,10 @@ export function CostCalculator() {
             See what we do →
           </Link>
         </div>
+        <p className="mt-3 text-xs text-muted print:hidden">
+          Opens your browser&apos;s print dialog — choose &quot;Save as
+          PDF&quot;. Nothing is sent to us.
+        </p>
       </div>
     </div>
   );

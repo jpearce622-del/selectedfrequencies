@@ -166,3 +166,30 @@
     animation: none;
   }
 }
+
+/* ---------------------------------------------------------------------
+   Print styles — used by the cost calculator's "Save as PDF" button so the
+   printed sheet is just the figures, not the whole site chrome.
+   --------------------------------------------------------------------- */
+@media print {
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Reveal-on-scroll elements must never print blank. */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Keep the results panel intact rather than splitting across pages. */
+  [aria-live="polite"] {
+    break-inside: avoid;
+  }
+
+  body {
+    background: #fff;
+  }
+}

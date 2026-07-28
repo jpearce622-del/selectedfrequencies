@@ -59,15 +59,14 @@ export const bitcoinPodcasts: BitcoinPodcast[] = [
     caseStudyUrl: "/work/bitcoin-and-the-long-game",
   },
   {
-    name: "What Bitcoin Did",
+    // Formerly "What Bitcoin Did" — the feed rebranded, confirmed by James.
+    name: "The Peter McCormack Show",
     host: "Peter McCormack",
     description:
-      "Long-form Bitcoin interviews on technology, macro, and policy — made accessible for newcomers and veterans alike.",
+      "Long-form Bitcoin interviews on technology, macro, and policy — made accessible for newcomers and veterans alike. Previously known as What Bitcoin Did.",
     topics: ["Bitcoin", "Macro", "Interviews"],
-    // NOTE: Apple feed id1317356120 now reads "The Peter McCormack Show".
     spotifyUrl: "",
-    appleUrl:
-      "https://podcasts.apple.com/us/podcast/what-bitcoin-did-with-peter-mccormack/id1317356120",
+    appleUrl: "https://podcasts.apple.com/us/podcast/id1317356120",
     websiteUrl: "",
     artwork: "/images/podcasts/what-bitcoin-did.jpg",
   },

@@ -168,13 +168,23 @@ export default function BitcoinPage() {
             online banking.
           </p>
 
-          {/* TODO: James — replace this placeholder with the real payment
-              method (Lightning address / BTCPay Server link / Strike handle).
-              Do not ship the site publicly announcing BTC without a real
-              destination configured here. */}
-          <div className="mt-6 max-w-3xl rounded-xl border border-dashed border-border bg-surface p-5 text-sm leading-6 text-muted">
-            <span className="font-medium text-foreground">Payment method:</span>{" "}
-            Payments handled via [Lightning / BTCPay Server / Strike — configure].
+          {/* Payment details are deliberately NOT published here. Payment
+              details go out per-invoice: a static public address invites
+              address-reuse privacy loss and address-spoofing scams, and a
+              per-invoice destination is safer for both sides. */}
+          <div className="mt-6 max-w-3xl rounded-xl border border-border bg-surface p-5 text-sm leading-6 text-muted">
+            <span className="font-medium text-foreground">Payment details:</span>{" "}
+            We don&apos;t publish a wallet address on this page. Payment details
+            are sent with your invoice, so every payment goes to a fresh
+            destination — better for your privacy and ours, and it means nobody
+            can spoof a public address and pass it off as us. Just{" "}
+            <Link
+              href="/contact"
+              className="font-medium text-accent hover:text-accent-bright"
+            >
+              get in touch
+            </Link>{" "}
+            and we&apos;ll take it from there.
           </div>
         </Reveal>
       </Section>
