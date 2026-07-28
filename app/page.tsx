@@ -9,6 +9,7 @@ import { LogoMarquee } from "@/components/case-studies/LogoStrip";
 import { CompanyLogos } from "@/components/home/CompanyLogos";
 import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
 import { MicScrollStory } from "@/components/home/MicScrollStory";
+import { HeroOverlay } from "@/components/home/HeroOverlay";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
@@ -67,37 +68,11 @@ export default function Home() {
   return (
     <>
 
-      {/* ---------- Scroll-scrubbed mic story — leads the page ---------- */}
-      <MicScrollStory />
-
-      {/* ---------- Static hero (below the mic) — server-rendered, not
-          animated in and not scroll-dependent (no Reveal wrappers) ---------- */}
-      <section className="overflow-hidden pt-14 pb-12 text-center sm:pt-20 sm:pb-16">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent sm:text-sm">
-            Podcast editing &amp; production
-          </p>
-          <h1 className="font-display mx-auto mt-4 max-w-4xl text-4xl leading-[1.06] font-semibold tracking-tight text-balance sm:text-6xl lg:text-7xl">
-            Podcast production that gives you your week back.
-          </h1>
-          <p className="mx-auto mt-5 max-w-[60ch] text-lg leading-relaxed text-muted sm:mt-6 sm:text-xl">
-            Full-service editing, show notes, and distribution for any show.
-            Eight years, thousands of episodes, millions of listens.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
-            <Button href="/contact">Start a conversation</Button>
-            <Link
-              href="/work"
-              className="group inline-flex items-center gap-1 text-base font-medium text-accent"
-            >
-              See the work
-              <span className="transition-transform duration-300 group-hover:translate-x-0.5">
-                →
-              </span>
-            </Link>
-          </div>
-        </Container>
-      </section>
+      {/* ---------- Scroll-scrubbed mic story, with the above-the-fold hero
+          overlaid on it. The hero is a plain server component (no client
+          animation), so the H1, subhead, and CTA are in the initial HTML and
+          visible without scrolling. ---------- */}
+      <MicScrollStory hero={<HeroOverlay />} />
 
       {/* ---------- Client trust strip: brand logos, immediately below the
           hero. Greyscale → colour on hover, wraps on mobile. ---------- */}

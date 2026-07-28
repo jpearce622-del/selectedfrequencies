@@ -97,7 +97,8 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="service" className="block text-sm font-medium">
-          Service interested in
+          Service interested in{" "}
+          <span className="font-normal text-muted">(optional)</span>
         </label>
         <select
           id="service"
@@ -118,14 +119,15 @@ export function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block text-sm font-medium">
-          Message
+          About your show{" "}
+          <span className="font-normal text-muted">(optional)</span>
         </label>
         <textarea
           id="message"
           name="message"
-          required
-          rows={5}
-          className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm focus:border-accent focus:outline-none"
+          rows={4}
+          placeholder="Tell us about your show — or leave this blank and we'll figure it out on the call."
+          className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:border-accent focus:outline-none"
         />
       </div>
 

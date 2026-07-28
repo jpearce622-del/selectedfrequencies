@@ -46,7 +46,7 @@ const chapters: {
  * through it. Falls back to a single static frame + stacked text (no
  * scroll-jacking) under prefers-reduced-motion.
  */
-export function MicScrollStory() {
+export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
@@ -62,6 +62,9 @@ export function MicScrollStory() {
 
   const [loadedCount, setLoadedCount] = useState(0);
   const [activeChapter, setActiveChapter] = useState(0);
+  // Hero starts fully visible (1) and fades as the chapter sequence begins.
+  // Never used to *reveal* the hero — it's readable from first paint.
+  const [heroOpacity, setHeroOpacity] = useState(1);
   const [reducedMotion, setReducedMotion] = useState(false);
 
   // Detect reduced-motion preference once on mount (avoids SSR mismatch;
@@ -204,11 +207,24 @@ export function MicScrollStory() {
       frameRef.current = Math.round(targetFrameRef.current);
       start();
 
-      const chapter = Math.min(
-        chapters.length - 1,
-        Math.floor(clamped * chapters.length)
-      );
+      // The hero owns the first 12% of the scroll, so the chapters start
+      // after it rather than competing with it at rest. -1 means "none shown".
+      const HERO_ZONE = 0.12;
+      const chapter =
+        clamped < HERO_ZONE
+          ? -1
+          : Math.min(
+              chapters.length - 1,
+              Math.floor(
+                ((clamped - HERO_ZONE) / (1 - HERO_ZONE)) * chapters.length
+              )
+            );
       setActiveChapter(chapter);
+
+      // Fade the hero out across the first 12% of the pinned scroll, so it
+      // hands over to the chapter cards instead of colliding with them.
+      const fade = 1 - Math.min(1, clamped / 0.12);
+      setHeroOpacity(fade);
     };
 
     // A resize changes the canvas pixel dimensions and the fit maths, so
@@ -239,7 +255,22 @@ export function MicScrollStory() {
 
   if (reducedMotion) {
     return (
-      <section className="bg-black py-24 text-background sm:py-32">
+      <>
+        {/* Reduced motion: hero over a single static frame, no animation. */}
+        {hero && (
+          <section className="relative min-h-[85vh] bg-black text-background">
+            <NextImage
+              src={frameSrc(80)}
+              alt="Podcast microphone in a recording studio"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[35%_center] sm:object-center"
+            />
+            {hero}
+          </section>
+        )}
+        <section className="bg-black py-24 text-background sm:py-32">
         <div className="mx-auto max-w-3xl px-6 text-center sm:px-8">
           <NextImage
             src={frameSrc(80)}
@@ -269,7 +300,8 @@ export function MicScrollStory() {
             ))}
           </div>
         </div>
-      </section>
+        </section>
+      </>
     );
   }
 
@@ -297,6 +329,45 @@ export function MicScrollStory() {
         {loadedCount < FRAME_COUNT && (
           <div className="absolute top-6 right-6 rounded-full bg-black/30 px-3 py-1 text-xs text-background/70">
             Loading {Math.round((loadedCount / FRAME_COUNT) * 100)}%
+          </div>
+        )}
+
+        {/* Above-the-fold hero. Rendered at full opacity from first paint and
+            faded out on scroll — never faded *in*, so it's readable
+            immediately and present in the server HTML. */}
+        {hero && (
+          <div
+            style={{
+              opacity: heroOpacity,
+              visibility: heroOpacity < 0.02 ? "hidden" : "visible",
+            }}
+            className="absolute inset-0"
+          >
+            {hero}
+          </div>
+        )}
+
+        {/* Scroll cue — sits bottom-centre, clear of the CTA, and fades with
+            the hero so it doesn't linger over the chapter cards. */}
+        {hero && (
+          <div
+            aria-hidden="true"
+            style={{ opacity: heroOpacity }}
+            className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-center"
+          >
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="rgba(255,255,255,0.6)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="sf-scroll-cue"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
           </div>
         )}
 

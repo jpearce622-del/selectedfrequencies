@@ -20,9 +20,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  if (!name?.trim() || !email?.trim() || !message?.trim()) {
+  // Only name and email are required — the message is optional so an
+  // enquiry is never blocked by a blank text box.
+  if (!name?.trim() || !email?.trim()) {
     return NextResponse.json(
-      { error: "Name, email, and message are required." },
+      { error: "Name and email are required." },
       { status: 400 }
     );
   }
@@ -72,7 +74,7 @@ export async function POST(request: Request) {
         `Email: ${email.trim()}`,
         service ? `Service interested in: ${service.trim()}` : null,
         "",
-        message.trim(),
+        message?.trim() || "(No message — they'd rather talk it through.)",
       ]
         .filter(Boolean)
         .join("\n"),

@@ -35,7 +35,8 @@ export default function ContactPage() {
             <Reveal delay={160} className="mt-6 max-w-md">
               <p className="text-lg leading-relaxed text-muted">
                 Tell us about your show and what you need — we&apos;ll reply
-                directly, usually within a day.
+                within one working day. Just a name and an email is enough to
+                start; the rest is optional.
               </p>
             </Reveal>
             <Reveal delay={220}>

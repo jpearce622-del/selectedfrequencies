@@ -193,3 +193,16 @@
     background: #fff;
   }
 }
+
+/* Scroll cue on the homepage hero — a gentle nudge, disabled for
+   prefers-reduced-motion (handled by the block below). */
+@keyframes sf-scroll-cue {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%      { transform: translateY(5px); opacity: 1; }
+}
+.sf-scroll-cue {
+  animation: sf-scroll-cue 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sf-scroll-cue { animation: none; }
+}
