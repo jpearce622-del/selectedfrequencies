@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# source photography for the mic sequence — the exported frames that the
+# site actually serves live in public/images/mic-360/
+Mic images SF/
+Real mic sf/
