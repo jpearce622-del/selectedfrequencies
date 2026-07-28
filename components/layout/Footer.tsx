@@ -9,9 +9,15 @@ const footerLinks = [
   { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
   { href: "/bitcoin", label: "Bitcoin" },
-  { href: "/best-bitcoin-podcasts", label: "Best Bitcoin Podcasts" },
-  { href: "/podcast-launch-roadmap", label: "Start a Podcast" },
   { href: "/contact", label: "Contact" },
+];
+
+// Free tools & resources — grouped separately so they read as a set.
+const resourceLinks = [
+  { href: "/podcast-launch-roadmap", label: "Launch roadmap" },
+  { href: "/podcast-editing-cost-calculator", label: "Editing cost calculator" },
+  { href: "/tools/show-notes-generator", label: "Show notes generator" },
+  { href: "/best-bitcoin-podcasts", label: "Best Bitcoin podcasts" },
 ];
 
 export function Footer() {
@@ -33,17 +39,37 @@ export function Footer() {
           </Link>
         </div>
 
-        <nav className="flex flex-wrap gap-x-8 gap-y-3 sm:justify-end">
-          {footerLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-background/60 transition-colors hover:text-background"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="grid gap-8 sm:grid-cols-2 sm:justify-items-end">
+          <nav className="flex flex-col gap-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-background/40">
+              Site
+            </p>
+            {footerLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-background/60 transition-colors hover:text-background"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <nav className="flex flex-col gap-3">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-background/40">
+              Free tools
+            </p>
+            {resourceLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-background/60 transition-colors hover:text-background"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </Container>
 
       <Container className="flex flex-col gap-2 border-t border-deep-line py-6 sm:flex-row sm:items-center sm:justify-between">

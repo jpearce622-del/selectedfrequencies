@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata, siteConfig } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { PodcastRoadmapChecklist } from "@/components/tools/PodcastRoadmapChecklist";
@@ -114,6 +113,20 @@ export default function PodcastLaunchRoadmapPage() {
           <div className="mx-auto max-w-3xl">
             <PodcastRoadmapChecklist steps={roadmapSteps} />
 
+            {/* Step 6 (editing) is where most people underestimate the time
+                cost — point them at the calculator. */}
+            <p className="mt-6 text-sm leading-6 text-muted">
+              Step 6 is the one that quietly eats your week. Wondering what
+              editing it yourself really costs?{" "}
+              <Link
+                href="/podcast-editing-cost-calculator"
+                className="font-medium text-accent hover:text-accent-bright"
+              >
+                Try the calculator
+              </Link>
+              .
+            </p>
+
             {/* ---------- The punchline: a fake "Step 10" that rhymes with
                 the nine real steps above ---------- */}
             <Reveal delay={80}>
@@ -216,7 +229,7 @@ export default function PodcastLaunchRoadmapPage() {
           <Reveal delay={120} className="mx-auto mt-5 max-w-2xl">
             <p className="text-base leading-relaxed text-background/70">
               Editing, show notes, and promotion are what quietly eat a
-              podcaster's week. Selected Frequencies is a full-service editing
+              podcaster&apos;s week. Selected Frequencies is a full-service editing
               and production studio — we handle any show end to end, so you can
               focus on the ideas, not the timeline.
             </p>

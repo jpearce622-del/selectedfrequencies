@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { buildMetadata, siteConfig } from "@/lib/metadata";
-import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Button } from "@/components/ui/Button";

@@ -22,10 +22,21 @@ const toolsItems = [
     description: "A tickable 9-step checklist to launch your show",
   },
   {
+    href: "/podcast-editing-cost-calculator",
+    label: "Editing Cost Calculator",
+    badge: "Free",
+    description: "What editing your own show really costs you",
+  },
+  {
     href: "/tools/show-notes-generator",
     label: "Show Notes Generator",
     badge: "Free",
     description: "Transcript + draft show notes from any episode",
+  },
+  {
+    href: "/best-bitcoin-podcasts",
+    label: "Best Bitcoin Podcasts",
+    description: "A hand-picked directory of Bitcoin & crypto shows",
   },
 ];
 
@@ -109,9 +120,11 @@ export function Header() {
                   >
                     <span className="flex items-center gap-2 text-sm font-medium text-foreground">
                       {item.label}
-                      <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent">
-                        {item.badge}
-                      </span>
+                      {item.badge && (
+                        <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent">
+                          {item.badge}
+                        </span>
+                      )}
                     </span>
                     <span className="text-xs text-muted">{item.description}</span>
                   </Link>
@@ -191,9 +204,11 @@ export function Header() {
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}
-                <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent">
-                  {item.badge}
-                </span>
+                {item.badge && (
+                  <span className="rounded-full bg-accent/10 px-2 py-0.5 text-xs font-semibold text-accent">
+                    {item.badge}
+                  </span>
+                )}
               </Link>
             ))}
             <Link
