@@ -5,8 +5,9 @@ export const podcastAnalyticsMetricsThatMatter: BlogPost = {
   slug: "podcast-analytics-metrics-that-matter",
   title:
     "Podcast Analytics: The Metrics That Actually Matter (and the Vanity Numbers to Ignore)",
+  seoTitle: "Podcast Analytics: What Matters",
   metaDescription:
-    "A producer's guide to podcast analytics — what downloads really measure, why consumption and retention matter more, and the five numbers worth checking every month.",
+    "Which podcast metrics actually matter — downloads, consumption, followers, and retention — how to read them honestly, and which vanity numbers to ignore.",
   publishedAt: "2026-07-14",
   category: "Analytics",
   author: shaunaMartin,

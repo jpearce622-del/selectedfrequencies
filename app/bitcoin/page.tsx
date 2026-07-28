@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = buildMetadata({
-  title: "We Accept Bitcoin — One of the First UK Podcast Studios to Take BTC",
+  title: "We Accept Bitcoin for Podcasts",
   description:
-    "Selected Frequencies is one of the first UK podcast studios to accept Bitcoin. Here's why we take BTC and Lightning for editing and production — and how paying in Bitcoin works.",
+    "One of the first UK podcast studios to accept Bitcoin. Why we take BTC and Lightning for editing and production, and how paying us by invoice all works.",
   path: "/bitcoin",
 });
 

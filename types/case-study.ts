@@ -18,6 +18,9 @@ export interface CaseStudy {
   hostName?: string;
   /** One-line description of the show, shown on index + teaser cards */
   oneLiner: string;
+  /** Search-result description, 150–160 chars. Falls back to a generated
+   *  summary (see lib/case-studies.ts) when not set. */
+  metaDescription?: string;
   /** Longer-form paragraph rendered as an "About the show" section on the
    *  case study page — the extra depth Google's guidance on thin content
    *  calls for. Optional so existing shorter case studies aren't broken. */

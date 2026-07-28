@@ -10,7 +10,7 @@ import { archiveItems } from "@/content/archive";
 export const metadata: Metadata = buildMetadata({
   title: "Archive",
   description:
-    "Earlier production work — podcasts, radio, and EDM — from the first years of Selected Frequencies.",
+    "Earlier production work from the first years of Selected Frequencies — mindset and health podcasts, plus EDM radio for Tomorrowland and Martin Garrix.",
   path: "/work/archive",
 });
 
@@ -30,7 +30,7 @@ export default function WorkArchivePage() {
               <div className="group relative aspect-square overflow-hidden rounded-2xl bg-fog shadow-sm ring-1 ring-border">
                 <Image
                   src={item.image}
-                  alt={item.name}
+                  alt={`${item.name} — podcast cover art`}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"

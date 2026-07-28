@@ -5,17 +5,20 @@ import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+import { FounderJsonLd, BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About",
+  title: "About James Pearce | Podcast Producer",
   description:
-    "Selected Frequencies is a full-service podcast editing and production studio, founded by James Pearce in 2019 — thousands of episodes produced, with deep experience in Bitcoin and finance shows.",
+    "Selected Frequencies is a UK podcast studio founded by James Pearce in 2019. Eight years in audio, from BBC Radio 1 mixes to thousands of podcast episodes.",
   path: "/about",
 });
 
 export default function AboutPage() {
   return (
     <>
+      <FounderJsonLd />
+      <BreadcrumbJsonLd trail={[{ name: "About", path: "/about" }]} />
       <section className="pt-20 pb-16 sm:pt-28 sm:pb-20">
         <Container>
           <div className="grid gap-12 sm:grid-cols-[1fr_1.6fr] sm:items-center">

@@ -7,8 +7,9 @@ import { SoundMark } from "@/components/brand/SoundMark";
 import { ContactForm } from "@/components/contact/ContactForm";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact",
-  description: "Get in touch about producing your podcast.",
+  title: "Get a Podcast Editing Quote",
+  description:
+    "Tell us about your show and get a straightforward quote for editing, show notes, or full production. Usually a reply within a day. We accept Bitcoin too.",
   path: "/contact",
 });
 

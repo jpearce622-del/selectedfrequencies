@@ -4,8 +4,9 @@ import { shaunaMartin } from "@/content/authors";
 export const podcastAudioQualityGuide: BlogPost = {
   slug: "podcast-audio-quality-guide",
   title: "Podcast Audio Quality: A Producer's Guide to Sounding Broadcast-Ready",
+  seoTitle: "Podcast Audio Quality Guide",
   metaDescription:
-    "How to make your podcast sound professional — room and mic technique, the gear that matters, the signal chain, editing, and the loudness target most shows get wrong.",
+    "How to make your podcast sound professional: room, mic technique, levels, and the −16 LUFS standard — the fixes that matter most, in priority order.",
   publishedAt: "2026-07-02",
   category: "Production",
   author: shaunaMartin,

@@ -39,6 +39,9 @@ export interface Author {
 export interface BlogPost {
   slug: string;
   title: string;
+  /** Shorter title for the <title> tag (≤38 chars so it fits with the
+   *  " | Selected Frequencies" suffix under 60). Falls back to `title`. */
+  seoTitle?: string;
   metaDescription: string;
   publishedAt: string; // ISO date, e.g. "2026-01-01"
   updatedAt?: string; // ISO date

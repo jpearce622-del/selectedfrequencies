@@ -7,9 +7,9 @@ import { Reveal } from "@/components/ui/Reveal";
 import { clients } from "@/content/clients";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Work",
+  title: "Podcast Production Case Studies",
   description:
-    "Case studies from podcasts produced by Selected Frequencies — full-service editing and production, with deep experience in Bitcoin and finance shows.",
+    "Case studies from the podcasts we produce — Bitcoin, finance, genetics, strategy, and coaching shows. See the work, plus the results behind each show.",
   path: "/work",
 });
 

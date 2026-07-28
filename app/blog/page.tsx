@@ -9,9 +9,9 @@ import { SoundMark } from "@/components/brand/SoundMark";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Blog",
+  title: "Podcast Blog — Editing, SEO & Growth",
   description:
-    "Notes on podcast production, editing, and building authority through audio.",
+    "Practical guides on podcast editing, audio quality, SEO, analytics, and growth — written by a producer who does this every day. No fluff, and no filler.",
   path: "/blog",
 });
 

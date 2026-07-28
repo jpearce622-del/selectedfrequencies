@@ -4,8 +4,9 @@ import { shaunaMartin } from "@/content/authors";
 export const descriptVsRiverside: BlogPost = {
   slug: "descript-vs-riverside",
   title: "Descript vs Riverside (2026): Podcast Editing Software Compared",
+  seoTitle: "Descript vs Riverside (2026)",
   metaDescription:
-    "Descript vs Riverside in 2026 — a hands-on comparison of the two most popular podcast tools. Which is better for recording, editing, AI features, video, and price, and why many creators use both.",
+    "Descript vs Riverside in 2026: which is better for recording, editing, AI features, video, and price — and why plenty of podcasters end up using both.",
   publishedAt: "2026-07-24",
   updatedAt: "2026-07-24",
   category: "Tools",

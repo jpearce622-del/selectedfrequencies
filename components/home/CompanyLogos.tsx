@@ -9,7 +9,7 @@ export function CompanyLogos() {
         <Image
           key={company.name}
           src={company.logo}
-          alt={company.name}
+          alt={`${company.name} logo`}
           width={160}
           height={44}
           className="h-7 w-auto object-contain opacity-60 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0 sm:h-8"

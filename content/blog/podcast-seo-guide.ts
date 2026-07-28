@@ -4,8 +4,9 @@ import { shaunaMartin } from "@/content/authors";
 export const podcastSeoGuide: BlogPost = {
   slug: "podcast-seo-guide",
   title: "Podcast SEO: How to Get Your Show Found in Search and AI Answers",
+  seoTitle: "Podcast SEO Guide",
   metaDescription:
-    "Podcasts are invisible to search engines by default. Here's how to make your show discoverable — episode titles, transcripts, per-episode pages, schema, and AI answers.",
+    "Podcasts are invisible to search by default. How to make your show discoverable — episode titles, transcripts, per-episode pages, schema, and AI answers.",
   publishedAt: "2026-06-18",
   category: "SEO",
   author: shaunaMartin,

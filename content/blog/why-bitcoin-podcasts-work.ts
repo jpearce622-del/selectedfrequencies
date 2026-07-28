@@ -4,8 +4,9 @@ import { shaunaMartin } from "@/content/authors";
 export const whyBitcoinPodcastsWork: BlogPost = {
   slug: "why-bitcoin-podcasts-work",
   title: "Why Bitcoin Podcasts Work: How Audio Became Crypto's Trust Engine",
+  seoTitle: "Why Bitcoin Podcasts Work",
   metaDescription:
-    "Bitcoin is hard to explain and easy to distrust. This is a deep dive into why podcasts have become the medium of record for crypto — how audio builds trust, educates, and compounds — with two shows we produce as worked examples.",
+    "Bitcoin is hard to explain and easy to distrust. Why long-form audio became crypto's trust engine — and how the best shows turn curiosity into conviction.",
   publishedAt: "2026-07-22",
   category: "Bitcoin",
   author: shaunaMartin,

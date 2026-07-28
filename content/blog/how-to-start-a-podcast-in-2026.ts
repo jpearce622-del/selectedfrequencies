@@ -4,8 +4,9 @@ import { shaunaMartin } from "@/content/authors";
 export const howToStartAPodcastIn2026: BlogPost = {
   slug: "how-to-start-a-podcast-in-2026",
   title: "How to Start a Podcast in 2026: A Full Beginner Walkthrough",
+  seoTitle: "How to Start a Podcast in 2026",
   metaDescription:
-    "A step-by-step guide to how to start a podcast in 2026 — concept, gear, recording, editing, hosting, and promotion — with realistic time and cost, for complete beginners.",
+    "A step-by-step guide to starting a podcast in 2026 — concept, gear, recording, editing, hosting, and promotion, with realistic time and cost for beginners.",
   publishedAt: "2026-07-24",
   category: "Getting Started",
   author: shaunaMartin,

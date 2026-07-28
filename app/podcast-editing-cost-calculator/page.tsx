@@ -11,9 +11,9 @@ import { regions, timeBenchmarks, sources } from "@/data/editing-benchmarks";
 import { tiers, formatGBP, UK_AGENCY_RANGE } from "@/data/pricing";
 
 const PAGE_TITLE =
-  "Podcast Editing Cost Calculator (UK 2026) — What DIY Editing Really Costs You";
+  "Podcast Editing Cost Calculator";
 const PAGE_DESCRIPTION =
-  "Free calculator: work out what editing your own podcast costs you each year in time and money, and compare it against hiring a professional editor. Real 2026 UK and US benchmark rates included.";
+  "Free calculator: work out what editing your own podcast costs you each year, and compare it against hiring an editor. Real UK and US benchmark rates 2026.";
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,

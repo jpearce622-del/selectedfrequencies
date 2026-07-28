@@ -26,13 +26,26 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
 
+  // Social scrapers (Facebook, X, LinkedIn) don't render SVG, so an SVG cover
+  // would share as a blank card. Fall back to the site's JPG default in that
+  // case rather than shipping a broken preview.
+  const isShareable = !post.coverImage.src.toLowerCase().endsWith(".svg");
+  const shareImage = isShareable ? post.coverImage.src : undefined;
+  const shareAlt = isShareable ? post.coverImage.alt : undefined;
+
   const meta = buildMetadata({
-    title: post.title,
+    // seoTitle keeps the <title> under 60 chars with the brand suffix; the
+    // full editorial `title` still renders as the article's H1.
+    title: post.seoTitle ?? post.title,
     description: post.metaDescription,
     path: `/blog/${post.slug}`,
+    image: shareImage,
+    imageAlt: shareAlt,
+    type: "article",
   });
 
-  // Add the article's cover image + article OG type on top of the shared meta.
+  // Layer the article-specific timestamps on top of the shared meta, keeping
+  // buildMetadata's images (which already carry width, height, and alt).
   return {
     ...meta,
     openGraph: {
@@ -41,11 +54,6 @@ export async function generateMetadata({
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt ?? post.publishedAt,
       authors: [post.author.name],
-      images: [{ url: post.coverImage.src, alt: post.coverImage.alt }],
-    },
-    twitter: {
-      ...meta.twitter,
-      images: [post.coverImage.src],
     },
   };
 }

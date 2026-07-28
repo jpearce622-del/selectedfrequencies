@@ -5,9 +5,9 @@ import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Free Podcast Tools",
+  title: "Free Podcast Tools & Calculators",
   description:
-    "Free tools from Selected Frequencies — transcript generators, show notes drafters, and more for podcast producers and hosts.",
+    "Free tools for podcasters — a 9-step launch checklist, an editing cost calculator, and a show notes generator. No sign-up, no catch, just useful things.",
   path: "/tools",
 });
 

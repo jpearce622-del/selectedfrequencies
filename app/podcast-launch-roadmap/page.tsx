@@ -11,9 +11,9 @@ const PATH = "/podcast-launch-roadmap";
 const CANONICAL = `${siteConfig.url}${PATH}`;
 
 export const metadata: Metadata = buildMetadata({
-  title: "How to Start a Podcast: 9-Step Launch Checklist (2026)",
+  title: "How to Start a Podcast: 9 Steps",
   description:
-    "A free, interactive 9-step checklist to start a podcast from scratch — concept, gear, recording, editing, hosting, and promotion — with beginner tips plus time and cost estimates. Tick off each step as you go.",
+    "A free, interactive 9-step checklist to start a podcast from scratch — concept, gear, recording, editing, hosting, and promotion. Launch for under £150.",
   path: PATH,
 });
 

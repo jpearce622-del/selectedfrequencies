@@ -4,8 +4,9 @@ import { shaunaMartin } from "@/content/authors";
 export const howToBookGreatPodcastGuests: BlogPost = {
   slug: "how-to-book-great-podcast-guests",
   title: "How to Book Great Podcast Guests (Without a Big Name or a Big Budget)",
+  seoTitle: "How to Book Great Podcast Guests",
   metaDescription:
-    "A practical system for booking podcast guests who actually move the needle — how to find them, the outreach email that gets a yes, and how to make saying yes effortless.",
+    "How to find, pitch, and book great podcast guests without a big name or budget — the research, the outreach email, and the follow-through that gets a yes.",
   publishedAt: "2026-07-09",
   category: "Growth",
   author: shaunaMartin,

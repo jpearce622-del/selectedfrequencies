@@ -8,21 +8,20 @@ import { Reveal } from "@/components/ui/Reveal";
 import { LogoMarquee } from "@/components/case-studies/LogoStrip";
 import { CompanyLogos } from "@/components/home/CompanyLogos";
 import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
-import { LocalBusinessJsonLd } from "@/components/seo/JsonLd";
 import { MicScrollStory } from "@/components/home/MicScrollStory";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "Full-Service Podcast Editing & Production",
+    title: "Podcast Editing & Production Studio",
     description:
-      "Selected Frequencies is a full-service podcast editing and production studio — editing, show notes, and distribution, end to end — with deep experience in Bitcoin and finance shows.",
+      "Full-service podcast editing and production — editing, show notes, and distribution, handled end to end. UK-based, working worldwide. Get a quote today.",
     path: "/",
   }),
   // The root segment doesn't apply the layout's "%s | Selected Frequencies"
   // template to its own title, so set the full document title explicitly.
   title: {
-    absolute: "Full-Service Podcast Editing & Production | Selected Frequencies",
+    absolute: "Podcast Editing & Production Studio | Selected Frequencies",
   },
 };
 
@@ -55,7 +54,9 @@ const whatIDo = [
 ];
 
 const stats = [
-  { value: "8 yrs", label: "Producing podcasts since 2019" },
+  // Founded 2019; James has worked in professional audio since 2017 — the
+  // "8 yrs" figure refers to the audio career, so label it accordingly.
+  { value: "8 yrs", label: "In professional audio since 2017" },
   { value: "End-to-end", label: "From raw audio to promoted episode" },
   { value: "Any genre", label: "Bitcoin & finance a speciality" },
 ];
@@ -65,7 +66,6 @@ export default function Home() {
 
   return (
     <>
-      <LocalBusinessJsonLd />
 
       {/* ---------- Scroll-scrubbed mic story — leads the page ---------- */}
       <MicScrollStory />

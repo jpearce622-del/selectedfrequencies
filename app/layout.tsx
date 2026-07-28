@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Plausible } from "@/components/analytics/Plausible";
+import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/metadata";
 
 // Fallback sans for non-Apple devices; on Macs the CSS stack renders
@@ -38,6 +39,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <OrganizationJsonLd />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

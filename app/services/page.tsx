@@ -20,7 +20,7 @@ const addOnTiers = tiers.filter((t) => t.addOn);
 export const metadata: Metadata = buildMetadata({
   title: "Podcast Editing & Production Services",
   description:
-    "Full production, editing-only, show notes and chapters, YouTube and social asset creation, and launch packages for new shows.",
+    "Podcast editing from £110, audio and video production from £165, and full production from £335 per episode. Show notes, clips, and distribution included.",
   path: "/services",
 });
 

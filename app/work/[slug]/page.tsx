@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { buildMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SoundMark } from "@/components/brand/SoundMark";
-import { getAllCaseStudies, getCaseStudyBySlug } from "@/lib/case-studies";
+import {
+  getAllCaseStudies,
+  getCaseStudyBySlug,
+  caseStudyMetaDescription,
+} from "@/lib/case-studies";
+import { buildMetadata, siteConfig, absoluteUrl } from "@/lib/metadata";
 
 type Params = { slug: string };
 
@@ -26,8 +30,10 @@ export async function generateMetadata({
 
   return buildMetadata({
     title: `${study.showName} — Case Study`,
-    description: study.oneLiner,
+    description: caseStudyMetaDescription(study),
     path: `/work/${study.slug}`,
+    image: study.logo,
+    imageAlt: study.logoAlt ?? `${study.showName} cover art`,
   });
 }
 
@@ -50,8 +56,50 @@ export default async function CaseStudyPage({
   const showTestimonial =
     study.testimonial && isReal(study.testimonial.quote);
 
+  const pageUrl = `${siteConfig.url}/work/${study.slug}`;
+
+  // CreativeWork describing the show itself, plus a breadcrumb trail matching
+  // the real navigation path. Both mirror what's visible on the page.
+  const creativeWorkJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: study.showName,
+    description: caseStudyMetaDescription(study),
+    url: pageUrl,
+    ...(study.logo ? { image: absoluteUrl(study.logo) } : {}),
+    ...(study.hostName
+      ? { author: { "@type": "Person", name: study.hostName } }
+      : {}),
+    ...(study.clientName
+      ? { sourceOrganization: { "@type": "Organization", name: study.clientName } }
+      : {}),
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Work", item: `${siteConfig.url}/work` },
+      { "@type": "ListItem", position: 3, name: study.showName, item: pageUrl },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       {/* Hero — themed to the show's own cover art, Spotify show-page
           style: a colour sampled from the artwork at the top, fading
           down into the site's own brand navy so it still reads as one
@@ -69,9 +117,10 @@ export default async function CaseStudyPage({
                 <div className="h-32 w-32 shrink-0 overflow-hidden rounded-2xl bg-white shadow-2xl shadow-black/40 sm:h-48 sm:w-48">
                   <Image
                     src={study.logo}
-                    alt={study.logoAlt ?? ""}
+                    alt={study.logoAlt ?? `${study.showName} — podcast cover art`}
                     width={220}
                     height={220}
+                    priority
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -132,7 +181,7 @@ export default async function CaseStudyPage({
           <Reveal>
             <Image
               src={study.coverImage}
-              alt={study.coverImageAlt ?? ""}
+              alt={study.coverImageAlt ?? `${study.showName} — production still`}
               width={1200}
               height={675}
               className="w-full rounded-2xl border border-border object-cover"

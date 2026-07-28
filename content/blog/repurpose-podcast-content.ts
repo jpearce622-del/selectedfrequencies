@@ -4,8 +4,9 @@ import { shaunaMartin } from "@/content/authors";
 export const repurposePodcastContent: BlogPost = {
   slug: "repurpose-podcast-content",
   title: "Repurposing Podcast Content: Turn One Episode Into a Month of Marketing",
+  seoTitle: "Repurposing Podcast Content",
   metaDescription:
-    "A system for repurposing podcast episodes into clips, video, blog posts, newsletters, and social content — so one recording works for weeks instead of a day.",
+    "How to turn one podcast episode into a week of content — clips, quotes, newsletters, and articles — without doubling your workload or your production time.",
   publishedAt: "2026-06-25",
   category: "Marketing",
   author: shaunaMartin,

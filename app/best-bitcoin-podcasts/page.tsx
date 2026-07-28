@@ -11,9 +11,9 @@ import {
   type BitcoinPodcast,
 } from "@/content/bitcoin-podcasts";
 
-const PAGE_TITLE = "The Best Bitcoin & Crypto Podcasts (2026)";
+const PAGE_TITLE = "Best Bitcoin & Crypto Podcasts 2026";
 const PAGE_DESCRIPTION =
-  "A curated directory of the best Bitcoin and crypto podcasts to follow in 2026 — hand-picked shows on sound money, investing, and the future of finance, with where to listen.";
+  "A hand-picked directory of the best Bitcoin and crypto podcasts to follow in 2026 — sound money, macro, and investing shows, plus where to listen to each.";
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,

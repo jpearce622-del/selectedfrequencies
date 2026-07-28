@@ -68,3 +68,31 @@ export function getFeaturedCaseStudies(): CaseStudy[] {
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
   return allCaseStudies.find((study) => study.slug === slug);
 }
+
+/**
+ * Search-result description for a case study, capped at 160 characters so it
+ * doesn't truncate in Google. Uses the hand-written `metaDescription` when a
+ * study has one; otherwise composes a factual one from fields we already
+ * hold — never inflating or inventing numbers.
+ */
+export function caseStudyMetaDescription(study: CaseStudy): string {
+  if (study.metaDescription) return study.metaDescription.slice(0, 160);
+
+  const lead = `${study.showName} — produced by Selected Frequencies.`;
+  const service = study.services[0]
+    ? ` ${study.services[0]} for ${study.clientName}.`
+    : "";
+
+  // Prefer a real, already-verified outcome clause when it fits.
+  const credibility = study.outcome
+    ? ` ${study.outcome.split("—")[0].trim()}`
+    : study.hostName
+      ? ` Hosted by ${study.hostName}.`
+      : "";
+
+  const composed = `${lead}${service}${credibility}`.replace(/\s+/g, " ").trim();
+  if (composed.length <= 160) return composed;
+
+  // Trim on a word boundary rather than mid-word.
+  return `${composed.slice(0, 157).replace(/[\s,.;:—-]+\S*$/, "")}…`;
+}
