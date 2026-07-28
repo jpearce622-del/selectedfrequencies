@@ -12,6 +12,7 @@ export const careerChangeDiaries: CaseStudy = {
   slug: "career-change-coach",
   clientName: "Alice Stapleton",
   showName: "The Career Change Diaries",
+  metaTitleName: "Career Change Diaries",
   hostName: "Alice Stapleton",
   oneLiner:
     "Accredited career change coach Alice Stapleton hosts monthly conversations with people who've actually made the leap — an army captain who now runs a wine merchant, a press officer turned creative strategist, a fashion buyer turned artisan craftswoman. Stories that specific deserve production that never gets in their way.",

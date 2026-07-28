@@ -15,6 +15,12 @@ export interface CaseStudy {
   clientName: string;
   /** The podcast itself */
   showName: string;
+  /** Shorter name used only in the <title> tag. The page title is built as
+   *  "<name> — Case Study | Selected Frequencies"; the suffix alone is 36
+   *  characters, so show names longer than ~24 push the title past Google's
+   *  ~60-character display limit and get truncated. Set this for long names
+   *  and leave it unset for short ones. */
+  metaTitleName?: string;
   hostName?: string;
   /** One-line description of the show, shown on index + teaser cards */
   oneLiner: string;

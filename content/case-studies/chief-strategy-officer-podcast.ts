@@ -11,6 +11,7 @@ export const chiefStrategyOfficerPodcast: CaseStudy = {
   slug: "chief-strategy-officer-podcast",
   clientName: "Outthinkers Network",
   showName: "The Chief Strategy Officer Podcast",
+  metaTitleName: "Chief Strategy Officer",
   hostName: "Kaihan Krippendorff",
   oneLiner:
     "Kaihan Krippendorff — who has advised more than 300 of the world's top companies — sits down monthly with sitting Chief Strategy Officers from businesses like WestRock, IDEX, and Anywhere Real Estate, plus Google's Chief Strategist Neil Hoyne. Conversations at that level need production that never once gets in the way.",

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -9,9 +10,11 @@ import { SoundMark } from "@/components/brand/SoundMark";
 import {
   getAllCaseStudies,
   getCaseStudyBySlug,
+  getRelatedCaseStudies,
   caseStudyMetaDescription,
 } from "@/lib/case-studies";
 import { buildMetadata, siteConfig, absoluteUrl } from "@/lib/metadata";
+import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
 
 type Params = { slug: string };
 
@@ -29,7 +32,7 @@ export async function generateMetadata({
   if (!study) return {};
 
   return buildMetadata({
-    title: `${study.showName} — Case Study`,
+    title: `${study.metaTitleName ?? study.showName} — Case Study`,
     description: caseStudyMetaDescription(study),
     path: `/work/${study.slug}`,
     image: study.logo,
@@ -45,6 +48,8 @@ export default async function CaseStudyPage({
   const { slug } = await params;
   const study = getCaseStudyBySlug(slug);
   if (!study) notFound();
+
+  const related = getRelatedCaseStudies(slug);
 
   // Only surface copy that's real — never render leftover placeholder
   // markers publicly. Real quotes/outcomes/services can be added to the data
@@ -255,6 +260,32 @@ export default async function CaseStudyPage({
             </Reveal>
           </Section>
         </section>
+      )}
+
+      {/* Cross-links to other case studies. Without these each study page is
+          reachable only from the /work grid, which leaves it a dead end for
+          crawlers and concentrates the site's authority on the index. */}
+      {related.length > 0 && (
+        <Section className="border-t border-border">
+          <Reveal className="flex items-end justify-between gap-4">
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              More case studies
+            </h2>
+            <Link
+              href="/work"
+              className="shrink-0 text-sm font-medium text-accent hover:underline"
+            >
+              View all →
+            </Link>
+          </Reveal>
+          <div className="mt-8 grid grid-cols-2 gap-6 lg:grid-cols-3">
+            {related.map((item, i) => (
+              <Reveal key={item.slug} delay={i * 60}>
+                <CaseStudyCard study={item} />
+              </Reveal>
+            ))}
+          </div>
+        </Section>
       )}
 
       <Section className="border-t border-border text-center">

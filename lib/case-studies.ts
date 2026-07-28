@@ -70,6 +70,30 @@ export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
 }
 
 /**
+ * Other case studies to link to from a case study page.
+ *
+ * Every case study previously had exactly one internal link pointing at it —
+ * the /work grid — which left each page a dead end and pooled all the
+ * site's authority on the index. Linking each study to a few others spreads
+ * that around and gives crawlers more than one route in.
+ *
+ * Ordering is deterministic (same category first, then the rest, both in
+ * declaration order) so the markup is stable between builds rather than
+ * reshuffling on every deploy. Studies are only described as "more work",
+ * never as topically related — there's no genre/topic field on CaseStudy to
+ * support a relatedness claim.
+ */
+export function getRelatedCaseStudies(slug: string, limit = 3): CaseStudy[] {
+  const current = getCaseStudyBySlug(slug);
+  const others = allCaseStudies.filter((study) => study.slug !== slug);
+  if (!current) return others.slice(0, limit);
+
+  const sameCategory = others.filter((s) => s.category === current.category);
+  const rest = others.filter((s) => s.category !== current.category);
+  return [...sameCategory, ...rest].slice(0, limit);
+}
+
+/**
  * Search-result description for a case study, capped at 160 characters so it
  * doesn't truncate in Google. Uses the hand-written `metaDescription` when a
  * study has one; otherwise composes a factual one from fields we already

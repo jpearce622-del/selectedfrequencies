@@ -12,6 +12,7 @@ export const biohackingBeauty: CaseStudy = {
   slug: "biohacking-beauty",
   clientName: "Young Goose",
   showName: "Biohacking Beauty: The Anti-Aging Skincare Podcast",
+  metaTitleName: "Biohacking Beauty",
   hostName: "Amitay Eshel & Anastasia Khodzhaeva",
   oneLiner:
     "Hosted by Young Goose founders Amitay Eshel and Anastasia Khodzhaeva, Biohacking Beauty explores the latest innovations at the intersection of beauty, longevity, health, and science, for listeners who want evidence-based skincare rather than trend-chasing.",

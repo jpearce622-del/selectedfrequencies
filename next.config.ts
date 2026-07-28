@@ -42,6 +42,17 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // 0. Canonicalise the host. www currently serves a 200 alongside the
+      //    apex, so every page is reachable at two URLs. The rel=canonical
+      //    tags already point at the apex, but a 301 removes the duplicate
+      //    outright rather than asking Google to resolve it.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.selectedfrequencies.com" }],
+        destination: "https://selectedfrequencies.com/:path*",
+        permanent: true,
+      },
+
       // 1. Specific old-post mappings (most specific first), tolerating the
       //    trailing slash Wix used.
       ...legacyPostRedirects.flatMap(({ from, to }) => [

@@ -12,6 +12,7 @@ export const realEstateMindset: CaseStudy = {
   slug: "real-estate-mindset",
   clientName: "Eric Nelson",
   showName: "The Real Estate Mindset",
+  metaTitleName: "Real Estate Mindset",
   hostName: "Eric Nelson",
   oneLiner:
     "The Real Estate Mindset is a podcast designed to educate and inspire property professionals, investors, and aspiring entrepreneurs — 170+ episodes across three years, hosted by Wild Oak Capital principal Eric Nelson.",

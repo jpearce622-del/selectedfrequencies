@@ -13,6 +13,7 @@ export const fascatCoaching: CaseStudy = {
   slug: "fascat-coaching",
   clientName: "FasCat Coaching",
   showName: "FasCat Cycling Training Tips Podcast",
+  metaTitleName: "FasCat Cycling",
   hostName: "Coach Frank Overton",
   oneLiner:
     "FasCat is dedicated to helping cyclists maximise their performance through smarter training, sports science, and data-driven coaching — endurance, power training, nutrition, race preparation, and recovery, for riders at every level.",
