@@ -30,10 +30,10 @@ export function OrganizationJsonLd() {
       name: siteConfig.founder,
       jobTitle: "Founder & Podcast Producer",
     },
-    areaServed: [
-      { "@type": "Country", name: "United Kingdom" },
-      { "@type": "Place", name: "Worldwide" },
-    ],
+    // ISO country codes rather than prose: unambiguous to parsers, and the
+    // markets the studio actually works in. IE is an availability claim
+    // (Irish clients are welcome), not a claim that any exist yet.
+    areaServed: ["GB", "IE", "US", "EU"],
     knowsAbout: [
       "Podcast editing",
       "Podcast production",

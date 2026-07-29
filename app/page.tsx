@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   ...buildMetadata({
     title: "Podcast Editing & Production Studio",
     description:
-      "Full-service podcast editing and production — editing, show notes, and distribution, handled end to end. UK-based, working worldwide. Get a quote today.",
+      "Full-service podcast editing and production, handled end to end. UK-based, working with clients across the UK, the US and Europe. Get a quote today.",
     path: "/",
   }),
   // The root segment doesn't apply the layout's "%s | Selected Frequencies"

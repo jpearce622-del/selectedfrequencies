@@ -39,6 +39,17 @@ export default function ContactPage() {
                 start; the rest is optional.
               </p>
             </Reveal>
+            {/* Genuinely useful logistics for US clients, and a relevance
+                signal at the same time: the time difference is the reason
+                episodes come back overnight rather than a drawback. */}
+            <Reveal delay={190} className="mt-4 max-w-md">
+              <p className="text-base leading-relaxed text-muted">
+                We work from Northern Ireland (GMT/BST) with clients across the
+                UK, the US and Europe. For US shows that time difference works
+                in your favour — send an episode at the end of your day and it
+                is usually being worked on before you are back at your desk.
+              </p>
+            </Reveal>
             <Reveal delay={220}>
               <SoundMark className="mt-10 h-8 w-32 text-accent" />
             </Reveal>

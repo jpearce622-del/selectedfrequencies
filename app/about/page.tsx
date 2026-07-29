@@ -69,6 +69,16 @@ export default function AboutPage() {
                   shows around the world, heard by millions of listeners across
                   every major platform.
                 </p>
+                <p>
+                  These days I work from Banbridge, about twenty-five minutes
+                  outside Belfast, in Northern Ireland. That matters less than it
+                  used to. Podcast production has been a remote craft for years —
+                  the files arrive, the work happens, the episode ships — and
+                  being here has turned out to suit the way my clients are spread
+                  out. A UK morning overlaps neatly with the rest of Europe, and
+                  by the time the US wakes up, work sent over the night before is
+                  usually already done. The studio is wherever the show is.
+                </p>
               </Reveal>
             </div>
           </div>

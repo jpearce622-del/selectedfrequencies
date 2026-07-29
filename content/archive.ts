@@ -1,6 +1,8 @@
 export interface ArchiveItem {
   name: string;
-  image: string;
+  /** Optional — the grid falls back to a titled tile, so a show without
+   *  supplied cover art isn't blocked from appearing. */
+  image?: string;
   /** Set when a full /work/[slug] case study page exists for this item. */
   slug?: string;
 }
@@ -15,7 +17,7 @@ export interface ArchiveItem {
 export const archiveItems: ArchiveItem[] = [
   { name: "Sano Genetics", image: "/images/clients/sano-genetics.png" },
   { name: "Total Mental Performance", image: "/images/clients/total-mental-performance.jpeg", slug: "tmp-podcast" },
-  { name: "Aaron Alexander", image: "/images/clients/aaron-alexander.jpeg" },
+  { name: "Aaron Alexander", image: "/images/clients/aaron-alexander.jpeg", slug: "align-podcast" },
   { name: "EYR Podcast", image: "/images/clients/eyr-podcast.png", slug: "embrace-your-real" },
   { name: "Martin Garrix", image: "/images/clients/martin-garrix.png", slug: "martin-garrix-show" },
   { name: "Felix Jaehn — Collaection Radio", image: "/images/clients/felix-jaehn-collection-radio.jpg", slug: "collaection-radio" },
@@ -38,4 +40,8 @@ export const archiveItems: ArchiveItem[] = [
   { name: "Complete Human", image: "/images/clients/complete-human.png", slug: "complete-human-podcast" },
   { name: "Real Estate Mindset", image: "/images/clients/real-estate-mindset.jpg", slug: "real-estate-mindset" },
   { name: "The EC Method", image: "/images/clients/the-ec-method.jpeg", slug: "the-ec-method" },
+  // TODO (James): supply cover art for these two and add an `image` path —
+  // they render as titled tiles until then.
+  { name: "Inspirations by Chana Mason", slug: "inspirations-chana-mason" },
+  { name: "The Possibility in the Universe", slug: "possibility-in-the-universe" },
 ];

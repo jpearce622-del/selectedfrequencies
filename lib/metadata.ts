@@ -5,6 +5,29 @@ export const siteConfig = {
   url: "https://selectedfrequencies.com",
   positioning:
     "Selected Frequencies is a full-service podcast editing and production studio — editing, show notes, and distribution, end to end — with deep experience in Bitcoin and finance shows.",
+  /**
+   * THE canonical positioning line. Two separate claims doing two jobs:
+   * where the studio is (fixed, factual, earns geo relevance) and who it
+   * serves (unbounded). Import this rather than restating it — variants
+   * drifting page to page is what this constant exists to prevent.
+   *
+   * Ireland is deliberately absent from the client list: there are no Irish
+   * clients, and an unearned "clients across Ireland" is worse than none.
+   * Irish relevance comes from the Northern Ireland base and off-site work.
+   */
+  positioningLine:
+    "UK-based podcast production for expert-led shows — working with clients across the UK, the US and Europe.",
+  /** Short form for tight spaces (footer) where the full line won't sit. */
+  positioningShort: "Podcast production, UK — working worldwide",
+  /**
+   * Region only. No street address anywhere: sole trader, home office, and
+   * no premises clients ever visit. Banbridge is ~25 minutes from Belfast,
+   * so "near Belfast" is the honest way to give the location a recognisable
+   * anchor without claiming to be in the city.
+   */
+  baseRegion: "Northern Ireland",
+  baseTown: "Banbridge",
+  baseNearCity: "Belfast",
   founder: "James Pearce",
   foundingDate: "2019",
   /** Default social share image (1200×630). Replace with a designed asset when one exists. */

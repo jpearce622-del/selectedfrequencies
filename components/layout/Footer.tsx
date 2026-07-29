@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/brand/Logo";
 import { BitcoinMark } from "@/components/brand/BitcoinMark";
+import { siteConfig } from "@/lib/metadata";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
@@ -77,7 +78,7 @@ export function Footer() {
           © {new Date().getFullYear()} Selected Frequencies. All rights reserved.
         </p>
         <p className="text-xs text-background/40">
-          Podcast production, worldwide
+          {siteConfig.positioningShort}
         </p>
       </Container>
     </footer>

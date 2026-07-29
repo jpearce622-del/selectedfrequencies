@@ -82,7 +82,7 @@ export default function ServicesPage() {
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    areaServed: "Worldwide",
+    areaServed: ["GB", "IE", "US", "EU"],
     url: `${siteConfig.url}/services`,
     description: siteConfig.positioning,
     hasOfferCatalog: {
@@ -160,8 +160,10 @@ export default function ServicesPage() {
             Pricing
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
-            Final pricing depends on episode length, format, and turnaround —
-            get in touch and we&apos;ll send a straightforward quote.
+            Rates for a UK podcast producer working directly with you — no
+            agency layer, no account manager. Final pricing depends on episode
+            length, format, and turnaround; get in touch and we&apos;ll send a
+            straightforward quote.
           </p>
         </Reveal>
 
@@ -281,9 +283,20 @@ export default function ServicesPage() {
       <Section className="border-t border-border">
         <Reveal>
           <div className="rounded-2xl border border-border bg-fog p-8">
-            <p className="max-w-3xl text-base leading-7 text-muted">
+            {/* This is where the UK geo terms live. The homepage stays
+                geographically neutral so it can rank in the US too, so
+                "podcast production company UK" / "podcast producer UK" are
+                carried here instead — in sentences that would exist anyway. */}
+            <h3 className="font-display text-lg font-semibold tracking-tight">
+              What UK podcast production companies charge
+            </h3>
+            <p className="mt-3 max-w-3xl text-base leading-7 text-muted">
               UK podcast production typically runs {UK_AGENCY_RANGE} per episode.
               We sit deliberately below that — same standard, less overhead.
+              Most podcast production companies in the UK carry an account
+              manager, a studio lease, and a sales team, and all of it lands on
+              your invoice. Here you work directly with the producer editing the
+              show.
             </p>
             <p className="mt-4 max-w-3xl text-sm leading-6 text-muted">
               Not sure if outsourcing is worth it?{" "}

@@ -201,9 +201,21 @@ export default async function CaseStudyPage({
             <h2 className="font-display text-2xl font-semibold tracking-tight">
               About {study.showName}
             </h2>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-muted">
-              {study.description}
-            </p>
+            {/* Blank-line-separated paragraphs. Descriptions written as a
+                single block still render exactly as before — this only
+                matters for the longer write-ups, where one 500-word
+                paragraph would be a wall of text. */}
+            <div className="mt-5 max-w-3xl space-y-4">
+              {study.description
+                .split("\n\n")
+                .map((para) => para.trim())
+                .filter(Boolean)
+                .map((para, i) => (
+                  <p key={i} className="text-base leading-7 text-muted">
+                    {para}
+                  </p>
+                ))}
+            </div>
           </Reveal>
         </Section>
       )}

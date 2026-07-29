@@ -24,6 +24,9 @@ import { heldeepRadio } from "@/content/case-studies/heldeep-radio";
 import { completeHumanPodcast } from "@/content/case-studies/complete-human-podcast";
 import { realEstateMindset } from "@/content/case-studies/real-estate-mindset";
 import { theEcMethod } from "@/content/case-studies/the-ec-method";
+import { alignPodcast } from "@/content/case-studies/align-podcast";
+import { inspirationsChanaMason } from "@/content/case-studies/inspirations-chana-mason";
+import { possibilityInTheUniverse } from "@/content/case-studies/possibility-in-the-universe";
 
 // Add one import + array entry per client as their case study copy is supplied.
 const allCaseStudies: CaseStudy[] = [
@@ -39,6 +42,9 @@ const allCaseStudies: CaseStudy[] = [
   // but category: "archive" and featured: false so they stay off the
   // flagship /work grid and homepage teasers.
   tmpPodcast,
+  alignPodcast,
+  inspirationsChanaMason,
+  possibilityInTheUniverse,
   embraceYourReal,
   collaectionRadio,
   heartfeldtRadio,

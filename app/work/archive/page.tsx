@@ -28,13 +28,24 @@ export default function WorkArchivePage() {
           {archiveItems.map((item, i) => {
             const tile = (
               <div className="group relative aspect-square overflow-hidden rounded-2xl bg-fog shadow-sm ring-1 ring-border">
-                <Image
-                  src={item.image}
-                  alt={`${item.name} — podcast cover art`}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={`${item.name} — podcast cover art`}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  // No cover art supplied yet — a titled tile in brand navy
+                  // reads as deliberate, where a broken image or an empty
+                  // square would not.
+                  <div className="flex h-full w-full items-center justify-center bg-deep p-4 text-center">
+                    <span className="font-display text-sm font-semibold leading-snug tracking-tight text-background/90">
+                      {item.name}
+                    </span>
+                  </div>
+                )}
                 <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/80 via-black/0 to-black/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <div className="p-4">
                     <p className="text-sm font-medium text-white">{item.name}</p>

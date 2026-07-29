@@ -81,8 +81,12 @@ export function HeroOverlay() {
           {/* Removes the "does this go into a void?" hesitation before the click. */}
           {/* Opacities here are set for WCAG AA (4.5:1) against the darkest
               point of the photo under the scrim — measured, not assumed. */}
+          {/* The base claim sits above the fold deliberately: a US visitor
+              should learn the UK base isn't a limitation before they scroll,
+              not after. Kept to one clause so it doesn't crowd the CTA. */}
           <p className="mt-4 text-xs text-white/80 sm:mt-5 sm:text-sm">
-            We&apos;ll reply within one working day · Bitcoin accepted
+            UK-based, working with the UK, US &amp; Europe · We&apos;ll reply
+            within one working day · Bitcoin accepted
           </p>
 
           {/* TODO (James): a single quantified figure converts better than a
