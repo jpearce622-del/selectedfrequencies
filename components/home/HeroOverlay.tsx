@@ -44,12 +44,46 @@ export function HeroOverlay() {
 
       <Container className="relative w-full">
         <div className="pointer-events-auto ml-auto max-w-xl sm:w-[50%] sm:max-w-none lg:w-[46%]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-amber sm:text-xs">
+          <p
+            className="text-[11px] font-semibold uppercase tracking-[0.16em] text-amber sm:text-xs"
+            style={{ textShadow: "0 0 18px rgba(229,115,41,0.55)" }}
+          >
             Podcast editing &amp; production
           </p>
 
-          <h1 className="font-display mt-3 text-[2rem] leading-[1.08] font-semibold tracking-tight text-balance text-white sm:mt-4 sm:text-5xl lg:text-6xl">
-            Podcast production that gives you your week back.
+          {/* The dark half of the text-shadow is doing the accessibility work
+              — it holds contrast against the brightest part of the photo —
+              and the warm half is the halo. Both are on the same declaration
+              so they can't drift apart. */}
+          <h1
+            className="font-display mt-3 text-[2rem] leading-[1.08] font-semibold tracking-tight text-balance text-white sm:mt-4 sm:text-5xl lg:text-6xl"
+            style={{
+              textShadow:
+                "0 2px 24px rgba(0,0,0,0.55), 0 0 46px rgba(229,115,41,0.28)",
+            }}
+          >
+            Podcast production that gives you{" "}
+            {/* The promise the whole page rests on, so it gets the score.
+                inline-block keeps the stroke tied to the words if the line
+                wraps between "week" and "back". */}
+            <span className="relative inline-block">
+              your week back.
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 200 12"
+                preserveAspectRatio="none"
+                className="sf-hero-score absolute -bottom-1 left-0 h-[0.16em] w-full overflow-visible sm:-bottom-2"
+              >
+                <path
+                  d="M2 8.5 C 46 3.4, 104 3.0, 198 6.2"
+                  fill="none"
+                  stroke="var(--accent)"
+                  strokeWidth="5"
+                  strokeLinecap="round"
+                  vectorEffect="non-scaling-stroke"
+                />
+              </svg>
+            </span>
           </h1>
 
           <p className="mt-3 max-w-[55ch] text-sm leading-6 text-white/85 sm:mt-5 sm:text-lg sm:leading-8">

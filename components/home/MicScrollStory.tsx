@@ -49,6 +49,7 @@ const chapters: {
 export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
   const sectionRef = useRef<HTMLElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const fxCanvasRef = useRef<HTMLCanvasElement>(null);
   const imagesRef = useRef<HTMLImageElement[]>([]);
   const frameRef = useRef(0);
   const rafRef = useRef<number | null>(null);
@@ -132,6 +133,98 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
     paint(ctx, img, cssWidth, cssHeight);
   }, []);
 
+  /**
+   * Depth particles. Positions are generated once from a fixed seed so the
+   * field is identical on every render (and between server and client) —
+   * Math.random() here would reshuffle the whole field on each paint.
+   * Each particle carries a depth: nearer ones are bigger, brighter, and
+   * parallax further, which is what reads as three-dimensionality.
+   */
+  const particles = useRef(
+    (() => {
+      let seed = 20240719;
+      const rand = () => {
+        seed = (seed * 1664525 + 1013904223) % 4294967296;
+        return seed / 4294967296;
+      };
+      return Array.from({ length: 70 }, () => {
+        const depth = rand();
+        return {
+          x: rand(),
+          y: rand(),
+          depth,
+          radius: 0.6 + depth * 2.2,
+          alpha: 0.12 + depth * 0.45,
+          // Warm accent for most, a few cooler ones so it doesn't read as
+          // a single flat colour wash.
+          warm: rand() > 0.25,
+          drift: 0.4 + rand() * 1.6,
+        };
+      });
+    })()
+  ).current;
+
+  /**
+   * Overlay FX: parallax particle field + a scroll-reactive bar visualiser.
+   * Drawn from the same rAF tick as the frame sequence, so there is no second
+   * animation loop and nothing runs once scrolling settles.
+   */
+  const drawFx = useCallback((progress: number) => {
+    const canvas = fxCanvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    if (canvas.width !== w * dpr || canvas.height !== h * dpr) {
+      canvas.width = w * dpr;
+      canvas.height = h * dpr;
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, w, h);
+
+    // ---- Particles ----------------------------------------------------
+    for (const p of particles) {
+      // Deeper particles travel further as you scroll: classic parallax.
+      const shift = progress * p.drift * h * 0.5;
+      const y = ((p.y * h - shift) % (h + 80) + (h + 80)) % (h + 80) - 40;
+      const x = p.x * w;
+      ctx.beginPath();
+      ctx.arc(x, y, p.radius, 0, Math.PI * 2);
+      ctx.fillStyle = p.warm
+        ? `rgba(240,144,79,${p.alpha})`
+        : `rgba(255,255,255,${p.alpha * 0.5})`;
+      ctx.fill();
+    }
+
+    // ---- Scroll-reactive visualiser ------------------------------------
+    // A bar row along the bottom edge whose envelope travels with scroll, so
+    // it reads as the mic actually picking something up rather than as
+    // decoration bolted on top.
+    const barCount = Math.max(28, Math.floor(w / 26));
+    const gap = w / barCount;
+    const barW = Math.max(2, gap * 0.34);
+    const maxH = Math.min(90, h * 0.11);
+
+    for (let i = 0; i < barCount; i++) {
+      const phase = i * 0.38 + progress * Math.PI * 6;
+      // Two waves at different rates, so the pattern never looks like a
+      // single repeating sine.
+      const envelope =
+        0.35 + 0.4 * Math.abs(Math.sin(phase)) + 0.25 * Math.abs(Math.sin(phase * 0.37));
+      // Fade the bars out toward the left and right edges so they dissolve
+      // into the vignette instead of stopping abruptly.
+      const edge = Math.sin((i / (barCount - 1)) * Math.PI);
+      const barH = maxH * envelope * edge;
+      if (barH < 1) continue;
+      const x = i * gap + (gap - barW) / 2;
+      ctx.fillStyle = `rgba(229,115,41,${0.1 + 0.22 * edge})`;
+      ctx.fillRect(x, h - barH, barW, barH);
+    }
+  }, [particles]);
+
   // Preload frames; draw frame 0 the moment it lands, as a poster.
   useEffect(() => {
     if (reducedMotion) return;
@@ -147,7 +240,10 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
         // Note: we deliberately do NOT force img.decode() on every frame.
         // 202 decoded 720p frames would pin ~750MB of bitmap memory and can
         // crash mobile browsers; decode-on-draw is cheap for 15KB frames.
-        if (i === 0) draw(0);
+        if (i === 0) {
+          draw(0);
+          drawFx(0);
+        }
       };
       images.push(img);
     }
@@ -156,7 +252,7 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, [reducedMotion, draw]);
+  }, [reducedMotion, draw, drawFx]);
 
   // Frames arrive asynchronously, and draw() bails on any frame that hasn't
   // loaded yet. Without this, the canvas stays stuck on whatever it managed to
@@ -186,6 +282,7 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
       if (Math.abs(diff) < 0.002) {
         currentFrameRef.current = target;
         draw(target);
+        drawFx(target / (FRAME_COUNT - 1));
         runningRef.current = false;
         rafRef.current = null;
         return;
@@ -193,6 +290,7 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
 
       currentFrameRef.current += diff * EASING;
       draw(currentFrameRef.current);
+      drawFx(currentFrameRef.current / (FRAME_COUNT - 1));
       rafRef.current = requestAnimationFrame(tick);
     };
 
@@ -241,6 +339,7 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
     const onResize = () => {
       onScroll();
       draw(currentFrameRef.current);
+      drawFx(currentFrameRef.current / (FRAME_COUNT - 1));
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -260,7 +359,7 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
     // once per mount (reducedMotion flip aside) — `draw()` always reads
     // the latest `imagesRef.current`, so re-subscribing on every one of
     // the 202 incremental loads would just churn listeners for no benefit.
-  }, [reducedMotion, draw]);
+  }, [reducedMotion, draw, drawFx]);
 
   if (reducedMotion) {
     return (
@@ -334,6 +433,16 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
             pixel-identical rather than two separately-authored "black"s
             that happen to drift apart. */}
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
+
+        {/* FX layer: parallax particles + scroll-reactive visualiser. Sits
+            above the photo but *below* the vignette, so the same gradient
+            that darkens the edges of the image also fades the particles into
+            them — rather than leaving bright dots sitting on top of black. */}
+        <canvas
+          ref={fxCanvasRef}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full"
+        />
 
         <div
           className="pointer-events-none absolute inset-0"

@@ -206,3 +206,25 @@
 @media (prefers-reduced-motion: reduce) {
   .sf-scroll-cue { animation: none; }
 }
+
+/* Hero underline score. Draws itself once on load rather than looping, so it
+   reads as emphasis being applied to the word rather than as an animation
+   asking for attention. The glow is a drop-shadow on the stroke itself, so it
+   follows the curve instead of sitting in a rectangle behind it. */
+@keyframes sf-hero-score {
+  from { stroke-dashoffset: 220; }
+  to   { stroke-dashoffset: 0; }
+}
+.sf-hero-score path {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: sf-hero-score 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+  filter: drop-shadow(0 0 7px rgba(229, 115, 41, 0.75));
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Still show the score — just present it fully drawn, with no motion. */
+  .sf-hero-score path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
