@@ -8,10 +8,12 @@ import { regions, type RegionId } from "@/data/editing-benchmarks";
 
 const mainTiers = tiers.filter((t) => !t.addOn);
 
-/** Minutes of editing per minute of finished audio — the usual ratio for a
- *  clean conversational edit. Used instead of asking people to estimate,
- *  which they consistently under-report. */
+/** Minutes of editing per minute of finished audio. Used instead of asking
+ *  people to estimate, which they consistently under-report.
+ *  Multi-cam is not a small uplift: syncing angles, cutting between them and
+ *  colour-matching cameras is most of a second edit on top of the first. */
 const EDIT_RATIO = 4;
+const EDIT_RATIO_MULTICAM = 7;
 /** Episode length is capped here: past an hour the linear model stops
  *  matching the per-episode benchmark rates it's compared against. */
 const MAX_LENGTH_MINUTES = 60;
@@ -68,7 +70,8 @@ export function CostCalculator() {
     // minute of finished audio. Capped at MAX_LENGTH_MINUTES so the figure
     // stays in territory the benchmark rates actually describe.
     const lengthMinutes = num(length, MAX_LENGTH_MINUTES);
-    const editHours = (lengthMinutes * EDIT_RATIO) / 60;
+    const ratio = multiCamOn ? EDIT_RATIO_MULTICAM : EDIT_RATIO;
+    const editHours = (lengthMinutes * ratio) / 60;
     const perEpHours = editHours + (showNotes ? 1 : 0);
     const hourlyRate = num(rate, 100_000);
 
@@ -82,7 +85,11 @@ export function CostCalculator() {
       tiers.find((t) => t.id === (showNotes ? "full-production" : "audio-video"))!;
     const tier =
       mainTiers.find((t) => t.id === compareTierId) ?? defaultTier;
-    const supplement = multiCamOn ? multiCam.supplement : 0;
+    // A multi-cam shoot changes nothing about an audio-only deliverable —
+    // there is no video to sync, cut between, or colour match — so the
+    // supplement is only charged on the tiers that actually include video.
+    const tierHasVideo = tier.id !== "editing-only";
+    const supplement = multiCamOn && tierHasVideo ? multiCam.supplement : 0;
     const ourPerEpisode = tier.price + supplement;
     const ourPerYear = ourPerEpisode * epPerYear;
 
@@ -91,6 +98,8 @@ export function CostCalculator() {
 
     return {
       epPerYear,
+      ratio,
+      tierHasVideo,
       editHours,
       perEpHours,
       hoursPerYear,
@@ -177,9 +186,9 @@ export function CostCalculator() {
               }}
             />
             <p className="mt-2 text-xs leading-5 text-muted">
-              We work on {EDIT_RATIO}{" "}
-              minutes of editing per minute of audio — the usual ratio for a
-              clean conversational edit. That&apos;s{" "}
+              We work on {result.ratio}{" "}
+              minutes of editing per minute of audio
+              {multiCamOn ? " for a multi-cam edit" : ""} — that&apos;s{" "}
               {result.editHours.toFixed(1)} hours an episode. Capped at{" "}
               {MAX_LENGTH_MINUTES} minutes.
             </p>
@@ -222,9 +231,11 @@ export function CostCalculator() {
             </select>
             {multiCamOn && (
               <p className="mt-2 text-xs leading-5 text-muted">
-                Multi-cam takes longer to edit — syncing the angles, cutting
-                between them, and matching colour across cameras. That&apos;s
-                why it carries a supplement on our side.
+                Syncing angles, cutting between them, and colour-matching
+                cameras is close to a second edit on top of the first — so
+                your own time goes from {EDIT_RATIO} to {EDIT_RATIO_MULTICAM}{" "}
+                minutes per minute of audio, and our video tiers carry a{" "}
+                {formatGBP(multiCam.supplement)} supplement.
               </p>
             )}
           </div>
@@ -347,6 +358,47 @@ export function CostCalculator() {
               {result.epPerYear.toLocaleString(loc)} episodes. Our prices are in
               GBP.
             </p>
+
+            {/* What the compared tier actually buys. Read straight from
+                data/pricing.ts — the same source as the /services rate card
+                and the Offer schema — so the calculator can never advertise a
+                different scope from the rest of the site. */}
+            <details className="group rounded-lg border border-border bg-fog/60 px-3.5 py-2.5">
+              <summary className="cursor-pointer list-none text-xs font-medium text-foreground marker:content-['']">
+                <span className="inline-flex items-center gap-1.5">
+                  <span
+                    aria-hidden="true"
+                    className="text-muted transition-transform group-open:rotate-90"
+                  >
+                    ›
+                  </span>
+                  What&apos;s included in {result.tier.name}?
+                </span>
+              </summary>
+              <ul className="mt-2.5 space-y-1.5">
+                {result.tier.includes.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-xs leading-5 text-muted"
+                  >
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    {item}
+                  </li>
+                ))}
+                {multiCamOn && result.tierHasVideo && (
+                  <li className="flex items-start gap-2 text-xs leading-5 text-muted">
+                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                    Multi-cam syncing, angle switching and colour matching
+                  </li>
+                )}
+              </ul>
+              {multiCamOn && !result.tierHasVideo && (
+                <p className="mt-2.5 text-xs leading-5 text-muted">
+                  This tier is audio only, so the multi-cam supplement
+                  doesn&apos;t apply — your own edit still takes longer though.
+                </p>
+              )}
+            </details>
             <div className="flex items-baseline justify-between gap-4 border-t border-border pt-3">
               <span className="text-muted">
                 Independent market average ({r.id.toUpperCase()})
