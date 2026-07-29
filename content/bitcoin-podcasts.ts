@@ -39,7 +39,9 @@ export const bitcoinPodcasts: BitcoinPodcast[] = [
     spotifyUrl: "https://open.spotify.com/show/06sBiOznJDxuhafDmkE9VK",
     appleUrl:
       "https://podcasts.apple.com/us/podcast/the-bitcoin-collective/id1561573613",
-    websiteUrl: "https://bitcoincollective.co",
+    // The show's own page rather than the company homepage — on a list of
+    // podcasts, "Website" should land on the podcast.
+    websiteUrl: "https://bitcoincollective.co/bitcoin-podcast-episodes/",
     artwork: "/images/clients/bitcoin-collective.jpeg",
     producedByUs: true,
     caseStudyUrl: "/work/bitcoin-collective",
