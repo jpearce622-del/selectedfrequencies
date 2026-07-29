@@ -80,9 +80,10 @@ export const tiers: PricingTier[] = [
   {
     id: "social-clips",
     name: "Basic clips",
-    price: 40,
+    price: 10,
     unit: "per clip",
-    forWho: "Straight cut-downs of the best moments",
+    forWho:
+      "Straight cut-downs of the best moments — 3–5 are already included in Full production",
     includes: [
       "Short-form vertical clips",
       "Captioned",
@@ -93,9 +94,6 @@ export const tiers: PricingTier[] = [
   {
     id: "advanced-clips",
     name: "Advanced clips",
-    // TODO (James): price not yet set — see the note in the commit. Left at
-    // the basic rate deliberately so nothing on the site advertises a number
-    // you haven't chosen; it is hidden from the rate card until you do.
     price: 40,
     unit: "per clip",
     forWho: "Produced clips built to stop the scroll, not just cut from the episode",
@@ -106,7 +104,6 @@ export const tiers: PricingTier[] = [
       "Titles, labels and lower thirds",
     ],
     addOn: true,
-    draft: true,
   },
 ];
 
