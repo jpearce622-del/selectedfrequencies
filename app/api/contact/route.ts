@@ -6,6 +6,47 @@ export const runtime = "nodejs";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+// Cold-outreach spam (SEO/ads/web-design solicitation) passes the honeypot
+// because it fills the visible fields like a real person would. Scored
+// rather than matched on single words: James's own clients and blog talk
+// about SEO and keywords, so one hit must never be enough to block.
+//
+// Phrases that are effectively only ever sales solicitation.
+const STRONG_SPAM = [
+  /top of (the )?search results?/i,
+  /you pick the keywords/i,
+  /first page of google/i,
+  /guarantee\w*\s+(rankings?|traffic|results)/i,
+  /rank(ing)? (you|your site|your business) (higher|#?1|first)/i,
+  /we (can )?put your (banner|ad|business|website)/i,
+  /increase your (website )?traffic/i,
+];
+
+// Weaker signals — meaningful only in combination.
+const WEAK_SPAM = [
+  /\bbacklinks?\b/i,
+  /\bbanner\b/i,
+  /no contracts?\b/i,
+  /\bseo (services|agency|expert|company)\b/i,
+  /web ?(site)? design services/i,
+  /digital marketing (services|agency)/i,
+  /\bcold ?call/i,
+  /\bbulk email/i,
+  /prepare a few keyword options/i,
+];
+
+/**
+ * Score a submission. 2+ blocks it: a strong phrase alone is decisive, or
+ * two weak signals together. A genuine enquiry that happens to mention SEO
+ * or keywords scores 1 and still gets through.
+ */
+function spamScore(text: string): number {
+  let score = 0;
+  for (const re of STRONG_SPAM) if (re.test(text)) score += 2;
+  for (const re of WEAK_SPAM) if (re.test(text)) score += 1;
+  return score;
+}
+
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
 
@@ -14,9 +55,36 @@ export async function POST(request: Request) {
   }
 
   const { name, email, service, message, company } = body as Record<string, string>;
+  const { renderedAt } = body as { renderedAt?: number };
 
-  // Honeypot: real users never fill this hidden field.
+  // All three checks below return { ok: true } rather than an error: a bot
+  // that's told it failed just retunes and tries again, whereas a silent
+  // success gives it nothing to work with. Each is logged so a false
+  // positive is visible in the runtime logs rather than vanishing.
+
+  // 1. Honeypot: real users never fill this hidden field.
   if (company) {
+    console.warn("[contact] blocked: honeypot filled");
+    return NextResponse.json({ ok: true });
+  }
+
+  // 2. Timing trap: the form records when it rendered. A human cannot read
+  //    the page, type a name, an email and a message inside three seconds;
+  //    scripted submissions almost always post immediately. Skipped
+  //    entirely when the timestamp is missing or implausible, so a slow
+  //    hydrate or a stale open tab never blocks a real person.
+  if (typeof renderedAt === "number" && Number.isFinite(renderedAt)) {
+    const elapsed = Date.now() - renderedAt;
+    if (elapsed >= 0 && elapsed < 3000) {
+      console.warn(`[contact] blocked: submitted in ${elapsed}ms`);
+      return NextResponse.json({ ok: true });
+    }
+  }
+
+  // 3. Solicitation scoring across the whole submission.
+  const score = spamScore(`${name ?? ""} ${message ?? ""}`);
+  if (score >= 2) {
+    console.warn(`[contact] blocked: spam score ${score} from ${email ?? "?"}`);
     return NextResponse.json({ ok: true });
   }
 

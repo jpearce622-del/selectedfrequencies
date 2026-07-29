@@ -16,6 +16,10 @@ type Status = "idle" | "submitting" | "success" | "error";
 export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  // When this form first rendered. Sent with the submission so the server
+  // can reject posts that arrive faster than a human could type — the
+  // lazy initialiser means it's set once on mount, not on every render.
+  const [renderedAt] = useState(() => Date.now());
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -29,7 +33,7 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, renderedAt }),
       });
 
       const result = await res.json();
