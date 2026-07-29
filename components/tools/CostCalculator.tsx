@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
-import { tiers, recordingSetups, formatGBP } from "@/data/pricing";
+import { tiers, publishedTiers, recordingSetups, formatGBP } from "@/data/pricing";
 import { regions, type RegionId } from "@/data/editing-benchmarks";
 
-const mainTiers = tiers.filter((t) => !t.addOn);
+// publishedTiers: an unpriced draft must never appear in the comparison.
+const mainTiers = publishedTiers.filter((t) => !t.addOn);
 
 /** Minutes of editing per minute of finished audio. Used instead of asking
  *  people to estimate, which they consistently under-report.
@@ -17,6 +18,7 @@ const EDIT_RATIO_MULTICAM = 7;
 /** Episode length is capped here: past an hour the linear model stops
  *  matching the per-episode benchmark rates it's compared against. */
 const MAX_LENGTH_MINUTES = 60;
+const MIN_LENGTH_MINUTES = 5;
 const multiCam = recordingSetups.find((s) => s.id === "multi-cam")!;
 
 /** Parse a text input into a safe, finite, non-negative number. */
@@ -167,30 +169,34 @@ export function CostCalculator() {
             <label className={labelCls} htmlFor="cc-length">
               Average episode length (minutes)
             </label>
-            <input
-              id="cc-length"
-              className={field}
-              type="number"
-              inputMode="decimal"
-              min={0}
-              max={MAX_LENGTH_MINUTES}
-              value={length}
-              onChange={(e) => setLength(e.target.value)}
-              // Clamp on blur rather than on change: the maths already caps
-              // at 60, and rewriting the field mid-keystroke would fight
-              // anyone typing "120" on their way to deleting a digit.
-              onBlur={() => {
-                if (num(length, 100_000) > MAX_LENGTH_MINUTES) {
-                  setLength(String(MAX_LENGTH_MINUTES));
-                }
-              }}
-            />
-            <p className="mt-2 text-xs leading-5 text-muted">
+            {/* A slider rather than a number field: the value is bounded on
+                both sides, people are estimating rather than entering a known
+                figure, and dragging invites the "what if my episodes were
+                longer?" comparison that a text box doesn't. */}
+            <div className="mt-3 flex items-center gap-4">
+              <input
+                id="cc-length"
+                type="range"
+                min={MIN_LENGTH_MINUTES}
+                max={MAX_LENGTH_MINUTES}
+                step={1}
+                value={length}
+                onChange={(e) => setLength(e.target.value)}
+                className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-border accent-[var(--accent)]"
+                aria-describedby="cc-length-note"
+              />
+              <output
+                htmlFor="cc-length"
+                className="w-16 shrink-0 text-right font-display text-lg font-semibold tabular-nums text-foreground"
+              >
+                {num(length, MAX_LENGTH_MINUTES)} min
+              </output>
+            </div>
+            <p id="cc-length-note" className="mt-2 text-xs leading-5 text-muted">
               We work on {result.ratio}{" "}
               minutes of editing per minute of audio
               {multiCamOn ? " for a multi-cam edit" : ""} — that&apos;s{" "}
-              {result.editHours.toFixed(1)} hours an episode. Capped at{" "}
-              {MAX_LENGTH_MINUTES} minutes.
+              {result.editHours.toFixed(1)} hours an episode.
             </p>
           </div>
 

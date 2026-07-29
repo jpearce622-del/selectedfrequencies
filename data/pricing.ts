@@ -25,6 +25,10 @@ export interface PricingTier {
   popular?: boolean;
   /** Add-ons are priced per item and sit outside the main tier ladder */
   addOn?: boolean;
+  /** Defined but not yet priced — filtered out of anything customer-facing
+   *  (rate card, calculator, Offer schema) so an unconfirmed price can never
+   *  be published by accident. */
+  draft?: boolean;
 }
 
 export const tiers: PricingTier[] = [
@@ -70,20 +74,39 @@ export const tiers: PricingTier[] = [
       "Full description and show notes",
       "Intro script",
       "Scheduling and publishing",
+      "3–5 basic clips with captions",
     ],
   },
   {
     id: "social-clips",
-    name: "Social clips",
+    name: "Basic clips",
     price: 40,
     unit: "per clip",
-    forWho: "",
+    forWho: "Straight cut-downs of the best moments",
     includes: [
       "Short-form vertical clips",
       "Captioned",
       "Formatted for Instagram, TikTok, and YouTube Shorts",
     ],
     addOn: true,
+  },
+  {
+    id: "advanced-clips",
+    name: "Advanced clips",
+    // TODO (James): price not yet set — see the note in the commit. Left at
+    // the basic rate deliberately so nothing on the site advertises a number
+    // you haven't chosen; it is hidden from the rate card until you do.
+    price: 40,
+    unit: "per clip",
+    forWho: "Produced clips built to stop the scroll, not just cut from the episode",
+    includes: [
+      "Everything in Basic clips",
+      "B-roll and cutaways",
+      "Music bed and sound effects",
+      "Titles, labels and lower thirds",
+    ],
+    addOn: true,
+    draft: true,
   },
 ];
 
@@ -121,6 +144,9 @@ export const recordingSetups: RecordingSetup[] = [
 
 /** Market context — third-party UK industry range, shown for honest comparison. */
 export const UK_AGENCY_RANGE = "£200–£850+" as const;
+
+/** Everything safe to show a customer — excludes unpriced drafts. */
+export const publishedTiers = tiers.filter((t) => !t.draft);
 
 export function getTier(id: string): PricingTier | undefined {
   return tiers.find((t) => t.id === id);

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import {
-  tiers,
+  publishedTiers,
   recordingSetups,
   formatGBP,
   CURRENCY,
@@ -14,8 +14,10 @@ import {
   getSetup,
 } from "@/data/pricing";
 
-const mainTiers = tiers.filter((t) => !t.addOn);
-const addOnTiers = tiers.filter((t) => t.addOn);
+// publishedTiers, not tiers: a draft (defined but not yet priced) must never
+// reach the rate card or the Offer schema.
+const mainTiers = publishedTiers.filter((t) => !t.addOn);
+const addOnTiers = publishedTiers.filter((t) => t.addOn);
 
 export const metadata: Metadata = buildMetadata({
   title: "Podcast Editing & Production Services",
@@ -88,7 +90,7 @@ export default function ServicesPage() {
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Podcast production services",
-      itemListElement: tiers.map((tier) => ({
+      itemListElement: publishedTiers.map((tier) => ({
         "@type": "Offer",
         name: tier.name,
         price: tier.price,
