@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Container } from "@/components/ui/Container";
 
 /**
  * Above-the-fold hero, overlaid on the microphone sequence.
@@ -42,8 +41,12 @@ export function HeroOverlay() {
         }}
       />
 
-      <Container className="relative w-full">
-        <div className="pointer-events-auto ml-auto max-w-xl sm:w-[50%] sm:max-w-none lg:w-[46%]">
+      {/* Deliberately not <Container>: the site's max-w-6xl would stop the
+          hero well short of the right edge on a wide screen, leaving the
+          copy stranded in the middle of the frame. A wider cap lets the
+          block sit out near the edge while keeping the same mobile gutter. */}
+      <div className="relative mx-auto w-full max-w-[92rem] px-6 sm:px-10 lg:px-14">
+        <div className="pointer-events-auto ml-auto max-w-xl sm:w-[52%] sm:max-w-none lg:w-[44%]">
           <p
             className="text-[11px] font-semibold uppercase tracking-[0.16em] text-amber sm:text-xs"
             style={{ textShadow: "0 0 18px rgba(229,115,41,0.55)" }}
@@ -62,12 +65,14 @@ export function HeroOverlay() {
                 "0 2px 24px rgba(0,0,0,0.55), 0 0 46px rgba(229,115,41,0.28)",
             }}
           >
-            Podcast production that gives you{" "}
-            {/* The promise the whole page rests on, so it gets the score.
-                inline-block keeps the stroke tied to the words if the line
-                wraps between "week" and "back". */}
+            Podcast production that gives you your{" "}
+            {/* Scoring a single word rather than a phrase is deliberate: an
+                absolutely-positioned stroke can only ever underline one
+                rectangle, so a phrase that wraps leaves the line hanging
+                under the wrong words. One word can't break, so this holds at
+                every aspect ratio. */}
             <span className="relative inline-block">
-              your week back.
+              week
               <svg
                 aria-hidden="true"
                 viewBox="0 0 200 12"
@@ -83,7 +88,8 @@ export function HeroOverlay() {
                   vectorEffect="non-scaling-stroke"
                 />
               </svg>
-            </span>
+            </span>{" "}
+            back.
           </h1>
 
           <p className="mt-3 max-w-[55ch] text-sm leading-6 text-white/85 sm:mt-5 sm:text-lg sm:leading-8">
@@ -133,7 +139,7 @@ export function HeroOverlay() {
             Collective and more
           </p>
         </div>
-      </Container>
+      </div>
     </div>
   );
 }
