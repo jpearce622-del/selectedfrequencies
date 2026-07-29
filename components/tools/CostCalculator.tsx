@@ -7,6 +7,14 @@ import { tiers, recordingSetups, formatGBP } from "@/data/pricing";
 import { regions, type RegionId } from "@/data/editing-benchmarks";
 
 const mainTiers = tiers.filter((t) => !t.addOn);
+
+/** Minutes of editing per minute of finished audio — the usual ratio for a
+ *  clean conversational edit. Used instead of asking people to estimate,
+ *  which they consistently under-report. */
+const EDIT_RATIO = 4;
+/** Episode length is capped here: past an hour the linear model stops
+ *  matching the per-episode benchmark rates it's compared against. */
+const MAX_LENGTH_MINUTES = 60;
 const multiCam = recordingSetups.find((s) => s.id === "multi-cam")!;
 
 /** Parse a text input into a safe, finite, non-negative number. */
@@ -32,14 +40,11 @@ function humanise(hours: number): string {
 export function CostCalculator() {
   const [episodes, setEpisodes] = useState("4");
   const [length, setLength] = useState("45");
-  const [hours, setHours] = useState("3");
   const [rate, setRate] = useState("50");
   const [multiCamOn, setMultiCamOn] = useState(false);
   const [showNotes, setShowNotes] = useState(false);
   const [region, setRegion] = useState<RegionId>("uk");
   const [compareTierId, setCompareTierId] = useState<string | null>(null);
-  // Once the user edits the hours field themselves we never overwrite it.
-  const [hoursTouched, setHoursTouched] = useState(false);
 
   // Auto-select USD for US locales. Deferred via rAF so the first render still
   // matches the server output (avoids a hydration mismatch) and so we're not
@@ -51,20 +56,20 @@ export function CostCalculator() {
     return () => cancelAnimationFrame(id);
   }, []);
 
-  // Multi-cam realistically doubles edit time. Nudge the default only while the
-  // user hasn't typed their own figure — handled here rather than in an effect
-  // so a manually-entered value is never overwritten.
   const handleSetupChange = (value: string) => {
-    const on = value === "multi-cam";
-    setMultiCamOn(on);
-    if (!hoursTouched) setHours(on ? "6" : "3");
+    setMultiCamOn(value === "multi-cam");
   };
 
   const r = regions[region];
 
   const result = useMemo(() => {
     const epPerMonth = num(episodes, 1000);
-    const perEpHours = num(hours, 500) + (showNotes ? 1 : 0);
+    // Editing time is derived, not asked for: EDIT_RATIO minutes of work per
+    // minute of finished audio. Capped at MAX_LENGTH_MINUTES so the figure
+    // stays in territory the benchmark rates actually describe.
+    const lengthMinutes = num(length, MAX_LENGTH_MINUTES);
+    const editHours = (lengthMinutes * EDIT_RATIO) / 60;
+    const perEpHours = editHours + (showNotes ? 1 : 0);
     const hourlyRate = num(rate, 100_000);
 
     const epPerYear = epPerMonth * 12;
@@ -86,6 +91,7 @@ export function CostCalculator() {
 
     return {
       epPerYear,
+      editHours,
       perEpHours,
       hoursPerYear,
       ownCostPerYear,
@@ -96,18 +102,29 @@ export function CostCalculator() {
       ourPerYear,
       marketPerYear,
     };
-  }, [episodes, hours, rate, showNotes, multiCamOn, compareTierId, r.marketMidpoint]);
+  }, [episodes, length, rate, showNotes, multiCamOn, compareTierId, r.marketMidpoint]);
 
   const sym = r.currencySymbol;
   const loc = r.locale;
 
-  // Honest closing line — never claims outsourcing is always cheaper.
-  const closing =
-    result.hoursPerYear <= 0
-      ? "Add your numbers above to see what your own editing time is worth."
-      : result.ownCostPerYear > result.marketPerYear
-        ? `Editing your own show is costing you more than hiring someone to do it — and you're not getting those ${Math.round(result.hoursPerYear).toLocaleString(loc)} hours back.`
-        : `Financially it's close — but you're still spending ${Math.round(result.hoursPerYear).toLocaleString(loc)} hours a year on the edit rather than on your show.`;
+  // The verdict must never contradict the figures directly above it. The old
+  // version compared against the market average while the panel showed our
+  // price most prominently, so it could read "costs more than hiring someone"
+  // directly beneath a number that was lower than ours. Each branch below now
+  // names exactly which comparison it is making.
+  const closing = (() => {
+    const hrs = Math.round(result.hoursPerYear).toLocaleString(loc);
+    if (result.hoursPerYear <= 0) {
+      return "Add your numbers above to see what your own editing time is worth.";
+    }
+    if (result.ownCostPerYear > result.ourPerYear) {
+      return `Your own time on the edit costs more than having us do it — and you don't get those ${hrs} hours back.`;
+    }
+    if (result.ownCostPerYear > result.marketPerYear) {
+      return `Your own time costs more than the going freelance rate, though less than our ${result.tier.name.toLowerCase()} tier — and it still costs you ${hrs} hours a year.`;
+    }
+    return `On money alone, editing it yourself is cheaper — but it costs you ${hrs} hours a year that could go into the show itself.`;
+  })();
 
   const field =
     "mt-1.5 w-full rounded-xl border border-border bg-surface px-4 py-2.5 text-base text-foreground outline-none focus:border-accent/60";
@@ -147,28 +164,25 @@ export function CostCalculator() {
               type="number"
               inputMode="decimal"
               min={0}
+              max={MAX_LENGTH_MINUTES}
               value={length}
               onChange={(e) => setLength(e.target.value)}
-            />
-          </div>
-
-          <div>
-            <label className={labelCls} htmlFor="cc-hours">
-              Hours you spend editing each episode
-            </label>
-            <input
-              id="cc-hours"
-              className={field}
-              type="number"
-              inputMode="decimal"
-              step="0.5"
-              min={0}
-              value={hours}
-              onChange={(e) => {
-                setHoursTouched(true);
-                setHours(e.target.value);
+              // Clamp on blur rather than on change: the maths already caps
+              // at 60, and rewriting the field mid-keystroke would fight
+              // anyone typing "120" on their way to deleting a digit.
+              onBlur={() => {
+                if (num(length, 100_000) > MAX_LENGTH_MINUTES) {
+                  setLength(String(MAX_LENGTH_MINUTES));
+                }
               }}
             />
+            <p className="mt-2 text-xs leading-5 text-muted">
+              We work on {EDIT_RATIO}{" "}
+              minutes of editing per minute of audio — the usual ratio for a
+              clean conversational edit. That&apos;s{" "}
+              {result.editHours.toFixed(1)} hours an episode. Capped at{" "}
+              {MAX_LENGTH_MINUTES} minutes.
+            </p>
           </div>
 
           <div>
@@ -209,9 +223,8 @@ export function CostCalculator() {
             {multiCamOn && (
               <p className="mt-2 text-xs leading-5 text-muted">
                 Multi-cam takes longer to edit — syncing the angles, cutting
-                between them, and matching colour across cameras. We&apos;ve
-                raised the default editing hours to reflect that; change it if
-                yours differs.
+                between them, and matching colour across cameras. That&apos;s
+                why it carries a supplement on our side.
               </p>
             )}
           </div>

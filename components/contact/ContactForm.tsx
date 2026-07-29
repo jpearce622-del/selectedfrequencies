@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 
 const services = [
   "Full production",
-  "Editing only",
+  "Audio editing only",
   "Show notes & chapters",
   "YouTube & social assets",
   "Launch package for a new show",

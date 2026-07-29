@@ -218,7 +218,7 @@ export default function CostCalculatorPage() {
           <p className="mt-8 max-w-3xl text-base leading-7 text-muted">
             For context, UK production agencies typically run {UK_AGENCY_RANGE}{" "}
             per episode. Our own rates start at{" "}
-            {formatGBP(tiers[0].price)} per episode for editing only — see{" "}
+            {formatGBP(tiers[0].price)} per episode for audio editing only — see{" "}
             <Link
               href="/services"
               className="font-medium text-accent hover:text-accent-bright"

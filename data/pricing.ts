@@ -30,7 +30,7 @@ export interface PricingTier {
 export const tiers: PricingTier[] = [
   {
     id: "editing-only",
-    name: "Editing only",
+    name: "Audio editing only",
     price: 110,
     unit: "per episode",
     forWho: "Shows that just need the edit",
@@ -49,7 +49,7 @@ export const tiers: PricingTier[] = [
     forWho:
       "Shows recording on Zoom, Riverside and similar, needing both audio and video ready to publish",
     includes: [
-      "Everything in Editing only",
+      "Everything in Audio editing only",
       "Full video edit",
       "Captions",
       "Intro and outro",
