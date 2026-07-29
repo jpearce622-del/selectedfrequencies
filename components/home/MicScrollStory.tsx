@@ -165,9 +165,9 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
   ).current;
 
   /**
-   * Overlay FX: parallax particle field + a scroll-reactive bar visualiser.
-   * Drawn from the same rAF tick as the frame sequence, so there is no second
-   * animation loop and nothing runs once scrolling settles.
+   * Overlay FX: a parallax particle field for depth. Drawn from the same rAF
+   * tick as the frame sequence, so there is no second animation loop and
+   * nothing runs once scrolling settles.
    */
   const drawFx = useCallback((progress: number) => {
     const canvas = fxCanvasRef.current;
@@ -199,74 +199,6 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
       ctx.fill();
     }
 
-    // ---- Scroll-reactive spectrum --------------------------------------
-    // A mirrored waveform through the middle of the frame, sitting behind the
-    // headline. This canvas is painted *below* both the vignette and the
-    // hero's own scrim, so the same gradients that make the text readable
-    // also hold the spectrum back — it can be generous here without ever
-    // competing with the words on top of it.
-    const barCount = Math.max(90, Math.floor(w / 7));
-    const gap = w / barCount;
-    const barW = Math.max(1.5, gap * 0.5);
-    const midY = h * 0.46;
-    const maxH = h * 0.3;
-
-    ctx.save();
-    // The glow is what separates this from a flat bar chart: each bar bleeds
-    // into its neighbours the way a lit display does.
-    ctx.shadowColor = "rgba(240,144,79,0.65)";
-    ctx.shadowBlur = 12;
-
-    for (let i = 0; i < barCount; i++) {
-      const n = i / (barCount - 1);
-      const phase = i * 0.21 + progress * Math.PI * 5;
-
-      // Three layers at unrelated rates: a slow swell, a mid ripple, and a
-      // fast jitter. Summed, they never resolve into a visible repeat, which
-      // is what makes it read as audio rather than as a pattern.
-      const swell = 0.5 + 0.5 * Math.sin(phase * 0.31 + n * 2.4);
-      const ripple = 0.5 + 0.5 * Math.sin(phase * 1.7 - n * 9.1);
-      const jitter = 0.5 + 0.5 * Math.sin(phase * 4.3 + i * 2.7);
-      const amp = swell * 0.55 + ripple * 0.3 + jitter * 0.15;
-
-      // Envelope: raising n before the sine skews the curve's peak to the
-      // right, so the tallest bars sit under the headline rather than in the
-      // middle of the frame, and the field carries all the way to the right
-      // edge instead of dying before the text starts.
-      const edge = Math.sin(Math.pow(n, 1.5) * Math.PI) ** 1.05;
-      const bias = 0.74 + 0.26 * Math.sin(n * Math.PI * 0.8 + 0.6);
-      const barH = maxH * amp * edge * bias;
-      if (barH < 1.2) continue;
-
-      const x = i * gap + (gap - barW) / 2;
-      // Warm through most of the sweep, cooling to violet at the right —
-      // the same two-tone split as the studio lighting in the photo.
-      const violet = n > 0.62 ? (n - 0.62) / 0.38 : 0;
-      const rr = Math.round(229 - violet * 80);
-      const gg = Math.round(115 - violet * 40);
-      const bb = Math.round(41 + violet * 180);
-      // The hero's own scrim darkens the right-hand side to keep the
-      // headline readable, so bars under the text need extra alpha simply to
-      // survive it — without this they fade out exactly where they matter.
-      const scrimLift = 1 + 1.1 * Math.max(0, n - 0.5);
-      const alpha = (0.1 + 0.3 * edge) * (0.55 + 0.45 * amp) * scrimLift;
-
-      ctx.fillStyle = `rgba(${rr},${gg},${bb},${alpha})`;
-      // Mirrored around the centre line, taller above than below, so it has
-      // a horizon rather than looking like a floating ribbon.
-      ctx.fillRect(x, midY - barH, barW, barH);
-      ctx.fillRect(x, midY, barW, barH * 0.62);
-    }
-    ctx.restore();
-
-    // The centre line itself — a thin beam holding the two halves together.
-    const beam = ctx.createLinearGradient(0, 0, w, 0);
-    beam.addColorStop(0, "rgba(229,115,41,0)");
-    beam.addColorStop(0.35, "rgba(240,144,79,0.32)");
-    beam.addColorStop(0.7, "rgba(190,120,190,0.22)");
-    beam.addColorStop(1, "rgba(229,115,41,0)");
-    ctx.fillStyle = beam;
-    ctx.fillRect(0, midY - 0.5, w, 1);
   }, [particles]);
 
   // Preload frames; draw frame 0 the moment it lands, as a poster.
@@ -478,7 +410,7 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
             that happen to drift apart. */}
         <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
 
-        {/* FX layer: parallax particles + scroll-reactive visualiser. Sits
+        {/* FX layer: parallax particles for depth. Sits
             above the photo but *below* the vignette, so the same gradient
             that darkens the edges of the image also fades the particles into
             them — rather than leaving bright dots sitting on top of black. */}
