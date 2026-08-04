@@ -300,6 +300,31 @@ export default async function CaseStudyPage({
         </Section>
       )}
 
+      {/* Archive-era studies link back to the archive index. It previously
+          had a single inbound link (from /work), which left the whole
+          earlier-work section hanging off one thread. */}
+      {study.category === "archive" && (
+        <Section className="border-t border-border">
+          <p className="text-sm text-muted">
+            This is earlier work from the studio&apos;s music and radio years —{" "}
+            <Link
+              href="/work/archive"
+              className="font-medium text-accent hover:text-accent-bright"
+            >
+              browse the full archive
+            </Link>
+            , or see{" "}
+            <Link
+              href="/work"
+              className="font-medium text-accent hover:text-accent-bright"
+            >
+              the podcasts we produce now
+            </Link>
+            .
+          </p>
+        </Section>
+      )}
+
       <Section className="border-t border-border text-center">
         <Reveal>
           <h2 className="font-display mx-auto max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl">

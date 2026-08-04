@@ -431,7 +431,7 @@ export function CostCalculator() {
         <p className="mt-6 text-sm leading-6 text-foreground">{closing}</p>
 
         <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-          <Button href="/contact?source=cost-calculator">Get a quote</Button>
+          <Button href="/contact">Get a quote</Button>
           {/* Save as PDF via the browser's own print-to-PDF. No email, no
               list, no third party — the user keeps their numbers. */}
           <button

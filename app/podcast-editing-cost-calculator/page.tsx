@@ -403,7 +403,7 @@ export default function CostCalculatorPage() {
             delay={200}
             className="mt-9 flex flex-wrap items-center justify-center gap-x-7 gap-y-4"
           >
-            <Button href="/contact?source=cost-calculator" variant="onDark">
+            <Button href="/contact" variant="onDark">
               Get a quote
             </Button>
             <Link

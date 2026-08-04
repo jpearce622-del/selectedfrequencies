@@ -94,23 +94,34 @@ export function getRelatedCaseStudies(slug: string, limit = 3): CaseStudy[] {
   const others = allCaseStudies.filter((study) => study.slug !== slug);
   if (!current) return others.slice(0, limit);
 
-  const sameCategory = others.filter((s) => s.category === current.category);
-  const rest = others.filter((s) => s.category !== current.category);
-  const pool = [...sameCategory, ...rest];
-  if (pool.length === 0) return [];
+  // Walk a ring of same-category studies starting from this one's position.
+  //
+  // Both earlier attempts (slice-from-top, then offset-by-hash/index) left
+  // some studies with a single inbound link, because each study builds its
+  // own differently-ordered pool — so an offset into it guarantees nothing
+  // about global coverage. A ring over a *fixed* list does: study i links to
+  // i+1, i+2, i+3, so every study is linked exactly `limit` times, by
+  // construction rather than by luck. Deterministic, so markup stays stable
+  // between builds.
+  const ring = allCaseStudies.filter((s) => s.category === current.category);
+  const here = ring.findIndex((s) => s.slug === slug);
 
-  // Rotate the window by a hash of the slug rather than always taking the
-  // first `limit`. Slicing from the top returned an identical trio to every
-  // page in a category, so the same three studies absorbed all the internal
-  // links while the rest kept exactly one (their index page) — the opposite
-  // of what this function exists to do. The hash keeps it deterministic, so
-  // the markup is still stable between builds.
-  const offset =
-    [...slug].reduce((sum, ch) => sum + ch.charCodeAt(0), 0) % pool.length;
-  return Array.from({ length: Math.min(limit, pool.length) }, (_, i) =>
-    pool[(offset + i) % pool.length]
-  );
+  const picked: CaseStudy[] = [];
+  for (let step = 1; step < ring.length && picked.length < limit; step++) {
+    picked.push(ring[(here + step) % ring.length]);
+  }
+
+  // Small category (fewer members than `limit` + itself) — top up from the
+  // rest so the section is never short.
+  if (picked.length < limit) {
+    for (const s of others) {
+      if (picked.length >= limit) break;
+      if (!picked.some((p) => p.slug === s.slug)) picked.push(s);
+    }
+  }
+  return picked;
 }
+
 
 /**
  * Search-result description for a case study, capped at 160 characters so it

@@ -7,7 +7,7 @@ import { buildMetadata, siteConfig } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
-import { getAllPosts, getPostBySlug } from "@/lib/blog";
+import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { AuthorCard, AuthorAvatar } from "@/components/blog/AuthorCard";
 import type { BlogImage } from "@/types/blog";
 
@@ -110,6 +110,7 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
+  const related = getRelatedPosts(slug);
 
   const url = `${siteConfig.url}/blog/${post.slug}`;
 
@@ -316,6 +317,41 @@ export default async function BlogPostPage({
           </div>
         </Container>
       </section>
+
+      {/* Keep reading. Posts were only reachable from the /blog index, so each
+          carried a single inbound internal link; cross-linking them turns the
+          blog from a hub-and-spoke into a mesh. */}
+      {related.length > 0 && (
+        <section className="border-t border-border">
+          <Container className="py-16 sm:py-20">
+            <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+              Keep reading
+            </h2>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {related.map((rp) => (
+                <Link
+                  key={rp.slug}
+                  href={`/blog/${rp.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-6 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg hover:shadow-black/[0.06]"
+                >
+                  <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                    {rp.category} · {rp.readingTime}
+                  </p>
+                  <h3 className="font-display mt-2 text-lg font-semibold leading-snug tracking-tight transition-colors group-hover:text-accent">
+                    {rp.title}
+                  </h3>
+                  <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">
+                    {rp.metaDescription}
+                  </p>
+                  <span className="mt-4 text-sm font-medium text-accent">
+                    Read it →
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       {/* ---------- CTA ---------- */}
       <section className="bg-deep text-background">
