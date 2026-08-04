@@ -15,21 +15,21 @@ export const metadata: Metadata = buildMetadata({
 });
 
 export default function ShowNotesGeneratorPage() {
-  // Matches the pattern used by the cost calculator: tells Google and AI
-  // search this page is a free, usable tool rather than a marketing page.
+  // WebPage rather than WebApplication — see the note on the cost calculator.
+  // The software rich result needs aggregateRating or review, this tool has
+  // no ratings, and inventing them isn't an option.
   const appJsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "WebPage",
     name: "Podcast Show Notes Generator",
     url: `${siteConfig.url}/tools/show-notes-generator`,
-    applicationCategory: "MultimediaApplication",
-    operatingSystem: "Any",
     description:
       "Upload a podcast episode and get a transcript plus AI-drafted show notes, YouTube titles, chapters, tags and social posts.",
-    offers: {
-      "@type": "Offer",
-      price: 0,
-      priceCurrency: "GBP",
+    inLanguage: "en-GB",
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
     },
     publisher: {
       "@type": "Organization",

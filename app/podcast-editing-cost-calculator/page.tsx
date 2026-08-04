@@ -64,18 +64,27 @@ export default function CostCalculatorPage() {
     })),
   };
 
+  // WebPage, not WebApplication/SoftwareApplication.
+  //
+  // Google's software rich result requires `aggregateRating` or `review`, and
+  // this tool has neither — nobody has rated it. Supplying one anyway would
+  // be inventing user feedback that doesn't exist, which is both dishonest
+  // and a structured-data policy violation. Without ratings the software type
+  // can never earn the rich result, so it was producing a validation error in
+  // exchange for nothing. WebPage describes the page accurately and carries
+  // no rating requirement; the tool being free is stated in the copy and the
+  // meta description, where a human and an AI answer engine both read it.
   const appJsonLd = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
+    "@type": "WebPage",
     name: "Podcast Editing Cost Calculator",
     url,
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Any",
     description: PAGE_DESCRIPTION,
-    offers: {
-      "@type": "Offer",
-      price: 0,
-      priceCurrency: "GBP",
+    inLanguage: "en-GB",
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
     },
     publisher: {
       "@type": "Organization",
