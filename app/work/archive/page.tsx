@@ -71,6 +71,56 @@ export default function WorkArchivePage() {
           })}
         </div>
       </Section>
+      {/* Context for the grid. 172 words of body copy previously — mostly
+          image tiles, which read as thin however much work they represent. */}
+      <Section className="border-t border-border">
+        <Reveal>
+          <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+            Why this work still matters
+          </h2>
+          <div className="mt-5 max-w-3xl space-y-4 text-base leading-7 text-muted">
+            <p>
+              Before Selected Frequencies produced podcasts it produced music
+              and radio — mix shows for artists including Martin Garrix, Felix
+              Jaehn, Oliver Heldens and Sam Feldt, and long-running radio
+              output for Tomorrowland. Those shows were weekly, and they were
+              judged on sound quality by audiences who listen on serious
+              systems. Nothing sharpens mixing and mastering discipline faster
+              than a mix show that has to hold up on a festival rig and a pair
+              of cheap earbuds in the same week.
+            </p>
+            <p>
+              That background is the reason podcast episodes here get treated
+              as audio productions rather than recordings to be tidied. The
+              habits carry over directly: matching loudness across episodes so
+              a listener never touches the volume, controlling dynamics so a
+              quiet guest stays intelligible, and mastering to a consistent
+              target so a show sounds the same in a car, on a phone speaker,
+              and in headphones.
+            </p>
+            <p>
+              Alongside the music work sit earlier podcast clients — health,
+              mindset, coaching and cycling shows — many of which have full
+              write-ups of their own. The current roster is on the{" "}
+              <Link
+                href="/work"
+                className="font-medium text-accent hover:text-accent-bright"
+              >
+                main work page
+              </Link>
+              , and the{" "}
+              <Link
+                href="/about"
+                className="font-medium text-accent hover:text-accent-bright"
+              >
+                about page
+              </Link>{" "}
+              covers how the studio moved from one to the other.
+            </p>
+          </div>
+        </Reveal>
+      </Section>
+
     </>
   );
 }

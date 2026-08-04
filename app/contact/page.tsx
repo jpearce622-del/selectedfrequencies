@@ -65,6 +65,70 @@ export default function ContactPage() {
                 .
               </p>
             </Reveal>
+            {/* What actually happens after the form is sent. The page was
+                121 words of body copy — thin to a crawler, and thin to a
+                visitor deciding whether it's worth filling in. */}
+            <Reveal delay={320} className="mt-10 border-t border-border pt-8">
+              <h2 className="font-display text-lg font-semibold tracking-tight">
+                What happens next
+              </h2>
+              <ol className="mt-4 space-y-3 text-sm leading-6 text-muted">
+                <li>
+                  <span className="font-medium text-foreground">
+                    You get a reply within one working day.
+                  </span>{" "}
+                  From James, not an account manager or an auto-responder.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">
+                    We work out what your show actually needs.
+                  </span>{" "}
+                  Usually a few questions over email — how long episodes run,
+                  how you record, whether you need video, and how much of the
+                  process you want to hand over. No call required unless you
+                  want one.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">
+                    You get a fixed price per episode.
+                  </span>{" "}
+                  Based on the{" "}
+                  <Link
+                    href="/services"
+                    className="font-medium text-accent hover:text-accent-bright"
+                  >
+                    published rates
+                  </Link>
+                  , not a figure invented for you. If your show doesn&apos;t fit
+                  a tier, we&apos;ll say so and quote the work honestly.
+                </li>
+                <li>
+                  <span className="font-medium text-foreground">
+                    We start with one episode.
+                  </span>{" "}
+                  You hear the difference on your own show before committing to
+                  anything ongoing. No contracts, no minimum term.
+                </li>
+              </ol>
+              <p className="mt-5 text-sm leading-6 text-muted">
+                Not ready for a quote? The{" "}
+                <Link
+                  href="/podcast-editing-cost-calculator"
+                  className="font-medium text-accent hover:text-accent-bright"
+                >
+                  editing cost calculator
+                </Link>{" "}
+                works out what producing your show yourself costs in time, and
+                the{" "}
+                <Link
+                  href="/work"
+                  className="font-medium text-accent hover:text-accent-bright"
+                >
+                  case studies
+                </Link>{" "}
+                cover how the shows we produce are actually made.
+              </p>
+            </Reveal>
           </div>
 
           {/* Right: form */}
