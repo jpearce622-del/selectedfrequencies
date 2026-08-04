@@ -8,3 +8,14 @@ export const shaunaMartin: Author = {
   avatar: "/images/authors/shauna-martin.jpg",
   avatarAlt: "Shauna Martin, Head of Content Marketing at Selected Frequencies",
 };
+
+// James is the producer, so posts written from inside the production process
+// carry his byline rather than the content team's — the authority in those
+// pieces comes from having done the work.
+export const jamesPearce: Author = {
+  name: "James Pearce",
+  role: "Founder & Podcast Producer",
+  bio: "I'm James — I founded Selected Frequencies and produce the shows we work on. Eight years in audio, from BBC Radio 1 mixes to thousands of podcast episodes, and I still edit every show myself.",
+  avatar: "/images/about/headshot.jpg",
+  avatarAlt: "James Pearce, founder and podcast producer at Selected Frequencies",
+};

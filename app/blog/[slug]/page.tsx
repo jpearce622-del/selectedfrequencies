@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+// GFM: the posts use tables, which core markdown does not support — without
+// this they render as literal pipe characters.
+import remarkGfm from "remark-gfm";
 import { buildMetadata, siteConfig } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
@@ -79,6 +82,28 @@ const markdownComponents = {
       </a>
     );
   },
+  // Tables come from remark-gfm. The wrapper scrolls on its own so a wide
+  // table never forces the whole page to scroll sideways on a phone.
+  table: ({ children }: { children?: React.ReactNode }) => (
+    <div className="my-6 overflow-x-auto rounded-xl border border-border">
+      <table className="w-full border-collapse text-left text-sm">
+        {children}
+      </table>
+    </div>
+  ),
+  thead: ({ children }: { children?: React.ReactNode }) => (
+    <thead className="bg-fog">{children}</thead>
+  ),
+  th: ({ children }: { children?: React.ReactNode }) => (
+    <th className="border-b border-border px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+      {children}
+    </th>
+  ),
+  td: ({ children }: { children?: React.ReactNode }) => (
+    <td className="border-b border-border px-4 py-2.5 align-top text-foreground">
+      {children}
+    </td>
+  ),
 };
 
 function Figure({ image }: { image: BlogImage }) {
@@ -246,7 +271,7 @@ export default async function BlogPostPage({
             <article className="min-w-0">
               {/* Lede */}
               <div className="prose prose-neutral max-w-none text-lg prose-p:leading-8 prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
-                <ReactMarkdown components={markdownComponents}>
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
                   {post.intro}
                 </ReactMarkdown>
               </div>
@@ -276,7 +301,7 @@ export default async function BlogPostPage({
                   </h2>
                   {section.image && <Figure image={section.image} />}
                   <div className="prose prose-neutral mt-5 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-h3:text-xl prose-h3:mt-8 prose-p:leading-8 prose-p:text-muted prose-li:text-muted prose-strong:text-foreground prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-accent prose-blockquote:text-foreground/80">
-                    <ReactMarkdown components={markdownComponents}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
                       {section.body}
                     </ReactMarkdown>
                   </div>
