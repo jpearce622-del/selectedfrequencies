@@ -17,7 +17,19 @@ const ORG_ID = `${siteConfig.url}/#organization`;
 export function OrganizationJsonLd() {
   const organization = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "ProfessionalService"],
+    // Organization only — deliberately NOT ProfessionalService.
+    //
+    // ProfessionalService is a subtype of LocalBusiness in schema.org, so
+    // validators (SEMrush, Google's Rich Results Test) hold it to
+    // LocalBusiness rules, which require a postal `address`. That produced a
+    // "value for the address field is required" error on every page.
+    //
+    // The fix is to drop the type, not to add the address: this is a sole
+    // trader working from home with no premises a client ever visits, so
+    // there is no address to publish and publishing one anyway would put a
+    // home address in public structured data. Organization carries the same
+    // name/logo/founder/sameAs signals with no address requirement.
+    "@type": "Organization",
     "@id": ORG_ID,
     name: siteConfig.name,
     url: siteConfig.url,

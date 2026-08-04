@@ -21,6 +21,14 @@ const tools = [
     tags: ["Getting Started", "Checklist", "Launch"],
   },
   {
+    href: "/podcast-editing-cost-calculator",
+    label: "Editing Cost Calculator",
+    badge: "Free",
+    description:
+      "Work out what editing your own show actually costs you in time each year, and compare it against UK and US benchmark rates.",
+    tags: ["Pricing", "Calculator", "Benchmarks"],
+  },
+  {
     href: "/tools/show-notes-generator",
     label: "Show Notes Generator",
     badge: "Free",
@@ -93,6 +101,59 @@ export default function ToolsPage() {
               </Reveal>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* Context, and routes out to the rest of the site. The page was a
+          grid of cards — almost no readable text — which reads as thin to a
+          crawler however useful the tools themselves are. */}
+      <section className="border-t border-border py-16 sm:py-20">
+        <Container>
+          <Reveal>
+            <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+              Why these exist
+            </h2>
+            <div className="mt-5 max-w-3xl space-y-4 text-base leading-7 text-muted">
+              <p>
+                Each of these started as something built for our own use.
+                The launch roadmap is the checklist we walk new hosts through
+                before their first recording. The cost calculator came from
+                having the same conversation over and over with people who
+                knew editing took a long time but had never put a number on
+                it. The show notes generator runs the same transcription and
+                drafting steps we use in production, just without the
+                editorial pass a paying client gets.
+              </p>
+              <p>
+                None of them require an account or a card, and none of them
+                are trials that stop working. They are genuinely useful on
+                their own, and if you decide the work is worth handing over
+                rather than doing yourself, the{" "}
+                <Link
+                  href="/services"
+                  className="font-medium text-accent hover:text-accent-bright"
+                >
+                  services and rates
+                </Link>{" "}
+                are published openly too — no quote form required to see a
+                price. You can also read{" "}
+                <Link
+                  href="/work"
+                  className="font-medium text-accent hover:text-accent-bright"
+                >
+                  how we produce the shows we work on
+                </Link>
+                , or browse the{" "}
+                <Link
+                  href="/blog"
+                  className="font-medium text-accent hover:text-accent-bright"
+                >
+                  guides on editing, audio quality and podcast SEO
+                </Link>
+                .
+              </p>
+            </div>
+          </Reveal>
         </Container>
       </section>
     </>

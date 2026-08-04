@@ -14,7 +14,14 @@ const footerLinks = [
 ];
 
 // Free tools & resources — grouped separately so they read as a set.
+//
+// /tools is listed here deliberately. The header's "All tools" link lives
+// inside a dropdown that only renders once clicked, so it never appears in
+// the server HTML and crawlers can't follow it — which left /tools orphaned
+// despite being in the sitemap. The footer is server-rendered on every page,
+// so this is the link that actually counts.
 const resourceLinks = [
+  { href: "/tools", label: "All free tools" },
   { href: "/podcast-launch-roadmap", label: "Launch roadmap" },
   { href: "/podcast-editing-cost-calculator", label: "Editing cost calculator" },
   { href: "/tools/show-notes-generator", label: "Show notes generator" },

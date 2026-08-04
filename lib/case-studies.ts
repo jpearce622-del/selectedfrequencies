@@ -96,7 +96,20 @@ export function getRelatedCaseStudies(slug: string, limit = 3): CaseStudy[] {
 
   const sameCategory = others.filter((s) => s.category === current.category);
   const rest = others.filter((s) => s.category !== current.category);
-  return [...sameCategory, ...rest].slice(0, limit);
+  const pool = [...sameCategory, ...rest];
+  if (pool.length === 0) return [];
+
+  // Rotate the window by a hash of the slug rather than always taking the
+  // first `limit`. Slicing from the top returned an identical trio to every
+  // page in a category, so the same three studies absorbed all the internal
+  // links while the rest kept exactly one (their index page) — the opposite
+  // of what this function exists to do. The hash keeps it deterministic, so
+  // the markup is still stable between builds.
+  const offset =
+    [...slug].reduce((sum, ch) => sum + ch.charCodeAt(0), 0) % pool.length;
+  return Array.from({ length: Math.min(limit, pool.length) }, (_, i) =>
+    pool[(offset + i) % pool.length]
+  );
 }
 
 /**

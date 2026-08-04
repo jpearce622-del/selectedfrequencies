@@ -64,6 +64,56 @@ export default function WorkIndexPage() {
         </div>
       </Section>
 
+      {/* Context for the grid above. The page was 187 words — thin enough
+          that search engines had almost nothing to read it on, since a wall
+          of client cards is mostly links. This explains what the work
+          actually involves and routes to the relevant service pages. */}
+      <Section className="border-t border-border">
+        <Reveal>
+          <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+            What producing these shows involves
+          </h2>
+          <div className="mt-5 max-w-3xl space-y-4 text-base leading-7 text-muted">
+            <p>
+              Every show above is different — a genetics researcher
+              interviewing scientists needs something other than a weekly
+              bitcoin conversation or a career-change coach talking to one
+              guest at a time. What they share is that the host records, and
+              everything after that is handled here: the edit, the sound, the
+              episode description, the chapters, and the assets that carry the
+              episode beyond the feed.
+            </p>
+            <p>
+              Most run weekly, which is the part that quietly ends podcasts.
+              Producing one good episode is straightforward; producing one
+              every week for three years, without the quality drifting or the
+              schedule slipping, is a different job — and it is the one these
+              clients hand over. Some have been publishing continuously since
+              2021.
+            </p>
+            <p>
+              Each case study below covers the specific production problem
+              that show poses and how it is solved. If you want the shape of
+              the service rather than the examples, the{" "}
+              <Link
+                href="/services"
+                className="font-medium text-accent hover:text-accent-bright"
+              >
+                services and rates
+              </Link>{" "}
+              page lists what is included at each tier, and the{" "}
+              <Link
+                href="/podcast-editing-cost-calculator"
+                className="font-medium text-accent hover:text-accent-bright"
+              >
+                editing cost calculator
+              </Link>{" "}
+              works out what doing it yourself costs in time.
+            </p>
+          </div>
+        </Reveal>
+      </Section>
+
       <Section className="border-t border-border">
         <Link
           href="/work/archive"
