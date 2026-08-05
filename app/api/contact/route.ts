@@ -113,6 +113,20 @@ export async function POST(request: Request) {
   // Enquiries always go to James; CONTACT_TO_EMAIL can override.
   const to = process.env.CONTACT_TO_EMAIL?.trim() || "james@selectedfrequencies.com";
 
+  // Reply-To normally carries the enquirer's address, and that difference is
+  // what makes the message read as a forwarded enquiry rather than mail we
+  // sent ourselves. When someone types one of our own addresses into the form,
+  // From, To and Reply-To collapse onto the same address — the self-addressed
+  // pattern phishing uses, which mail clients junk on sight. Drop Reply-To in
+  // that case; the address is still recorded in the body below.
+  const senderDomain = (user ?? "").split("@")[1]?.toLowerCase() ?? "";
+  const replyAddress = email.trim();
+  const replyIsOurs =
+    replyAddress.toLowerCase() === (user ?? "").toLowerCase() ||
+    replyAddress.toLowerCase() === to.toLowerCase() ||
+    (senderDomain !== "" &&
+      replyAddress.toLowerCase().endsWith(`@${senderDomain}`));
+
   if (!host || !user || !pass) {
     console.error(
       "Contact form is not configured: missing SMTP_HOST, SMTP_USER, or SMTP_PASS."
@@ -135,11 +149,11 @@ export async function POST(request: Request) {
       // Most SMTP servers require the From to be the authenticated mailbox.
       from: `Selected Frequencies Website <${user}>`,
       to,
-      replyTo: email.trim(),
+      ...(replyIsOurs ? {} : { replyTo: replyAddress }),
       subject: `New enquiry from ${name.trim()}${service ? ` — ${service.trim()}` : ""}`,
       text: [
         `Name: ${name.trim()}`,
-        `Email: ${email.trim()}`,
+        `Email: ${email.trim()}${replyIsOurs ? "  ⚠️ our own address — reply-to omitted, likely a test or spoof" : ""}`,
         service ? `Service interested in: ${service.trim()}` : null,
         "",
         message?.trim() || "(No message — they'd rather talk it through.)",
