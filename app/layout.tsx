@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
+import { Plausible } from "@/components/analytics/Plausible";
 import { OrganizationJsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/metadata";
 
@@ -43,7 +43,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
-        <GoogleAnalytics />
+        <Plausible />
       </body>
     </html>
   );
