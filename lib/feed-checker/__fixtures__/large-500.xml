@@ -1,0 +1,4013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+<channel>
+<title>Test Show</title>
+<link>https://example.com</link>
+<description>A description long enough to clear the two hundred character threshold that the checker uses, because a short one triggers a separate warning and that would muddy what each fixture is actually testing here today.</description>
+<language>en-gb</language>
+<itunes:author>Test Author</itunes:author>
+<itunes:explicit>false</itunes:explicit>
+<itunes:category text="Technology"/>
+<itunes:image href="https://example.com/art.jpg"/>
+<itunes:owner><itunes:name>Test</itunes:name><itunes:email>test@example.com</itunes:email></itunes:owner>
+<item>
+<title>Ep 1</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep1</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep1.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 2</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep2</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep2.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 3</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep3</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep3.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 4</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep4</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep4.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 5</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep5</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep5.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 6</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep6</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep6.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 7</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep7</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep7.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 8</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep8</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep8.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 9</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep9</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep9.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 10</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep10</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep10.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 11</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep11</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep11.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 12</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep12</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep12.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 13</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep13</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep13.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 14</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep14</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep14.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 15</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep15</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep15.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 16</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep16</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep16.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 17</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep17</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep17.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 18</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep18</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep18.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 19</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep19</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep19.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 20</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep20</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep20.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 21</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep21</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep21.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 22</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep22</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep22.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 23</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep23</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep23.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 24</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep24</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep24.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 25</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep25</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep25.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 26</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep26</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep26.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 27</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep27</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep27.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 28</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep28</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep28.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 29</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep29</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep29.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 30</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep30</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep30.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 31</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep31</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep31.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 32</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep32</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep32.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 33</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep33</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep33.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 34</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep34</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep34.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 35</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep35</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep35.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 36</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep36</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep36.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 37</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep37</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep37.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 38</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep38</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep38.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 39</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep39</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep39.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 40</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep40</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep40.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 41</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep41</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep41.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 42</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep42</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep42.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 43</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep43</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep43.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 44</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep44</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep44.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 45</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep45</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep45.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 46</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep46</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep46.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 47</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep47</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep47.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 48</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep48</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep48.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 49</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep49</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep49.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 50</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep50</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep50.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 51</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep51</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep51.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 52</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep52</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep52.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 53</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep53</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep53.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 54</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep54</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep54.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 55</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep55</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep55.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 56</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep56</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep56.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 57</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep57</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep57.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 58</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep58</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep58.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 59</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep59</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep59.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 60</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep60</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep60.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 61</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep61</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep61.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 62</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep62</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep62.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 63</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep63</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep63.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 64</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep64</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep64.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 65</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep65</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep65.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 66</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep66</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep66.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 67</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep67</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep67.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 68</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep68</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep68.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 69</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep69</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep69.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 70</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep70</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep70.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 71</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep71</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep71.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 72</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep72</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep72.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 73</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep73</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep73.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 74</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep74</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep74.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 75</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep75</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep75.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 76</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep76</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep76.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 77</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep77</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep77.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 78</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep78</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep78.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 79</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep79</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep79.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 80</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep80</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep80.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 81</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep81</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep81.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 82</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep82</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep82.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 83</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep83</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep83.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 84</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep84</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep84.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 85</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep85</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep85.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 86</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep86</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep86.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 87</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep87</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep87.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 88</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep88</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep88.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 89</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep89</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep89.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 90</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep90</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep90.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 91</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep91</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep91.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 92</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep92</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep92.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 93</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep93</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep93.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 94</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep94</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep94.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 95</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep95</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep95.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 96</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep96</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep96.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 97</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep97</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep97.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 98</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep98</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep98.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 99</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep99</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep99.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 100</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep100</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep100.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 101</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep101</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep101.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 102</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep102</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep102.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 103</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep103</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep103.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 104</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep104</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep104.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 105</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep105</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep105.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 106</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep106</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep106.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 107</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep107</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep107.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 108</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep108</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep108.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 109</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep109</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep109.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 110</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep110</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep110.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 111</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep111</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep111.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 112</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep112</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep112.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 113</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep113</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep113.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 114</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep114</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep114.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 115</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep115</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep115.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 116</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep116</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep116.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 117</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep117</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep117.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 118</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep118</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep118.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 119</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep119</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep119.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 120</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep120</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep120.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 121</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep121</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep121.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 122</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep122</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep122.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 123</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep123</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep123.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 124</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep124</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep124.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 125</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep125</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep125.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 126</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep126</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep126.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 127</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep127</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep127.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 128</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep128</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep128.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 129</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep129</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep129.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 130</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep130</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep130.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 131</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep131</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep131.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 132</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep132</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep132.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 133</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep133</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep133.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 134</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep134</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep134.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 135</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep135</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep135.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 136</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep136</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep136.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 137</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep137</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep137.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 138</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep138</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep138.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 139</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep139</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep139.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 140</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep140</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep140.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 141</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep141</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep141.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 142</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep142</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep142.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 143</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep143</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep143.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 144</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep144</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep144.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 145</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep145</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep145.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 146</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep146</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep146.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 147</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep147</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep147.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 148</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep148</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep148.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 149</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep149</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep149.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 150</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep150</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep150.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 151</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep151</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep151.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 152</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep152</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep152.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 153</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep153</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep153.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 154</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep154</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep154.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 155</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep155</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep155.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 156</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep156</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep156.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 157</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep157</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep157.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 158</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep158</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep158.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 159</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep159</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep159.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 160</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep160</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep160.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 161</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep161</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep161.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 162</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep162</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep162.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 163</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep163</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep163.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 164</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep164</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep164.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 165</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep165</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep165.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 166</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep166</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep166.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 167</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep167</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep167.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 168</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep168</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep168.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 169</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep169</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep169.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 170</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep170</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep170.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 171</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep171</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep171.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 172</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep172</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep172.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 173</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep173</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep173.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 174</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep174</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep174.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 175</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep175</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep175.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 176</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep176</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep176.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 177</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep177</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep177.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 178</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep178</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep178.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 179</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep179</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep179.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 180</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep180</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep180.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 181</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep181</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep181.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 182</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep182</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep182.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 183</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep183</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep183.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 184</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep184</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep184.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 185</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep185</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep185.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 186</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep186</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep186.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 187</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep187</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep187.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 188</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep188</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep188.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 189</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep189</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep189.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 190</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep190</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep190.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 191</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep191</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep191.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 192</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep192</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep192.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 193</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep193</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep193.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 194</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep194</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep194.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 195</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep195</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep195.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 196</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep196</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep196.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 197</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep197</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep197.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 198</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep198</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep198.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 199</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep199</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep199.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 200</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep200</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep200.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 201</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep201</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep201.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 202</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep202</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep202.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 203</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep203</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep203.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 204</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep204</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep204.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 205</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep205</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep205.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 206</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep206</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep206.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 207</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep207</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep207.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 208</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep208</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep208.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 209</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep209</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep209.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 210</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep210</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep210.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 211</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep211</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep211.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 212</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep212</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep212.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 213</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep213</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep213.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 214</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep214</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep214.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 215</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep215</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep215.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 216</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep216</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep216.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 217</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep217</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep217.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 218</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep218</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep218.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 219</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep219</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep219.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 220</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep220</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep220.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 221</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep221</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep221.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 222</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep222</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep222.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 223</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep223</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep223.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 224</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep224</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep224.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 225</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep225</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep225.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 226</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep226</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep226.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 227</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep227</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep227.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 228</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep228</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep228.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 229</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep229</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep229.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 230</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep230</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep230.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 231</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep231</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep231.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 232</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep232</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep232.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 233</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep233</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep233.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 234</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep234</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep234.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 235</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep235</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep235.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 236</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep236</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep236.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 237</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep237</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep237.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 238</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep238</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep238.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 239</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep239</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep239.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 240</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep240</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep240.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 241</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep241</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep241.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 242</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep242</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep242.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 243</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep243</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep243.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 244</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep244</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep244.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 245</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep245</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep245.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 246</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep246</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep246.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 247</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep247</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep247.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 248</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep248</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep248.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 249</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep249</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep249.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 250</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep250</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep250.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 251</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep251</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep251.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 252</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep252</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep252.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 253</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep253</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep253.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 254</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep254</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep254.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 255</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep255</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep255.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 256</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep256</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep256.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 257</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep257</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep257.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 258</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep258</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep258.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 259</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep259</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep259.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 260</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep260</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep260.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 261</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep261</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep261.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 262</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep262</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep262.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 263</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep263</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep263.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 264</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep264</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep264.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 265</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep265</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep265.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 266</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep266</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep266.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 267</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep267</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep267.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 268</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep268</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep268.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 269</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep269</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep269.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 270</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep270</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep270.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 271</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep271</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep271.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 272</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep272</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep272.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 273</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep273</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep273.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 274</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep274</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep274.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 275</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep275</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep275.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 276</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep276</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep276.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 277</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep277</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep277.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 278</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep278</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep278.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 279</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep279</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep279.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 280</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep280</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep280.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 281</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep281</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep281.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 282</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep282</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep282.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 283</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep283</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep283.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 284</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep284</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep284.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 285</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep285</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep285.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 286</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep286</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep286.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 287</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep287</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep287.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 288</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep288</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep288.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 289</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep289</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep289.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 290</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep290</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep290.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 291</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep291</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep291.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 292</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep292</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep292.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 293</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep293</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep293.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 294</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep294</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep294.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 295</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep295</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep295.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 296</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep296</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep296.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 297</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep297</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep297.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 298</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep298</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep298.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 299</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep299</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep299.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 300</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep300</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep300.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 301</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep301</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep301.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 302</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep302</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep302.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 303</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep303</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep303.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 304</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep304</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep304.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 305</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep305</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep305.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 306</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep306</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep306.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 307</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep307</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep307.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 308</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep308</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep308.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 309</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep309</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep309.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 310</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep310</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep310.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 311</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep311</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep311.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 312</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep312</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep312.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 313</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep313</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep313.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 314</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep314</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep314.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 315</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep315</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep315.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 316</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep316</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep316.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 317</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep317</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep317.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 318</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep318</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep318.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 319</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep319</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep319.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 320</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep320</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep320.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 321</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep321</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep321.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 322</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep322</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep322.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 323</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep323</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep323.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 324</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep324</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep324.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 325</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep325</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep325.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 326</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep326</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep326.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 327</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep327</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep327.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 328</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep328</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep328.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 329</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep329</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep329.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 330</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep330</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep330.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 331</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep331</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep331.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 332</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep332</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep332.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 333</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep333</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep333.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 334</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep334</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep334.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 335</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep335</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep335.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 336</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep336</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep336.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 337</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep337</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep337.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 338</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep338</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep338.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 339</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep339</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep339.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 340</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep340</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep340.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 341</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep341</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep341.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 342</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep342</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep342.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 343</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep343</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep343.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 344</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep344</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep344.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 345</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep345</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep345.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 346</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep346</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep346.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 347</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep347</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep347.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 348</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep348</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep348.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 349</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep349</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep349.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 350</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep350</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep350.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 351</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep351</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep351.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 352</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep352</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep352.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 353</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep353</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep353.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 354</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep354</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep354.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 355</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep355</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep355.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 356</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep356</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep356.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 357</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep357</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep357.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 358</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep358</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep358.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 359</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep359</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep359.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 360</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep360</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep360.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 361</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep361</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep361.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 362</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep362</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep362.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 363</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep363</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep363.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 364</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep364</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep364.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 365</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep365</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep365.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 366</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep366</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep366.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 367</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep367</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep367.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 368</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep368</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep368.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 369</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep369</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep369.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 370</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep370</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep370.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 371</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep371</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep371.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 372</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep372</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep372.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 373</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep373</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep373.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 374</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep374</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep374.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 375</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep375</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep375.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 376</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep376</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep376.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 377</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep377</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep377.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 378</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep378</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep378.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 379</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep379</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep379.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 380</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep380</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep380.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 381</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep381</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep381.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 382</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep382</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep382.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 383</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep383</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep383.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 384</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep384</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep384.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 385</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep385</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep385.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 386</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep386</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep386.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 387</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep387</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep387.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 388</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep388</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep388.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 389</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep389</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep389.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 390</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep390</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep390.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 391</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep391</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep391.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 392</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep392</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep392.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 393</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep393</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep393.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 394</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep394</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep394.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 395</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep395</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep395.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 396</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep396</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep396.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 397</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep397</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep397.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 398</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep398</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep398.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 399</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep399</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep399.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 400</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep400</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep400.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 401</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep401</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep401.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 402</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep402</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep402.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 403</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep403</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep403.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 404</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep404</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep404.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 405</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep405</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep405.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 406</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep406</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep406.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 407</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep407</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep407.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 408</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep408</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep408.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 409</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep409</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep409.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 410</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep410</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep410.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 411</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep411</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep411.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 412</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep412</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep412.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 413</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep413</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep413.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 414</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep414</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep414.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 415</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep415</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep415.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 416</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep416</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep416.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 417</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep417</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep417.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 418</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep418</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep418.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 419</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep419</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep419.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 420</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep420</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep420.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 421</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep421</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep421.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 422</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep422</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep422.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 423</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep423</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep423.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 424</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep424</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep424.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 425</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep425</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep425.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 426</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep426</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep426.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 427</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep427</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep427.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 428</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep428</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep428.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 429</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep429</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep429.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 430</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep430</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep430.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 431</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep431</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep431.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 432</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep432</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep432.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 433</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep433</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep433.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 434</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep434</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep434.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 435</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep435</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep435.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 436</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep436</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep436.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 437</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep437</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep437.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 438</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep438</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep438.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 439</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep439</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep439.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 440</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep440</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep440.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 441</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep441</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep441.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 442</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep442</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep442.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 443</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep443</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep443.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 444</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep444</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep444.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 445</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep445</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep445.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 446</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep446</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep446.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 447</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep447</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep447.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 448</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep448</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep448.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 449</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep449</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep449.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 450</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep450</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep450.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 451</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep451</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep451.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 452</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep452</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep452.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 453</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep453</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep453.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 454</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep454</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep454.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 455</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep455</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep455.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 456</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep456</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep456.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 457</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep457</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep457.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 458</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep458</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep458.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 459</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep459</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep459.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 460</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep460</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep460.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 461</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep461</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep461.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 462</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep462</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep462.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 463</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep463</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep463.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 464</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep464</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep464.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 465</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep465</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep465.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 466</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep466</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep466.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 467</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep467</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep467.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 468</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep468</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep468.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 469</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep469</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep469.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 470</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep470</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep470.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 471</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep471</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep471.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 472</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep472</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep472.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 473</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep473</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep473.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 474</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep474</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep474.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 475</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep475</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep475.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 476</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep476</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep476.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 477</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep477</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep477.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 478</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep478</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep478.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 479</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep479</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep479.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 480</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep480</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep480.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 481</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep481</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep481.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 482</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep482</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep482.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 483</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep483</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep483.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 484</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep484</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep484.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 485</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep485</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep485.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 486</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep486</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep486.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 487</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep487</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep487.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 488</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep488</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep488.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 489</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep489</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep489.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 490</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep490</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep490.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 491</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep491</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep491.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 492</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep492</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep492.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 493</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep493</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep493.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 494</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep494</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep494.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 495</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep495</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep495.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 496</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep496</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep496.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 497</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep497</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep497.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 498</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep498</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep498.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 499</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep499</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep499.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 500</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep500</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep500.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+</channel></rss>

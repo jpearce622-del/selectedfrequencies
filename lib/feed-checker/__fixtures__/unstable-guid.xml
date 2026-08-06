@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+<channel>
+<title>Test Show</title>
+<link>https://example.com</link>
+<description>A description long enough to clear the two hundred character threshold that the checker uses, because a short one triggers a separate warning and that would muddy what each fixture is actually testing here today.</description>
+<language>en-gb</language>
+<itunes:author>Test Author</itunes:author>
+<itunes:explicit>false</itunes:explicit>
+<itunes:category text="Technology"/>
+<itunes:image href="https://example.com/art.jpg"/>
+<itunes:owner><itunes:name>Test</itunes:name><itunes:email>test@example.com</itunes:email></itunes:owner>
+<item>
+<title>Ep 1</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep1?t=1732176000</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep1?t=1732176000.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 2</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep2?cb=99182</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/https://example.com/ep2?cb=99182.mp3" length="12345678" type="audio/mpeg"/>
+</item>
+</channel></rss>
