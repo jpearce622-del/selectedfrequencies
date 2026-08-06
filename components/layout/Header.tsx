@@ -34,7 +34,7 @@ const toolsItems = [
     description: "Transcript + draft show notes from any episode",
   },
   {
-    href: "/best-bitcoin-podcasts",
+    href: "/blog/best-bitcoin-podcasts",
     label: "Best Bitcoin Podcasts",
     description: "A hand-picked directory of Bitcoin & crypto shows",
   },

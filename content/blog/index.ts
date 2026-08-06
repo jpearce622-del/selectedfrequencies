@@ -8,9 +8,11 @@ import { whyBitcoinPodcastsWork } from "./why-bitcoin-podcasts-work";
 import { howToStartAPodcastIn2026 } from "./how-to-start-a-podcast-in-2026";
 import { descriptVsRiverside } from "./descript-vs-riverside";
 import { founderPodcastTimePerWeek } from "./founder-podcast-time-per-week";
+import { bestBitcoinPodcasts } from "./best-bitcoin-podcasts";
 
 // Newest-first ordering is handled by getAllPosts() (sorts on publishedAt).
 export const posts: BlogPost[] = [
+  bestBitcoinPodcasts,
   founderPodcastTimePerWeek,
   descriptVsRiverside,
   howToStartAPodcastIn2026,

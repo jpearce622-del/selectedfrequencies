@@ -25,7 +25,7 @@ const resourceLinks = [
   { href: "/podcast-launch-roadmap", label: "Launch roadmap" },
   { href: "/podcast-editing-cost-calculator", label: "Editing cost calculator" },
   { href: "/tools/show-notes-generator", label: "Show notes generator" },
-  { href: "/best-bitcoin-podcasts", label: "Best Bitcoin podcasts" },
+  { href: "/blog/best-bitcoin-podcasts", label: "Best Bitcoin podcasts" },
 ];
 
 export function Footer() {

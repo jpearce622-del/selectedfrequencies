@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/blog",
     "/bitcoin",
-    "/best-bitcoin-podcasts",
     "/podcast-editing-cost-calculator",
     "/tools",
     "/tools/show-notes-generator",

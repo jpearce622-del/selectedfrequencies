@@ -101,7 +101,7 @@ export default function BitcoinPage() {
         <p className="text-sm text-muted">
           New to the space? Browse our pick of the{" "}
           <Link
-            href="/best-bitcoin-podcasts"
+            href="/blog/best-bitcoin-podcasts"
             className="font-medium text-accent hover:text-accent-bright"
           >
             best Bitcoin &amp; crypto podcasts

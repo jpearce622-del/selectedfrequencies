@@ -87,7 +87,7 @@ export default function BlogIndexPage() {
       <Section className="border-t border-border">
         <Reveal>
           <Link
-            href="/best-bitcoin-podcasts"
+            href="/blog/best-bitcoin-podcasts"
             className="group flex flex-col items-start justify-between gap-4 rounded-2xl border border-border bg-fog p-8 transition-colors hover:border-accent/40 sm:flex-row sm:items-center"
           >
             <div>

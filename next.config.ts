@@ -64,7 +64,16 @@ const nextConfig: NextConfig = {
       //    rather than a 404.
       { source: "/post/:slug*", destination: "/blog", permanent: true },
 
-      // 3. Other legacy Wix paths referenced in the old site.
+      // 3. The Bitcoin podcast round-up moved from a standalone page into
+      //    the blog. The old URL had picked up links and sat in the sitemap,
+      //    so it 301s rather than 404ing.
+      {
+        source: "/best-bitcoin-podcasts",
+        destination: "/blog/best-bitcoin-podcasts",
+        permanent: true,
+      },
+
+      // 4. Other legacy Wix paths referenced in the old site.
       { source: "/ourwork", destination: "/work", permanent: true },
     ];
   },
