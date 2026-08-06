@@ -23,12 +23,8 @@ const APPLE_CATEGORIES = new Set([
   "Science","Society & Culture","Sports","Technology","True Crime","TV & Film",
 ]);
 
-// Analytics prefixes redirect enclosures by design. Flagging these as a
-// problem would fire on a large share of professionally hosted shows.
-const ANALYTICS_HOSTS = [
-  "podtrac.com","chartable.com","chrt.fm","blubrry.com","mgln.ai","megaphone.fm",
-  "pdst.fm","claritaspod.com","podscribe.com","verifi.podscribe.com",
-];
+// The analytics-prefix host list lives in engine.ts, which is where the
+// redirect chain is actually inspected. A second copy here was never read.
 
 const ISO_639 = new Set([
   "en","en-us","en-gb","en-au","en-ca","en-ie","en-nz","en-za","fr","fr-fr","fr-ca",
@@ -234,9 +230,17 @@ export const checks: Check[] = [
     severity: "critical",
     title: "No unescaped special characters",
     run: (ctx) => {
-      // Bare & that isn't the start of an entity, ignoring CDATA blocks.
-      const withoutCdata = ctx.rawXml.replace(/<!\[CDATA\[[\s\S]*?\]\]>/g, "");
-      const bad = [...withoutCdata.matchAll(/&(?!#?\w+;)/g)];
+      // Bare & that isn't the start of an entity.
+      //
+      // CDATA and comments are both stripped first, because a bare & is
+      // perfectly legal inside either — the document still parses. Plenty of
+      // hosts stamp a generator comment into the feed, and one containing
+      // "R&D" or an ampersand in a company name would otherwise draw a
+      // critical failure and cap an entirely healthy feed at 49.
+      const scannable = ctx.rawXml
+        .replace(/<!\[CDATA\[[\s\S]*?\]\]>/g, "")
+        .replace(/<!--[\s\S]*?-->/g, "");
+      const bad = [...scannable.matchAll(/&(?!#?\w+;)/g)];
       return bad.length === 0
         ? { status: "pass", detail: "Special characters are escaped properly." }
         : {
@@ -1057,17 +1061,44 @@ export const checks: Check[] = [
         const delta = Math.abs((e.contentLength ?? 0) - (e.declaredLength ?? 0));
         return delta > Math.max(1024, (e.contentLength ?? 0) * 0.01);
       });
-      return wrong.length === 0
-        ? { status: "pass", detail: "Declared sizes match the actual files." }
-        : {
-            status: "warn",
-            detail: `${wrong.length} file${wrong.length > 1 ? "s have" : " has"} a length attribute that doesn't match the real size.`,
-            fix: "Apps use the declared length for the progress bar and for download estimates. A wrong value breaks seeking.",
-            evidence: wrong.map(
-              (e) =>
-                `${e.episodeTitle} — declared ${e.declaredLength}, actual ${e.contentLength}`
-            ),
-          };
+      if (wrong.length === 0) {
+        return { status: "pass", detail: "Declared sizes match the actual files." };
+      }
+
+      // Dynamic ad insertion makes every served file larger than the static
+      // length the feed declares, and by a similar amount each time. That is
+      // how a monetised show is *supposed* to behave — the host cannot
+      // declare a length it won't know until the request is made. Telling
+      // someone their feed is broken because they run ads would be the
+      // clearest possible case of the tool crying wolf on a healthy feed.
+      //
+      // The tell is that every sampled file is bigger, not just some, and by
+      // a consistent margin. A genuine fault is erratic and often negative.
+      const deltas = wrong.map(
+        (e) => (e.contentLength ?? 0) - (e.declaredLength ?? 0)
+      );
+      const allLarger = deltas.every((d) => d > 0);
+      const mean = deltas.reduce((a, b) => a + b, 0) / deltas.length;
+      const consistent =
+        mean > 0 && deltas.every((d) => Math.abs(d - mean) < mean * 0.5);
+
+      if (wrong.length === checked.length && allLarger && consistent) {
+        return {
+          status: "pass",
+          detail: `Every file is about ${Math.round(mean / 1024)} KB larger than declared, which is the signature of dynamic ad insertion.`,
+          fix: undefined,
+        };
+      }
+
+      return {
+        status: "warn",
+        detail: `${wrong.length} file${wrong.length > 1 ? "s have" : " has"} a length attribute that doesn't match the real size.`,
+        fix: "Apps use the declared length for the progress bar and for download estimates. A wrong value breaks seeking. If your host does dynamic ad insertion a small difference is expected — a large or inconsistent one isn't.",
+        evidence: wrong.map(
+          (e) =>
+            `${e.episodeTitle} — declared ${e.declaredLength}, actual ${e.contentLength}`
+        ),
+      };
     },
   },
   {

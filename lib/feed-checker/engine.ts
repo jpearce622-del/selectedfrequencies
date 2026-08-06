@@ -315,7 +315,14 @@ export function score(ctx: CheckContext): Report {
   if (criticalFailures.length > 0) total = Math.min(total, 49);
   total = Math.max(0, Math.min(100, total));
 
-  const warnings = results.filter((r) => r.status === "warn").length;
+  // Split the warnings the same way the score does. A Podcasting 2.0 tag
+  // nobody requires is not a thing "worth fixing", and counting it as one
+  // makes a healthy feed look worse than it is.
+  const warned = results.filter((r) => r.status === "warn");
+  const warnings = warned.filter(
+    (r) => !CATEGORIES[r.category].additiveOnly
+  ).length;
+  const optional = warned.length - warnings;
   const passes = results.filter((r) => r.status === "pass").length;
 
   const verdict =
@@ -323,7 +330,9 @@ export function score(ctx: CheckContext): Report {
       ? `${criticalFailures.length} issue${criticalFailures.length > 1 ? "s" : ""} here could get this feed rejected.`
       : warnings > 0
         ? `Nothing blocking, but ${warnings} thing${warnings > 1 ? "s are" : " is"} worth fixing.`
-        : "This feed is in good shape.";
+        : optional > 0
+          ? "Nothing to fix — every requirement passed."
+          : "This feed is in good shape.";
 
   return {
     feedUrl: ctx.feedUrl,
@@ -334,6 +343,7 @@ export function score(ctx: CheckContext): Report {
     verdict,
     criticalCount: criticalFailures.length,
     warningCount: warnings,
+    optionalCount: optional,
     passCount: passes,
     categories,
     meta: {

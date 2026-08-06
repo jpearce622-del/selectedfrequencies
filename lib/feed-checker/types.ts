@@ -150,7 +150,17 @@ export interface Report {
   grade: string;
   verdict: string;
   criticalCount: number;
+  /**
+   * Warnings in the compliance categories only.
+   *
+   * Podcasting 2.0 findings are counted separately: they score additively and
+   * nothing there can fail, so folding them in here would have the headline
+   * say "10 things are worth fixing" when six of them are optional extras no
+   * platform asks for.
+   */
   warningCount: number;
+  /** Additive-only suggestions — never a fault, only an upgrade. */
+  optionalCount: number;
   passCount: number;
   categories: CategoryScore[];
   meta: {

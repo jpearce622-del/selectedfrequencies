@@ -8,7 +8,7 @@
  *
  * Run with:  npx tsx lib/feed-checker/verify.ts
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { parseFeed } from "./parse";
 import { score } from "./engine";
@@ -61,6 +61,18 @@ const EXPECTATIONS: Expectation[] = [
       "channel.category": "pass",
       "channel.explicit": "pass",
       "channel.language": "pass",
+    },
+    scoreOver: 55,
+  },
+  {
+    // Regression guard. Five of Apple's nineteen top-level categories contain
+    // an ampersand, which XML requires be written as &amp;. Before entities
+    // were decoded at the accessor, every feed in those categories drew a
+    // critical failure and was capped at 49 for perfectly correct markup.
+    fixture: "entity-encoded.xml",
+    expect: {
+      "channel.category": "pass",
+      "structure.unescaped_entities": "pass",
     },
     scoreOver: 55,
   },

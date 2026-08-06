@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  A correctly-encoded feed in an Apple category whose name contains an
+  ampersand. XML requires that & be written as &amp; in content, so this is
+  what a healthy feed in one of the five ampersand categories looks like on
+  the wire. It must not be reported as an invalid category.
+
+  The bare & in the line above is deliberate and legal: inside a comment it
+  needs no escaping, the document parses, and the unescaped-entity check must
+  not flag it.
+-->
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:podcast="https://podcastindex.org/namespace/1.0">
+<channel>
+<title>Rock &amp; Roll Health</title>
+<link>https://example.com</link>
+<description>A description long enough to clear the two hundred character threshold that the checker uses, because a short one triggers a separate warning and that would muddy what each fixture is actually testing here today.</description>
+<language>en-gb</language>
+<itunes:author>Test Author</itunes:author>
+<itunes:explicit>false</itunes:explicit>
+<itunes:category text="Health &amp; Fitness"/>
+<itunes:image href="https://example.com/art.jpg"/>
+<itunes:owner><itunes:name>Test</itunes:name><itunes:email>test@example.com</itunes:email></itunes:owner>
+<item>
+<title>Ep 1</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep1</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/ep1.mp3?token=a&amp;sig=b" length="12345678" type="audio/mpeg"/>
+</item>
+<item>
+<title>Ep 2</title>
+<description>An episode description that is comfortably longer than fifty characters so it passes.</description>
+<pubDate>Fri, 21 Nov 2025 09:00:00 +0000</pubDate>
+<guid>https://example.com/ep2</guid>
+<itunes:duration>1800</itunes:duration>
+<enclosure url="https://example.com/ep2.mp3?token=a&amp;sig=b" length="12345678" type="audio/mpeg"/>
+</item>
+</channel></rss>

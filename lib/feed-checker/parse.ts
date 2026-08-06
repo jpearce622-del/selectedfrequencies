@@ -107,24 +107,45 @@ export function parseFeed(xml: string): ParseOutcome {
   };
 }
 
-/** Read a tag's text whether the parser gave us a string or a node. */
+/**
+ * Read a tag's text whether the parser gave us a string or a node.
+ *
+ * Decoding happens here, not in each check. `processEntities: false` means the
+ * parser hands back the raw source text, so a channel title of
+ * "Health &amp; Fitness" arrives with the entity intact. Every check reads
+ * feed content through this function and `attr()`, so decoding at the accessor
+ * is the only place it can't be forgotten — and forgetting it is not
+ * cosmetic: the Apple category check compares against "Health & Fitness" and
+ * would fail every feed in the five categories whose names contain an
+ * ampersand, capping their score at 49 for correctly-encoded XML.
+ *
+ * The checks that look for genuinely broken escaping read `ctx.rawXml`
+ * directly and are unaffected by this.
+ */
 export function text(node: unknown): string | undefined {
   if (node == null) return undefined;
-  if (typeof node === "string") return node.trim() || undefined;
+  if (typeof node === "string") return decodeEntities(node).trim() || undefined;
   if (typeof node === "number") return String(node);
   if (typeof node === "object") {
     const t = (node as Record<string, unknown>)["#text"];
-    if (typeof t === "string") return t.trim() || undefined;
+    if (typeof t === "string") return decodeEntities(t).trim() || undefined;
     if (typeof t === "number") return String(t);
   }
   return undefined;
 }
 
-/** Read an attribute off a tag node. */
+/**
+ * Read an attribute off a tag node.
+ *
+ * Decoded for the same reason as `text()`, and it matters more here: an
+ * enclosure URL written correctly as `?a=1&amp;b=2` must be fetched as
+ * `?a=1&b=2`. Left encoded, the probe requests a URL the host has never heard
+ * of and reports working audio as broken.
+ */
 export function attr(node: unknown, name: string): string | undefined {
   if (node && typeof node === "object") {
     const v = (node as Record<string, unknown>)[`@_${name}`];
-    if (typeof v === "string") return v.trim() || undefined;
+    if (typeof v === "string") return decodeEntities(v).trim() || undefined;
     if (typeof v === "number") return String(v);
   }
   return undefined;

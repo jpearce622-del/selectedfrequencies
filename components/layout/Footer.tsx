@@ -22,6 +22,7 @@ const footerLinks = [
 // so this is the link that actually counts.
 const resourceLinks = [
   { href: "/tools", label: "All free tools" },
+  { href: "/tools/feed-checker", label: "RSS feed health checker" },
   { href: "/podcast-launch-roadmap", label: "Launch roadmap" },
   { href: "/podcast-editing-cost-calculator", label: "Editing cost calculator" },
   { href: "/tools/show-notes-generator", label: "Show notes generator" },

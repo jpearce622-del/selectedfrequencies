@@ -16,6 +16,12 @@ const navLinks = [
 
 const toolsItems = [
   {
+    href: "/tools/feed-checker",
+    label: "RSS Feed Health Checker",
+    badge: "Free",
+    description: "Score your podcast feed against Apple's requirements",
+  },
+  {
     href: "/podcast-launch-roadmap",
     label: "Podcast Launch Roadmap",
     badge: "Free",

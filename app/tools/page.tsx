@@ -7,11 +7,19 @@ import { Reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = buildMetadata({
   title: "Free Podcast Tools & Calculators",
   description:
-    "Free tools for podcasters — a 9-step launch checklist, an editing cost calculator, and a show notes generator. No sign-up, no catch, just useful things.",
+    "Free tools for podcasters — an RSS feed health checker, a 9-step launch checklist, an editing cost calculator, and a show notes generator. No sign-up, no catch.",
   path: "/tools",
 });
 
 const tools = [
+  {
+    href: "/tools/feed-checker",
+    label: "RSS Feed Health Checker",
+    badge: "Free",
+    description:
+      "Paste your podcast feed and get a scored report in seconds — artwork, tags, GUIDs and audio files checked against what Apple and Spotify actually require.",
+    tags: ["RSS", "Apple Podcasts", "Diagnostics"],
+  },
   {
     href: "/podcast-launch-roadmap",
     label: "Podcast Launch Roadmap",

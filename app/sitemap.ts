@@ -15,6 +15,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/podcast-editing-cost-calculator",
     "/tools",
     "/tools/show-notes-generator",
+    // Only the tool itself. /tools/feed-checker/r/* is noindex by design —
+    // those are other people's feeds and they expire within hours.
+    "/tools/feed-checker",
     "/podcast-launch-roadmap",
     "/contact",
   ].map((path) => ({

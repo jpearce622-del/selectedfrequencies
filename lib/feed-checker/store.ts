@@ -26,8 +26,29 @@ if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) 
 
 export const isPersistent = () => redis !== null;
 
-/** Fallback store. Values carry their own expiry so it can't grow forever. */
-const memory = new Map<string, { value: unknown; expires: number }>();
+/**
+ * Fallback store. Values carry their own expiry so it can't grow forever.
+ *
+ * Hung off globalThis rather than being a plain module-level const, because
+ * Next bundles route handlers and pages into separate server chunks and each
+ * chunk gets its own instance of this module. A module-level Map therefore
+ * isn't shared between `/api/feed-check` and the report page that reads what
+ * it wrote — which made shareable permalinks fail every single time without
+ * Upstash, not merely across serverless instances. Caught by opening a
+ * permalink for a report the API confirmed it still had cached.
+ *
+ * This makes the fallback genuinely process-wide. It still cannot span
+ * separate serverless instances — only a real shared store does that, which
+ * is what `isPersistent()` reports.
+ */
+const globalStore = globalThis as typeof globalThis & {
+  __feedCheckerMemory?: Map<string, { value: unknown; expires: number }>;
+};
+
+const memory = (globalStore.__feedCheckerMemory ??= new Map<
+  string,
+  { value: unknown; expires: number }
+>());
 
 function memGet<T>(key: string): T | null {
   const hit = memory.get(key);
