@@ -94,10 +94,23 @@ async function probeEnclosure(
     declaredType,
   };
   try {
-    const res = await safeFetch(url, {
+    let res = await safeFetch(url, {
       method: "HEAD",
       timeoutMs: ENCLOSURE_TIMEOUT_MS,
     });
+
+    // A fair number of CDNs and analytics prefixes answer HEAD with 400 or
+    // 405 while serving GET perfectly well. Reporting those as broken audio
+    // would be a false alarm on professionally hosted shows, so fall back to
+    // a tiny ranged GET — which also proves range support directly.
+    if (res.status === 400 || res.status === 403 || res.status === 405) {
+      res = await safeFetch(url, {
+        method: "GET",
+        maxBytes: 2048,
+        timeoutMs: ENCLOSURE_TIMEOUT_MS,
+      });
+    }
+
     const len = res.headers.get("content-length");
     return {
       ...base,
@@ -132,7 +145,16 @@ export async function runReport(
   const rawXml = res.body?.toString("utf8") ?? "";
 
   onProgress("parsing", "Reading the XML");
-  const { feed, error } = parseFeed(rawXml);
+
+  // A truncated body is not malformed XML, and saying so would send someone
+  // hunting for a syntax error that doesn't exist. Report the real cause.
+  const { feed, error } = res.truncated
+    ? {
+        feed: null,
+        error:
+          "The feed is too large to check in full — reading stopped partway through. Most hosts can cap the feed at the most recent few hundred episodes, which fixes this and speeds up every platform that polls you.",
+      }
+    : parseFeed(rawXml);
 
   const ctx: CheckContext = {
     feedUrl,

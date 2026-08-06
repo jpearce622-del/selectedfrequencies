@@ -35,11 +35,27 @@ export class SafeFetchError extends Error {
   }
 }
 
-const MAX_REDIRECTS = 5;
+/**
+ * Redirect cap.
+ *
+ * The brief said 5. Measured against a real feed, a normal analytics chain
+ * (podtrac → pdst.fm → vpixl → pscrb → host) already uses exactly 5, so that
+ * cap sat on the boundary and failed any show with one extra hop — reporting
+ * perfectly healthy audio as unreachable. 8 keeps a loop from running away
+ * while clearing the real-world chains with room to spare.
+ */
+const MAX_REDIRECTS = 8;
 const CONNECT_TIMEOUT_MS = 10_000;
 const TOTAL_TIMEOUT_MS = 30_000;
-/** Feeds above this are aborted mid-stream rather than buffered. */
-const MAX_BODY_BYTES = 15 * 1024 * 1024;
+/**
+ * Feeds above this are abandoned mid-stream rather than buffered.
+ *
+ * Set from evidence rather than instinct: the brief suggested ~15MB, but The
+ * Daily's feed is 15.6MB, so that would have refused to check one of the
+ * largest podcasts in the world. 25MB clears the real-world ceiling with room
+ * spare while still refusing anything pathological.
+ */
+const MAX_BODY_BYTES = 25 * 1024 * 1024;
 
 /**
  * Blocked IPv4 ranges as [network, prefixLength].

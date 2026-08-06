@@ -42,11 +42,27 @@ const ISO_639 = new Set([
 const RFC2822 =
   /^(Mon|Tue|Wed|Thu|Fri|Sat|Sun),\s+\d{1,2}\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+\d{4}\s+\d{2}:\d{2}(:\d{2})?\s+([+-]\d{4}|UT|GMT|EST|EDT|CST|CDT|MST|MDT|PST|PDT|[A-IK-Z])$/;
 
+/**
+ * A UUID is stable by construction, so it is never a finding. Checked first
+ * because the timestamp heuristic below false-positives on them: a v4 UUID
+ * has a 12-character final segment that is all digits roughly once in every
+ * two hundred, which across a few thousand episodes is a guaranteed false
+ * alarm on a perfectly healthy feed. Caught by running the checker against
+ * The Daily, which it wrongly flagged.
+ */
+const UUID_LIKE =
+  /^(urn:uuid:)?[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
 /** GUIDs that look regenerated rather than stable. */
 const UNSTABLE_GUID = [
+  // A cache-buster or version parameter is the clearest signal there is.
   /[?&](t|ts|time|timestamp|v|ver|version|cb|cache|rand|_)=/i,
-  /\b\d{10,13}\b/, // bare unix timestamp
-  /\/\d{4}\/\d{2}\/\d{2}\//, // date path that moves if the post date changes
+  // A bare epoch, but only in a plausible range (2001–2033) so arbitrary
+  // long digit runs in an ID don't trip it.
+  /(^|[^0-9a-f])1[0-9]{9}([^0-9a-f]|$)/,
+  /(^|[^0-9a-f])1[0-9]{12}([^0-9a-f]|$)/,
+  // A date path, which moves if the publish date is ever corrected.
+  /\/\d{4}\/\d{2}\/\d{2}\//,
 ];
 
 const ch = (ctx: CheckContext, tag: string) =>
@@ -774,6 +790,7 @@ export const checks: Check[] = [
       for (const item of ctx.parsed.items) {
         const g = text(first(item.guid as never));
         if (!g) continue;
+        if (UUID_LIKE.test(g)) continue;
         if (UNSTABLE_GUID.some((re) => re.test(g))) {
           const t = text(first(item.title as never)) ?? "(untitled)";
           suspect.push(`${t} — ${g}`);
