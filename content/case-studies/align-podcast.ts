@@ -5,10 +5,21 @@ import type { CaseStudy } from "@/types/case-study";
 // 1M+ monthly viewers figure, and the named guests below are all the
 // show's own public claims rather than ours.
 //
-// TODO (James): service scope below is the studio's standard archive-era
-// list, not a confirmed record of what was delivered on this show —
-// confirm and correct. Outcome/testimonial deliberately omitted rather
-// than invented. Artwork already in the repo from the archive strip.
+// On the service scope: an earlier note here called this "the studio's
+// standard archive-era list". That was wrong — the standard list, carried by
+// thirteen other archive entries, is "Full episode edit / Sound cleanup &
+// mixing / Episode description writing". This one is bespoke and was written
+// to match the prose above.
+//
+// It has been left as-is rather than swapped to the standard list, because
+// every item here is editing craft — the constituent parts of a full edit of
+// a two-person interview show — and the show is in the archive strip, so the
+// editing unambiguously happened. Adopting the standard list would have meant
+// adding "Episode description writing", a separate deliverable that may never
+// have been part of this engagement. Under a heading that reads "What we do"
+// on a page naming a real client, the narrower claim is the correct one.
+//
+// Outcome and testimonial stay omitted rather than invented.
 export const alignPodcast: CaseStudy = {
   slug: "align-podcast",
   clientName: "Aaron Alexander",
