@@ -59,8 +59,20 @@ const DiscoveryLeak = dynamic(() => import("@/components/tools/DiscoveryLeak"), 
   ),
 });
 
+/**
+ * Unlike the two above, this one is server-rendered ON PURPOSE — note the
+ * absence of `ssr: false`. Its annotations are the substance of the article
+ * they appear in, so they have to exist in the initial HTML for crawlers and
+ * for readers without JavaScript. It holds no URL-derived state, so there's
+ * no hydration mismatch to avoid.
+ */
+const ShowNotesAnatomy = dynamic(
+  () => import("@/components/tools/ShowNotesAnatomy")
+);
+
 export function InteractiveSlot({ id }: { id: InteractiveId }) {
   if (id === "growth-diagnostic") return <GrowthDiagnostic />;
   if (id === "discovery-leak") return <DiscoveryLeak />;
+  if (id === "show-notes-anatomy") return <ShowNotesAnatomy />;
   return null;
 }

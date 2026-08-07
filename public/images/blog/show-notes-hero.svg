@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-label="A show notes document with several sections highlighted and annotation callouts pointing to them" font-family="-apple-system, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3e57"/>
+      <stop offset="1" stop-color="#1b2838"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.32" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#e57329" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#e57329" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="840" fill="url(#bg)"/>
+  <rect width="1600" height="840" fill="url(#glow)"/>
+
+  <!-- ===== The document ===== -->
+  <g transform="translate(190 120)">
+    <rect width="640" height="600" rx="24" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+
+    <!-- title row (highlighted) -->
+    <rect x="24" y="28" width="592" height="66" rx="12" fill="#e57329" fill-opacity="0.18" stroke="#f0904f" stroke-opacity="0.55" stroke-width="2"/>
+    <rect x="44" y="48" width="360" height="14" rx="7" fill="#f0904f"/>
+    <rect x="44" y="72" width="210" height="10" rx="5" fill="#ffffff" fill-opacity="0.4"/>
+
+    <!-- hook -->
+    <g fill="#ffffff" fill-opacity="0.34">
+      <rect x="44" y="122" width="552" height="11" rx="5.5"/>
+      <rect x="44" y="144" width="500" height="11" rx="5.5"/>
+    </g>
+
+    <!-- bullets (highlighted) -->
+    <rect x="24" y="184" width="592" height="120" rx="12" fill="#e57329" fill-opacity="0.14" stroke="#f0904f" stroke-opacity="0.4" stroke-width="2"/>
+    <g>
+      <circle cx="52" cy="212" r="4" fill="#f0904f"/><rect x="68" y="206" width="380" height="11" rx="5.5" fill="#ffffff" fill-opacity="0.42"/>
+      <circle cx="52" cy="242" r="4" fill="#f0904f"/><rect x="68" y="236" width="440" height="11" rx="5.5" fill="#ffffff" fill-opacity="0.42"/>
+      <circle cx="52" cy="272" r="4" fill="#f0904f"/><rect x="68" y="266" width="330" height="11" rx="5.5" fill="#ffffff" fill-opacity="0.42"/>
+    </g>
+
+    <!-- chapters -->
+    <g>
+      <rect x="44" y="336" width="64" height="11" rx="5.5" fill="#f0904f" fill-opacity="0.8"/>
+      <rect x="124" y="336" width="300" height="11" rx="5.5" fill="#ffffff" fill-opacity="0.34"/>
+      <rect x="44" y="362" width="64" height="11" rx="5.5" fill="#f0904f" fill-opacity="0.8"/>
+      <rect x="124" y="362" width="380" height="11" rx="5.5" fill="#ffffff" fill-opacity="0.34"/>
+      <rect x="44" y="388" width="64" height="11" rx="5.5" fill="#f0904f" fill-opacity="0.8"/>
+      <rect x="124" y="388" width="250" height="11" rx="5.5" fill="#ffffff" fill-opacity="0.34"/>
+    </g>
+
+    <!-- transcript block (highlighted) -->
+    <rect x="24" y="428" width="592" height="140" rx="12" fill="#e57329" fill-opacity="0.14" stroke="#f0904f" stroke-opacity="0.4" stroke-width="2"/>
+    <g fill="#ffffff" fill-opacity="0.28">
+      <rect x="44" y="452" width="552" height="10" rx="5"/>
+      <rect x="44" y="472" width="530" height="10" rx="5"/>
+      <rect x="44" y="492" width="560" height="10" rx="5"/>
+      <rect x="44" y="512" width="480" height="10" rx="5"/>
+      <rect x="44" y="532" width="540" height="10" rx="5"/>
+    </g>
+  </g>
+
+  <!-- ===== Annotation callouts ===== -->
+  <g>
+    <!-- connector lines -->
+    <g stroke="#f0904f" stroke-opacity="0.45" stroke-width="2" fill="none" stroke-dasharray="3 8">
+      <path d="M838 181 H 930"/>
+      <path d="M838 364 H 930"/>
+      <path d="M838 618 H 930"/>
+    </g>
+    <g fill="#f0904f"><circle cx="838" cy="181" r="5"/><circle cx="838" cy="364" r="5"/><circle cx="838" cy="618" r="5"/></g>
+
+    <!-- callout cards -->
+    <g>
+      <rect x="946" y="140" width="440" height="82" rx="16" fill="#ffffff" fill-opacity="0.09" stroke="#f0904f" stroke-opacity="0.4" stroke-width="2"/>
+      <text x="972" y="172" font-size="17" font-weight="700" fill="#f0904f" letter-spacing="1">EPISODE TITLE</text>
+      <text x="972" y="199" font-size="16" fill="#ffffff" fill-opacity="0.6">Topic first, guest second, number last.</text>
+    </g>
+    <g>
+      <rect x="946" y="323" width="440" height="82" rx="16" fill="#ffffff" fill-opacity="0.09" stroke="#f0904f" stroke-opacity="0.4" stroke-width="2"/>
+      <text x="972" y="355" font-size="17" font-weight="700" fill="#f0904f" letter-spacing="1">SCANNABLE BULLETS</text>
+      <text x="972" y="382" font-size="16" fill="#ffffff" fill-opacity="0.6">What AI answers pull into summaries.</text>
+    </g>
+    <g>
+      <rect x="946" y="577" width="440" height="82" rx="16" fill="#ffffff" fill-opacity="0.09" stroke="#f0904f" stroke-opacity="0.4" stroke-width="2"/>
+      <text x="972" y="609" font-size="17" font-weight="700" fill="#f0904f" letter-spacing="1">FULL TRANSCRIPT</text>
+      <text x="972" y="636" font-size="16" fill="#ffffff" fill-opacity="0.6">5,000+ indexable words per episode.</text>
+    </g>
+  </g>
+</svg>

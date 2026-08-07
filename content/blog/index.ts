@@ -10,9 +10,11 @@ import { descriptVsRiverside } from "./descript-vs-riverside";
 import { founderPodcastTimePerWeek } from "./founder-podcast-time-per-week";
 import { bestBitcoinPodcasts } from "./best-bitcoin-podcasts";
 import { whyIsntMyPodcastGrowing } from "./why-isnt-my-podcast-growing";
+import { howToWritePodcastShowNotes } from "./how-to-write-podcast-show-notes";
 
 // Newest-first ordering is handled by getAllPosts() (sorts on publishedAt).
 export const posts: BlogPost[] = [
+  howToWritePodcastShowNotes,
   whyIsntMyPodcastGrowing,
   bestBitcoinPodcasts,
   founderPodcastTimePerWeek,

@@ -16,7 +16,10 @@ export interface BlogImage {
  * consumer of the blog index, including the sitemap. The renderer maps these
  * to dynamically-imported components instead.
  */
-export type InteractiveId = "growth-diagnostic" | "discovery-leak";
+export type InteractiveId =
+  | "growth-diagnostic"
+  | "discovery-leak"
+  | "show-notes-anatomy";
 
 export interface BlogSection {
   /** Anchor id for the table of contents + deep links, e.g. "why-it-matters" */
