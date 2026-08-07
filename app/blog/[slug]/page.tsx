@@ -12,6 +12,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { AuthorCard, AuthorAvatar } from "@/components/blog/AuthorCard";
+import { InteractiveSlot } from "@/components/blog/InteractiveSlot";
 import type { BlogImage } from "@/types/blog";
 
 type Params = { slug: string };
@@ -173,6 +174,23 @@ export default async function BlogPostPage({
     ],
   };
 
+  // FAQPage, emitted only when the page actually renders a visible FAQ.
+  // Structured data describing content a user can't see is the exact thing
+  // Google penalises, so this is driven off the same array as the markup and
+  // is absent entirely when a post has no FAQ.
+  const faqJsonLd =
+    post.faqs && post.faqs.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: { "@type": "Answer", text: faq.answer },
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
@@ -183,6 +201,12 @@ export default async function BlogPostPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       {/* ---------- Header ---------- */}
       <section className="pt-16 pb-8 sm:pt-24">
@@ -263,6 +287,19 @@ export default async function BlogPostPage({
                       </a>
                     </li>
                   ))}
+                  {post.faqs && post.faqs.length > 0 && (
+                    <li>
+                      <a
+                        href="#faq"
+                        className="-ml-px flex gap-2.5 border-l-2 border-transparent pl-4 text-sm leading-snug text-muted transition-colors hover:border-accent hover:text-foreground"
+                      >
+                        <span className="font-mono text-xs text-muted-foreground">
+                          {String(post.sections.length + 1).padStart(2, "0")}
+                        </span>
+                        Common questions
+                      </a>
+                    </li>
+                  )}
                 </ol>
               </nav>
             </aside>
@@ -305,8 +342,45 @@ export default async function BlogPostPage({
                       {section.body}
                     </ReactMarkdown>
                   </div>
+                  {section.interactive && (
+                    <InteractiveSlot id={section.interactive} />
+                  )}
                 </section>
               ))}
+
+              {/* FAQ. Rendered from the same array that produces the FAQPage
+                  schema below, because Google requires the markup and the
+                  visible content to correspond. */}
+              {post.faqs && post.faqs.length > 0 && (
+                <section id="faq" className="scroll-mt-28 pt-12">
+                  <h2 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
+                    Common questions
+                  </h2>
+                  <div className="mt-6 space-y-3">
+                    {post.faqs.map((faq) => (
+                      <details
+                        key={faq.question}
+                        className="group rounded-2xl border border-border bg-surface p-5"
+                      >
+                        <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
+                          <h3 className="font-display text-base font-semibold tracking-tight">
+                            {faq.question}
+                          </h3>
+                          <span
+                            aria-hidden="true"
+                            className="shrink-0 text-muted transition-transform group-open:rotate-180"
+                          >
+                            ↓
+                          </span>
+                        </summary>
+                        <p className="mt-3 text-sm leading-relaxed text-muted">
+                          {faq.answer}
+                        </p>
+                      </details>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               {/* References */}
               {post.references && post.references.length > 0 && (

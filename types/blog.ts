@@ -8,6 +8,16 @@ export interface BlogImage {
   credit?: string;
 }
 
+/**
+ * Interactive widgets a section can embed.
+ *
+ * A key rather than a component, because content modules are plain data —
+ * importing a React component into one would drag client code into every
+ * consumer of the blog index, including the sitemap. The renderer maps these
+ * to dynamically-imported components instead.
+ */
+export type InteractiveId = "growth-diagnostic" | "discovery-leak";
+
 export interface BlogSection {
   /** Anchor id for the table of contents + deep links, e.g. "why-it-matters" */
   id: string;
@@ -17,6 +27,19 @@ export interface BlogSection {
   body: string;
   /** Optional figure rendered at the top of the section */
   image?: BlogImage;
+  /**
+   * Optional interactive rendered after the section body. The article must
+   * still read completely without it — these are enhancements, and they don't
+   * render at all with JavaScript disabled.
+   */
+  interactive?: InteractiveId;
+}
+
+export interface BlogFaq {
+  question: string;
+  /** Plain text. Rendered visibly AND emitted as FAQPage schema — the two
+   *  must always match, which is why there is one source for both. */
+  answer: string;
 }
 
 export interface BlogReference {
@@ -57,6 +80,12 @@ export interface BlogPost {
   sections: BlogSection[];
   /** Optional "key takeaways" summary bullets */
   keyTakeaways?: string[];
+  /**
+   * Optional FAQ. Rendered as visible HTML and as FAQPage structured data
+   * from the same array — Google requires the two to correspond, and keeping
+   * one source is the only way to guarantee they can't drift.
+   */
+  faqs?: BlogFaq[];
   /** Optional source / reference links */
   references?: BlogReference[];
 }

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-label="Five stacked layers of podcast growth — discovery, packaging, retention, consistency and measurement — narrowing downwards, with the third layer highlighted as the constraint" font-family="-apple-system, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3e57"/>
+      <stop offset="1" stop-color="#1b2838"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.45" r="0.62">
+      <stop offset="0" stop-color="#e57329" stop-opacity="0.15"/>
+      <stop offset="1" stop-color="#e57329" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="840" fill="url(#bg)"/>
+  <rect width="1600" height="840" fill="url(#glow)"/>
+
+  <text x="150" y="130" font-size="22" font-weight="700" fill="#ffffff" fill-opacity="0.9" letter-spacing="2">FIVE LAYERS, ONE BOTTLENECK</text>
+
+  <!-- A funnel of five bars. The narrow warm one is the constraint: the
+       layer everything below it is capped by. -->
+  <g transform="translate(150 190)">
+    <!-- 1. Discovery -->
+    <g>
+      <rect width="1000" height="86" rx="12" fill="#ffffff" fill-opacity="0.14"/>
+      <text x="26" y="52" font-size="24" font-weight="700" fill="#ffffff" fill-opacity="0.92">DISCOVERY</text>
+      <text x="1030" y="52" font-size="19" fill="#ffffff" fill-opacity="0.5">nobody finds it</text>
+    </g>
+    <!-- 2. Packaging -->
+    <g transform="translate(60 106)">
+      <rect width="880" height="86" rx="12" fill="#ffffff" fill-opacity="0.14"/>
+      <text x="26" y="52" font-size="24" font-weight="700" fill="#ffffff" fill-opacity="0.92">PACKAGING</text>
+      <text x="970" y="52" font-size="19" fill="#ffffff" fill-opacity="0.5">they don't press play</text>
+    </g>
+    <!-- 3. Retention — the constraint -->
+    <g transform="translate(120 212)">
+      <rect width="470" height="86" rx="12" fill="#e57329"/>
+      <text x="26" y="52" font-size="24" font-weight="700" fill="#ffffff">RETENTION</text>
+      <text x="910" y="52" font-size="19" fill="#e57329">they press play and leave</text>
+    </g>
+    <!-- 4. Consistency -->
+    <g transform="translate(180 318)">
+      <rect width="410" height="86" rx="12" fill="#ffffff" fill-opacity="0.14"/>
+      <text x="26" y="52" font-size="24" font-weight="700" fill="#ffffff" fill-opacity="0.92">CONSISTENCY</text>
+      <text x="850" y="52" font-size="19" fill="#ffffff" fill-opacity="0.5">nothing compounds</text>
+    </g>
+    <!-- 5. Measurement -->
+    <g transform="translate(240 424)">
+      <rect width="350" height="86" rx="12" fill="#ffffff" fill-opacity="0.14"/>
+      <text x="26" y="52" font-size="24" font-weight="700" fill="#ffffff" fill-opacity="0.92">MEASUREMENT</text>
+      <text x="790" y="52" font-size="19" fill="#ffffff" fill-opacity="0.5">wrong number</text>
+    </g>
+  </g>
+
+  <text x="150" y="790" font-size="20" fill="#ffffff" fill-opacity="0.55">The narrow layer sets the width of everything under it.</text>
+</svg>
