@@ -16,15 +16,56 @@ const JOB_TTL_SECONDS = 60 * 60; // an hour is plenty for a poll cycle
 const RATE_HOUR = 10;
 const RATE_DAY = 30;
 
+/**
+ * Both naming conventions are accepted.
+ *
+ * Adding Upstash through the Vercel Marketplace injects the variables for
+ * you, but the names it uses depend on how the integration was added — the
+ * Redis-flavoured `KV_REST_API_*` pair and Upstash's own
+ * `UPSTASH_REDIS_REST_*` pair are both in circulation. Reading either means
+ * the store works whichever way it was connected, rather than silently
+ * falling back to memory because the credentials arrived under the name we
+ * weren't looking for. That failure mode is invisible: everything deploys
+ * fine and the tool just quietly stops being able to read its own results.
+ */
+const redisUrl =
+  process.env.UPSTASH_REDIS_REST_URL ?? process.env.KV_REST_API_URL;
+const redisToken =
+  process.env.UPSTASH_REDIS_REST_TOKEN ?? process.env.KV_REST_API_TOKEN;
+
 let redis: Redis | null = null;
-if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
-  redis = new Redis({
-    url: process.env.UPSTASH_REDIS_REST_URL,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN,
-  });
+if (redisUrl && redisToken) {
+  redis = new Redis({ url: redisUrl, token: redisToken });
 }
 
 export const isPersistent = () => redis !== null;
+
+/**
+ * Round-trips a value through the store. Presence of credentials only proves
+ * something was configured, not that it works — a typo'd token deploys
+ * perfectly and fails on first use.
+ */
+export async function checkStoreHealth(): Promise<{
+  persistent: boolean;
+  reachable: boolean;
+  error?: string;
+}> {
+  if (!redis) return { persistent: false, reachable: false };
+  try {
+    const key = `fc:health:${Date.now()}`;
+    await set(key, "ok", 30);
+    const back = await get<string>(key);
+    return { persistent: true, reachable: back === "ok" };
+  } catch (e) {
+    return {
+      persistent: true,
+      reachable: false,
+      // The Upstash client puts the HTTP status in here, which is what
+      // distinguishes a bad token (401) from a wrong URL.
+      error: (e as Error).message,
+    };
+  }
+}
 
 /**
  * Fallback store. Values carry their own expiry so it can't grow forever.
