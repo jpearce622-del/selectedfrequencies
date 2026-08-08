@@ -12,9 +12,11 @@ import { bestBitcoinPodcasts } from "./best-bitcoin-podcasts";
 import { whyIsntMyPodcastGrowing } from "./why-isnt-my-podcast-growing";
 import { howToWritePodcastShowNotes } from "./how-to-write-podcast-show-notes";
 import { howToGetPodcastSponsors } from "./how-to-get-podcast-sponsors";
+import { monoprice110010Review } from "./monoprice-110010-review";
 
 // Newest-first ordering is handled by getAllPosts() (sorts on publishedAt).
 export const posts: BlogPost[] = [
+  monoprice110010Review,
   howToGetPodcastSponsors,
   howToWritePodcastShowNotes,
   whyIsntMyPodcastGrowing,

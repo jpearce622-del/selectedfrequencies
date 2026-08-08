@@ -22,6 +22,13 @@ const legacyPostRedirects: { from: string; to: string }[] = [
     // (step 2) and is the closest genuinely useful destination.
     to: "/podcast-launch-roadmap",
   },
+  {
+    // Still earning Search + Google Images impressions on the old Wix site
+    // despite 404ing since the move. Rebuilt and repositioned for podcasters
+    // rather than generic headphone shoppers; the 301 carries the equity over.
+    from: "are-the-monoprice-110010-good-budget-headphones",
+    to: "/blog/monoprice-110010-review",
+  },
 ];
 
 const nextConfig: NextConfig = {

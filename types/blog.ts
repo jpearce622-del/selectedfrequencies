@@ -45,6 +45,25 @@ export interface BlogFaq {
   answer: string;
 }
 
+/**
+ * Product review data. Emits Review JSON-LD with the product as
+ * `itemReviewed`.
+ *
+ * `rating` is optional and must ONLY be set when the article visibly displays
+ * that exact score — schema may never claim a rating the reader can't see.
+ * Omitting it drops `reviewRating` from the markup rather than inventing one.
+ */
+export interface BlogReview {
+  productName: string;
+  /** Manufacturer / brand, e.g. "Monoprice" */
+  brand?: string;
+  /** Same score shown on the page, out of `ratingMax` */
+  rating?: number;
+  ratingMax?: number;
+  /** One-line summary of the verdict, mirroring the article */
+  verdict: string;
+}
+
 export interface BlogReference {
   /** Source name / title shown as the link text */
   label: string;
@@ -91,4 +110,6 @@ export interface BlogPost {
   faqs?: BlogFaq[];
   /** Optional source / reference links */
   references?: BlogReference[];
+  /** Set on product reviews — emits Review JSON-LD alongside BlogPosting. */
+  review?: BlogReview;
 }

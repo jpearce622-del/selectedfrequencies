@@ -6,7 +6,7 @@ import ReactMarkdown from "react-markdown";
 // GFM: the posts use tables, which core markdown does not support — without
 // this they render as literal pipe characters.
 import remarkGfm from "remark-gfm";
-import { buildMetadata, siteConfig } from "@/lib/metadata";
+import { buildMetadata, siteConfig, absoluteUrl } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
@@ -191,12 +191,63 @@ export default async function BlogPostPage({
         }
       : null;
 
+  // Review schema for product reviews. `reviewRating` is emitted only when the
+  // post carries a rating, which it may only do when that exact score is
+  // visible in the article — never claim a score the reader can't see.
+  const reviewJsonLd = post.review
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        headline: post.title,
+        reviewBody: post.review.verdict,
+        datePublished: post.publishedAt,
+        dateModified: post.updatedAt ?? post.publishedAt,
+        url,
+        itemReviewed: {
+          "@type": "Product",
+          name: post.review.productName,
+          ...(post.review.brand
+            ? { brand: { "@type": "Brand", name: post.review.brand } }
+            : {}),
+          ...(post.coverImage
+            ? { image: absoluteUrl(post.coverImage.src) }
+            : {}),
+        },
+        author: {
+          "@type": "Person",
+          name: post.author.name,
+          jobTitle: post.author.role,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: siteConfig.name,
+          url: siteConfig.url,
+        },
+        ...(post.review.rating !== undefined
+          ? {
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: post.review.rating,
+                bestRating: post.review.ratingMax ?? 5,
+                worstRating: 1,
+              },
+            }
+          : {}),
+      }
+    : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {reviewJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewJsonLd) }}
+        />
+      )}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}

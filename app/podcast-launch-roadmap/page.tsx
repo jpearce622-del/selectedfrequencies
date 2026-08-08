@@ -127,6 +127,20 @@ export default function PodcastLaunchRoadmapPage() {
               .
             </p>
 
+            {/* Step 3 is the gear step — headphones are the one purchase
+                people most often get wrong. */}
+            <p className="mt-3 text-sm leading-6 text-muted">
+              On step 3, headphones are the easiest thing to buy wrong: noise
+              cancelling is exactly what you don&apos;t want.{" "}
+              <Link
+                href="/blog/monoprice-110010-review"
+                className="font-medium text-accent hover:text-accent-bright"
+              >
+                Here&apos;s why, using a popular budget pair as the example
+              </Link>
+              .
+            </p>
+
             {/* ---------- The punchline: a fake "Step 10" that rhymes with
                 the nine real steps above ---------- */}
             <Reveal delay={80}>
