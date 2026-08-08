@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown, { defaultUrlTransform } from "react-markdown";
 // GFM: the posts use tables, which core markdown does not support — without
 // this they render as literal pipe characters.
 import remarkGfm from "remark-gfm";
@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/Button";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog";
 import { AuthorCard, AuthorAvatar } from "@/components/blog/AuthorCard";
 import { InteractiveSlot } from "@/components/blog/InteractiveSlot";
+import { getAffiliate, hasAnyAffiliateLinks } from "@/data/affiliate-links";
 import type { BlogImage } from "@/types/blog";
 
 type Params = { slug: string };
@@ -70,9 +71,43 @@ function formatDate(iso: string): string {
   });
 }
 
+/**
+ * Preserve the internal `affiliate:` scheme through react-markdown's URL
+ * sanitiser, and sanitise everything else exactly as before.
+ *
+ * Without this, `defaultUrlTransform` strips the unrecognised scheme and hands
+ * the link renderer `href=""`. The renderer's `affiliate:` branch then never
+ * matches, so the link falls through to the ordinary path and ships as a dead
+ * anchor with NO rel="sponsored nofollow" on it — the precise compliance
+ * failure the affiliate indirection exists to prevent. It stayed invisible
+ * because no post used an `affiliate:` link until the headphone cluster.
+ */
+function urlTransform(url: string): string {
+  return url.startsWith("affiliate:") ? url : defaultUrlTransform(url);
+}
+
 // Markdown link renderer: external links open in a new tab safely.
 const markdownComponents = {
   a: ({ href, children }: { href?: string; children?: React.ReactNode }) => {
+    // Affiliate links are written in markdown as [text](affiliate:product-id)
+    // so article files never contain a URL or tracking tag. The real URL comes
+    // from data/affiliate-links.ts, and the required rel attributes are applied
+    // here — one place, impossible to forget on an individual link.
+    if (href?.startsWith("affiliate:")) {
+      const product = getAffiliate(href.slice("affiliate:".length));
+      // No URL configured yet: render plain text rather than a dead link.
+      if (!product?.url) return <>{children}</>;
+      return (
+        <a
+          href={product.url}
+          target="_blank"
+          rel="sponsored nofollow noopener"
+        >
+          {children}
+        </a>
+      );
+    }
+
     const external = !!href && /^https?:\/\//.test(href);
     return (
       <a
@@ -236,12 +271,38 @@ export default async function BlogPostPage({
       }
     : null;
 
+  // ItemList for roundups. Mirrors the picks the page visibly ranks, in the
+  // same order — same rule as the rating and the FAQ: schema never claims
+  // something a reader can't see on the page.
+  const itemListJsonLd =
+    post.itemList && post.itemList.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: post.title,
+          itemListOrder: "https://schema.org/ItemListOrderDescending",
+          numberOfItems: post.itemList.length,
+          itemListElement: post.itemList.map((item, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            name: item.name,
+            url: absoluteUrl(item.url),
+          })),
+        }
+      : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
+      {itemListJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+        />
+      )}
       {reviewJsonLd && (
         <script
           type="application/ld+json"
@@ -359,7 +420,22 @@ export default async function BlogPostPage({
             <article className="min-w-0">
               {/* Lede */}
               <div className="prose prose-neutral max-w-none text-lg prose-p:leading-8 prose-a:text-accent prose-a:no-underline hover:prose-a:underline">
-                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                {/* Affiliate disclosure. UK CMA/ASA rules require it to be
+                    prominent rather than footer-buried, so it sits directly
+                    above the article body — before any affiliate link can
+                    appear. Only rendered on posts that opt in AND once at
+                    least one real URL exists, so we never disclose a
+                    commercial relationship we don't yet have. */}
+                {post.hasAffiliateLinks && hasAnyAffiliateLinks && (
+                  <p className="not-prose mb-6 rounded-xl border border-border bg-fog px-5 py-4 text-sm leading-6 text-muted">
+                    Some links below are affiliate links. If you buy through
+                    them we may earn a small commission, at no extra cost to
+                    you. It doesn&apos;t affect what we recommend — there&apos;s
+                    a popular pair in here we tell you <em>not</em> to buy for
+                    podcasting, which should tell you something.
+                  </p>
+                )}
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents} urlTransform={urlTransform}>
                   {post.intro}
                 </ReactMarkdown>
               </div>
@@ -389,7 +465,7 @@ export default async function BlogPostPage({
                   </h2>
                   {section.image && <Figure image={section.image} />}
                   <div className="prose prose-neutral mt-5 max-w-none prose-headings:font-display prose-headings:tracking-tight prose-h3:text-xl prose-h3:mt-8 prose-p:leading-8 prose-p:text-muted prose-li:text-muted prose-strong:text-foreground prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-accent prose-blockquote:text-foreground/80">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents} urlTransform={urlTransform}>
                       {section.body}
                     </ReactMarkdown>
                   </div>

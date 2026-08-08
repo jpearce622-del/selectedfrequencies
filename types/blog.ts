@@ -64,6 +64,21 @@ export interface BlogReview {
   verdict: string;
 }
 
+/**
+ * A ranked pick in a roundup, emitted as ItemList JSON-LD.
+ *
+ * Every entry must correspond to a pick the page visibly displays, in the same
+ * order — an ItemList that doesn't match the visible ranking is the same
+ * category of violation as an invented rating.
+ */
+export interface BlogListItem {
+  name: string;
+  /** Site-relative URL of the item's own page, e.g. a full review. */
+  url: string;
+  /** Short label for why it's on the list, e.g. "Best budget". */
+  label?: string;
+}
+
 export interface BlogReference {
   /** Source name / title shown as the link text */
   label: string;
@@ -112,4 +127,15 @@ export interface BlogPost {
   references?: BlogReference[];
   /** Set on product reviews — emits Review JSON-LD alongside BlogPosting. */
   review?: BlogReview;
+  /**
+   * Set on roundups — emits ItemList JSON-LD alongside BlogPosting. Must
+   * mirror the picks the page actually shows, in the same order.
+   */
+  itemList?: BlogListItem[];
+  /**
+   * Opt in to the affiliate disclosure banner. Set on any post using
+   * [text](affiliate:id) links. The banner still only renders once a real URL
+   * exists in data/affiliate-links.ts.
+   */
+  hasAffiliateLinks?: boolean;
 }

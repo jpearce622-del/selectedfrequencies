@@ -214,6 +214,18 @@ export function PodcastRoadmapChecklist({ steps }: { steps: RoadmapStep[] }) {
                   </span>
                 </span>
               </button>
+
+              {/* Outside the button: an anchor inside a button is invalid
+                  markup and would compete for the click. Server-rendered, so
+                  it's a real crawlable link rather than a JS-only affordance. */}
+              {step.link && (
+                <a
+                  href={step.link.href}
+                  className="mt-2 ml-1 inline-block text-sm font-medium text-accent hover:text-accent-bright hover:underline"
+                >
+                  {step.link.label} →
+                </a>
+              )}
             </li>
           );
         })}

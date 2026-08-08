@@ -23,6 +23,14 @@ export interface RoadmapStep {
   time: string;
   /** Rough out-of-pocket cost for a first-timer. */
   cost: string;
+  /**
+   * Optional "read more" link rendered beneath the step card.
+   *
+   * It sits outside the card rather than inside the tip because the card
+   * itself is a <button> — an anchor nested in a button is invalid markup and
+   * would fight the toggle for the click.
+   */
+  link?: { href: string; label: string };
 }
 
 export const roadmapSteps: RoadmapStep[] = [
@@ -49,9 +57,13 @@ export const roadmapSteps: RoadmapStep[] = [
     title: "Get the minimum gear",
     description:
       "A single USB microphone and a pair of closed-back headphones is all you need to sound professional on episode one.",
-    tip: "Skip the expensive XLR setup for now. A USB mic like the Samson Q2U or Audio-Technica ATR2100x records broadcast-quality audio and plugs straight into your laptop — no audio interface required.",
+    tip: "Skip the expensive XLR setup for now. A USB mic like the Samson Q2U or Audio-Technica ATR2100x records broadcast-quality audio and plugs straight into your laptop — no audio interface required. For headphones, closed-back with no active noise cancelling is the only rule that matters.",
     time: "~1 hour to buy",
     cost: "£60–£150",
+    link: {
+      href: "/blog/best-headphones-for-podcasting",
+      label: "Which headphones to buy, from £60 to £150",
+    },
   },
   {
     id: "software",
