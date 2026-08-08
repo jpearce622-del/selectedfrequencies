@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog",
     "/bitcoin",
     "/podcast-editing-cost-calculator",
+    "/podcast-sponsorship-calculator",
     "/tools",
     "/tools/show-notes-generator",
     // Only the tool itself. /tools/feed-checker/r/* is noindex by design —

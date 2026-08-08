@@ -11,9 +11,11 @@ import { founderPodcastTimePerWeek } from "./founder-podcast-time-per-week";
 import { bestBitcoinPodcasts } from "./best-bitcoin-podcasts";
 import { whyIsntMyPodcastGrowing } from "./why-isnt-my-podcast-growing";
 import { howToWritePodcastShowNotes } from "./how-to-write-podcast-show-notes";
+import { howToGetPodcastSponsors } from "./how-to-get-podcast-sponsors";
 
 // Newest-first ordering is handled by getAllPosts() (sorts on publishedAt).
 export const posts: BlogPost[] = [
+  howToGetPodcastSponsors,
   howToWritePodcastShowNotes,
   whyIsntMyPodcastGrowing,
   bestBitcoinPodcasts,

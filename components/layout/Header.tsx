@@ -34,6 +34,12 @@ const toolsItems = [
     description: "What editing your own show really costs you",
   },
   {
+    href: "/podcast-sponsorship-calculator",
+    label: "Sponsorship Calculator",
+    badge: "Free",
+    description: "What your show is worth to a sponsor",
+  },
+  {
     href: "/tools/show-notes-generator",
     label: "Show Notes Generator",
     badge: "Free",
