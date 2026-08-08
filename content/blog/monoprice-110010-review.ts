@@ -31,7 +31,7 @@ export const monoprice110010Review: BlogPost = {
     alt: "Over-ear headphones beside two frequency response curves — a flat monitoring curve and a bass-boosted consumer curve",
   },
   intro:
-    "**Short answer: yes, the Monoprice 110010 are good budget headphones.** For around £80 at the time of writing they're comfortable enough, the noise cancelling genuinely works, and they sound better than the price suggests.\n\n**But if you're buying them to record or edit a podcast, they're the wrong tool** — and the reasons are worth understanding, because they apply to every pair of active noise cancelling headphones, not just these.\n\nI produce podcasts for a living and spend most of my working week inside a pair of headphones. So this isn't a spec sheet rewritten from the box. It's what these are actually like to use, and where they do and don't belong.",
+    "**Short answer: yes, the Monoprice 110010 are good budget headphones.** For around £80 at the time of writing they're comfortable enough, the noise cancelling genuinely works, and they sound better than the price suggests.\n\n**But if you're buying them to record or edit a podcast, they're the wrong tool** — and the reasons are worth understanding, because they apply to every pair of active noise cancelling headphones, not just these.\n\nI produce podcasts for a living and spend most of my working week inside a pair of headphones. So this isn't a spec sheet rewritten from the box. It's what these are actually like to use, and where they do and don't belong.\n\n*A quick note on the model number: you'll see this pair listed as both the **110010** and the **10010** depending on the retailer — Monoprice's own SKU versus the model number Amazon and others use. They're the same headphones.*",
   keyTakeaways: [
     "Good value as budget listening and travel headphones at around £80.",
     "Active noise cancelling processes the signal, so you're not hearing what's actually being recorded.",
@@ -44,13 +44,13 @@ export const monoprice110010Review: BlogPost = {
       id: "short-verdict",
       heading: "The short verdict",
       body:
-        "**Rated 4 out of 5 as budget listening headphones.** That rating is for what they're sold as — casual listening and travel — not for studio work, which they aren't designed for and which I wouldn't score them on.\n\n**Good for:** commuting, travel, casual listening, working in a noisy room, or as a spare pair to hand a guest.\n\n**Not for:** monitoring your own voice while recording, editing, mixing, or any decision where you need to hear exactly what's on the recording.\n\n**Buy them if** you want capable, comfortable noise cancelling headphones without spending Bose or Sony money. **Don't buy them if** they're meant to be the headphones you produce a show on — that's a different tool for a different job, and the gap isn't about price.",
+        "**Rated 4 out of 5 as budget listening headphones.** That rating is for what they're sold as — casual listening and travel — not for studio work, which they aren't designed for and which I wouldn't score them on.\n\nThat score sits deliberately at *very good with a known flaw* rather than near-perfect. The independent reviews back both halves of that: broad agreement that the sound punches well above roughly £80, and equally broad agreement that comfort over long sessions and noise cancelling against premium Bose and Sony models are where they give ground. Sources are listed at the end.\n\n**Good for:** commuting, travel, casual listening, working in a noisy room, or as a spare pair to hand a guest.\n\n**Not for:** monitoring your own voice while recording, editing, mixing, or any decision where you need to hear exactly what's on the recording.\n\n**Buy them if** you want capable, comfortable noise cancelling headphones without spending Bose or Sony money. **Don't buy them if** they're meant to be the headphones you produce a show on — that's a different tool for a different job, and the gap isn't about price.",
     },
     {
       id: "what-you-get",
       heading: "What you get for the money",
       body:
-        "At roughly £80 (prices move, so check before you buy) the build is better than the number suggests. They're closed-back, over-ear, and light at about 0.51 lbs — enough that you forget you're wearing them for the first hour or two. The drivers are large (listings vary between 40mm and 50mm, so I won't pretend to a single figure), which is a fair part of why the low end has the weight it does.\n\nThe noise cancelling runs off a single AAA battery rather than a rechargeable cell. That's a genuine trade-off rather than a flaw: no charging cable to lose and no degraded battery in three years, but you do need a spare AAA in the bag. It also means the headphones keep working passively when the battery dies, which is more than some rechargeable pairs manage.\n\nThey ship with a protective case, which at this price is not a given and makes them a sensible travel pair.\n\nThe honest comfort caveat: they're comfortable for *shorter* sessions. Over a long stretch — the kind of four-hour edit that is my normal working day — the clamp and the pad depth start to tell. For a flight or a commute, fine. For a full day's work, less so, and that's the first practical strike against them as production headphones.",
+        "At roughly £80 (prices move, so check before you buy) the build is better than the number suggests. They're closed-back, over-ear, and light at about 0.51 lbs — enough that you forget you're wearing them for the first hour or two. The drivers are large (listings vary between 40mm and 50mm, so I won't pretend to a single figure), which is a fair part of why the low end has the weight it does.\n\nThe noise cancelling runs off a single AAA battery rather than a rechargeable cell. That's a genuine trade-off rather than a flaw: no charging cable to lose and no degraded battery in three years, but you do need a spare AAA in the bag. It also means the headphones keep working passively when the battery dies, which is more than some rechargeable pairs manage.\n\nThey ship with a protective case, which at this price is not a given and makes them a sensible travel pair.\n\nThe honest comfort caveat: they're comfortable for *shorter* sessions, and this is where the reviews converge most sharply. Sound & Vision's reviewer found the earpiece pressing on his ear after about thirty minutes and couldn't manage a full hour in them, rating comfort a clear step below Bose. That matches my own experience — for a flight or a commute they're fine, but over the kind of four-hour edit that is a normal working day the clamp starts to tell.\n\nThat alone is a practical strike against them as production headphones, before we get anywhere near the sound.",
     },
     {
       id: "how-they-sound",
@@ -89,6 +89,18 @@ export const monoprice110010Review: BlogPost = {
         "The Monoprice 110010 are good budget headphones. At around £80 they're comfortable for a couple of hours, the noise cancelling does what it claims on low-frequency noise, they come with a case, and they sound warm and pleasant. If you want capable ANC headphones without premium money, they're a fair buy.\n\nThey're just not podcast production headphones, and no amount of value changes that — because the things that make them enjoyable to listen to are the same things that make them unreliable to work on.\n\nBuy them for the commute. Buy a flat, closed-back, un-processed pair for the edit. They're different tools, and it isn't really a question of price.\n\nIf the editing is the part you'd rather hand over entirely, [that's what we do](/services) — or [get a quote](/contact).",
     },
   ],
+  // Independent reviews consulted when setting this score (July 2026):
+  //   • RTINGS measured the pair and summarised them as "an overall decent
+  //     pair of headphones" with solid bass and mid-range.
+  //   • Sound & Vision praised the look and the sub-$100 value, but found the
+  //     earpiece pressing after ~30 minutes and couldn't wear them an hour —
+  //     comfort "a big step down from Bose".
+  //   • Multiple outlets independently place the sound above its price and the
+  //     ANC among the better sub-$100 options, while below premium Bose/Sony.
+  // Consensus is "very good for the money, with real limits on comfort and
+  // ANC depth" — which is a 4, not a 4.5. Some SEO-farm reviews score it
+  // higher; those were disregarded as unreliable.
+  //
   // Rating mirrors EXACTLY what the "short verdict" section displays on the
   // page ("Rated 4 out of 5 as budget listening headphones"). If that line
   // changes, change this too — or drop `rating` and the schema omits it.
@@ -125,6 +137,20 @@ export const monoprice110010Review: BlogPost = {
       question: "Do you need closed-back headphones for podcasting?",
       answer:
         "For recording, yes. Closed-back headphones keep the sound inside the cups so it doesn't leak out and get picked up by your microphone, which would leave you with bleed you can't remove later. The Monoprice 110010 are closed-back, so the form factor is right — it's the active noise cancelling and the bass-forward tuning that make them the wrong choice.",
+    },
+  ],
+  references: [
+    {
+      label: "RTINGS — Monoprice 110010 measured review",
+      url: "https://www.rtings.com/headphones/reviews/monoprice/110010",
+    },
+    {
+      label: "Sound & Vision — Monoprice 10010 review",
+      url: "https://www.soundandvision.com/content/review-monoprice-10010",
+    },
+    {
+      label: "SoundGuys — Monoprice headphones testing",
+      url: "https://www.soundguys.com/monoprice-dual-driver-headphones-review-108951/",
     },
   ],
 };
