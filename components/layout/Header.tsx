@@ -45,11 +45,6 @@ const toolsItems = [
     badge: "Free",
     description: "Transcript + draft show notes from any episode",
   },
-  {
-    href: "/blog/best-bitcoin-podcasts",
-    label: "Best Bitcoin Podcasts",
-    description: "A hand-picked directory of Bitcoin & crypto shows",
-  },
 ];
 
 export function Header() {
