@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/lib/metadata";
 import { getAllCaseStudies } from "@/lib/case-studies";
 import { getAllPosts } from "@/lib/blog";
+import { getAllServicePages } from "@/lib/service-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -26,6 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
+  // Commercial landing pages. Derived rather than listed, so a new one is
+  // in the sitemap the moment its content file exists.
+  const serviceRoutes = getAllServicePages().map((page) => ({
+    url: `${siteConfig.url}/services/${page.slug}`,
+    lastModified: new Date(),
+  }));
+
   const caseStudyRoutes = getAllCaseStudies().map((study) => ({
     url: `${siteConfig.url}/work/${study.slug}`,
     lastModified: new Date(),
@@ -36,5 +44,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.publishedAt,
   }));
 
-  return [...staticRoutes, ...caseStudyRoutes, ...blogRoutes];
+  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...blogRoutes];
 }

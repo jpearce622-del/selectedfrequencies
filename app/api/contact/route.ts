@@ -55,6 +55,14 @@ export async function POST(request: Request) {
   }
 
   const { name, email, service, message, company } = body as Record<string, string>;
+  // Extra fields from the service landing pages. `source` identifies which
+  // page produced the enquiry, so they can be told apart in the inbox
+  // without any analytics wiring. All optional — the main contact form
+  // doesn't send them and must keep working unchanged.
+  const { source, organisation, showKind, situation } = body as Record<
+    string,
+    string
+  >;
   const { renderedAt } = body as { renderedAt?: number };
 
   // All three checks below return { ok: true } rather than an error: a bot
@@ -150,11 +158,17 @@ export async function POST(request: Request) {
       from: `Selected Frequencies Website <${user}>`,
       to,
       ...(replyIsOurs ? {} : { replyTo: replyAddress }),
-      subject: `New enquiry from ${name.trim()}${service ? ` — ${service.trim()}` : ""}`,
+      // The source tag leads the subject so landing-page enquiries are
+      // filterable in the inbox at a glance.
+      subject: `${source ? `[${source.trim()}] ` : ""}New enquiry from ${name.trim()}${service ? ` — ${service.trim()}` : ""}`,
       text: [
+        source ? `Came from: ${source.trim()}` : null,
         `Name: ${name.trim()}`,
         `Email: ${email.trim()}${replyIsOurs ? "  ⚠️ our own address — reply-to omitted, likely a test or spoof" : ""}`,
+        organisation?.trim() ? `Company: ${organisation.trim()}` : null,
         service ? `Service interested in: ${service.trim()}` : null,
+        showKind?.trim() ? `Kind of show: ${showKind.trim()}` : null,
+        situation?.trim() ? `Situation: ${situation.trim()}` : null,
         "",
         message?.trim() || "(No message — they'd rather talk it through.)",
       ]

@@ -5,6 +5,7 @@ import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
+import { getAllServicePages } from "@/lib/service-pages";
 import {
   publishedTiers,
   recordingSetups,
@@ -150,6 +151,45 @@ export default function ServicesPage() {
                   ))}
                 </ul>
               </div>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* ---------- Hub links down to the commercial landing pages ----------
+          This page targets the broad "podcast production services" term only.
+          Each page below owns one buyer and one keyword; the hub passes
+          authority down to them and deliberately does not compete for their
+          terms. Generated from the content files, so later industry variants
+          appear here without this page being edited. */}
+      <Section className="border-t border-border">
+        <Reveal>
+          <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl">
+            Working with a specific kind of client?
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
+            The packages above are the standard ones. These pages cover the
+            three arrangements that come up most often, and each answers a
+            different set of questions.
+          </p>
+        </Reveal>
+        <div className="mt-8 grid gap-6 lg:grid-cols-3">
+          {getAllServicePages().map((page, i) => (
+            <Reveal key={page.slug} delay={(i % 3) * 70}>
+              <Link
+                href={`/services/${page.slug}`}
+                className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg"
+              >
+                <h3 className="font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">
+                  {page.h1}
+                </h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                  {page.subheadline}
+                </p>
+                <span className="mt-5 text-sm font-medium text-accent">
+                  Read more →
+                </span>
+              </Link>
             </Reveal>
           ))}
         </div>
