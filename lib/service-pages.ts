@@ -186,8 +186,61 @@ function assertNoVisiblePlaceholders(pages: ServicePage[]): void {
   }
 }
 
+/**
+ * Internal-link resolution guard.
+ *
+ * The template resolves every slug through getCaseStudyBySlug / getPostBySlug
+ * and renders nothing when one misses. That is the right runtime behaviour and
+ * a terrible authoring experience: a typo'd slug costs the page an internal
+ * link and produces no error anywhere. It has already happened once — a page
+ * referenced "the-assembly" (the FILENAME) when the slug is "assemble-you",
+ * and both links silently vanished from the built page.
+ *
+ * Imports are local to keep this out of the module's import graph until the
+ * check actually runs, since lib/case-studies and lib/blog both pull in the
+ * full content set.
+ */
+function assertInternalLinksResolve(pages: ServicePage[]): void {
+  const {
+    getCaseStudyBySlug,
+  } = require("@/lib/case-studies") as typeof import("@/lib/case-studies");
+  const { getPostBySlug } = require("@/lib/blog") as typeof import("@/lib/blog");
+
+  const problems: string[] = [];
+  const slugs = new Set(pages.map((p) => p.slug));
+
+  for (const page of pages) {
+    for (const s of page.proof.caseStudySlugs) {
+      if (!getCaseStudyBySlug(s))
+        problems.push(`${page.slug}: proof.caseStudySlugs -> no case study "${s}"`);
+    }
+    if (!getCaseStudyBySlug(page.internalLinks.caseStudySlug))
+      problems.push(
+        `${page.slug}: internalLinks.caseStudySlug -> no case study "${page.internalLinks.caseStudySlug}"`
+      );
+    if (!getPostBySlug(page.internalLinks.blogSlug))
+      problems.push(
+        `${page.slug}: internalLinks.blogSlug -> no post "${page.internalLinks.blogSlug}"`
+      );
+
+    const related = page.internalLinks.relatedServiceSlug;
+    if (related && !slugs.has(related))
+      problems.push(`${page.slug}: relatedServiceSlug -> no service page "${related}"`);
+    if (related === page.slug)
+      problems.push(`${page.slug}: relatedServiceSlug points at itself`);
+  }
+
+  if (problems.length) {
+    throw new Error(
+      `Service page internal link does not resolve:\n  - ${problems.join("\n  - ")}\n` +
+        `Check the slug INSIDE the content file — it often differs from the filename.`
+    );
+  }
+}
+
 assertServicePagesAreDistinct(servicePages);
 assertNoVisiblePlaceholders(servicePages);
+assertInternalLinksResolve(servicePages);
 
 export function getAllServicePages(): ServicePage[] {
   return servicePages;

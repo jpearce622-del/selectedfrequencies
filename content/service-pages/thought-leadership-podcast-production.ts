@@ -19,7 +19,12 @@ export const thoughtLeadershipPodcastProduction: ServicePage = {
   supportingKeywords: [
     "thought leadership podcast production",
     "podcast editing for founders",
-    "executive podcast production",
+    // "executive podcast production" deliberately removed: that space is now
+    // owned by executive-podcast-production-service.ts, which serves a
+    // different buyer (a CMO or comms lead producing FOR an exec, rather than
+    // the founder buying for their own show). Leaving it here would have the
+    // two pages competing for the same query.
+    "personal brand podcast production",
     "podcast producer for founders",
     "interview podcast editing service",
   ],
