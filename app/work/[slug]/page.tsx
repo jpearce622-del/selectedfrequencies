@@ -220,6 +220,76 @@ export default async function CaseStudyPage({
         </Section>
       )}
 
+      {study.engagement && (
+        <Section className="border-t border-border">
+          <Reveal>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              How we help
+            </h2>
+            <div className="mt-5 max-w-3xl space-y-4">
+              {study.engagement
+                .split("\n\n")
+                .map((para) => para.trim())
+                .filter(Boolean)
+                .map((para, i) => (
+                  <p key={i} className="text-base leading-7 text-muted">
+                    {para}
+                  </p>
+                ))}
+            </div>
+          </Reveal>
+        </Section>
+      )}
+
+      {/* A sample of the actual output. Showing the work beats describing it,
+          and on a page whose job is to win production enquiries it's the most
+          persuasive thing available. preload="none" means the file transfers
+          only when someone presses play, so the page weight is a poster
+          image. */}
+      {study.video && (
+        <Section className="border-t border-border">
+          <Reveal>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              A sample of the work
+            </h2>
+            <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,300px)_minmax(0,1fr)] lg:items-start">
+              <div
+                className="overflow-hidden rounded-2xl border border-border bg-deep"
+                style={{ aspectRatio: study.video.aspect ?? "9/16" }}
+              >
+                <video
+                  controls
+                  preload="none"
+                  playsInline
+                  poster={study.video.poster}
+                  className="h-full w-full object-cover"
+                  aria-label={study.video.posterAlt}
+                >
+                  <source src={study.video.src} type="video/mp4" />
+                  {/* Fallback for a browser that can't play it at all. */}
+                  <a href={study.video.src}>Download the clip</a>
+                </video>
+              </div>
+              <div>
+                <p className="text-base leading-7 text-muted">
+                  {study.video.caption}
+                </p>
+                {study.video.sourceUrl && (
+                  <a
+                    href={study.video.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-block text-sm font-medium text-accent hover:text-accent-bright"
+                  >
+                    {study.video.sourceLabel ?? "Watch the original"} →
+                  </a>
+                )}
+              </div>
+            </div>
+          </Reveal>
+        </Section>
+      )}
+
       {(services.length > 0 || showOutcome) && (
       <Section className="border-t border-border">
         <div className="grid gap-12 sm:grid-cols-2">
