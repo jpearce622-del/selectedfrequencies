@@ -121,8 +121,21 @@ export interface ServiceCta {
   note?: string;
 }
 
+/**
+ * Which block a page sits in on the /services hub.
+ *
+ * "engagement" pages are segmented by buyer and scope — what the arrangement
+ * is. "industry" pages are segmented by the constraint a sector imposes —
+ * compliance sign-off, partner time, a private audience. Keeping the two
+ * apart on the hub is what stops a visitor reading them as fifteen variants
+ * of the same page, and mirrors how they are kept apart in search.
+ */
+export type ServicePageGroup = "engagement" | "industry";
+
 export interface ServicePage {
   slug: string;
+  /** Hub grouping. Defaults to "engagement" when absent. */
+  group?: ServicePageGroup;
   /**
    * The one term this page is for. Enforced unique across all pages by
    * assertServicePagesAreDistinct() in lib/service-pages.ts.

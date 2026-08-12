@@ -27,6 +27,7 @@ import { theEcMethod } from "@/content/case-studies/the-ec-method";
 import { alignPodcast } from "@/content/case-studies/align-podcast";
 import { inspirationsChanaMason } from "@/content/case-studies/inspirations-chana-mason";
 import { possibilityInTheUniverse } from "@/content/case-studies/possibility-in-the-universe";
+import { fintalkVermeg } from "@/content/case-studies/fintalk-vermeg";
 
 // Add one import + array entry per client as their case study copy is supplied.
 const allCaseStudies: CaseStudy[] = [
@@ -38,6 +39,10 @@ const allCaseStudies: CaseStudy[] = [
   outthinkers,
   strategyAtScale,
   chiefStrategyOfficerPodcast,
+  // featured: false until real cover art and an outcome figure exist — it
+  // carries the fintech service page, but it isn't ready for the homepage
+  // logo strip without artwork.
+  fintalkVermeg,
   // Archive-era clients (pre-repositioning) — full case study pages,
   // but category: "archive" and featured: false so they stay off the
   // flagship /work grid and homepage teasers.

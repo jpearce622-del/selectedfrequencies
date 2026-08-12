@@ -132,12 +132,12 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* ---------- Shows we produce — artwork marquee, each cover links to
-          its case study (kept here for the case-study links it adds) ---------- */}
+      {/* ---------- Shows we have worked on — artwork marquee, each cover links
+          to its case study (kept here for the case-study links it adds) ---------- */}
       <section className="border-t border-border py-14">
         <Container>
           <p className="mb-9 text-center text-sm font-medium text-muted-foreground">
-            Shows we produce
+            Shows we have worked on
           </p>
         </Container>
         <LogoMarquee />

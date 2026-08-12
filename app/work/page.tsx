@@ -65,8 +65,8 @@ export default function WorkIndexPage() {
     <>
       <PageHeader
         eyebrow="Selected work"
-        title="Shows we produce for."
-        intro="A selection of the shows we produce — from genetics research to bitcoin and career change."
+        title="Shows we have worked on."
+        intro="A selection of the shows we have worked on — from genetics research to bitcoin and career change."
       />
 
       <Section className="border-t border-border">

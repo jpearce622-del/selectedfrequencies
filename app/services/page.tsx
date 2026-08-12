@@ -20,6 +20,38 @@ import {
 const mainTiers = publishedTiers.filter((t) => !t.addOn);
 const addOnTiers = publishedTiers.filter((t) => t.addOn);
 
+// Split by `group` so the hub reads as two shorter lists rather than one long
+// undifferentiated one. Pages without a group default to "engagement", which
+// keeps every pre-existing page where it was.
+const allServicePages = getAllServicePages();
+const engagementPages = allServicePages.filter((p) => p.group !== "industry");
+const industryPages = allServicePages.filter((p) => p.group === "industry");
+
+function ServicePageCard({
+  page,
+  index,
+}: {
+  page: (typeof allServicePages)[number];
+  index: number;
+}) {
+  return (
+    <Reveal delay={(index % 3) * 70}>
+      <Link
+        href={`/services/${page.slug}`}
+        className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg"
+      >
+        <h4 className="font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">
+          {page.h1}
+        </h4>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+          {page.subheadline}
+        </p>
+        <span className="mt-5 text-sm font-medium text-accent">Read more →</span>
+      </Link>
+    </Reveal>
+  );
+}
+
 export const metadata: Metadata = buildMetadata({
   title: "Podcast Editing & Production Services",
   description:
@@ -168,31 +200,33 @@ export default function ServicesPage() {
             Working with a specific kind of client?
           </h2>
           <p className="mt-4 max-w-2xl text-base leading-7 text-muted">
-            The packages above are the standard ones. These pages cover the
-            three arrangements that come up most often, and each answers a
-            different set of questions.
+            The packages above are the standard ones. These pages go deeper on
+            a particular arrangement or a particular industry, and each answers
+            a different set of questions.
           </p>
         </Reveal>
-        <div className="mt-8 grid gap-6 lg:grid-cols-3">
-          {getAllServicePages().map((page, i) => (
-            <Reveal key={page.slug} delay={(i % 3) * 70}>
-              <Link
-                href={`/services/${page.slug}`}
-                className="group flex h-full flex-col rounded-2xl border border-border bg-surface p-7 transition-all duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-lg"
-              >
-                <h3 className="font-display text-xl font-semibold tracking-tight transition-colors group-hover:text-accent">
-                  {page.h1}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
-                  {page.subheadline}
-                </p>
-                <span className="mt-5 text-sm font-medium text-accent">
-                  Read more →
-                </span>
-              </Link>
-            </Reveal>
+
+        <h3 className="mt-10 font-display text-sm font-semibold uppercase tracking-widest text-muted">
+          By engagement
+        </h3>
+        <div className="mt-6 grid gap-6 lg:grid-cols-3">
+          {engagementPages.map((page, i) => (
+            <ServicePageCard key={page.slug} page={page} index={i} />
           ))}
         </div>
+
+        {industryPages.length > 0 && (
+          <>
+            <h3 className="mt-14 font-display text-sm font-semibold uppercase tracking-widest text-muted">
+              By industry
+            </h3>
+            <div className="mt-6 grid gap-6 lg:grid-cols-3">
+              {industryPages.map((page, i) => (
+                <ServicePageCard key={page.slug} page={page} index={i} />
+              ))}
+            </div>
+          </>
+        )}
       </Section>
 
       {/* ---------- Rate card — all prices read from data/pricing.ts ---------- */}

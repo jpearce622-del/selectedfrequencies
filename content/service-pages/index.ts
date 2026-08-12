@@ -8,6 +8,12 @@ import { monthlyPodcastEditingRetainer } from "./monthly-podcast-editing-retaine
 import { doneForYouPodcastProduction } from "./done-for-you-podcast-production";
 import { podcastPostProductionServices } from "./podcast-post-production-services";
 import { podcastRepurposingServiceB2b } from "./podcast-repurposing-service-b2b";
+import { fintechPodcastProductionCompany } from "./fintech-podcast-production-company";
+import { cryptoPodcastProductionService } from "./crypto-podcast-production-service";
+import { podcastProductionForVcFirms } from "./podcast-production-for-vc-firms";
+import { biotechPodcastProduction } from "./biotech-podcast-production";
+import { podcastProductionForCoachesAndConsultants } from "./podcast-production-for-coaches-and-consultants";
+import { corporateInternalPodcastProduction } from "./corporate-internal-podcast-production";
 
 /**
  * Commercial service landing pages under /services/[slug].
@@ -35,4 +41,13 @@ export const servicePages: ServicePage[] = [
   monthlyPodcastEditingRetainer,
   // Downstream assets
   podcastRepurposingServiceB2b,
+  // Industry pages. Segmented by the CONSTRAINT the sector imposes, not by
+  // the sector name — that is what keeps them from cannibalising the general
+  // pages above, which are segmented by buyer and scope.
+  fintechPodcastProductionCompany,
+  cryptoPodcastProductionService,
+  biotechPodcastProduction,
+  podcastProductionForVcFirms,
+  podcastProductionForCoachesAndConsultants,
+  corporateInternalPodcastProduction,
 ];
