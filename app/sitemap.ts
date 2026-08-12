@@ -3,6 +3,7 @@ import { siteConfig } from "@/lib/metadata";
 import { getAllCaseStudies } from "@/lib/case-studies";
 import { getAllPosts } from "@/lib/blog";
 import { getAllServicePages } from "@/lib/service-pages";
+import { getAllComparisonPages } from "@/lib/comparison-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
@@ -22,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/feed-checker",
     "/podcast-launch-roadmap",
     "/contact",
+    "/compare",
   ].map((path) => ({
     url: `${siteConfig.url}${path}`,
     lastModified: new Date(),
@@ -34,6 +36,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
+  // Competitor comparison pages. Derived for the same reason as the service
+  // pages: a new one is in the sitemap as soon as its content file exists.
+  const comparisonRoutes = getAllComparisonPages().map((page) => ({
+    url: `${siteConfig.url}/compare/${page.slug}`,
+    lastModified: new Date(page.verifiedOn),
+  }));
+
   const caseStudyRoutes = getAllCaseStudies().map((study) => ({
     url: `${siteConfig.url}/work/${study.slug}`,
     lastModified: new Date(),
@@ -44,5 +53,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: post.publishedAt,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...blogRoutes];
+  return [
+    ...staticRoutes,
+    ...serviceRoutes,
+    ...comparisonRoutes,
+    ...caseStudyRoutes,
+    ...blogRoutes,
+  ];
 }

@@ -27,6 +27,12 @@ const resourceLinks = [
   { href: "/podcast-editing-cost-calculator", label: "Editing cost calculator" },
   { href: "/tools/show-notes-generator", label: "Show notes generator" },
   { href: "/blog/best-bitcoin-podcasts", label: "Best Bitcoin podcasts" },
+  // Comparison pages live in the footer rather than the main nav. Someone
+  // browsing the site is a prospect; pointing them at our competitors is a
+  // poor use of their attention. Someone arriving from "[competitor]
+  // alternative" already made that comparison their business — and the
+  // footer renders server-side on every page, so these stay crawlable.
+  { href: "/compare", label: "Compare agencies" },
 ];
 
 export function Footer() {
