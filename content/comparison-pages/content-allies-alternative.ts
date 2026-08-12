@@ -93,6 +93,8 @@ export const contentAlliesAlternative: ComparisonPage = {
     { label: "Podcast SEO & repurposing", values: ["Yes", "Show notes, chapters, transcripts and clips"] },
     { label: "Full production", values: ["Yes", "Yes"] },
     { label: "Video", values: ["Yes", "Yes"] },
+    { label: "Works inside your own tools", values: ["Not published", "Yes — Slack, Notion, Monday, WhatsApp or email"] },
+    { label: "Ad-hoc advice outside production", values: ["Not published", "Included — distribution, analytics, monetisation"] },
     { label: "Team size", values: ["Not published", "Small studio — direct with the editor"] },
     { label: "Founded", values: ["Not published", "See our case studies"] },
     { label: "Based", values: ["Colorado Springs and Denver, CO", "Northern Ireland — remote"] },
@@ -117,6 +119,9 @@ export const contentAlliesAlternative: ComparisonPage = {
       "**You want to stop whenever you like.** No minimum term. Per-episode while you're testing, monthly once it's settled. For a channel that might be reviewed at the end of the financial year, that flexibility has real value.",
       "**You need the standard held over hundreds of episodes.** This is where we're strongest and it's evidenced rather than claimed. The Genetics Podcast has run to 248 episodes with Cambridge researchers and biotech CEOs as guests; The Bitcoin Collective has published weekly since 2021 without a single gap. Consistency across a long catalogue is a spec-and-process problem, and it's the one we've solved most often.",
       "**Your subject is technical.** Where accuracy through the edit matters — a mis-cut qualifying clause changing what a claim asserts — we've built specific workflows for that, in [regulated fintech](/services/fintech-podcast-production-company) and [life sciences](/services/biotech-podcast-production) especially. That's a craft argument rather than a marketing one, and it's the kind of thing a generalist programme doesn't optimise for.",
+      "**We work inside your setup, not alongside it.** This is the difference clients mention most and the hardest one to see from a website. Slack, Notion, Monday, WhatsApp, email — whatever your marketing team already runs on, we join it rather than adding another tool and another standing meeting. In practice the person editing your show sits in the same channel as the people planning the campaign, so a question about episode forty gets answered in minutes instead of becoming a scheduled call. What you end up with is closer to a producer on the team than a supplier at the end of an email chain.",
+      "**You get the podcasting experience, not just the episodes.** Being that close to your team means the questions that come up around a show — what your download numbers actually mean, whether a sponsorship offer is worth taking, why a platform isn't showing your chapters, how to handle a back-catalogue migration — get answered as part of the relationship rather than scoped as consultancy. That is years of production experience available to your team directly, and it is a real part of what you are buying even though nobody puts it on a rate card.",
+      "**And it makes us quick when it actually matters.** With no queue and no account layer between you and the person doing the work, an urgent episode can move immediately — we have turned one around in under twelve hours when a client needed it to ship. That is not a standing promise on every episode, and it is genuinely hard for a larger operation to offer at all, because at scale work has to be scheduled in advance. It is a real advantage of buying from a small studio, and worth weighing against the capacity a bigger team gives you.",
     ],
   },
   scenarios: [

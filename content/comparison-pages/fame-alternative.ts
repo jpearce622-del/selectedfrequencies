@@ -96,6 +96,8 @@ export const fameAlternative: ComparisonPage = {
     { label: "Host coaching", values: ["Yes", "No"] },
     { label: "Full production & video", values: ["Yes", "Yes"] },
     { label: "Stated launch time", values: ["6–8 weeks", "1–2 weeks for an existing show"] },
+    { label: "Works inside your own tools", values: ["Not published", "Yes — Slack, Notion, Monday, WhatsApp or email"] },
+    { label: "Ad-hoc advice outside production", values: ["Not published", "Included — distribution, analytics, monetisation"] },
     { label: "Stated scale", values: ["300+ podcasts produced, 100+ live at any time", "Small studio — direct with the editor"] },
   ],
   competitorWins: {
@@ -118,6 +120,9 @@ export const fameAlternative: ComparisonPage = {
       "**You keep your own hosting and your own feed.** We work inside your accounts rather than ours. Nothing to reclaim if you leave, no feed to migrate, no dependency to unwind. That's worth thinking about before any arrangement where the supplier also owns the hosting.",
       "**No minimum, no lock-in.** Per-episode while you're testing, monthly once settled. Most podcasts don't survive their first year and being able to stop cleanly is worth real money when you're not yet sure.",
       "**We won't guarantee growth, and that's deliberate.** We don't control Apple's charts, Spotify's recommendations or whether your guests share the episode — so a promise about audience size would be one we couldn't reliably keep. What we will commit to is a turnaround in working days and a consistent standard across a long catalogue: 248 episodes for The Genetics Podcast, 204 weekly without a gap for The Bitcoin Collective. Those are the things we actually control.",
+      "**We work inside your setup, not alongside it.** This is the difference clients mention most and the hardest one to see from a website. Slack, Notion, Monday, WhatsApp, email — whatever your marketing team already runs on, we join it rather than adding another tool and another standing meeting. In practice the person editing your show sits in the same channel as the people planning the campaign, so a question about episode forty gets answered in minutes instead of becoming a scheduled call. What you end up with is closer to a producer on the team than a supplier at the end of an email chain.",
+      "**You get the podcasting experience, not just the episodes.** Being that close to your team means the questions that come up around a show — what your download numbers actually mean, whether a sponsorship offer is worth taking, why a platform isn't showing your chapters, how to handle a back-catalogue migration — get answered as part of the relationship rather than scoped as consultancy. That is years of production experience available to your team directly, and it is a real part of what you are buying even though nobody puts it on a rate card.",
+      "**And it makes us quick when it actually matters.** With no queue and no account layer between you and the person doing the work, an urgent episode can move immediately — we have turned one around in under twelve hours when a client needed it to ship. That is not a standing promise on every episode, and it is genuinely hard for a larger operation to offer at all, because at scale work has to be scheduled in advance. It is a real advantage of buying from a small studio, and worth weighing against the capacity a bigger team gives you.",
     ],
   },
   scenarios: [

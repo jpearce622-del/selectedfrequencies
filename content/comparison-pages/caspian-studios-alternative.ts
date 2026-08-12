@@ -91,6 +91,8 @@ export const caspianStudiosAlternative: ComparisonPage = {
     { label: "Guest booking", values: ["Yes", "No"] },
     { label: "Paid growth marketing", values: ["Yes", "No"] },
     { label: "Multi-use content & repurposing", values: ["Yes — cover art, social video, newsletters, websites", "Show notes, chapters, transcripts and clips"] },
+    { label: "Works inside your own tools", values: ["Not published", "Yes — Slack, Notion, Monday, WhatsApp or email"] },
+    { label: "Ad-hoc advice outside production", values: ["Not published", "Included — distribution, analytics, monetisation"] },
     { label: "Team size", values: ["Not published", "Small studio — direct with the editor"] },
     { label: "Typical client", values: ["Enterprise tech brands", "Founder-led, B2B and technical shows already running"] },
   ],
@@ -114,6 +116,9 @@ export const caspianStudiosAlternative: ComparisonPage = {
       "**Smaller scope means faster turnaround and easier changes.** A produced series has a long pipeline by necessity — scripting, recording, sound design, review. An interview show we produce goes from raw files to published episode in an agreed number of working days, and changing the format is a conversation rather than a re-scoping exercise.",
       "**Long-run consistency is our strongest suit.** Where we're genuinely good is holding a standard across hundreds of episodes: 248 for The Genetics Podcast, 204 weekly without a gap for The Bitcoin Collective. A flagship series is judged on peak quality; a long-running interview show is judged on whether episode 200 is as good as episode 12. Those need different things from a producer, and we're built for the second.",
       "**And you keep everything.** Your hosting, your feed, your raw recordings, your show spec. No minimum term. For a show that might change shape next year, that flexibility is worth more than production value it doesn't need.",
+      "**We work inside your setup, not alongside it.** This is the difference clients mention most and the hardest one to see from a website. Slack, Notion, Monday, WhatsApp, email — whatever your marketing team already runs on, we join it rather than adding another tool and another standing meeting. In practice the person editing your show sits in the same channel as the people planning the campaign, so a question about episode forty gets answered in minutes instead of becoming a scheduled call. What you end up with is closer to a producer on the team than a supplier at the end of an email chain.",
+      "**You get the podcasting experience, not just the episodes.** Being that close to your team means the questions that come up around a show — what your download numbers actually mean, whether a sponsorship offer is worth taking, why a platform isn't showing your chapters, how to handle a back-catalogue migration — get answered as part of the relationship rather than scoped as consultancy. That is years of production experience available to your team directly, and it is a real part of what you are buying even though nobody puts it on a rate card.",
+      "**And it makes us quick when it actually matters.** With no queue and no account layer between you and the person doing the work, an urgent episode can move immediately — we have turned one around in under twelve hours when a client needed it to ship. That is not a standing promise on every episode, and it is genuinely hard for a larger operation to offer at all, because at scale work has to be scheduled in advance. It is a real advantage of buying from a small studio, and worth weighing against the capacity a bigger team gives you.",
     ],
   },
   scenarios: [

@@ -95,6 +95,8 @@ export const rise25Alternative: ComparisonPage = {
     { label: "Client dashboard / platform", values: ["Yes — \"Podcast Copilot\"", "No"] },
     { label: "Minimum commitment", values: ["Not published", "None. Per-episode, or monthly with notice"] },
     { label: "Stated launch time", values: ["4–5 weeks", "1–2 weeks for an existing show"] },
+    { label: "Works inside your own tools", values: ["Not published", "Yes — Slack, Notion, Monday, WhatsApp or email"] },
+    { label: "Ad-hoc advice outside production", values: ["Not published", "Included — distribution, analytics, monetisation"] },
     { label: "Team size", values: ["\"Team of 40+\"", "Small studio — direct with the editor"] },
     { label: "Based", values: ["Tiburon, CA and Northbrook, IL", "Northern Ireland — remote"] },
     { label: "Operating since", values: ["2008", "See our case studies"] },
@@ -119,6 +121,9 @@ export const rise25Alternative: ComparisonPage = {
       "**No minimum, and no lock-in.** Per-episode if you're still testing the format, monthly if you've settled. Most new podcasts don't survive their first year, and being able to stop cleanly is worth real money when you're not yet sure.",
       "**Long-run consistency in technical subjects.** Where we're genuinely strong is a catalogue that has to hold its standard across hundreds of episodes, particularly where the subject matter is technical and a mis-cut sentence changes the meaning. The Genetics Podcast has run to 248 episodes with researchers and biotech CEOs as guests; The Bitcoin Collective has published weekly since 2021 without missing a week. That's a process problem rather than a creative one, and it's the one we've solved most often.",
       "**You talk to the editor.** No account layer, no note being relayed. The flip side is that there's no team to escalate to and no bench if we're at capacity, which is a genuine limitation of buying from a small studio rather than a 40-person agency.",
+      "**We work inside your setup, not alongside it.** This is the difference clients mention most and the hardest one to see from a website. Slack, Notion, Monday, WhatsApp, email — whatever your marketing team already runs on, we join it rather than adding another tool and another standing meeting. In practice the person editing your show sits in the same channel as the people planning the campaign, so a question about episode forty gets answered in minutes instead of becoming a scheduled call. What you end up with is closer to a producer on the team than a supplier at the end of an email chain.",
+      "**You get the podcasting experience, not just the episodes.** Being that close to your team means the questions that come up around a show — what your download numbers actually mean, whether a sponsorship offer is worth taking, why a platform isn't showing your chapters, how to handle a back-catalogue migration — get answered as part of the relationship rather than scoped as consultancy. That is years of production experience available to your team directly, and it is a real part of what you are buying even though nobody puts it on a rate card.",
+      "**And it makes us quick when it actually matters.** With no queue and no account layer between you and the person doing the work, an urgent episode can move immediately — we have turned one around in under twelve hours when a client needed it to ship. That is not a standing promise on every episode, and it is genuinely hard for a larger operation to offer at all, because at scale work has to be scheduled in advance. It is a real advantage of buying from a small studio, and worth weighing against the capacity a bigger team gives you.",
     ],
   },
   scenarios: [

@@ -92,6 +92,21 @@ export const monthlyPodcastEditingRetainer: ServicePage = {
         detail:
           "You talk to the person doing the edit. Feedback on episode twelve does not have to be re-explained to someone new.",
       },
+      {
+        title: "We work in your tools, not ours",
+        detail:
+          "Slack, Notion, Monday, WhatsApp or plain email — whatever your team already runs on, we join it rather than asking you to adopt another system. The practical effect is that a question gets answered in a thread instead of becoming a scheduled call, and the producer picks up context about campaigns and launches without a handover.",
+      },
+      {
+        title: "Advice on the things around the show",
+        detail:
+          "What your download numbers actually mean, whether a sponsorship offer is worth taking, why a platform is not showing your chapters, how to move a back catalogue. Those questions get answered as part of the arrangement rather than quoted as consultancy.",
+      },
+      {
+        title: "Room to move when something is urgent",
+        detail:
+          "Because there is no queue and no account layer between you and the edit, an urgent episode can jump immediately — we have turned one around in under twelve hours when a client needed it out. Not a promise on every episode, and not something a larger operation can offer at all, since at scale work has to be scheduled in advance.",
+      },
     ],
     footnote:
       "Video editing, extra clips and full done-for-you production sit on top of a retainer rather than inside it — the scope of that is covered on the done-for-you page.",
