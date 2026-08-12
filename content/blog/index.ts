@@ -17,9 +17,19 @@ import { bestHeadphonesForPodcasting } from "./best-headphones-for-podcasting";
 import { athM30xReview } from "./audio-technica-ath-m30x-review";
 import { sonyMdr7506Review } from "./sony-mdr-7506-review";
 import { sennheiserHd25Review } from "./sennheiser-hd-25-review";
+import { inHouseVsOutsourcedPodcastProduction } from "./in-house-vs-outsourced-podcast-production";
+import { howMuchDoesPodcastProductionCostPerEpisode } from "./how-much-does-podcast-production-cost-per-episode";
+import { podcastProductionAgencyPricing } from "./podcast-production-agency-pricing";
+import { whatDoesAPodcastProducerActuallyDo } from "./what-does-a-podcast-producer-actually-do";
+import { bestPodcastProductionCompaniesForB2b } from "./best-podcast-production-companies-for-b2b";
 
 // Newest-first ordering is handled by getAllPosts() (sorts on publishedAt).
 export const posts: BlogPost[] = [
+  inHouseVsOutsourcedPodcastProduction,
+  howMuchDoesPodcastProductionCostPerEpisode,
+  podcastProductionAgencyPricing,
+  whatDoesAPodcastProducerActuallyDo,
+  bestPodcastProductionCompaniesForB2b,
   bestHeadphonesForPodcasting,
   sonyMdr7506Review,
   athM30xReview,

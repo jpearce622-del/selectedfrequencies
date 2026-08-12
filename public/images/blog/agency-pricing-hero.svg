@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-label="Two podcast production agency pricing quotes side by side with mismatched line items being aligned for comparison" font-family="-apple-system, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3e57"/>
+      <stop offset="1" stop-color="#1b2838"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#e57329" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#e57329" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="840" fill="url(#bg)"/>
+  <rect width="1600" height="840" fill="url(#glow)"/>
+  <g transform="translate(150 130)">
+    <text x="0" y="0" font-size="22" font-weight="700" fill="#ffffff" fill-opacity="0.9" letter-spacing="2">PER EPISODE  vs  RETAINER</text>
+    <g transform="translate(0 70)">
+      <rect width="495" height="74" rx="12" fill="#3d5470"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#ffffff">PER EPISODE</text>
+      <text x="519" y="40" font-size="19" fill="#ffffff" fill-opacity="0.6">pay for what you publish</text>
+    </g>
+    <g transform="translate(0 162)">
+      <rect width="731" height="74" rx="12" fill="#e57329"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#ffffff">MONTHLY RETAINER</text>
+      <text x="755" y="40" font-size="19" fill="#ffffff" fill-opacity="0.6">lower unit cost, reserved capacity</text>
+    </g>
+    <g transform="translate(0 254)">
+      <rect width="283" height="74" rx="12" fill="#3d5470"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#ffffff">HOURLY</text>
+      <text x="307" y="40" font-size="19" fill="#ffffff" fill-opacity="0.6">budgeting impossible — avoid</text>
+    </g>
+  </g>
+</svg>

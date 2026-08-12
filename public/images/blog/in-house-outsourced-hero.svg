@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-label="Two cost curves crossing: a flat fixed line for an in-house producer's salary and a rising variable line for outsourced per-episode fees, meeting at a break-even point" font-family="-apple-system, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3e57"/>
+      <stop offset="1" stop-color="#1b2838"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#e57329" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#e57329" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="840" fill="url(#bg)"/>
+  <rect width="1600" height="840" fill="url(#glow)"/>
+
+  <!-- The whole argument of the post as one chart: a flat fixed cost
+       (salary) against a rising variable cost (per-episode fees). Where
+       they cross is the break-even episode count. -->
+  <g transform="translate(190 130)">
+    <text x="0" y="0" font-size="22" font-weight="700" fill="#ffffff" fill-opacity="0.9" letter-spacing="2">COST SHAPE, NOT COST</text>
+
+    <!-- axes -->
+    <g transform="translate(0 60)">
+      <line x1="0" y1="440" x2="1180" y2="440" stroke="#ffffff" stroke-opacity="0.28" stroke-width="2"/>
+      <line x1="0" y1="0" x2="0" y2="440" stroke="#ffffff" stroke-opacity="0.28" stroke-width="2"/>
+
+      <text x="1180" y="482" font-size="17" fill="#ffffff" fill-opacity="0.55" text-anchor="end">EPISODES PER YEAR →</text>
+      <text x="-14" y="6" font-size="17" fill="#ffffff" fill-opacity="0.55" text-anchor="end" transform="rotate(-90 -14 6)">ANNUAL COST</text>
+
+      <!-- fixed cost: in-house salary, flat -->
+      <line x1="0" y1="190" x2="1180" y2="190" stroke="#8fb4d9" stroke-width="5" stroke-linecap="round"/>
+      <text x="1160" y="168" font-size="19" font-weight="700" fill="#8fb4d9" text-anchor="end">IN-HOUSE — fixed</text>
+
+      <!-- variable cost: outsourced, rises with volume -->
+      <line x1="0" y1="440" x2="1180" y2="52" stroke="#e57329" stroke-width="5" stroke-linecap="round"/>
+      <text x="1160" y="40" font-size="19" font-weight="700" fill="#e57329" text-anchor="end">OUTSOURCED — variable</text>
+
+      <!-- break-even marker where the two lines meet -->
+      <circle cx="644" cy="190" r="11" fill="#ffffff"/>
+      <line x1="644" y1="190" x2="644" y2="440" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="7 7"/>
+      <text x="644" y="474" font-size="18" font-weight="700" fill="#ffffff" fill-opacity="0.85" text-anchor="middle">BREAK-EVEN</text>
+
+      <!-- which side wins, stated plainly -->
+      <text x="300" y="248" font-size="18" font-weight="700" fill="#e57329" text-anchor="middle">outsourcing cheaper</text>
+      <text x="960" y="248" font-size="18" font-weight="700" fill="#8fb4d9" text-anchor="middle">hiring cheaper</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 840" role="img" aria-label="The stages of what a podcast producer does, from pre-production briefing through recording and editing to distribution" font-family="-apple-system, Segoe UI, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2b3e57"/>
+      <stop offset="1" stop-color="#1b2838"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.6">
+      <stop offset="0" stop-color="#e57329" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#e57329" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="840" fill="url(#bg)"/>
+  <rect width="1600" height="840" fill="url(#glow)"/>
+  <g transform="translate(150 130)">
+    <text x="0" y="0" font-size="22" font-weight="700" fill="#ffffff" fill-opacity="0.9" letter-spacing="2">ONE EPISODE, FIVE STAGES</text>
+    <g transform="translate(0 70)">
+      <rect width="306" height="74" rx="12" fill="#3d5470"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#ffffff">PRE-PRODUCTION</text>
+      <text x="330" y="40" font-size="19" fill="#ffffff" fill-opacity="0.6">format, briefs, scheduling</text>
+    </g>
+    <g transform="translate(0 162)">
+      <rect width="188" height="74" rx="12" fill="#e57329"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#ffffff">RECORDING</text>
+      <text x="212" y="40" font-size="19" fill="#ffffff" fill-opacity="0.6">the visible hour</text>
+    </g>
+    <g transform="translate(0 254)">
+      <rect width="826" height="74" rx="12" fill="#3d5470"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#ffffff">POST-PRODUCTION</text>
+      <text x="850" y="40" font-size="19" fill="#ffffff" fill-opacity="0.6">2–4× episode length</text>
+    </g>
+    <g transform="translate(0 346)">
+      <rect width="401" height="74" rx="12" fill="#3d5470"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#ffffff">ASSETS</text>
+      <text x="425" y="40" font-size="19" fill="#ffffff" fill-opacity="0.6">notes, clips, transcript</text>
+    </g>
+    <g transform="translate(0 438)">
+      <rect width="141" height="74" rx="12" fill="#3d5470"/>
+      <text x="24" y="40" font-size="20" font-weight="700" fill="#ffffff">DISTRIBUTION</text>
+      <text x="165" y="40" font-size="19" fill="#ffffff" fill-opacity="0.6">upload, metadata, checks</text>
+    </g>
+  </g>
+</svg>
