@@ -5,8 +5,19 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const FRAME_COUNT = 202;
+// WebP, not JPEG: the same 202 frames at q=82 come to ~3.6MB instead of
+// ~7.3MB, with a max per-channel delta around 20/255 confined to edges —
+// invisible on a moving product shot. Frame count is deliberately unchanged;
+// smoothness comes from having 202 of them.
 const frameSrc = (i: number) =>
-  `/images/mic-360/frame-${String(i).padStart(3, "0")}.jpg`;
+  `/images/mic-360/frame-${String(i).padStart(3, "0")}.webp`;
+
+// Load in two passes. Firing 202 requests at once is what made the homepage
+// look pathological to auditing tools, and it delays the first usable frame
+// because the one you actually need is queued behind 200 you don't. So:
+// every 4th frame first (51 requests) — enough to scrub the whole rotation —
+// then the remaining 151 fill in and sharpen it.
+const COARSE_STRIDE = 4;
 
 // Every line here already appears elsewhere on the site (stats, "what we
 // do" steps, positioning copy, closing CTA) — just told one beat at a
@@ -117,8 +128,27 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
 
     const maxIndex = FRAME_COUNT - 1;
     const index = Math.min(maxIndex, Math.max(0, Math.round(value)));
-    const img = imagesRef.current[index];
-    if (!ready(img)) return;
+    let img = imagesRef.current[index];
+
+    // During the coarse pass only every COARSE_STRIDE-th frame exists, so the
+    // exact frame is usually missing. Fall back to the nearest loaded
+    // neighbour rather than bailing: the rotation stays scrubbable from the
+    // first pass and simply sharpens as the second pass fills the gaps.
+    if (!ready(img)) {
+      for (let d = 1; d <= COARSE_STRIDE; d++) {
+        const lo = imagesRef.current[index - d];
+        if (index - d >= 0 && ready(lo)) {
+          img = lo;
+          break;
+        }
+        const hi = imagesRef.current[index + d];
+        if (index + d <= maxIndex && ready(hi)) {
+          img = hi;
+          break;
+        }
+      }
+      if (!ready(img)) return;
+    }
 
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     const cssWidth = canvas.clientWidth;
@@ -207,23 +237,53 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
     let cancelled = false;
     const images: HTMLImageElement[] = [];
 
-    for (let i = 0; i < FRAME_COUNT; i++) {
-      const img = new Image();
-      img.src = frameSrc(i);
+    for (let i = 0; i < FRAME_COUNT; i++) images.push(new Image());
+    imagesRef.current = images;
+
+    let outstanding = 0;
+    let fineStarted = false;
+
+    const load = (i: number) => {
+      const img = images[i];
+      if (!img || img.src) return;
+      outstanding++;
       img.onload = () => {
         if (cancelled) return;
         setLoadedCount((c) => c + 1);
         // Note: we deliberately do NOT force img.decode() on every frame.
         // 202 decoded 720p frames would pin ~750MB of bitmap memory and can
-        // crash mobile browsers; decode-on-draw is cheap for 15KB frames.
+        // crash mobile browsers; decode-on-draw is cheap for these frames.
         if (i === 0) {
           draw(0);
           drawFx(0);
         }
+        if (--outstanding === 0 && !fineStarted) {
+          fineStarted = true;
+          startFine();
+        }
       };
-      images.push(img);
+      // A frame that 404s or decodes badly must not stall the second pass.
+      img.onerror = () => {
+        if (cancelled) return;
+        if (--outstanding === 0 && !fineStarted) {
+          fineStarted = true;
+          startFine();
+        }
+      };
+      img.src = frameSrc(i);
+    };
+
+    // Second pass: everything the coarse pass skipped.
+    function startFine() {
+      if (cancelled) return;
+      for (let i = 0; i < FRAME_COUNT; i++) {
+        if (i % COARSE_STRIDE !== 0) load(i);
+      }
     }
-    imagesRef.current = images;
+
+    // First pass: frame 0 plus every 4th frame, so the full rotation is
+    // scrubbable as soon as ~51 small images have landed.
+    for (let i = 0; i < FRAME_COUNT; i += COARSE_STRIDE) load(i);
 
     return () => {
       cancelled = true;
