@@ -18,15 +18,29 @@ import type { CaseStudy } from "@/types/case-study";
 //   - A publicly listed episode, "How Basel 3.1 is Transforming Regulatory
 //     Reporting", confirms the regulatory subject matter.
 //
-// IMPORTANT — the show appears to have been unpublished. The RSS feed is still
-// live and locked (last built April 2026) but currently returns ZERO episodes;
-// the iTunes lookup API returns no result for the show ID in US, GB, LU, BE or
-// FR; and Spotify's oEmbed endpoint errors for the show URL. Amazon Music's
-// listing still responds. So no platform links are included here rather than
-// publishing a link that 404s for a visitor.
+// IMPORTANT — the audio show appears to have been unpublished. The RSS feed is
+// still live and still serves channel metadata and cover art, but currently
+// returns ZERO episodes; the iTunes lookup API returns no result for the show
+// ID in US, GB, LU, BE or FR; and Spotify's oEmbed endpoint errors for the show
+// URL. So no audio platform links are included here rather than publishing a
+// link that 404s for a visitor.
 //
-// Consequently there is no episode count and no outcome metric in this file.
-// Both are genuinely unknown and are marked TK rather than estimated.
+// The VIDEO episodes are still public on YouTube, which is why that is the one
+// link on this page. Verified by fetching the URL directly (August 2026): the
+// title returned is "FinTalk S2EP8 | Basel 3.1 Reporting: Risk Weights,
+// Property Market, Social Housing & Data Governance". That single link is worth
+// more than a list of dead ones — it lets a prospect watch the actual output.
+//
+// Season/episode span is evidenced rather than asserted: S2E8 from the verified
+// YouTube title above, and S3E9 ("The challenges and Solutions in SME Lending",
+// guest Dr Gabriele Sabato, Co-founder & CEO of Wiserfunding) from episode
+// artwork supplied by James. So the show ran to at least three seasons. A total
+// episode count is still unknown and is NOT stated anywhere on this page.
+//
+// Cover art: pulled from the show's own live RSS feed, which still serves it at
+// 1400x1400. James designed it, so this is his own work rather than a
+// third-party asset — resized to 1000px and stored as WebP (23KB) alongside
+// every other client logo. themeColor sampled from that file.
 export const fintalkVermeg: CaseStudy = {
   slug: "fintalk-vermeg",
   clientName: "VERMEG",
@@ -43,22 +57,31 @@ The content bears that out. Episodes worked through material like how Basel 3.1 
 
 The production was the full scope: a multi-camera 4K video edit, episode artwork, episode descriptions, and distribution across platforms. Multi-camera adds a constraint that compounds the first problem — every cut has to work for the ear and the eye at once, and a camera change landing mid-clause is more noticeable on screen than the equivalent audio edit is in isolation. Filming a subject-matter expert who is not a broadcaster, and cutting between angles without making them look uncertain, is most of the craft in a show like this.
 
-Episode descriptions carried their own requirement. Written for an audience that searches by framework and regulation name rather than by guest, they had to use the sector's vocabulary precisely — RegTech, regulatory reporting, collateral management — because those are the terms this listener actually types.`,
+Episode descriptions carried their own requirement. Written for an audience that searches by framework and regulation name rather than by guest, they had to use the sector's vocabulary precisely — RegTech, regulatory reporting, collateral management — because those are the terms this listener actually types.
+
+Short-form clips came out of the same episodes, and in a regulated sector they need more care than usual. A clip is a statement stripped of its context, and a claim about a reporting obligation that was accurate across two minutes of conversation can be misleading in forty seconds of it. Selection here is as much about what cannot safely be lifted as what performs.
+
+The show ran across multiple seasons — the episode below is from season two, and season three reached at least nine episodes, with guests including the co-founder and CEO of credit-risk firm Wiserfunding on SME lending. That span is the part worth noting: a vendor podcast aimed at compliance officers only keeps going if the standard holds every time, because this audience notices when it slips.`,
   services: [
     "Multi-camera 4K video edit",
     "Full episode audio edit",
     "Episode artwork",
     "Episode description writing",
+    "Short-form clips for social",
     "Distribution across platforms",
   ],
-  // TK: outcome — episode count, downloads, or any engagement figure VERMEG
-  // shared. Deliberately absent rather than estimated. The show is no longer
-  // publicly listed, so nothing could be counted independently.
-  links: [],
-  // TK: cover art. The show's artwork is on Buzzsprout's storage, but every
-  // other case study uses artwork supplied by James rather than hotlinked or
-  // re-hosted from a third party, so this follows that.
-  themeColor: "#0B3B5C", // conservative navy; TK: resample once real cover art is added
+  // TK: outcome — a total episode count, downloads, or any engagement figure
+  // VERMEG shared. Deliberately absent rather than estimated. The audio feed no
+  // longer lists episodes, so nothing could be counted independently.
+  links: [
+    {
+      label: "YouTube",
+      url: "https://www.youtube.com/watch?v=wOkCceIa1aU",
+    },
+  ],
+  logo: "/images/clients/fintalk-vermeg.webp", // real show artwork, from the show's own feed
+  logoAlt: "FinTalk by VERMEG cover art",
+  themeColor: "#9A2530", // sampled from the cover art's brand red
   featured: false,
   category: "flagship",
 };

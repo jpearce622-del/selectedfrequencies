@@ -18,6 +18,7 @@ export const shows: Show[] = [
   { name: "Outthinkers (Kaihan Krippendorff)", artwork: "/images/clients/outthinkers.jpeg", caseStudySlug: "outthinkers" },
   { name: "Strategy at Scale", artwork: "/images/clients/strategy-at-scale.jpeg", caseStudySlug: "strategy-at-scale" },
   { name: "The Chief Strategy Officer Podcast", artwork: "/images/clients/chief-strategy-officer-podcast.jpeg", caseStudySlug: "chief-strategy-officer-podcast" },
+  { name: "FinTalk by VERMEG", artwork: "/images/clients/fintalk-vermeg.webp", caseStudySlug: "fintalk-vermeg" },
   { name: "Martin Garrix", artwork: "/images/clients/martin-garrix.png" },
   { name: "Complete Human", artwork: "/images/clients/complete-human.png" },
   { name: "Tomorrowland", artwork: "/images/clients/tomorrowland-1.png" },

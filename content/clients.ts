@@ -86,8 +86,7 @@ export const clients: ClientRosterEntry[] = [
     clientName: "VERMEG",
     showName: "FinTalk by VERMEG",
     hostName: "Jawad Akhtar",
-    // TK: cover art. Renders as a text roster card until it exists, which is
-    // the intended fallback rather than a broken image.
+    logo: "/images/clients/fintalk-vermeg.webp",
     logoAlt: "FinTalk by VERMEG cover art — fintech and RegTech podcast production",
     hasCaseStudy: true,
   },
