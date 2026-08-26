@@ -107,6 +107,33 @@ export const rollingTwelveMonthEpisodes = 190;
  */
 export const assembleYouStart = "2022-11-21";
 
+/**
+ * 2026 delivery volume. James's own figure, and the one number on the site
+ * that a prospect CANNOT fully verify from public feeds. That is a
+ * deliberate exception, so the reasoning is recorded here.
+ *
+ * Public floor counted 26 Aug 2026 across every feed we can find: Genetics
+ * 33, The Assembly 33, Bitcoin Collective 18, Outthinkers 17, Bitcoin and
+ * the Long Game 9, Career Change Diaries 6, Chana Mason 5, CSO 5,
+ * Possibility in the Universe 4, Strategy at Scale 3 = 133. That counts
+ * whole feeds even where James produced only part of them, so it is
+ * generous rather than conservative.
+ *
+ * The gap to 200 is Assemble You's paywalled standalone series and
+ * white-label work, neither of which appears in a public feed by design.
+ * The claim is therefore consistent with the evidence rather than provable
+ * by it, which is why the on-page wording says "including private and
+ * paywalled series": it explains the shortfall before a sceptic finds it,
+ * and turns invisible work into a signal of scale rather than a hole.
+ *
+ * If this is ever challenged, the answer is an invoice count, not a feed.
+ */
+export const episodes2026 = {
+  claim: "200+",
+  publicFloor: 133,
+  countedOn: "2026-08-26",
+} as const;
+
 export const flagshipRetention = {
   show: "The Genetics Podcast",
   joinedAtEpisode: 65,

@@ -1,4 +1,4 @@
-import { continuityFacts } from "@/data/continuity";
+import { continuityFacts, episodes2026 } from "@/data/continuity";
 import { Container } from "@/components/ui/Container";
 
 /**
@@ -31,6 +31,22 @@ export function ProofStrip() {
             </div>
           ))}
         </dl>
+
+        {/* Volume, under the retention cells rather than in them: the strip
+            argues that shows stay, and this argues that there are a lot of
+            them. "Including private and paywalled series" is doing real work
+            — public feeds only account for 133 of these, and naming why the
+            rest are invisible is better than leaving a prospect to find the
+            gap and draw their own conclusion. */}
+        <p className="mt-7 border-t border-border pt-5 text-xs leading-5 text-muted sm:text-sm">
+          {/* Comma inside the span: JSX preserves the newline between a
+              closing tag and following punctuation as a space, which renders
+              as "2026 , including". */}
+          <span className="font-medium text-foreground">
+            {episodes2026.claim} episodes produced so far in 2026,
+          </span>{" "}
+          including private and paywalled series.
+        </p>
       </Container>
     </section>
   );
