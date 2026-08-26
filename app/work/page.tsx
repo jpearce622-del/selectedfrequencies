@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/Section";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Reveal } from "@/components/ui/Reveal";
 import { clients } from "@/content/clients";
+import { getCaseStudyBySlug } from "@/lib/case-studies";
 
 export const metadata: Metadata = buildMetadata({
   title: "Podcast Production Case Studies",
@@ -83,6 +84,16 @@ export default function WorkIndexPage() {
                     <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
                       {client.clientName}
                     </p>
+                    {/* Takeover tag on the index, not just the case study.
+                        Someone whose editor has gone quiet is scanning for
+                        proof that moving producer works, and this is the
+                        subset that proves it — making them open each page to
+                        find out wastes the signal. */}
+                    {getCaseStudyBySlug(client.slug)?.continuity?.takeover && (
+                      <span className="mt-2 inline-block rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                        Taken over mid-run
+                      </span>
+                    )}
                     <h2 className="font-display mt-2 text-xl font-semibold tracking-tight transition-colors group-hover:text-accent sm:text-2xl">
                       {client.showName}
                     </h2>

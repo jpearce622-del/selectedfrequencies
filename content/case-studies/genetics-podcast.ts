@@ -24,6 +24,18 @@ export const geneticsPodcast: CaseStudy = {
   logo: "/images/clients/genetics-podcast-cover.jpeg", // real show artwork
   logoAlt: "The Genetics Podcast cover art",
   themeColor: "#E85A42", // sampled from the show's coral-red cover art
+  // Verified against the live feed 26 Aug 2026. Episode 65 ("EP 65: Dr
+  // Patrick Short guest features on The G Word") published 30 Jun 2021;
+  // 189 episodes from that point to the most recent on 20 Aug 2026.
+  continuity: {
+    takeover: true,
+    joined: "Episode 65, June 2021",
+    cadence: "Fortnightly",
+    episodesDelivered: 189,
+    duration: "5 years",
+    stillRunning: true,
+    note: "The longest-running show on the books, and the clearest evidence on this site: the feed shows an unbroken run from episode 65 to now.",
+  },
   featured: true,
   category: "flagship",
 };

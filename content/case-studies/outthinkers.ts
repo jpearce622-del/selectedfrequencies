@@ -81,6 +81,18 @@ Video changed the shape of the work most. An audio edit produces one asset. A vi
   logo: "/images/clients/outthinkers.jpeg", // real show artwork
   logoAlt: "Outthinkers cover art",
   themeColor: "#2E8FA6", // sampled from the show's teal accent
+  // Takeover: the show began in April 2021 and James came in from January
+  // 2023, which the feed dates to the 20 Jan 2023 episode. 102 episodes
+  // from then to 25 Aug 2026.
+  continuity: {
+    takeover: true,
+    joined: "January 2023",
+    cadence: "Fortnightly",
+    episodesDelivered: 102,
+    duration: "3 years",
+    stillRunning: true,
+    note: "Brought in as an editor and now responsible for all post-production across the network's shows, which is the scope growth the rest of this site argues for.",
+  },
   featured: true,
   category: "flagship",
 };

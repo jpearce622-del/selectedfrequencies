@@ -33,6 +33,44 @@ export interface CaseStudyVideo {
   sourceLabel?: string;
 }
 
+/**
+ * Continuity record for a show. This is the block the whole site's
+ * positioning rests on, so the rule is strict: every field must be something
+ * James can evidence, and `stillRunning` must be re-checked against the feed
+ * before it is claimed.
+ *
+ * Optional as a whole. A case study without one renders exactly as before,
+ * which is deliberate — a thin "Still running" section invented to fill the
+ * template would undermine the three real ones.
+ */
+export interface CaseStudyContinuity {
+  /**
+   * True when the show was already running and James took it over. False
+   * when he was there from (or before) episode one.
+   *
+   * Not a cosmetic distinction: a takeover means the host had a producer,
+   * chose to move, and then chose not to move again. That is the strongest
+   * form of the retention claim and it earns a visible tag.
+   */
+  takeover: boolean;
+  /** e.g. "Episode 65, June 2021" or "From launch, April 2023". */
+  joined: string;
+  /** e.g. "Fortnightly". Present tense — what it does now. */
+  cadence: string;
+  /** Episodes delivered by Selected Frequencies. Feed-countable. */
+  episodesDelivered?: number;
+  /** e.g. "5 years". Shown alongside the episode count. */
+  duration: string;
+  /**
+   * Whether the show is still publishing. False is allowed and is sometimes
+   * the honest answer (a client ending a show is normal); it simply drops
+   * the "still running" framing rather than pretending.
+   */
+  stillRunning: boolean;
+  /** One line for the "Still running" section. */
+  note?: string;
+}
+
 export interface CaseStudy {
   /** URL slug, e.g. "genetics-podcast" -> /work/genetics-podcast */
   slug: string;
@@ -82,6 +120,11 @@ export interface CaseStudy {
    *  of the case study hero's gradient (fades to brand navy), Spotify
    *  show-page style. Falls back to plain navy if omitted. */
   themeColor?: string;
+  /**
+   * Continuity record. Drives the "taken over mid-run" tag and the "Still
+   * running" section, which the case studies previously had nowhere.
+   */
+  continuity?: CaseStudyContinuity;
   /** Show in home page teasers + logo strip */
   featured: boolean;
   category: "flagship" | "archive";

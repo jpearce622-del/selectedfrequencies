@@ -163,6 +163,33 @@ export default async function CaseStudyPage({
             </p>
           </Reveal>
 
+          {/* Continuity, in the hero rather than further down. How long the
+              show has been here is the thing this site sells, so it sits
+              beside the show name instead of waiting until someone scrolls.
+              The takeover tag is separated because it is the strongest of
+              the three: a host who already moved producer once and then
+              stopped moving is better evidence than duration alone. */}
+          {study.continuity && (
+            <Reveal delay={240} className="mt-6 flex flex-wrap items-center gap-2">
+              {study.continuity.takeover && (
+                <span className="rounded-full bg-amber/20 px-3 py-1 text-xs font-semibold text-amber ring-1 ring-inset ring-amber/30">
+                  Taken over mid-run
+                </span>
+              )}
+              <span className="rounded-full bg-background/10 px-3 py-1 text-xs font-medium text-background/80">
+                {study.continuity.cadence}
+              </span>
+              <span className="rounded-full bg-background/10 px-3 py-1 text-xs font-medium text-background/80">
+                {study.continuity.joined}
+              </span>
+              {study.continuity.stillRunning && (
+                <span className="rounded-full bg-background/10 px-3 py-1 text-xs font-medium text-background/80">
+                  Still running
+                </span>
+              )}
+            </Reveal>
+          )}
+
           {study.links.length > 0 && (
             <Reveal delay={260} className="mt-8 flex flex-wrap gap-3">
               {study.links.map((link) => (
@@ -324,6 +351,53 @@ export default async function CaseStudyPage({
           )}
         </div>
       </Section>
+      )}
+
+      {/* The section the case studies never had. Everything above says what
+          the work is; this says that it did not stop. On a site arguing that
+          shows stay, that is the closing argument, so it gets its own block
+          rather than a line in a paragraph. */}
+      {study.continuity && (
+        <Section className="border-t border-border">
+          <Reveal>
+            <h2 className="font-display text-2xl font-semibold tracking-tight">
+              {study.continuity.stillRunning ? "Still running" : "Where it ended"}
+            </h2>
+            <dl className="mt-6 grid max-w-3xl gap-x-8 gap-y-6 sm:grid-cols-3">
+              <div>
+                <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                  Started
+                </dt>
+                <dd className="font-display mt-1.5 text-lg font-semibold tracking-tight">
+                  {study.continuity.joined}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                  With us
+                </dt>
+                <dd className="font-display mt-1.5 text-lg font-semibold tracking-tight">
+                  {study.continuity.duration}
+                </dd>
+              </div>
+              {study.continuity.episodesDelivered !== undefined && (
+                <div>
+                  <dt className="text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground">
+                    Episodes delivered
+                  </dt>
+                  <dd className="font-display mt-1.5 text-lg font-semibold tabular-nums tracking-tight">
+                    {study.continuity.episodesDelivered}
+                  </dd>
+                </div>
+              )}
+            </dl>
+            {study.continuity.note && (
+              <p className="mt-6 max-w-3xl text-base leading-7 text-muted">
+                {study.continuity.note}
+              </p>
+            )}
+          </Reveal>
+        </Section>
       )}
 
       {showTestimonial && study.testimonial && (

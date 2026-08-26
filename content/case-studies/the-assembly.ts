@@ -32,6 +32,19 @@ Keeping that identical week after week is more work than setting it up once. Lev
   logo: "/images/clients/the-assembly.jpeg", // real show artwork
   logoAlt: "The Assembly cover art",
   themeColor: "#1FCB82", // sampled from the show's mint-green cover art
+  // Not a takeover. James's records put the Assemble You relationship at
+  // 21 Nov 2022, five months before The Assembly's first episode on
+  // 13 Apr 2023, so he was there from the start. 122 episodes to 24 Aug
+  // 2026, which the feed puts at roughly three a month rather than weekly.
+  continuity: {
+    takeover: false,
+    joined: "From launch, April 2023",
+    cadence: "Around three episodes a month",
+    episodesDelivered: 122,
+    duration: "Client since November 2022",
+    stillRunning: true,
+    note: "The longest client relationship here, and the one that has widened most: alongside the show, Assemble You commission standalone paywalled series.",
+  },
   featured: true,
   category: "flagship",
 };
