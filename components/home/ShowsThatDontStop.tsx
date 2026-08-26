@@ -26,28 +26,24 @@ export function ShowsThatDontStop() {
             <p>
               On a long-running show the job isn&apos;t one brilliant episode.
               It&apos;s episode 200 sounding like episode 1 without the host
-              having to think about it. Same voice, same standard, same day,
-              for years.
+              having to think about it.
             </p>
-            {/* Was "every show I work on was already running when I took it
-                over". That overclaimed. James started with Assemble You in
-                November 2022 and The Assembly didn't launch until April
-                2023, so he was there before episode one — a launch, not a
-                takeover. Same for Bitcoin and the Long Game, where he has
-                done 8 of its 9 episodes.
-
-                The mix is the better claim anyway. "Every show was a
-                takeover" is one sentence away from being disproved by a
-                prospect who checks a launch date; "some inherited, some from
-                scratch, all still here" survives the check and says more. */}
+            {/* Scope growth, not just duration. This is the correction that
+                matters: the standalone series and one-off specials are not
+                scattered freelance jobs, they are the SAME long-standing
+                clients handing over more. A client who keeps you for years
+                is good evidence; a client who keeps widening what they trust
+                you with is better, because renewal can be inertia and
+                expansion can't. */}
             <p>
-              Some of these shows I took over mid-run, one of them at episode
-              65. Others I helped start. Either way they&apos;re all still
-              here, and nobody moves producer twice for fun.
+              Some of these shows I took over mid-run, one at episode 65.
+              Others I helped start. They&apos;re all still here, and most
+              have handed me more as they went: editing first, then show
+              notes, thumbnails, clips, whole standalone series.
             </p>
             <p>
-              That&apos;s the whole offer. Not a service list, a show that
-              keeps going.
+              That&apos;s the offer. Not a service list, a show that keeps
+              going.
             </p>
           </div>
         </Reveal>

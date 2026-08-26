@@ -48,19 +48,19 @@ export const continuityFacts: ContinuityFact[] = [
     value: "189",
     label: "Episodes delivered for it since, still running fortnightly",
   },
+  // The two cells below carry the scope-growth argument rather than raw
+  // duration. Both clients started narrow and widened, which is stronger
+  // evidence than length alone: staying can be inertia, handing over more
+  // cannot.
   {
-    // Replaces an earlier cell that read "122 episodes for The Assembly,
-    // since it launched in 2023". That was wrong once James confirmed every
-    // show was a takeover: if he joined The Assembly after its April 2023
-    // launch he did not deliver all 122, and the feed cannot show where he
-    // came in. This figure is countable from the feeds instead.
-    value: "190",
+    value: "Since Nov 2022",
     label:
-      "Episodes delivered in the last 12 months, across the shows named on this site",
+      "With Assemble You, across their show and their standalone paywalled series",
   },
   {
     value: "Since 2023",
-    label: "With Outthinker Network, now running all their post-production",
+    label:
+      "With Outthinker Network, editing at first, now all their post-production",
   },
 ];
 
@@ -87,6 +87,13 @@ export const continuityFacts: ContinuityFact[] = [
  * Goes stale slowly. Re-count before quoting it in a new year.
  */
 export const rollingTwelveMonthEpisodes = 190;
+// NOT in the proof strip. It was, briefly. Removed once James explained the
+// standalone series come from Assemble You rather than from scattered
+// one-off clients: that makes scope growth an available argument, and a
+// client widening what they hand over beats a raw episode count on a page
+// about continuity. The figure is still accurate and still useful elsewhere
+// (an about page, a service page) where volume rather than loyalty is the
+// question being answered.
 
 /**
  * Assemble You. James's own record: the relationship began Monday 21 Nov
