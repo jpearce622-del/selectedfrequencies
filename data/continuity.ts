@@ -49,8 +49,14 @@ export const continuityFacts: ContinuityFact[] = [
     label: "Episodes delivered for it since, still running fortnightly",
   },
   {
-    value: "122",
-    label: "Episodes for The Assembly, since it launched in 2023",
+    // Replaces an earlier cell that read "122 episodes for The Assembly,
+    // since it launched in 2023". That was wrong once James confirmed every
+    // show was a takeover: if he joined The Assembly after its April 2023
+    // launch he did not deliver all 122, and the feed cannot show where he
+    // came in. This figure is countable from the feeds instead.
+    value: "190",
+    label:
+      "Episodes delivered in the last 12 months, across the shows named on this site",
   },
   {
     value: "Since 2023",
@@ -66,6 +72,22 @@ export const continuityFacts: ContinuityFact[] = [
  * guest features on The G Word", published 30 June 2021. 189 episodes from
  * that point to 20 Aug 2026, which is the most recent at time of writing.
  */
+/**
+ * Rolling 12-month delivery volume. Counted from the live feeds of the seven
+ * named shows on 26 Aug 2026: Genetics 52, The Assembly 51, Bitcoin
+ * Collective 29, Outthinkers 27, Career Change Diaries 11, CSO 10, Strategy
+ * at Scale 10.
+ *
+ * This is a FLOOR, not a total. James estimates 200-300 across everything
+ * including white-label and unnamed work, and that is entirely plausible
+ * against these figures — but an estimate cannot go on a site whose whole
+ * argument is "check the feed yourself". A number a sceptic can count is
+ * worth more than a bigger one they have to take on trust.
+ *
+ * Goes stale slowly. Re-count before quoting it in a new year.
+ */
+export const rollingTwelveMonthEpisodes = 190;
+
 export const flagshipRetention = {
   show: "The Genetics Podcast",
   joinedAtEpisode: 65,

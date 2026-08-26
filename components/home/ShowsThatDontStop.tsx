@@ -29,6 +29,17 @@ export function ShowsThatDontStop() {
               having to think about it. Same voice, same standard, same day,
               for years.
             </p>
+            {/* The takeover point. James confirmed every show he has taken
+                on was already running when he got it, and all of them are
+                still with him. That is the strongest form of the retention
+                claim, because a show that was already someone else's is one
+                the host actively chose to move and then chose not to move
+                again. */}
+            <p>
+              Every show I work on was already running when I took it over,
+              and they&apos;re all still here. Nobody switches producer twice
+              for fun.
+            </p>
             <p>
               That&apos;s the whole offer. Not a service list, a show that
               keeps going.
