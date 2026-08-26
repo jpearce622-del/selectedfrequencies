@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildMetadata } from "@/lib/metadata";
 import { Container } from "@/components/ui/Container";
-import { Section } from "@/components/ui/Section";
 import { Button } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { LogoMarquee } from "@/components/case-studies/LogoStrip";
@@ -10,6 +9,8 @@ import { CompanyLogos } from "@/components/home/CompanyLogos";
 import { CaseStudyCard } from "@/components/case-studies/CaseStudyCard";
 import { MicScrollStory } from "@/components/home/MicScrollStory";
 import { HeroOverlay } from "@/components/home/HeroOverlay";
+import { ProofStrip } from "@/components/home/ProofStrip";
+import { ShowsThatDontStop } from "@/components/home/ShowsThatDontStop";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
@@ -54,13 +55,6 @@ const whatIDo = [
   },
 ];
 
-const stats = [
-  // Founded 2019; James has worked in professional audio since 2017 — the
-  // "8 yrs" figure refers to the audio career, so label it accordingly.
-  { value: "8 yrs", label: "In professional audio since 2017" },
-  { value: "End-to-end", label: "From raw audio to promoted episode" },
-  { value: "Any genre", label: "Bitcoin & finance a speciality" },
-];
 
 export default function Home() {
   const featuredCaseStudies = getFeaturedCaseStudies();
@@ -74,6 +68,9 @@ export default function Home() {
           visible without scrolling. ---------- */}
       <MicScrollStory hero={<HeroOverlay />} />
 
+      {/* ---------- Retention proof, directly under the hero ---------- */}
+      <ProofStrip />
+
       {/* ---------- Client trust strip: brand logos, immediately below the
           hero. Greyscale → colour on hover, wraps on mobile. ---------- */}
       <section className="border-t border-border py-10 sm:py-12">
@@ -84,6 +81,11 @@ export default function Home() {
           <CompanyLogos />
         </Container>
       </section>
+
+      {/* ---------- The positioning argument. Sits above services on
+          purpose: how long a show stays matters more than the
+          deliverable list, which any freelancer could also claim. ---------- */}
+      <ShowsThatDontStop />
 
       {/* ---------- Process (light-grey) ---------- */}
       <section className="bg-fog">
@@ -117,20 +119,6 @@ export default function Home() {
           </div>
         </Container>
       </section>
-
-      {/* ---------- Credibility stats ---------- */}
-      <Section>
-        <div className="grid gap-12 text-center sm:grid-cols-3">
-          {stats.map((stat, i) => (
-            <Reveal key={stat.label} delay={i * 90}>
-              <p className="font-display text-5xl font-semibold tracking-tight sm:text-6xl">
-                {stat.value}
-              </p>
-              <p className="mt-3 text-base text-muted">{stat.label}</p>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
 
       {/* ---------- Shows we have worked on — artwork marquee, each cover links
           to its case study (kept here for the case-study links it adds) ---------- */}

@@ -92,9 +92,14 @@ export function HeroOverlay() {
             back.
           </h1>
 
+          {/* Continuity, not a service list. The old subline ("thousands of
+              episodes, millions of listens") was both unverifiable and a
+              claim any freelancer could make. This one names a show, an
+              episode number and a date, so a prospect can check it in the
+              feed — which is the entire point of leading with retention. */}
           <p className="mt-3 max-w-[55ch] text-sm leading-6 text-white/85 sm:mt-5 sm:text-lg sm:leading-8">
-            Full-service editing, show notes, and distribution for any show.
-            Eight years, thousands of episodes, millions of listens.
+            I took over The Genetics Podcast at episode 65. That was June
+            2021, and I&apos;m still on it 189 episodes later.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3 sm:mt-8">
