@@ -88,6 +88,18 @@ export const continuityFacts: ContinuityFact[] = [
  */
 export const rollingTwelveMonthEpisodes = 190;
 
+/**
+ * Assemble You. James's own record: the relationship began Monday 21 Nov
+ * 2022, which is five months BEFORE The Assembly's first episode (13 Apr
+ * 2023). So he was there from the show's launch rather than taking it over,
+ * and the earlier months were their standalone series work.
+ *
+ * Not derivable from any feed — the feed only shows when the show started,
+ * not when he did. Recorded here because it is the longest client
+ * relationship on the books and it is his to attest to.
+ */
+export const assembleYouStart = "2022-11-21";
+
 export const flagshipRetention = {
   show: "The Genetics Podcast",
   joinedAtEpisode: 65,

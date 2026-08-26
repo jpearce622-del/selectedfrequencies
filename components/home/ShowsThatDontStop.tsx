@@ -29,16 +29,21 @@ export function ShowsThatDontStop() {
               having to think about it. Same voice, same standard, same day,
               for years.
             </p>
-            {/* The takeover point. James confirmed every show he has taken
-                on was already running when he got it, and all of them are
-                still with him. That is the strongest form of the retention
-                claim, because a show that was already someone else's is one
-                the host actively chose to move and then chose not to move
-                again. */}
+            {/* Was "every show I work on was already running when I took it
+                over". That overclaimed. James started with Assemble You in
+                November 2022 and The Assembly didn't launch until April
+                2023, so he was there before episode one — a launch, not a
+                takeover. Same for Bitcoin and the Long Game, where he has
+                done 8 of its 9 episodes.
+
+                The mix is the better claim anyway. "Every show was a
+                takeover" is one sentence away from being disproved by a
+                prospect who checks a launch date; "some inherited, some from
+                scratch, all still here" survives the check and says more. */}
             <p>
-              Every show I work on was already running when I took it over,
-              and they&apos;re all still here. Nobody switches producer twice
-              for fun.
+              Some of these shows I took over mid-run, one of them at episode
+              65. Others I helped start. Either way they&apos;re all still
+              here, and nobody moves producer twice for fun.
             </p>
             <p>
               That&apos;s the whole offer. Not a service list, a show that
