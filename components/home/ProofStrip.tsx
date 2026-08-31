@@ -1,47 +1,34 @@
-import { continuityFacts, episodes2026 } from "@/data/continuity";
+import { episodes2026 } from "@/data/continuity";
 import { Container } from "@/components/ui/Container";
 
 /**
- * Retention proof, directly under the hero.
+ * A single quiet line under the hero.
  *
- * Deliberately undesigned: no icons, no counting-up animation, no Reveal
- * wrapper. A number that animates reads as a marketing device, and the claim
- * here only works if it reads as a fact someone wrote down. The restraint is
- * the argument.
+ * This used to be a four-cell grid of per-client retention facts (5 years on
+ * The Genetics Podcast, 189 episodes, Assemble You since Nov 2022, Outthinker
+ * Network since 2023). It was too much specific detail about named clients
+ * for a homepage: a visitor who has just arrived does not yet care which
+ * episode of which show was taken over in which month, and four large figures
+ * demanded that they did.
  *
- * Server-rendered with no client JS, so it's in the initial HTML and costs
- * nothing on Core Web Vitals.
+ * All of it still exists, in the place where someone actively looking for it
+ * will find it: the `continuity` block on each case study renders the same
+ * facts as hero chips and a "Still running" section. Detail belongs where the
+ * reader has already chosen the subject.
+ *
+ * What stays here is the one non-client-specific claim: total volume. It says
+ * this is a working business without naming anybody, which is the right
+ * amount of assertion for a homepage.
+ *
+ * `continuityFacts` in data/continuity.ts is deliberately kept even though
+ * nothing renders it today. It is the audited record of what was verified,
+ * and it is the source to reach for if a proof strip is ever wanted again.
  */
 export function ProofStrip() {
   return (
-    <section
-      aria-label="Client retention"
-      className="border-b border-border bg-fog"
-    >
-      <Container className="py-8 sm:py-10">
-        <dl className="grid grid-cols-2 gap-x-6 gap-y-7 lg:grid-cols-4">
-          {continuityFacts.map((fact) => (
-            <div key={fact.label}>
-              <dt className="font-display text-2xl font-semibold tracking-tight tabular-nums sm:text-3xl">
-                {fact.value}
-              </dt>
-              <dd className="mt-1.5 text-xs leading-5 text-muted sm:text-sm sm:leading-6">
-                {fact.label}
-              </dd>
-            </div>
-          ))}
-        </dl>
-
-        {/* Volume, under the retention cells rather than in them: the strip
-            argues that shows stay, and this argues that there are a lot of
-            them. "Including private and paywalled series" is doing real work
-            — public feeds only account for 133 of these, and naming why the
-            rest are invisible is better than leaving a prospect to find the
-            gap and draw their own conclusion. */}
-        <p className="mt-7 border-t border-border pt-5 text-xs leading-5 text-muted sm:text-sm">
-          {/* Comma inside the span: JSX preserves the newline between a
-              closing tag and following punctuation as a space, which renders
-              as "2026 , including". */}
+    <section aria-label="Production volume" className="border-b border-border bg-fog">
+      <Container className="py-5 sm:py-6">
+        <p className="text-xs leading-5 text-muted sm:text-sm">
           <span className="font-medium text-foreground">
             {episodes2026.claim} episodes produced so far in 2026,
           </span>{" "}
