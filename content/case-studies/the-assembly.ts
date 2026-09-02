@@ -34,12 +34,19 @@ Keeping that identical week after week is more work than setting it up once. Lev
   themeColor: "#1FCB82", // sampled from the show's mint-green cover art
   // Not a takeover. James's records put the Assemble You relationship at
   // 21 Nov 2022, five months before The Assembly's first episode on
-  // 13 Apr 2023, so he was there from the start. 122 episodes to 24 Aug
-  // 2026, which the feed puts at roughly three a month rather than weekly.
+  // 13 Apr 2023, so he was there from the start.
+  //
+  // Cadence is "Weekly" on James's instruction, which is his to state. Note
+  // it does not match the public feed: 122 episodes between Apr 2023 and
+  // Aug 2026 works out at roughly three a month, and that was the figure
+  // here before. The likeliest explanation is that the public feed doesn't
+  // carry everything he delivers for Assemble You, since their standalone
+  // paywalled series sit behind a wall by design. Worth knowing that a
+  // prospect counting the public feed will arrive at a lower number.
   continuity: {
     takeover: false,
     joined: "From launch, April 2023",
-    cadence: "Around three episodes a month",
+    cadence: "Weekly",
     episodesDelivered: 122,
     duration: "Client since November 2022",
     stillRunning: true,
