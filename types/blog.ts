@@ -102,6 +102,13 @@ export interface BlogPost {
   /** Shorter title for the <title> tag (≤38 chars so it fits with the
    *  " | Selected Frequencies" suffix under 60). Falls back to `title`. */
   seoTitle?: string;
+  /**
+   * Render `seoTitle` without the "| Selected Frequencies" suffix. For pages
+   * ranking on queries where the brand adds nothing to the click (a product
+   * review, a tool), the suffix spends 23 of the ~60 visible characters on
+   * a name the searcher doesn't recognise. Opt in per post.
+   */
+  seoTitleAbsolute?: boolean;
   metaDescription: string;
   publishedAt: string; // ISO date, e.g. "2026-01-01"
   updatedAt?: string; // ISO date

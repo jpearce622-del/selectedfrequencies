@@ -17,12 +17,17 @@ import {
   sources,
 } from "@/data/sponsorship-benchmarks";
 
-const PAGE_TITLE = "Podcast Sponsorship Calculator";
+// CTR fix. Position 8.6 on 59 impressions with ZERO clicks. Every other
+// result on that page is also called some variant of "podcast sponsorship
+// calculator", so the title has to carry the outcome rather than the
+// category. Keyword stays first for relevance; the promise follows.
+const PAGE_TITLE = "Podcast Sponsorship Calculator: What Your Show Could Earn";
 const PAGE_DESCRIPTION =
   "Free calculator: work out what your podcast could earn from sponsorship. Enter your downloads and get CPM-based rates for pre-roll, mid-roll, and post-roll ads.";
 
 export const metadata: Metadata = buildMetadata({
   title: PAGE_TITLE,
+  absoluteTitle: true,
   description: PAGE_DESCRIPTION,
   path: "/podcast-sponsorship-calculator",
 });

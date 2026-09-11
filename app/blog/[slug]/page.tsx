@@ -47,6 +47,7 @@ export async function generateMetadata({
     image: shareImage,
     imageAlt: shareAlt,
     type: "article",
+    absoluteTitle: post.seoTitleAbsolute,
   });
 
   // Layer the article-specific timestamps on top of the shared meta, keeping

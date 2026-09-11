@@ -51,6 +51,7 @@ export function buildMetadata({
   image,
   imageAlt,
   type = "website",
+  absoluteTitle = false,
 }: {
   title: string;
   description: string;
@@ -59,6 +60,16 @@ export function buildMetadata({
   image?: string;
   imageAlt?: string;
   type?: "website" | "article";
+  /**
+   * Bypass the "| Selected Frequencies" template and use `title` verbatim.
+   *
+   * The suffix costs 23 of the ~60 characters Google shows, which is fine
+   * on a services page where the brand is the point, and a dead weight on a
+   * product review or a tool where the searcher has never heard of us. Use
+   * it only on pages that rank for a query where the brand adds nothing to
+   * the click decision.
+   */
+  absoluteTitle?: boolean;
 }): Metadata {
   const url = `${siteConfig.url}${path}`;
   const ogImage = absoluteUrl(image ?? siteConfig.ogImage);
@@ -66,8 +77,9 @@ export function buildMetadata({
 
   return {
     // Plain string: the root layout's title.template appends "| Selected
-    // Frequencies" automatically — don't duplicate it here.
-    title,
+    // Frequencies" automatically — don't duplicate it here. `absolute`
+    // opts a page out of that template entirely.
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     alternates: { canonical: url },
     openGraph: {

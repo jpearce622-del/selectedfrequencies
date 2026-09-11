@@ -42,7 +42,15 @@ export const athM30xReview: BlogPost = {
   slug: "audio-technica-ath-m30x-review",
   title:
     "Audio-Technica ATH-M30x review: the budget pair I actually recommend",
-  seoTitle: "Audio-Technica ATH-M30x Review",
+  // CTR fix. Position 9.4 on 116 impressions at 0.9% CTR: the searcher is
+  // choosing between RTINGS, SoundGuys and us, and "Audio-Technica ATH-M30x
+  // Review | Selected Frequencies" gives them no reason to pick the one
+  // whose name they don't know. Absolute title (no brand suffix) so the
+  // full width goes on the audience and the question a podcaster is
+  // actually asking. Deliberately no first-person hands-on claim in the
+  // title, since James hasn't confirmed personal use of this pair.
+  seoTitle: "ATH-M30x Review: Best Budget Headphones for Podcasting?",
+  seoTitleAbsolute: true,
   metaDescription:
     "An honest ATH-M30x review for podcasters. Around £60, closed-back, and flat enough to edit on — here's why these are the budget pair I actually recommend.",
   publishedAt: "2026-08-08",
