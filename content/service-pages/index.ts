@@ -14,6 +14,7 @@ import { podcastProductionForVcFirms } from "./podcast-production-for-vc-firms";
 import { biotechPodcastProduction } from "./biotech-podcast-production";
 import { podcastProductionForCoachesAndConsultants } from "./podcast-production-for-coaches-and-consultants";
 import { corporateInternalPodcastProduction } from "./corporate-internal-podcast-production";
+import { podcastProductionUk } from "./podcast-production-uk";
 
 /**
  * Commercial service landing pages under /services/[slug].
@@ -28,6 +29,9 @@ import { corporateInternalPodcastProduction } from "./corporate-internal-podcast
  * quietly competing with it in search.
  */
 export const servicePages: ServicePage[] = [
+  // Geographic. The one page with a published from-price, because its
+  // primary query is explicitly about cost.
+  podcastProductionUk,
   // Buyer-type pages
   outsourcedPodcastProduction,
   thoughtLeadershipPodcastProduction,
