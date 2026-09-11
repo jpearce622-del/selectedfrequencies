@@ -5,6 +5,8 @@ import { contentAlliesAlternative } from "./content-allies-alternative";
 import { fameAlternative } from "./fame-alternative";
 import { caspianStudiosAlternative } from "./caspian-studios-alternative";
 import { lowerStreetVsRise25 } from "./lower-street-vs-rise25";
+import { fameVsContentAllies } from "./fame-vs-content-allies";
+import { caspianStudiosVsLowerStreet } from "./caspian-studios-vs-lower-street";
 
 /**
  * Competitor comparison pages under /compare/[slug].
@@ -37,6 +39,9 @@ import { lowerStreetVsRise25 } from "./lower-street-vs-rise25";
  *     queries; the roundup owns the category query. Keep that split.
  */
 export const comparisonPages: ComparisonPage[] = [
+  // Head-to-head. Both sides of each pair re-verified on the date in the file.
+  fameVsContentAllies,
+  caspianStudiosVsLowerStreet,
   // Alternative pages — reader has one competitor on their shortlist
   lowerStreetAlternative,
   rise25Alternative,
