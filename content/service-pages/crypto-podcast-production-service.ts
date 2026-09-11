@@ -10,7 +10,7 @@ import type { ServicePage } from "@/types/service-page";
  * is accuracy.
  *
  * Evidence discipline — read before editing:
- *   - Proof is Bitcoin Collective (204 episodes since 2021, weekly without a
+ *   - Proof is Bitcoin Collective (228 episodes since 2021; James on the majority since 2022, with a
  *     gap, 4.8/5 on Apple) and Bitcoin and the Long Game. Both real, both
  *     with verified figures in their case study files.
  *   - Those are BITCOIN shows. They are not DeFi, NFT, L2 or broader web3
@@ -171,7 +171,7 @@ export const cryptoPodcastProductionService: ServicePage = {
       {
         question: "Can you keep a weekly show running through a volatile market?",
         answer:
-          "That is largely a scheduling design problem rather than a production one. Batching evergreen episodes ahead gives the feed a buffer to publish from when nobody has time to record — and busy markets are exactly when a show is most valuable and least likely to get made. The Bitcoin Collective has published weekly since 2021 without a gap.",
+          "That is largely a scheduling design problem rather than a production one. Batching evergreen episodes ahead gives the feed a buffer to publish from when nobody has time to record — and busy markets are exactly when a show is most valuable and least likely to get made. The Bitcoin Collective has published 228 episodes since 2021.",
       },
     ],
   },
@@ -179,7 +179,7 @@ export const cryptoPodcastProductionService: ServicePage = {
     heading: "Bitcoin shows we produce",
     caseStudySlugs: ["bitcoin-collective", "bitcoin-and-the-long-game"],
     intro:
-      "Both are Bitcoin shows rather than broader web3 work, which is the honest description. The Bitcoin Collective has run 204 episodes since 2021 — weekly, without a gap — and holds 4.8/5 on Apple Podcasts.",
+      "Both are Bitcoin shows rather than broader web3 work, which is the honest description. The Bitcoin Collective has run 228 episodes since 2021 and holds 4.8/5 on Apple Podcasts.",
   },
   pricing: {
     mode: "enquiry",

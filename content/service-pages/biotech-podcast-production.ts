@@ -13,7 +13,7 @@ import type { ServicePage } from "@/types/service-page";
  *
  * Evidence discipline — read before editing:
  *   - The Genetics Podcast is real and strong: Sano Genetics, Dr Patrick
- *     Short, 248 episodes, 880,000+ downloads across 40 countries, Google's
+ *     Short, 250+ episodes, 880,000+ downloads across 40 countries, Google's
  *     highest-ranked genetics podcast, guests from Cambridge researchers to
  *     biotech CEOs. All verified in its case study file.
  *   - It is the ONLY life sciences client. Do not pad this section with the
@@ -165,7 +165,7 @@ export const biotechPodcastProduction: ServicePage = {
       {
         question: "Can you handle a long-running catalogue consistently?",
         answer:
-          "That is much of what we do. The Genetics Podcast has run to 248 episodes, and the requirement on a catalogue that size is that episode 248 sits correctly next to episode 12 — same loudness, same structure, same standard — which is a spec-and-process question rather than a creative one.",
+          "That is much of what we do. The Genetics Podcast has run past 250 episodes, and the requirement on a catalogue that size is that episode 250 sits correctly next to episode 12 — same loudness, same structure, same standard — which is a spec-and-process question rather than a creative one.",
       },
     ],
   },
@@ -173,7 +173,7 @@ export const biotechPodcastProduction: ServicePage = {
     heading: "Life sciences work",
     caseStudySlugs: ["genetics-podcast"],
     intro:
-      "The Genetics Podcast, for genomics company Sano Genetics, hosted by Dr Patrick Short — 248 episodes, over 880,000 downloads across 40 countries, and the highest-ranked genetics podcast on Google, with guests ranging from Cambridge researchers to biotech CEOs. It is our only life sciences client, which is a more useful thing to know than a longer list would be.",
+      "The Genetics Podcast, for genomics company Sano Genetics, hosted by Dr Patrick Short — 250+ episodes, over 880,000 downloads across 40 countries, and the highest-ranked genetics podcast on Google, with guests ranging from Cambridge researchers to biotech CEOs. It is our only life sciences client, which is a more useful thing to know than a longer list would be.",
   },
   pricing: {
     mode: "enquiry",

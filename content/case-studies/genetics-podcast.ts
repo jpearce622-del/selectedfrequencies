@@ -13,10 +13,10 @@ export const geneticsPodcast: CaseStudy = {
   showName: "The Genetics Podcast",
   hostName: "Dr Patrick Short",
   oneLiner:
-    "Dr Patrick Short, CEO of Sano Genetics, has built Google's highest-ranked genetics podcast — 248 episodes and 880,000+ downloads across 40 countries, with guests ranging from Cambridge researchers to biotech CEOs. A show read by that audience can't afford an inconsistent edit.",
+    "Dr Patrick Short, CEO of Sano Genetics, has built Google's highest-ranked genetics podcast — 250+ episodes and 880,000+ downloads across 40 countries, with guests ranging from Cambridge researchers to biotech CEOs. A show read by that audience can't afford an inconsistent edit.",
   services: ["Full audio & video episode edit", "Short-form clips for social"],
   outcome:
-    "248 episodes and counting, 880,000+ downloads across 40 countries — the highest-ranked genetics podcast on Google, covering everything from gene therapy to AI-driven health data.",
+    "250+ episodes and counting, 880,000+ downloads across 40 countries — the highest-ranked genetics podcast on Google, covering everything from gene therapy to AI-driven health data.",
   links: [
     { label: "Spotify", url: "https://open.spotify.com/show/2VT2teij4xBhPMNDYoZ7Ur" },
     { label: "Apple Podcasts", url: "https://podcasts.apple.com/us/podcast/the-genetics-podcast/id1462418412" },
