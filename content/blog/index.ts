@@ -14,6 +14,7 @@ import { howToWritePodcastShowNotes } from "./how-to-write-podcast-show-notes";
 import { howToGetPodcastSponsors } from "./how-to-get-podcast-sponsors";
 import { monoprice110010Review } from "./monoprice-110010-review";
 import { podcastEditorGoneQuiet } from "./podcast-editor-gone-quiet";
+import { whenToStopEditingYourOwnPodcast } from "./when-to-stop-editing-your-own-podcast";
 import { bestHeadphonesForPodcasting } from "./best-headphones-for-podcasting";
 import { athM30xReview } from "./audio-technica-ath-m30x-review";
 import { sonyMdr7506Review } from "./sony-mdr-7506-review";
@@ -26,6 +27,7 @@ import { bestPodcastProductionCompaniesForB2b } from "./best-podcast-production-
 
 // Newest-first ordering is handled by getAllPosts() (sorts on publishedAt).
 export const posts: BlogPost[] = [
+  whenToStopEditingYourOwnPodcast,
   podcastEditorGoneQuiet,
   inHouseVsOutsourcedPodcastProduction,
   howMuchDoesPodcastProductionCostPerEpisode,
