@@ -1,4 +1,5 @@
 import type { CaseStudy } from "@/types/case-study";
+import { getTestimonial } from "@/data/testimonials";
 
 // Hosts, rebrand history, and platform links researched via public
 // web search (podcasts.apple.com / open.spotify.com /
@@ -43,6 +44,12 @@ Keeping that identical week after week is more work than setting it up once. Lev
   // carry everything he delivers for Assemble You, since their standalone
   // paywalled series sit behind a wall by design. Worth knowing that a
   // prospect counting the public feed will arrive at a lower number.
+  // Supplied by Adam Lacey, September 2026. Pulled from data/testimonials.ts
+  // so the wording here and on the homepage is one string.
+  testimonial: {
+    quote: getTestimonial("assemble-you")!.quote,
+    attribution: "Adam Lacey, Assemble You",
+  },
   continuity: {
     takeover: false,
     joined: "From launch, April 2023",

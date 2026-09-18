@@ -182,4 +182,11 @@ export interface ServicePage {
   formTag: string;
   /** Service schema: what this is called in structured data. */
   schemaServiceName: string;
+  /**
+   * Optional client quote, by id from data/testimonials.ts. Rendered as a
+   * speech bubble directly after the proof section, where a prospect has
+   * just seen the case studies and is deciding whether to believe them.
+   * Use only where the client quoted is the kind of buyer the page is for.
+   */
+  testimonialId?: string;
 }

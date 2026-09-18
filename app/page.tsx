@@ -11,6 +11,8 @@ import { MicScrollStory } from "@/components/home/MicScrollStory";
 import { HeroOverlay } from "@/components/home/HeroOverlay";
 import { ProofStrip } from "@/components/home/ProofStrip";
 import { ShowsThatDontStop } from "@/components/home/ShowsThatDontStop";
+import { TestimonialBubble } from "@/components/ui/TestimonialBubble";
+import { getTestimonial } from "@/data/testimonials";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
@@ -86,6 +88,15 @@ export default function Home() {
           purpose: how long a show stays matters more than the
           deliverable list, which any freelancer could also claim. ---------- */}
       <ShowsThatDontStop />
+
+      {/* The client saying the same thing the section above argues. "Part of
+          our weekly cadence and process" is the retention claim in a
+          customer's words, placed immediately after our own version of it. */}
+      <section className="border-t border-border bg-fog">
+        <Container className="py-14 sm:py-16">
+          <TestimonialBubble testimonial={getTestimonial("assemble-you")!} />
+        </Container>
+      </section>
 
       {/* ---------- Process (light-grey) ---------- */}
       <section className="bg-fog">

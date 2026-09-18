@@ -13,6 +13,8 @@ import {
 import { getCaseStudyBySlug } from "@/lib/case-studies";
 import { getPostBySlug } from "@/lib/blog";
 import { ServiceEnquiryForm } from "@/components/services/ServiceEnquiryForm";
+import { TestimonialBubble } from "@/components/ui/TestimonialBubble";
+import { getTestimonial } from "@/data/testimonials";
 import type { ServicePage, ServiceSectionId } from "@/types/service-page";
 
 /**
@@ -187,8 +189,11 @@ function Proof({ page }: { page: ServicePage }) {
   const studies = page.proof.caseStudySlugs
     .map((s) => getCaseStudyBySlug(s))
     .filter((s): s is NonNullable<typeof s> => Boolean(s));
+  const testimonial = page.testimonialId
+    ? getTestimonial(page.testimonialId)
+    : undefined;
 
-  if (studies.length === 0) return null;
+  if (studies.length === 0 && !testimonial) return null;
 
   return (
     <Section className="border-t border-border">
@@ -226,6 +231,13 @@ function Proof({ page }: { page: ServicePage }) {
           </Reveal>
         ))}
       </div>
+      {testimonial && (
+        <Reveal delay={120}>
+          <div className="mt-10">
+            <TestimonialBubble testimonial={testimonial} />
+          </div>
+        </Reveal>
+      )}
     </Section>
   );
 }

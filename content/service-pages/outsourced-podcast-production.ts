@@ -220,6 +220,7 @@ export const outsourcedPodcastProduction: ServicePage = {
     // brand show, so this reader may be on the wrong page.
     relatedServiceSlug: "thought-leadership-podcast-production",
   },
+  testimonialId: "assemble-you",
   formTag: "b2b-outsourced-production",
   schemaServiceName: "Outsourced podcast production for B2B companies",
 };
