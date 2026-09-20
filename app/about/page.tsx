@@ -24,7 +24,7 @@ export default function AboutPage() {
           <div className="grid gap-12 sm:grid-cols-[1fr_1.6fr] sm:items-center">
             <Reveal>
               <Image
-                src="/images/about/headshot.jpg"
+                src="/images/about/james-pearce-headshot.jpg"
                 alt="James Pearce, founder of Selected Frequencies"
                 width={720}
                 height={720}

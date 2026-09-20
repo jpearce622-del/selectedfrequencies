@@ -213,6 +213,7 @@ export const thoughtLeadershipPodcastProduction: ServicePage = {
     blogSlug: "podcast-audio-quality-guide",
     relatedServiceSlug: "outsourced-podcast-production",
   },
+  testimonialId: "tmp-podcast",
   formTag: "thought-leadership",
   schemaServiceName: "Podcast editing for thought leadership podcasts",
 };

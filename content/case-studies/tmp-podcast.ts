@@ -1,4 +1,5 @@
 import type { CaseStudy } from "@/types/case-study";
+import { getTestimonial } from "@/data/testimonials";
 
 // Show, host, and episode-count facts researched via public web search
 // (open.spotify.com / podcasts.apple.com / totalmentalperformance.com),
@@ -31,5 +32,10 @@ export const tmpPodcast: CaseStudy = {
   logoAlt: "TMP Podcast cover art",
   themeColor: "#C8102E",
   featured: false,
+  // Pulled from data/testimonials.ts so it's one string site-wide.
+  testimonial: {
+    quote: getTestimonial("tmp-podcast")!.quote,
+    attribution: "Kyran O'Neill, TMP Podcast",
+  },
   category: "archive",
 };

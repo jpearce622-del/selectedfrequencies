@@ -16,6 +16,6 @@ export const jamesPearce: Author = {
   name: "James Pearce",
   role: "Founder & Podcast Producer",
   bio: "I'm James — I founded Selected Frequencies and produce the shows we work on. Eight years in audio, from BBC Radio 1 mixes to thousands of podcast episodes, and I still edit every show myself.",
-  avatar: "/images/about/headshot.jpg",
+  avatar: "/images/about/james-pearce-headshot.jpg",
   avatarAlt: "James Pearce, founder and podcast producer at Selected Frequencies",
 };

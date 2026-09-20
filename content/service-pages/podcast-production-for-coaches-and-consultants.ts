@@ -244,6 +244,7 @@ export const podcastProductionForCoachesAndConsultants: ServicePage = {
     blogSlug: "why-isnt-my-podcast-growing",
     relatedServiceSlug: "monthly-podcast-editing-retainer",
   },
+  testimonialId: "tmp-podcast",
   formTag: "coaching-podcast-production",
   schemaServiceName: "Podcast production for coaches and consultants",
 };

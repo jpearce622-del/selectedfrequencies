@@ -94,7 +94,13 @@ export default function Home() {
           customer's words, placed immediately after our own version of it. */}
       <section className="border-t border-border bg-fog">
         <Container className="py-14 sm:py-16">
-          <TestimonialBubble testimonial={getTestimonial("assemble-you")!} />
+          {/* Two voices, deliberately different in register: Adam's is the
+              retention evidence, Kyran's is what the day-to-day is like.
+              Side by side on desktop, stacked on a phone. */}
+          <div className="grid gap-10 lg:grid-cols-2 lg:gap-12">
+            <TestimonialBubble testimonial={getTestimonial("assemble-you")!} />
+            <TestimonialBubble testimonial={getTestimonial("tmp-podcast")!} />
+          </div>
         </Container>
       </section>
 
