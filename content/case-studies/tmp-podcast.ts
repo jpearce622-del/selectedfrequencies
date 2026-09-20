@@ -35,7 +35,7 @@ export const tmpPodcast: CaseStudy = {
   // Pulled from data/testimonials.ts so it's one string site-wide.
   testimonial: {
     quote: getTestimonial("tmp-podcast")!.quote,
-    attribution: "Kyran O'Neill, TMP Podcast",
+    attribution: "Lola, Marketing Manager, Total Mental Performance",
   },
   category: "archive",
 };

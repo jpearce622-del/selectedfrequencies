@@ -40,13 +40,19 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "tmp-podcast",
-    // Supplied September 2026, "from TMP podcast". Verbatim. Attributed to
-    // Kyran O'Neill because the case study names him as both client and
-    // host — if it came from someone else on the show, correct the name.
+    // Supplied September 2026, from Lola at TMP. Verbatim.
+    //
+    // Initially attributed to Kyran O'Neill (the case study's named client
+    // and host) — James corrected that. Role verified against
+    // totalmentalperformance.com/about on 2026-09-20, which reads: "Lola is
+    // an incredibly resilient, creative and bright marketing manager who
+    // oversees all of marketing systems and delivery." No surname is
+    // published there, so none is used here.
     quote:
       "James has been doing an incredible job. Super responsive, proactive, creative, and responsible. Always great communication and top-level work. James is a superstar podcast producer and an amazing person. 1000% recommend him!",
-    name: "Kyran O'Neill",
-    organisation: "TMP Podcast",
+    name: "Lola",
+    role: "Marketing Manager",
+    organisation: "Total Mental Performance",
     caseStudySlug: "tmp-podcast",
     avatar: "/images/clients/total-mental-performance.jpeg",
     avatarAlt: "TMP Podcast cover art",
