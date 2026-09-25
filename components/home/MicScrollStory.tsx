@@ -19,6 +19,11 @@ const frameSrc = (i: number) =>
 // then the remaining 151 fill in and sharpen it.
 const COARSE_STRIDE = 4;
 
+// Gap between a resting card's bottom edge and the bottom of the chapter
+// window. It is the depth of the bottom fade, so a settled card never sits
+// in it. Must match the `bottom-5` on each card wrapper.
+const RAIL_BOTTOM_INSET = 20;
+
 // Every line here already appears elsewhere on the site (stats, "what we
 // do" steps, positioning copy, closing CTA) — just told one beat at a
 // time as the mic turns. Nothing new is claimed.
@@ -84,6 +89,9 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
   // scroll-driven, which means updating every frame — and a state update
   // every frame would re-render the whole section sixty times a second.
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  // The clipped window the cards travel through. Its height sets the step
+  // between cards, so the spacing adapts to each breakpoint's window.
+  const railRef = useRef<HTMLDivElement>(null);
   // Hero starts fully visible (1) and fades as the chapter sequence begins.
   // Never used to *reveal* the hero — it's readable from first paint.
   const [heroOpacity, setHeroOpacity] = useState(1);
@@ -384,24 +392,43 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
       // and fully legible instead of drifting out of frame at the end of the
       // section. That card carries the CTA, so it is the one thing here that
       // must not be mid-fade when the scrolling stops.
+      // Floored at 0.5 so card one is already settled when the page loads
+      // rather than sitting half-clipped at the bottom of the window.
       const read = Math.min(
         chapters.length - 0.5,
-        Math.max(0, (clamped - HERO_ZONE) / (1 - HERO_ZONE)) * chapters.length
+        Math.max(
+          0.5,
+          Math.max(0, (clamped - HERO_ZONE) / (1 - HERO_ZONE)) * chapters.length
+        )
       );
+
+      // One step = the height of the window above a resting card. A card
+      // leaving moves exactly one step up, so it has cleared the window by
+      // the time the next one lands, and adjacent cards are always a full
+      // step apart. Because every card is shorter than a step, two cards
+      // can never occupy the same pixels. The old fixed 90px step was less
+      // than a card's height, which is why they slid over each other.
+      const rail = railRef.current;
+      const step = rail ? rail.clientHeight - RAIL_BOTTOM_INSET : 200;
 
       cardRefs.current.forEach((el, i) => {
         if (!el) return;
         const d = i - read + 0.5; // +0.5 centres a card mid-band
         const dist = Math.abs(d);
-        // Plateau then ramp: fully legible through the middle of its band,
-        // fading only at the edges. Without the plateau the text would
-        // never sit still long enough to read.
+        // Plateau then ramp: fully legible through the middle of its band.
+        // Asymmetric on purpose: the outgoing card fades early as it rises,
+        // so the eye is already on the incoming one; the incoming card comes
+        // up to full strength just before it settles.
         const opacity =
-          dist <= 0.42 ? 1 : Math.max(0, 1 - (dist - 0.42) / 0.45);
+          dist <= 0.3
+            ? 1
+            : d < 0
+              ? Math.max(0, 1 - (dist - 0.3) / 0.4)
+              : Math.max(0, 1 - (dist - 0.3) / 0.5);
         el.style.opacity = String(opacity);
         // Travels upward through the frame as you scroll down, so the card
         // moves with the scroll rather than appearing in place.
-        el.style.transform = `translate3d(0, ${d * 90}px, 0) scale(${1 - Math.min(dist, 1) * 0.04})`;
+        el.style.transform = `translate3d(0, ${d * step}px, 0)`;
         // Cards fully faded out must not eat taps meant for the page.
         el.style.pointerEvents = opacity > 0.9 ? "auto" : "none";
       });
@@ -653,10 +680,27 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
 
             Stacked absolutely rather than in flow so a card's height can
             vary (the last one carries a button) without shifting its
-            neighbours, and so two can cross-fade through each other at a
-            band edge. */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 px-6 pb-16 sm:px-10 sm:pb-20">
-          <div className="relative mx-auto h-[13rem] max-w-md sm:mx-0 sm:h-[12rem]">
+            neighbours.
+
+            The cards travel through a clipped window with feathered edges,
+            like a ticker: the outgoing card rises into the headroom above
+            the resting slot and dissolves at the top edge while the next
+            one comes up from the bottom edge. The window is a full card
+            step tall, so the two are never on top of each other. On
+            desktop the empty left column allows generous headroom; on a
+            phone the hero sits directly above, so the window is shorter
+            and the feathering tighter. */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 px-6 pb-11 sm:px-10 sm:pb-[3.75rem]">
+          <div
+            ref={railRef}
+            className="relative mx-auto h-[14rem] max-w-md overflow-hidden [--rail-fade:24px] sm:mx-0 sm:h-[22rem] sm:[--rail-fade:96px]"
+            style={{
+              maskImage:
+                "linear-gradient(to bottom, transparent 0, #000 var(--rail-fade), #000 calc(100% - 20px), transparent 100%)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, transparent 0, #000 var(--rail-fade), #000 calc(100% - 20px), transparent 100%)",
+            }}
+          >
             {chapters.map((c, i) => (
               <div
                 key={c.text}
@@ -664,14 +708,15 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
                   cardRefs.current[i] = el;
                 }}
                 // Inline defaults matter: they are what renders server-side
-                // and before hydration. Card one visible, the rest clear, so
-                // the first paint is the same thing JS then takes over.
+                // and before hydration. Card one settled, the rest parked
+                // below the window, so the first paint is the same thing JS
+                // then takes over.
                 style={{
                   opacity: i === 0 ? 1 : 0,
-                  transform: `translate3d(0, ${(i + 0.5) * 90}px, 0)`,
+                  transform: i === 0 ? "none" : "translate3d(0, 200%, 0)",
                   willChange: "transform, opacity",
                 }}
-                className="absolute inset-x-0 bottom-0"
+                className="absolute inset-x-0 bottom-5"
               >
                 <div className="pointer-events-auto rounded-2xl border border-white/15 bg-white/[0.07] px-5 py-4 shadow-xl shadow-black/40 backdrop-blur-md">
                   <p className="text-[11px] font-semibold tracking-[0.16em] text-amber uppercase">
