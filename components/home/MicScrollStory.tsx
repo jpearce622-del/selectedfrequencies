@@ -74,6 +74,11 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
 
   const [loadedCount, setLoadedCount] = useState(0);
   const [activeChapter, setActiveChapter] = useState(0);
+  // Continuous scroll position, quantised to 5% steps. Quantised so this is
+  // at most 20 re-renders across the whole section rather than one per
+  // scroll frame, which is the difference between a progress bar and a
+  // performance problem.
+  const [barFill, setBarFill] = useState(0);
   // Hero starts fully visible (1) and fades as the chapter sequence begins.
   // Never used to *reveal* the hero — it's readable from first paint.
   const [heroOpacity, setHeroOpacity] = useState(1);
@@ -364,6 +369,7 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
               )
             );
       setActiveChapter(chapter);
+      setBarFill(Math.round(clamped * 20) / 20);
 
       // The hero stays put for the whole pinned section — only the scroll cue
       // fades, once the visitor has clearly started scrolling.
@@ -457,7 +463,11 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
     <section
       ref={sectionRef}
       className="relative -mt-20 bg-black"
-      style={{ height: "480vh" }}
+      // Was 480vh, which is nearly 4,000px of pinned scrolling on a phone
+      // and the main reason the page felt stuck. 320vh keeps the sequence
+      // deliberate while cutting a third of the dead travel; the rotation
+      // simply scrubs a little faster, which reads as more responsive.
+      style={{ height: "320vh" }}
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden">
         {/* Canvas only ever draws the photo itself (clearRect, never a
@@ -487,6 +497,74 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
               "linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.55) 100%), linear-gradient(to right, #000 0%, rgba(0,0,0,0.55) 20%, transparent 42%, transparent 58%, rgba(0,0,0,0.55) 80%, #000 100%)",
           }}
         />
+
+        {/* Wayfinding. The scroll cue below fades once you start moving, so
+            past that point nothing told you the section was finite or that
+            scrolling was doing anything — which is exactly the "page is
+            stuck" feeling. These two fade IN as the cue fades out.
+
+            Segments rather than a continuous bar on purpose: five of them
+            says "there are five things and you are on the third", which a
+            smooth bar cannot. */}
+        <div
+          className="pointer-events-none absolute inset-x-0 top-24 flex justify-center px-6 transition-opacity duration-500 sm:px-10"
+          style={{ opacity: 1 - heroOpacity }}
+        >
+          <div className="flex w-full max-w-md items-center gap-3">
+            <div
+              className="flex flex-1 gap-1.5"
+              role="progressbar"
+              aria-label="Intro progress"
+              aria-valuemin={0}
+              aria-valuemax={chapters.length}
+              aria-valuenow={Math.max(0, activeChapter + 1)}
+            >
+              {chapters.map((c, i) => {
+                // Fills across its own slice rather than snapping full the
+                // moment its chapter is entered. Discrete segments still say
+                // "five things"; a continuous fill means the bar completes
+                // when the SECTION does, not 300px early.
+                const slice = 1 / chapters.length;
+                const fill = Math.min(1, Math.max(0, (barFill - i * slice) / slice));
+                return (
+                  <span
+                    key={c.eyebrow}
+                    className="h-0.5 flex-1 overflow-hidden rounded-full bg-white/20"
+                  >
+                    <span
+                      className="block h-full rounded-full bg-amber transition-[width] duration-200 ease-out motion-reduce:transition-none"
+                      style={{ width: `${fill * 100}%` }}
+                    />
+                  </span>
+                );
+              })}
+            </div>
+            <span className="shrink-0 font-mono text-[10px] tabular-nums text-white/50">
+              {String(Math.max(1, activeChapter + 1)).padStart(2, "0")}/
+              {String(chapters.length).padStart(2, "0")}
+            </span>
+          </div>
+        </div>
+
+        {/* Skip. Some visitors want the page, not the sequence, and making
+            them scroll four screens to get it is the wrong trade. Keyboard
+            reachable, and it lands just past the section rather than
+            jumping to an arbitrary anchor. */}
+        <button
+          type="button"
+          onClick={() => {
+            const section = sectionRef.current;
+            if (!section) return;
+            window.scrollTo({
+              top: section.offsetTop + section.offsetHeight - window.innerHeight,
+              behavior: reducedMotion ? "auto" : "smooth",
+            });
+          }}
+          style={{ opacity: 1 - heroOpacity }}
+          className="absolute right-6 bottom-6 rounded-full border border-white/20 bg-black/30 px-3.5 py-1.5 text-xs font-medium text-white/70 backdrop-blur-sm transition-colors hover:border-white/40 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber sm:right-10"
+        >
+          Skip intro
+        </button>
 
         {loadedCount < FRAME_COUNT && (
           <div className="absolute top-6 right-6 rounded-full bg-black/30 px-3 py-1 text-xs text-background/70">
