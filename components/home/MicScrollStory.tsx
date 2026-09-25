@@ -79,6 +79,11 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
   // scroll frame, which is the difference between a progress bar and a
   // performance problem.
   const [barFill, setBarFill] = useState(0);
+  // Cards are positioned imperatively from the scroll handler rather than
+  // via React state. Their motion has to be 1:1 with the scroll to read as
+  // scroll-driven, which means updating every frame — and a state update
+  // every frame would re-render the whole section sixty times a second.
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   // Hero starts fully visible (1) and fades as the chapter sequence begins.
   // Never used to *reveal* the hero — it's readable from first paint.
   const [heroOpacity, setHeroOpacity] = useState(1);
@@ -350,15 +355,16 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
       const progress = scrollable > 0 ? -rect.top / scrollable : 0;
       const clamped = Math.min(1, Math.max(0, progress));
 
+      // The hero owns the first 12% of the scroll, so the chapters start
+      // after it rather than competing with it at rest.
+      const HERO_ZONE = 0.12;
+
       // Kept fractional so the easing loop can glide through frames; draw()
       // snaps to the nearest whole frame when it paints.
       targetFrameRef.current = clamped * (FRAME_COUNT - 1);
       frameRef.current = Math.round(targetFrameRef.current);
       start();
 
-      // The hero owns the first 12% of the scroll, so the chapters start
-      // after it rather than competing with it at rest. -1 means "none shown".
-      const HERO_ZONE = 0.12;
       const chapter =
         clamped < HERO_ZONE
           ? -1
@@ -370,6 +376,35 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
             );
       setActiveChapter(chapter);
       setBarFill(Math.round(clamped * 20) / 20);
+
+      // Continuous read position through the chapters, e.g. 2.4 = just past
+      // the third card. The fractional part is the whole point: it is what
+      // turns a threshold trigger into motion that tracks your finger.
+      // Capped at chapters.length - 0.5 so the final card settles centred
+      // and fully legible instead of drifting out of frame at the end of the
+      // section. That card carries the CTA, so it is the one thing here that
+      // must not be mid-fade when the scrolling stops.
+      const read = Math.min(
+        chapters.length - 0.5,
+        Math.max(0, (clamped - HERO_ZONE) / (1 - HERO_ZONE)) * chapters.length
+      );
+
+      cardRefs.current.forEach((el, i) => {
+        if (!el) return;
+        const d = i - read + 0.5; // +0.5 centres a card mid-band
+        const dist = Math.abs(d);
+        // Plateau then ramp: fully legible through the middle of its band,
+        // fading only at the edges. Without the plateau the text would
+        // never sit still long enough to read.
+        const opacity =
+          dist <= 0.42 ? 1 : Math.max(0, 1 - (dist - 0.42) / 0.45);
+        el.style.opacity = String(opacity);
+        // Travels upward through the frame as you scroll down, so the card
+        // moves with the scroll rather than appearing in place.
+        el.style.transform = `translate3d(0, ${d * 90}px, 0) scale(${1 - Math.min(dist, 1) * 0.04})`;
+        // Cards fully faded out must not eat taps meant for the page.
+        el.style.pointerEvents = opacity > 0.9 ? "auto" : "none";
+      });
 
       // The hero stays put for the whole pinned section — only the scroll cue
       // fades, once the visitor has clearly started scrolling.
@@ -600,57 +635,59 @@ export function MicScrollStory({ hero }: { hero?: React.ReactNode }) {
           </div>
         )}
 
-        {/* Chapters accumulate as they're reached: each block pops in, in
-            order, and stays. The stack is anchored to the bottom and grows
-            upward — newest block enters at the bottom, pushing earlier ones
-            up — so the sequence reads 01, then 01+02, then 01+02+03… */}
-        <div className="absolute inset-x-0 bottom-0 px-6 pb-16 sm:px-10 sm:pb-20">
-          <div className="mx-auto flex max-w-md flex-col sm:mx-0">
-            {chapters.map((c, i) => {
-              const revealed = i <= activeChapter;
-              return (
-                <div
-                  key={c.text}
-                  // The hero is now pinned for the whole section, so on small
-                  // screens show only the current card — a full accumulated
-                  // stack would run past the hero. Desktop keeps the stack:
-                  // there the hero sits right and the cards sit bottom-left.
-                  className={i === activeChapter ? "" : "max-sm:!hidden"}
-                  style={{
-                    display: "grid",
-                    gridTemplateRows: revealed ? "1fr" : "0fr",
-                    opacity: revealed ? 1 : 0,
-                    transition:
-                      "grid-template-rows 0.55s cubic-bezier(0.22,1,0.36,1), opacity 0.45s ease",
-                  }}
-                >
-                  <div style={{ overflow: "hidden", minHeight: 0 }}>
-                    <div
-                      className="mt-3 rounded-2xl border border-white/15 bg-white/[0.07] px-5 py-4 shadow-xl shadow-black/40 backdrop-blur-md"
-                      style={{
-                        transform: revealed
-                          ? "translateY(0) scale(1)"
-                          : "translateY(10px) scale(0.98)",
-                        transition:
-                          "transform 0.55s cubic-bezier(0.22,1,0.36,1)",
-                      }}
-                    >
-                      <p className="text-[11px] font-semibold tracking-[0.16em] text-amber uppercase">
-                        {c.eyebrow}
-                      </p>
-                      <p className="font-display mt-1.5 text-lg font-semibold leading-snug tracking-tight text-background sm:text-xl">
-                        {c.text}
-                      </p>
-                      {c.cta && (
-                        <div className="mt-4">
-                          <Button href={c.cta.href}>{c.cta.label}</Button>
-                        </div>
-                      )}
+        {/* Chapters, positioned by scroll rather than triggered by it.
+
+            This used to be a stack where each card popped in on a 0.55s CSS
+            transition once its threshold was crossed. That is why the page
+            read as stuck: you scrolled, nothing moved, then at some unseen
+            line an animation played on its own clock, disconnected from your
+            hand. Motion that isn't tied to the input doesn't register as a
+            response to the input.
+
+            Now every card sits in the same place and its position and
+            opacity are written from the scroll offset each frame, so the
+            cards physically travel up through the frame as you scroll down.
+            One pixel of scroll is one pixel of movement — the same principle
+            as the mic rotation, which was already the only genuinely
+            scroll-linked thing on the page.
+
+            Stacked absolutely rather than in flow so a card's height can
+            vary (the last one carries a button) without shifting its
+            neighbours, and so two can cross-fade through each other at a
+            band edge. */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 px-6 pb-16 sm:px-10 sm:pb-20">
+          <div className="relative mx-auto h-[13rem] max-w-md sm:mx-0 sm:h-[12rem]">
+            {chapters.map((c, i) => (
+              <div
+                key={c.text}
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
+                // Inline defaults matter: they are what renders server-side
+                // and before hydration. Card one visible, the rest clear, so
+                // the first paint is the same thing JS then takes over.
+                style={{
+                  opacity: i === 0 ? 1 : 0,
+                  transform: `translate3d(0, ${(i + 0.5) * 90}px, 0)`,
+                  willChange: "transform, opacity",
+                }}
+                className="absolute inset-x-0 bottom-0"
+              >
+                <div className="pointer-events-auto rounded-2xl border border-white/15 bg-white/[0.07] px-5 py-4 shadow-xl shadow-black/40 backdrop-blur-md">
+                  <p className="text-[11px] font-semibold tracking-[0.16em] text-amber uppercase">
+                    {c.eyebrow}
+                  </p>
+                  <p className="font-display mt-1.5 text-lg font-semibold leading-snug tracking-tight text-background sm:text-xl">
+                    {c.text}
+                  </p>
+                  {c.cta && (
+                    <div className="mt-4">
+                      <Button href={c.cta.href}>{c.cta.label}</Button>
                     </div>
-                  </div>
+                  )}
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       </div>
